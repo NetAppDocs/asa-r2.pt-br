@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
+summary: 'Para começar a usar um sistema ASA R2 (ASA A1K, ASA A70, ASA A90), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.' 
+searchtitle: Instalar e configurar os sistemas de storage ASA A1K, ASA A70 e ASA A90 
+---
+= Início rápido para sistemas de armazenamento ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para começar a funcionar com o sistema ASA R2, instale os componentes de hardware, configure o cluster, configure o acesso aos dados dos hosts para o sistema de storage e provisione o storage.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Instale e configure o hardware
+[role="quick-margin-para"]
+link:../install-setup/install-setup-workflow.html["Instale e configure"] Seu sistema ASA R2 e implantá-lo como um par de HA no ambiente ONTAP.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] Configure o cluster
+[role="quick-margin-para"]
+Use o System Manager para guiá-lo através de um processo rápido e fácil para link:../install-setup/initialize-ontap-cluster.html["Configure o cluster do ONTAP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] Configure o acesso aos dados
+[role="quick-margin-para"]
+link:../install-setup/set-up-data-access.html["Conete seu sistema ASA R2 aos seus clientes SAN"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"] Provisione seu storage
+[role="quick-margin-para"]
+link:../manage-data/provision-san-storage.html["Provisionamento de storage"] Para começar a fornecer dados aos seus clientes SAN.
+
+.O que se segue?
+Agora você pode usar o System Manager para proteger seus dados pelo link:../data-protection/create-snapshots.html["criar instantâneos"].

@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: data-protection/policies-schedules.html 
+keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
+summary: Use políticas e programações de proteção de dados para proteger os dados em um cronograma automatizado. 
+---
+= Gerenciar políticas e programações de proteção de dados da ONTAP em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use políticas de snapshot para proteger os dados nos grupos de consistência em uma programação automatizada. Use programações de políticas nas políticas de snapshot para determinar com que frequência os snapshots são feitos.
+
+
+
+== Crie um novo cronograma de política de proteção
+
+Um cronograma de política de proteção define com que frequência uma política de snapshots é executada. Você pode criar programações para serem executadas em intervalos regulares com base em vários dias, horas ou minutos. Por exemplo, você pode criar uma programação para executar a cada hora ou para executar apenas uma vez por dia. Você também pode criar programações para serem executadas em horários específicos em dias específicos da semana ou mês. Por exemplo, você pode criar uma agenda para ser executada às 12:15am no dia 20th de cada mês.
+
+A definição de várias programações de políticas de proteção oferece a flexibilidade de aumentar ou diminuir a frequência de snapshots para diferentes aplicações. Isso permite que você forneça um nível maior de proteção e um risco menor de perda de dados para seus workloads essenciais do que o que pode ser necessário para workloads menos essenciais.
+
+.Passos
+. Selecione *proteção > políticas*; em seguida, selecione *Programação*.
+. image:icon_add_blue_bg.png["um retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]Selecione .
+. Introduza um nome para a programação e, em seguida, selecione os parâmetros de programação.
+. Selecione *Guardar*.
+
+
+.O que se segue?
+Agora que você criou uma nova agenda de políticas, pode usar a programação recém-criada em suas políticas para definir quando os snapshots são feitos.
+
+
+
+== Criar uma política de snapshot
+
+Uma política de snapshot define com que frequência os snapshots são feitos, o número máximo de snapshots permitidos e o tempo de retenção dos snapshots.
+
+.Passos
+. No System Manager, selecione *proteção > políticas*; em seguida, selecione *políticas Snapshot*.
+. image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]Selecione .
+. Introduza um nome para a política de instantâneos.
+. Selecione *Cluster* para aplicar a política a todo o cluster. Selecione *Storage VM* para aplicar a política a uma VM de armazenamento individual.
+. Selecione *Adicionar um agendamento*; em seguida, insira o agendamento da política de snapshot.
+. Selecione *Adicionar política*.
+
+
+.O que se segue?
+Agora que você criou uma política de snapshot, pode aplicá-la a um grupo de consistência. Os instantâneos serão tirados do grupo de consistência com base nos parâmetros definidos na política de instantâneos.
+
+
+
+== Aplique uma política de snapshot a um grupo de consistência
+
+Aplique uma política de snapshot a um grupo de consistência para criar, reter e rotular automaticamente snapshots do grupo de consistência.
+
+.Passos
+. No System Manager, selecione *proteção > políticas*; em seguida, selecione *políticas Snapshot*.
+. Passe o Mouse sobre o nome da política de snapshot que você deseja aplicar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *aplicar*.
+. Selecione os grupos de consistência aos quais você deseja aplicar a política de snapshot; em seguida, selecione *aplicar*.
+
+
+.O que se segue?
+Agora que seus dados estão protegidos com snapshots, você deve link:snapshot-replication.html#step-3-create-a-replication-relationship["configure uma relação de replicação"]copiar seus grupos de consistência para um local geograficamente remoto para backup e recuperação de desastres.
+
+
+
+== Edite, exclua ou desative uma política de snapshot
+
+Edite uma política de instantâneos para modificar o nome da política, o número máximo de instantâneos ou o rótulo SnapMirror. Exclua uma política para removê-la e seus dados de backup associados do cluster. Desative uma política para interromper temporariamente a criação ou transferência de instantâneos especificados pela política.
+
+.Passos
+. No System Manager, selecione *proteção > políticas*; em seguida, selecione *políticas Snapshot*.
+. Passe o Mouse sobre o nome da política de snapshot que você deseja editar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Edit*, *Delete* ou *Disable*.
+
+
+.Resultado
+Você modificou, excluiu ou desativou a política de snapshot.
+
+
+
+== Editar uma política de replicação
+
+Edite uma política de replicação para modificar a descrição da política, o agendamento de transferência e as regras. Também pode editar a política para ativar ou desativar a compressão de rede.
+
+.Passos
+. No System Manager, selecione *proteção > políticas*.
+. Selecione *políticas de replicação*.
+. Passe o Mouse sobre a política de replicação que você deseja editar; em seguida, image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Selecione *Editar*.
+. Atualize a política; em seguida, selecione *Salvar*.
+
+
+.Resultado
+Você modificou a política de replicação.

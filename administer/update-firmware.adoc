@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: administer/update-firmware.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: O ONTAP atualiza automaticamente o firmware em sistemas ASA R2. Você pode usar o System Manager para desativar as atualizações automáticas e exibir as atualizações antes de serem instaladas. 
+---
+= Atualize o firmware em sistemas de armazenamento ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O ONTAP transfere e atualiza automaticamente ficheiros de firmware e de sistema no seu sistema ASA R2 por predefinição. Se você quiser a flexibilidade de visualizar as atualizações recomendadas antes que elas sejam baixadas e instaladas, você pode usar o Gerenciador de sistema do ONTAP para desativar atualizações automatizadas ou editar parâmetros de atualização para mostrar notificações de atualizações disponíveis antes que qualquer ação seja executada.
+
+
+
+== Ativar atualizações automáticas
+
+As atualizações recomendadas para firmware de armazenamento, firmware SP/BMC e ficheiros de sistema são automaticamente transferidas e instaladas no sistema ASA R2 por predefinição. Se as atualizações automáticas tiverem sido desativadas, você poderá habilitá-las a restabelecer o comportamento padrão.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Ativar*.
+. Leia e aceite o EULA.
+. Aceite as predefinições para atualizar automaticamente os ficheiros de firmware e de sistema. Opcionalmente, selecione para mostrar notificações ou para ignorar automaticamente as atualizações recomendadas.
+. Selecione para confirmar que suas modificações de atualização serão aplicadas a todas as atualizações atuais e futuras.
+. Selecione *Guardar*.
+
+
+.Resultado
+As atualizações recomendadas são transferidas e instaladas automaticamente no sistema ASA R2 com base nas seleções de atualização.
+
+
+
+== Desativar as atualizações automáticas
+
+Desative as atualizações automáticas se você quiser que a flexibilidade exiba as atualizações recomendadas antes que elas sejam instaladas. Se desativar as atualizações automáticas, terá de efetuar manualmente atualizações de firmware e de ficheiros de sistema.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Desativar*.
+
+
+.Resultado
+As atualizações automáticas estão desativadas. Deve verificar regularmente as atualizações recomendadas e decidir se pretende efetuar uma instalação manual.
+
+
+
+== Ver atualizações automáticas
+
+Veja uma lista de atualizações de firmware e de ficheiros de sistema que foram transferidas para o cluster e que estão agendadas para instalação automática. Veja também as atualizações que foram instaladas automaticamente anteriormente.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Exibir todas as atualizações automáticas*.
+
+
+
+
+== Editar atualizações automáticas
+
+Você pode optar por ter as atualizações recomendadas para o firmware de armazenamento, o firmware SP/BMC e os arquivos de sistema baixados e instalados automaticamente no cluster, ou pode optar por ter as atualizações recomendadas descartadas automaticamente. Se você quiser controlar manualmente a instalação ou a demissão de atualizações, selecione para ser notificado quando uma atualização recomendada estiver disponível; então você pode selecionar manualmente para instalá-la ou descartá-la.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Editar atualizações automáticas*.
+. Atualize as seleções para atualizações automáticas.
+. Selecione *Guardar*.
+
+
+.Resultado
+As atualizações automáticas são modificadas com base nas suas seleções.
+
+
+
+== Atualize o firmware manualmente
+
+Se você quiser a flexibilidade de visualizar as atualizações recomendadas antes que elas sejam baixadas e instaladas, você pode desativar as atualizações automatizadas e atualizar seu firmware manualmente.
+
+.Passos
+. Transfira o ficheiro de atualização do firmware para um servidor ou cliente local.
+. No System Manager, selecione *Cluster > Overview* e, em seguida, *Update*.
+. Selecione *Atualização de firmware*; image:icon_update_firmware.png["retângulo azul contendo um sinal de adição seguido das palavras atualizar firmware em letras brancas"]selecione .
+
+
+.Resultado
+O firmware é atualizado.

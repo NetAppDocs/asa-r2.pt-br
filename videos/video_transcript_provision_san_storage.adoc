@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_provision_san_storage.html 
+keywords: frontmatter, front matter 
+summary: Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas do ONTAP para executar tarefas comuns de forma rápida e fácil em seus sistemas de storage ASA R2. 
+---
+= Configure o armazenamento SAN no sistema ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A transcrição a seguir é fornecida para o vídeo `Provision SAN storage on your ASA r2 storage system`.
+
+link:videos-common-tasks.html#video_transcript_return_provision_san_storage["Voltar à página"]
+
+Você pode usar o Gerenciador de sistemas do ONTAP para provisionar unidades de storage para hosts de maneira rápida e fácil no sistema de storage do ASA R2.
+
+Neste exemplo, criaremos seis novas unidades de storage para um host VMware.
+
+No menu System Manager (Gestor do sistema), selecione *Storage* (armazenamento) e, em seguida, selecione *Add* (Adicionar).
+
+Introduza um nome para as unidades de armazenamento, o número de unidades e a capacidade para cada unidade; em seguida, selecione o sistema operativo anfitrião.
+
+Se você criar mais de uma unidade, por padrão, cada unidade será criada com a mesma capacidade.
+
+Selecione *mais opções* para inserir as informações do seu host. Para este exemplo, selecionaremos o protocolo SCSI e adicionaremos um novo host iSCSI.
+
+Insira o nome do host e, em seguida, adicione os iniciadores do host e uma descrição.
+
+Selecione *agendar instantâneos* Proteja suas unidades de armazenamento com snapshots regulares.
+
+Selecione proteção remota para *replicar suas unidades em um local remoto*.
+
+Selecione uma VM de armazenamento e uma política de replicação; selecione *Adicionar*.
+
+As unidades de armazenamento devem estar em um grupo de consistência para replicação. Insira um nome de grupo de consistência e selecione *criar*.
+
+Você provisionou com rapidez e facilidade 6 unidades de storage para hosts VMware com proteção de dados local e remota.

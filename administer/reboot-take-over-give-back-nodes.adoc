@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: administer/reboot-take-over-give-back-nodes.html 
+keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Talvez seja necessário reinicializar um nó para manutenção, solução de problemas, atualizações de software ou outros motivos administrativos. 
+---
+= Reinicie um nó em um sistema de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Talvez seja necessário reinicializar um nó para manutenção, solução de problemas, atualizações de software ou outros motivos administrativos. Quando um nó é reinicializado, o parceiro de HA executa automaticamente um takeover. Em seguida, o nó do parceiro executa um giveback automático após o nó reinicializado voltar online.
+
+.Passos
+. No System Manager, selecione *Cluster > Overview*.
+. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ao lado do nó que deseja reinicializar; em seguida, selecione *Reboot*.
+. Digite o motivo pelo qual você está reiniciando o nó; em seguida, selecione *Reboot*.
++
+O motivo que introduzir para a reinicialização é registado no registo de auditoria do sistema.
+
+
+
+.O que se segue?
+Enquanto o nó está sendo reinicializado, seu parceiro de HA realiza um takeover para que não haja interrupção no serviço de dados. Quando a reinicialização estiver concluída, o parceiro de HA executa um giveback.

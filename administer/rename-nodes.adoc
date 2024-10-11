@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: administer/rename-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+---
+= Renomeie um nó em um sistema de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o Gerenciador de sistema do ONTAP para renomear um nó no sistema ASA R2. Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos.
+
+.Passos
+. No System Manager, selecione *Cluster > Overview*.
+. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ao lado do nó que deseja renomear; em seguida, selecione *Renomear*.
+. Insira o novo nome para o nó e selecione *Renomear*.
+
+
+.Resultado
+O novo nome é aplicado ao nó.

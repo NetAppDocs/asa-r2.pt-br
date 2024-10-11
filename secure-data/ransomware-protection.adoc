@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: secure-data/ransomware-protection.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
+summary: Use snapshots à prova de violação para proteger seus dados. Os snapshots à prova de violação não podem ser excluídos e podem ser usados para recuperar dados comprometidos por um ataque de ransomware. 
+---
+= Proteger contra ataques de ransomware em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para maior proteção contra ataques de ransomware, replique snapshots para um cluster remoto e bloqueie os snapshots de destino para torná-los à prova de violação. Os instantâneos bloqueados não podem ser eliminados acidentalmente ou maliciosamente. Use snapshots bloqueados para recuperar dados caso uma unidade de storage seja comprometida por um ataque de ransomware.
+
+
+
+== Inicialize o relógio SnapLock Compliance
+
+Antes de criar snapshots à prova de adulteração, é necessário inicializar o relógio SnapLock Compliance nos clusters local e de destino.
+
+.Passos
+. Selecione *Cluster > Overview*.
+. Na seção *nós*, selecione *Inicializar Relógio SnapLock Compliance*.
+. Selecione *Inicializar*.
+. Verifique se o relógio de conformidade foi inicializado.
++
+.. Selecione *Cluster > Overview*.
+.. Na seção *nós*, image:icon_show_hide.png["três colunas azuis no fundo branco"]selecione ; em seguida, selecione *Relógio SnapLock Compliance*.
+
+
+
+
+.O que vem a seguir?
+Depois de inicializar o relógio SnapLock Compliance nos clusters local e de destino, você estará pronto para link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["crie uma relação de replicação com instantâneos bloqueados"].

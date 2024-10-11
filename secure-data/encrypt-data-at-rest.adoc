@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: secure-data/encrypt-data-at-rest.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption 
+summary: Criptografe dados em repouso para que não possam ser lidos se um disco for devolvido, perdido ou roubado. Use a criptografia de hardware e software para habilitar a proteção de camada dupla. 
+searchtitle: Proteção de dados em repouso com criptografia usando o Gerenciador de sistemas do ONTAP | ASA R2 
+---
+= Criptografia de dados em repouso em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao criptografar dados em repouso, não é possível ler se um meio de storage é reutilizado, devolvido, extraviado ou roubado. Você pode usar o Gerenciador de sistemas do ONTAP para criptografar seus dados em nível de hardware e software para proteção de camada dupla.
+
+O NetApp Storage Encryption (NSE) é compatível com a criptografia de hardware usando unidades de autocriptografia (SEDs). Os SEDs criptografam dados conforme são gravados. Cada SED contém uma chave de criptografia exclusiva. Os dados criptografados armazenados no SED não podem ser lidos sem a chave de criptografia do SED. Os nós que tentam ler de um SED devem ser autenticados para acessar a chave de criptografia do SED. Os nós são autenticados pela obtenção de uma chave de autenticação de um gerenciador de chaves e, em seguida, apresentando a chave de autenticação à SED. Se a chave de autenticação for válida, o SED dará ao nó a sua chave de encriptação para aceder aos dados que contém.
+
+Use o gerenciador de chaves integrado do ASA R2 ou um gerenciador de chaves externo para fornecer chaves de autenticação aos nós.
+
+Além do NSE, você também pode habilitar a criptografia de software para adicionar outra camada de segurança aos seus dados.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Na seção *Segurança*, em *criptografia*, selecione *Configurar*.
+. Configure o gerenciador de chaves.
++
+[cols="2"]
+|===
+| Opção | Passos 
+
+
+| Configure o Onboard Key Manager  a| 
+.. Selecione *Onboard Key Manager* para adicionar os servidores de chave.
+.. Introduza uma frase-passe.
+
+
+
+
+| Configurar um gerenciador de chaves externo  a| 
+.. Selecione *Gerenciador de chaves externo* para adicionar os servidores de chaves.
+.. image:icon_add.gif["um sinal de mais azul seguido da palavra add"]Selecione para adicionar os servidores de chaves.
+.. Adicione os certificados de CA do servidor KMIP.
+.. Adicione os certificados de cliente KMIP.
+
+
+|===
+. Selecione *encriptação de camada dupla* para ativar a encriptação de software.
+. Selecione *Guardar*.
+
+
+.O que se segue?
+Agora que você criptografou seus dados em repouso, se estiver usando o protocolo NVMe/TCP, poderá link:nvme-tcp-connections.html["criptografe todos os dados enviados pela rede"] entre o host NVMe/TCP e o sistema ASA R2.

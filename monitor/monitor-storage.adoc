@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-storage.html 
+keywords: monitor, storage, cluster, utilization, usage 
+summary: Monitore a utilização do storage para garantir que você tenha a capacidade de storage necessária para atender a workloads atuais e futuros. 
+searchtitle: Monitore a utilização de espaço usando o Gerenciador de sistema do ONTAP | ASA R2 
+---
+= Monitorar a utilização de cluster e unidades de storage em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o Gerenciador do sistema do ONTAP para monitorar a utilização do storage e garantir que você tenha a capacidade de storage necessária para atender a workloads atuais e futuros.
+
+
+
+== Monitorar a utilização do cluster
+
+Monitore regularmente a quantidade de storage consumida pelo cluster para garantir que, se necessário, esteja preparado para expandir a capacidade do cluster antes de ficar sem espaço.
+
+.Passos
+. No System Manager, selecione *Dashboard*.
+. Em *Capacity*, visualize a quantidade de espaço físico usado e a quantidade de espaço disponível no cluster.
++
+A taxa de redução de dados representa a quantidade de espaço economizada com a eficiência de storage.
+
+
+
+.O que se segue?
+Se o cluster estiver com pouco espaço ou se não tiver capacidade para atender a uma demanda futura, você deve Planejar link:../administer/increase-storage-capacity.html["adicionar novas unidades"]seu sistema ASA R2 para aumentar a capacidade de storage.
+
+
+
+== Monitorar a utilização da unidade de storage
+
+Monitore a quantidade de storage consumida por uma unidade de storage para que você possa aumentar proativamente o tamanho da unidade de storage de acordo com as necessidades da sua empresa.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Selecione a unidade de armazenamento que pretende monitorizar e, em seguida, selecione *Visão geral*.
+. Em *armazenamento*, veja o seguinte:
++
+** Tamanho da sua unidade de armazenamento
+** Quantidade de espaço usado
+** Relação de redução de dados
++
+A taxa de redução de dados representa a quantidade de espaço economizado com a eficiência de storage
+
+** Instantâneo utilizado
++
+O snapshot usado representa a quantidade de storage usada pelos snapshots.
+
+
+
+
+
+.O que se segue?
+Se a sua unidade de armazenamento estiver próxima da capacidade, você deve link:../manage-data/modify-storage-units.html["modifique a unidade de armazenamento"]aumentar seu tamanho.

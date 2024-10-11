@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-performance.html 
+keywords: monitor, cluster, performance, storage units, latency, iops, throughput 
+summary: Monitore o desempenho do cluster e das unidades de storage para determinar como a latência, o IOPS e a taxa de transferência estão impactando suas aplicações essenciais aos negócios. 
+searchtitle: Monitore o desempenho do cluster usando o Gerenciador de sistema do ONTAP| ASA R2 
+---
+= Monitore o desempenho do cluster e da unidade de armazenamento em sistemas de armazenamento ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o Gerenciador de sistema do ONTAP para monitorar o desempenho geral do cluster e o desempenho de unidades de storage específicas para determinar como a latência, o IOPS e a taxa de transferência estão impactando suas aplicações essenciais aos negócios. O desempenho pode ser monitorado em vários períodos de tempo, variando de uma hora a um ano.
+
+Por exemplo, suponha que um aplicativo crítico esteja com alta latência e baixa taxa de transferência. Quando você visualiza o desempenho do cluster nos últimos cinco dias úteis, observa uma diminuição na performance ao mesmo tempo todos os dias. Use essas informações para determinar se o aplicativo crítico está competindo por recursos de cluster quando um processo não crítico começa a ser executado em segundo plano. Você poderá modificar sua política de QoS para limitar o impacto do workload não crítico nos recursos do sistema e garantir que seu workload crítico atenda aos destinos mínimos de taxa de transferência.
+
+
+
+== Monitorar o desempenho do cluster
+
+Use métricas de performance do cluster para determinar se você precisa mudar os workloads para minimizar a latência e maximizar o IOPS e a taxa de transferência para suas aplicações essenciais.
+
+.Passos
+. No System Manager, selecione *Dashboard*.
+. Em *desempenho*, visualize a latência, IOPS e taxa de transferência do cluster por hora, dia, semana, mês ou ano.
+. image:icon_download.png["seta para baixo azul"]Selecione para transferir os dados de desempenho.
+
+
+.O que se segue?
+Use as métricas de performance do cluster para analisar se você precisa modificar suas políticas de QoS ou fazer outros ajustes nos workloads da aplicação para maximizar o desempenho geral do cluster.
+
+
+
+== Monitore o desempenho da unidade de armazenamento
+
+Use as métricas de desempenho da unidade de storage para determinar o impacto de aplicações específicas na latência, IOPS e taxa de transferência.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Selecione a unidade de armazenamento que pretende monitorizar e, em seguida, selecione *Visão geral*.
+. Em *desempenho*, visualize a latência, IOPS e taxa de transferência da unidade de armazenamento por hora, dia, semana, mês ou ano.
+. image:icon_download.png["seta para baixo azul"]Selecione para transferir os dados de desempenho.
+
+
+.O que se segue?
+Use as métricas de performance da unidade de storage para analisar se você precisa modificar as políticas de QoS atribuídas às unidades de storage a fim de diminuir a latência e maximizar o IOPS e a taxa de transferência.

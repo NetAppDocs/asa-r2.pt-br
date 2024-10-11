@@ -1,0 +1,14 @@
+---
+section: learn-more
+title: Saiba mais
+entries:
+- title: ASA R2 para usuários avançados do ONTAP
+  entries:
+  - title: Comparar sistemas de hardware
+    url: "/learn-more/hardware-comparison.html"
+  - title: Suporte e limitações de software
+    url: "/learn-more/software-support-limitations.html"
+  - title: Suporte CLI
+    url: "/learn-more/cli-support.html"
+  - title: Compatível com API REST
+    url: "/learn-more/rest-api-support.html"

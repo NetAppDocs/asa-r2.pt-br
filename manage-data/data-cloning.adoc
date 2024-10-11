@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: manage-data/data-cloning.html 
+keywords: data cloning, clone data, cloning data, luns, namespaces, clone storage units, clone, cloning, clone consistency groups 
+summary: Clone unidades de storage e grupos de consistência no ASA R2 para criar cópias de dados para uso fora do ambiente de produção para diversos fins. 
+searchtitle: Clonagem de dados usando o ONTAP System Manager | ASA R2 
+---
+= Clonar dados em sistemas de storage ASA R2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+A clonagem de dados cria cópias de unidades de storage e grupos de consistência no sistema ASA R2 usando o Gerenciador de sistemas do ONTAP que pode ser usado para desenvolvimento de aplicações, testes, backups, migração de dados ou outras funções administrativas.
+
+
+
+== Clonar unidades de storage
+
+Ao clonar uma unidade de storage, você cria uma nova unidade de storage no sistema ASA R2 que é uma cópia gravável e pontual da unidade de storage clonada.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Passe o Mouse sobre o nome da unidade de armazenamento que você deseja clonar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Clone*.
+. Aceite o nome padrão para a nova unidade de armazenamento que será criada como um clone ou insira um novo.
+. Selecione o sistema operacional do host.
++
+Um novo snapshot é criado para o clone por padrão.
+
+. Se você quiser usar um snapshot existente, criar um novo grupo de hosts ou adicionar um novo host, selecione *mais opções*.
++
+[cols="2"]
+|===
+| Opção | Passos 
+
+
+ a| 
+Use um instantâneo existente
+ a| 
+.. Em *Snapshot to clone*, selecione *Use an existing snaphot*.
+.. Selecione o instantâneo que deseja usar para o clone.
+
+
+
+
+ a| 
+Crie um novo grupo de hosts
+ a| 
+.. Em *Host mapping*, selecione *New host group*.
+.. Insira um nome para o novo grupo de hosts; em seguida, selecione os iniciadores de host a serem incluídos no grupo.
+
+
+
+
+ a| 
+Adicione um novo host
+ a| 
+.. Em *Host mapping*, selecione *New hosts*.
+.. Insira o nome a para o novo host; em seguida, selecione *FC* ou *iSCSI*.
+.. Selecione os iniciadores do host na lista de iniciadores existentes ou selecione *Adicionar* para adicionar novos iniciadores para o host.
+
+
+|===
+. Selecione *Clone*.
+
+
+.O que se segue?
+Criou uma nova unidade de armazenamento idêntica à unidade de armazenamento clonada. Agora está pronto para utilizar a nova unidade de armazenamento, conforme necessário.
+
+
+
+== Grupos de consistência de clones
+
+Ao clonar um grupo de consistência, você cria um novo grupo de consistência idêntico à estrutura, às unidades de storage e aos dados do grupo de consistência clonado. Use um clone de grupo de consistência para realizar testes de aplicações ou migrar dados. Suponha, por exemplo, que você precise migrar uma carga de trabalho de produção de um grupo de consistência. Você pode clonar o grupo de consistência para criar uma cópia do workload de produção e mantê-lo como um backup até que a migração seja concluída.
+
+O clone é criado a partir de um snapshot do grupo de consistência que está sendo clonado. O snapshot usado para o clone é feito no momento em que o processo de clonagem é iniciado por padrão. Você pode modificar o comportamento padrão para usar um instantâneo pré-existente.
+
+Mapeamentos de unidades de armazenamento são copiados como parte do processo de clonagem. As políticas de snapshot não são copiadas como parte do processo de clonagem.
+
+É possível criar clones de grupos de consistência armazenados localmente no sistema ASA R2 ou de grupos de consistência replicados para locais remotos.
+
+[role="tabbed-block"]
+====
+.Clone usando snapshot local
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja clonar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione e, em seguida, selecione *Clone*.
+. Insira um nome para o clone do grupo de consistência ou aceite o nome padrão.
+. Selecione o sistema operacional do host.
+. Se você quiser dissociar o clone do grupo de consistência de origem e alocar espaço em disco, selecione *Split clone*.
+. Se você quiser usar um snapshot existente, criar um novo grupo de hosts ou adicionar um novo host para o clone, selecione *mais opções*.
++
+[cols="2"]
+|===
+| Opção | Passos 
+
+
+ a| 
+Use um instantâneo existente
+ a| 
+.. Em *Snapshot to clone*, selecione *Use an existing snapshot*.
+.. Selecione o instantâneo que deseja usar para o clone.
+
+
+
+
+ a| 
+Crie um novo grupo de hosts
+ a| 
+.. Em *Host mapping*, selecione *New host group*.
+.. Insira um nome para o novo grupo de hosts; em seguida, selecione os iniciadores de host a serem incluídos no grupo.
+
+
+
+
+ a| 
+Adicione um novo host
+ a| 
+.. Em *Host mapping*, selecione *New hosts*.
+.. Introduza o nome do novo nome de anfitrião; em seguida, selecione *FC* ou *iSCSI*.
+.. Selecione os iniciadores do host na lista de iniciadores existentes ou selecione *Adicionar iniciador* para adicionar novos iniciadores para o host.
+
+
+|===
+. Selecione *Clone*.
+
+
+--
+.Clone usando snapshot remoto
+--
+.Passos
+. No System Manager, selecione *proteção > replicação*.
+. Passe o Mouse sobre o *Source* que você deseja clonar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione e, em seguida, selecione *Clone*.
+. Selecione o cluster de origem e a VM de armazenamento; em seguida, introduza um nome para o novo grupo de consistência ou aceite o nome predefinido.
+. Selecione o instantâneo para clonar; em seguida, selecione *Clone*.
+
+
+.O que se segue?
+Clonou um grupo de consistência a partir da sua localização remota. O novo grupo de consistência está disponível localmente no seu sistema ASA R2 para ser usado conforme necessário.
+
+--
+====
+.O que se segue?
+Para proteger seus dados, você deve link:../data-protection/create-snapshots.html#step-2-create-a-snapshot["criar instantâneos"]do grupo de consistência clonada.

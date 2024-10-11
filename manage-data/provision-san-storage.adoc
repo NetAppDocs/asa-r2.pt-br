@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: manage-data/provision-san-storage.html 
+keywords: provision storage,san, create storage units, luns, namespaces, nvme, add host, add host initiators, map host, host mapping, create, ontap 
+summary: 'Provisione storage ONTAP no ASA R2 para permitir que hosts SAN (SCSI e NVMe) leiam e gravem dados em unidades de storage especificadas (LUNs e namespaces NVMe).' 
+searchtitle: Provisione storage SAN usando o Gerenciador de sistemas do ONTAP | ASA R2 
+---
+= Provisione storage SAN ONTAP nos sistemas ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você provisiona o storage, permite que seus hosts SAN leiam e gravem dados nos sistemas de storage ASA R2. Para provisionar o armazenamento, use o Gerenciador do sistema do ONTAP para criar unidades de armazenamento, adicionar iniciadores de host e mapear o host para uma unidade de armazenamento. Você também precisa executar etapas no host para ativar as operações de leitura/gravação.
+
+
+
+== Crie unidades de armazenamento
+
+Em um sistema ASA R2, uma unidade de armazenamento disponibiliza espaço de armazenamento aos seus hosts SAN para operações de dados. Uma unidade de storage refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe. Se o cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN. Se o cluster estiver configurado para oferecer suporte a hosts NVMe, você será solicitado a criar um namespace NVMe. Uma unidade de armazenamento ASA R2 tem uma capacidade máxima de 128TB TB.
+
+Consulte a link:https://hwu.netapp.com/["NetApp Hardware Universe"^] para obter os limites de armazenamento mais atuais para sistemas ASA R2.
+
+Os iniciadores do host são adicionados e mapeados para a unidade de armazenamento como parte do processo de criação da unidade de armazenamento. Você também pode link:provision-san-storage.html#add-host-initiators["adicione iniciadores de host"]elink:provision-san-storage.html#map-the-storage-unit-to-a-host["mapa"]-los para suas unidades de armazenamento depois que as unidades de armazenamento são criadas.
+
+.Passos
+. No System Manager, selecione *Storage* (armazenamento) e, em seguida, image:icon_add_blue_bg.png["ícone retangular com fundo azul e a palavra adicionar centrado em letras brancas"]selecione .
+. Introduza um nome para a nova unidade de armazenamento.
+. Introduza o número de unidades que pretende criar.
++
+Se você criar mais de uma unidade de armazenamento, cada unidade será criada com a mesma capacidade, sistema operacional host e mapeamento de host.
+
+. Introduza a capacidade da unidade de armazenamento e, em seguida, selecione o sistema operativo anfitrião.
+. Aceite o *mapeamento de host* selecionado automaticamente ou selecione um grupo de host diferente para a unidade de armazenamento a ser mapeada.
++
+*Mapeamento do host* refere-se ao grupo de hosts para o qual a nova unidade de armazenamento será mapeada. Se houver um grupo de hosts pré-existente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts pré-existente será selecionado automaticamente para o mapeamento do host. Você pode aceitar o grupo de host que é selecionado automaticamente para o mapeamento de host ou pode selecionar um grupo de host diferente.
+
++
+Se não houver nenhum grupo de hosts pré-existente para hosts em execução no sistema operacional especificado, um novo grupo de hosts será criado automaticamente pelo ONTAP.
+
+. Se você quiser fazer qualquer uma das seguintes opções, selecione *mais opções* e conclua as etapas necessárias.
++
+[cols="2, 4a"]
+|===
+| Opção | Passos 
+
+
+ a| 
+Altere a política de qualidade do serviço (QoS) padrão
+
+Se a política de QoS padrão não tiver sido definida anteriormente na máquina virtual de armazenamento (VM) na qual a unidade de armazenamento está sendo criada, essa opção não estará disponível.
+ a| 
+.. Em *armazenamento e otimização*, ao lado de *qualidade do serviço (QoS)*, image:icon_dropdown_arrow.gif["ícone de seta azul apontando na direção descendente"]selecione .
+.. Selecione uma política de QoS existente.
+
+
+
+
+ a| 
+Crie uma nova política de QoS
+ a| 
+.. Em *armazenamento e otimização*, ao lado de *qualidade do serviço (QoS)*, image:icon_dropdown_arrow.gif["ícone de seta azul apontando na direção descendente"]selecione .
+.. Selecione *Definir nova política*.
+.. Introduza um nome para a nova política de QoS.
+.. Defina um limite de QoS, uma garantia de QoS ou ambos.
++
+... Opcionalmente, em *limit*, insira um limite máximo de throughput, um limite máximo de IOPS ou ambos.
++
+A configuração de uma taxa de transferência máxima e de IOPS para uma unidade de storage restringe o impacto nos recursos do sistema, de modo que não prejudique o desempenho de workloads críticos.
+
+... Opcionalmente, em *Guarantee*, insira uma taxa de transferência mínima, um mínimo de IOPS ou ambos.
++
+Definir uma taxa de transferência mínima e IOPS para uma unidade de storage garante que ela atenda aos requisitos mínimos de desempenho, independentemente da demanda por workloads da concorrência.
+
+
+
+.. Selecione *Adicionar*.
+
+
+
+
+ a| 
+Adicione um novo host SCSI
+ a| 
+.. Em *informações do host*, selecione *SCSI* para o protocolo de conexão.
+.. Selecione o sistema operacional do host.
+.. Em *Mapeamento do host*, selecione *novos hosts*.
+.. Selecione *FC* ou *iSCSI*.
+.. Selecione iniciadores de host existentes ou selecione *Adicionar iniciador* para adicionar um novo iniciador de host.
++
+Um exemplo de uma WWPN FC válida é "01:02:03:04:0a:0b:0C:0d". Exemplos de nomes de iniciadores iSCSI válidos são "iqn.1995-08.com.example:string" e "eui.0123456789abcdef".
+
+
+
+
+
+ a| 
+Crie um novo grupo de hosts SCSI
+ a| 
+.. Em *informações do host*, selecione *SCSI* para o protocolo de conexão.
+.. Selecione o sistema operacional do host.
+.. Em *Mapeamento do host*, selecione *novo grupo de hosts*.
+.. Introduza um nome para o grupo anfitrião e, em seguida, selecione os anfitriões a adicionar ao grupo.
+
+
+
+
+ a| 
+Adicionar um novo subsistema NVMe
+ a| 
+.. Em *informações do host*, selecione *NVMe* para o protocolo de conexão.
+.. Selecione o sistema operacional do host.
+.. Em *Mapeamento do host*, selecione *novo subsistema NVMe*.
+.. Introduza um nome para o subsistema ou aceite o nome predefinido.
+.. Introduza um nome para o iniciador.
+.. Se pretender ativar a autenticação na banda ou a TLS (Transport Layer Security), image:icon_dropdown_arrow.gif["ícone de seta azul apontando na direção descendente"]selecione e, em seguida, selecione as suas opções.
++
+A autenticação na banda permite autenticação bidirecional e unidirecional segura entre os hosts NVMe e o sistema ASA R2.
+
++
+O TLS criptografa todos os dados enviados pela rede entre seus hosts NVMe/TCP e seu sistema ASA R2.
+
+.. Selecione *Adicionar iniciador* para adicionar mais iniciadores.
++
+O host NQN deve ser formatado como <nqn.yyyy-mm>, seguido por um nome de domínio totalmente qualificado. O ano deve ser igual ou posterior a 1970. O comprimento máximo total deve ser 223. Um exemplo de um iniciador NVMe válido é o nqn.2014-08.com.example:string
+
+
+
+|===
+. Selecione *Adicionar*.
+
+
+.O que se segue?
+Suas unidades de storage são criadas e mapeadas para seus hosts. Agora você pode link:../data-protection/create-snapshots.html["criar instantâneos"]proteger os dados no seu sistema ASA R2.
+
+.Para mais informações
+Saiba mais link:../administer/manage-client-vm-access.html["Como os sistemas ASA R2 usam máquinas virtuais de armazenamento"]sobre o .
+
+
+
+== Adicione iniciadores de host
+
+Você pode adicionar novos iniciadores de host ao seu sistema ASA R2 a qualquer momento. Os iniciadores tornam os hosts elegíveis para acessar unidades de armazenamento e executar operações de dados.
+
+.Antes de começar
+Se você quiser replicar a configuração do host para um cluster de destino durante o processo de adição de iniciadores de host, o cluster deve estar em um relacionamento de replicação. Opcionalmente, você pode link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["crie uma relação de replicação"] depois que seu host for adicionado.
+
+Adicione iniciadores de host para hosts SCSI ou NVMe.
+
+[role="tabbed-block"]
+====
+.SCSI anfitriões
+--
+.Passos
+. Selecione *Host*.
+. Selecione *SCSI*; em seguida, image:icon_add_blue_bg.png["ícone de retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Digite o nome do host, selecione o sistema operacional do host e insira uma descrição do host.
+. Se você quiser replicar a configuração do host para um cluster de destino, selecione *replique a configuração do host* e, em seguida, selecione o cluster de destino.
++
+O cluster precisa estar em uma relação de replicação para replicar a configuração do host.
+
+. Adicione hosts novos ou existentes.
++
+[cols="2"]
+|===
+| Adicione novos hosts | Adicionar hosts existentes 
+
+
+ a| 
+.. Selecione *novos hosts*.
+.. Selecione *FC* ou *iSCSI*; em seguida, selecione os iniciadores do host.
+.. Opcionalmente, selecione *Configurar proximidade do host*.
++
+A configuração da proximidade do host permite que o ONTAP identifique a controladora mais próxima do host para otimização do caminho de dados e redução da latência. Isso só se aplica se você tiver replicado dados para um local remoto. Se não tiver configurado a replicação de instantâneos, não será necessário selecionar esta opção.
+
+.. Se precisar adicionar novos iniciadores, selecione *Adicionar iniciadores*.
+
+ a| 
+.. Selecione *hosts existentes*.
+.. Selecione o host que você deseja adicionar.
+.. Selecione *Adicionar*.
+
+
+|===
+. Selecione *Adicionar*.
+
+
+.O que se segue?
+Seus hosts SCSI são adicionados ao seu sistema ASA R2 e você está pronto para mapear seus hosts para suas unidades de armazenamento.
+
+--
+.Hosts NVMe
+--
+.Passos
+. Selecione *Host*.
+. Selecione *NVMe*; em seguida, image:icon_add_blue_bg.png["ícone retangular com fundo azul e a palavra adicionar centrado em letras brancas"]selecione .
+. Insira um nome para o subsistema NVMe, selecione o sistema operacional host e insira uma descrição.
+. Selecione *Adicionar iniciador*.
+
+
+.O que se segue?
+Seus hosts NVMe são adicionados ao sistema ASA R2 e você está pronto para mapear seus hosts para suas unidades de storage.
+
+--
+====
+
+
+== Crie grupos de host
+
+Em um sistema ASA R2, um _grupo de hosts_ é o mecanismo usado para dar aos hosts acesso a unidades de armazenamento. Um grupo de hosts se refere a um iggroup para hosts SCSI ou a um subsistema NVMe para hosts NVMe. Um host só pode ver as unidades de armazenamento mapeadas para os grupos de hosts aos quais pertence. Quando um grupo de hosts é mapeado para uma unidade de armazenamento, os hosts que são membros do grupo são então capazes de montar (criar diretórios e estruturas de arquivo) a unidade de armazenamento.
+
+Os grupos de hosts são criados automaticamente ou manualmente quando você cria suas unidades de storage. Opcionalmente, você pode usar as etapas a seguir para criar grupos de hosts antes ou depois da criação da unidade de armazenamento.
+
+.Passos
+. No System Manager, selecione *Host*.
+. Selecione os hosts que você deseja adicionar ao grupo de hosts.
++
+Depois de selecionar o primeiro host, a opção para adicionar a um grupo de hosts aparece acima da lista de hosts.
+
+. Selecione *Adicionar ao grupo anfitrião*.
+. PESQUISE e selecione o grupo de hosts ao qual você deseja adicionar o host.
+
+
+.O que se segue?
+Criou um grupo anfitrião e pode agora mapeá-lo para uma unidade de armazenamento.
+
+
+
+== Mapear a unidade de armazenamento para um host
+
+Depois de criar as unidades de armazenamento do ASA R2 e adicionar iniciadores de host, é necessário mapear os hosts para as unidades de armazenamento para começar a fornecer dados. As unidades de armazenamento são mapeadas para hosts como parte do processo de criação da unidade de armazenamento. Você também pode mapear unidades de armazenamento existentes para hosts novos ou existentes a qualquer momento.
+
+.Passos
+. Selecione *armazenamento*.
+. Passe o cursor sobre o nome da unidade de armazenamento que pretende mapear.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Map to hosts*.
+. Selecione os hosts que deseja mapear para a unidade de armazenamento; em seguida, selecione *Map*.
+
+
+.O que se segue?
+Sua unidade de armazenamento é mapeada para seus hosts e você está pronto para concluir o processo de provisionamento em seus hosts.
+
+
+
+== Provisionamento completo no lado do host
+
+Depois de criar suas unidades de armazenamento, adicionar seus iniciadores de host e mapear suas unidades de armazenamento, há etapas que você deve executar em seus hosts antes que eles possam ler e gravar dados em seu sistema ASA R2.
+
+.Passos
+. Para FC e FC/NVMe, defina a zona dos switches FC por WWPN.
++
+Use uma zona por iniciador e inclua todas as portas de destino em cada zona.
+
+. Descubra a nova unidade de armazenamento.
+. Inicialize a unidade de armazenamento e um sistema de criação de ficheiros.
+. Verifique se o host pode ler e gravar dados na unidade de armazenamento.
+
+
+.O que se segue?
+Você concluiu o processo de provisionamento e está pronto para começar a fornecer dados. Agora você pode link:../data-protection/create-snapshots.html["criar instantâneos"]proteger os dados no seu sistema ASA R2.
+
+.Para mais informações
+Para obter mais detalhes sobre a configuração do lado do host, consulte link:https://docs.netapp.com/us-en/ontap-sanhost/["Documentação do host SAN ONTAP"^]o para seu host específico.

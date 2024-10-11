@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: manage-data/storage-limits.html 
+keywords: storage limits, cluster limits, maximum lun size, supported protocols, asa r2, asa a1k, asa a70, asa a90 
+summary: As configurações do ASA R2 dão suporte a um máximo de 2 nós por cluster que executa os protocolos FC, iSCSI, NVMe/FC ou NVMe/TCP. 
+---
+= Limites de armazenamento do ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de storage do ASA R2.
+
+Os sistemas ASA R2 suportam o seguinte:
+
+[cols="1h, 1"]
+|===
+
+
+| Máximo de nós por cluster | 2 
+
+
+| Tamanho máximo da unidade de armazenamento | 128 TB 
+|===
+.Para mais informações
+Para obter uma lista completa dos limites de armazenamento mais atuais do ASA R2, link:https://hwu.netapp.com/["NetApp Hardware Universe"^]consulte .

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-workflow.html 
+keywords: asa r2, install, setup, workflow 
+summary: Comece a instalar e configurar o sistema de storage ASA R2 e implante-o como um par de HA no ambiente ONTAP. 
+---
+= Fluxo de trabalho de instalação e configuração para sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para instalar e configurar o sistema ASA r2, você analisa os requisitos de hardware, prepara o site, instala e faz o cabo dos componentes de hardware, liga o sistema e configura o cluster do ONTAP.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"]link:install-setup-requirements.html["Revise os requisitos de instalação de hardware"]
+[role="quick-margin-para"]
+Verifique os requisitos de hardware para instalar o sistema de storage ASA R2.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Um"]link:prepare-hardware.html["Prepare-se para instalar o sistema de storage ASA r2"]
+[role="quick-margin-para"]
+Para se preparar para instalar o sistema ASA R2, você precisa preparar o local, verificar os requisitos ambientais e elétricos e garantir que há espaço suficiente no rack. Em seguida, desembale o equipamento, compare seu conteúdo com o deslizamento de embalagem e Registre o hardware para acessar os benefícios de suporte.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Dois"]link:deploy-hardware.html["Instale o hardware do sistema de storage ASA r2"]
+[role="quick-margin-para"]
+Para instalar o hardware, instale os kits de trilho para o seu sistema de armazenamento e prateleiras e, em seguida, instale e proteja o sistema de armazenamento no gabinete ou rack de telecomunicações. Em seguida, deslize as prateleiras sobre os trilhos. Finalmente, conete dispositivos de gerenciamento de cabos à parte traseira do sistema de armazenamento para roteamento organizado de cabos.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Três"]link:cable-hardware.html["Faça o cabeamento das controladoras e gavetas de storage do sistema de storage ASA r2"]
+[role="quick-margin-para"]
+Para fazer o cabeamento do hardware, primeiro conete os controladores de storage à rede e, em seguida, conete os controladores às gavetas de storage.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Quatro"]link:power-on-hardware.html["Ligue o sistema de armazenamento ASA r2"]
+[role="quick-margin-para"]
+Antes de ligar os controladores, ligue cada gaveta NS224 e atribua um ID exclusivo do compartimento para garantir que cada gaveta seja identificada exclusivamente na configuração.

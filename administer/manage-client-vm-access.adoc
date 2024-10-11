@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-client-vm-access.html 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+summary: Crie um LIF para acessar dados em unidades de armazenamento no ASA R2. Use sub-redes para simplificar a criação de LIF e IPspaces para fornecer administração e roteamento seguros. 
+searchtitle: Gerencie o acesso do cliente ao armazenamento usando o Gerenciador de sistema do ONTAP | ASA R2 
+---
+= Gerenciar o acesso do cliente a VMs de storage em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As unidades de armazenamento em um sistema ASA R2 estão contidas nas máquinas virtuais de armazenamento (VMs). As VMs de storage são usadas para fornecer dados aos clientes de SAN. Use o Gerenciador do sistema ONTAP para criar um LIF (interface de rede) para que seus clientes SAN se conetem a uma VM de storage e acessem dados nas unidades de armazenamento. Opcionalmente, você pode usar sub-redes para simplificar a criação de LIF e IPspaces para fornecer às VMs de armazenamento seu próprio armazenamento seguro, administração e roteamento.
+
+
+
+== Crie IPspaces
+
+Um espaço IPspace é um espaço de endereço IP distinto no qual as VMs de armazenamento residem. Quando você cria IPspaces, você habilita as VMs de armazenamento para ter seu próprio armazenamento seguro, administração e roteamento. Você também permite que os clientes em domínios de rede separados administrativamente usem endereços IP sobrepostos do mesmo intervalo de sub-rede de endereços IP.
+
+Você deve criar um espaço IPspace antes de criar uma sub-rede.
+
+.Passos
+. Selecione *rede > Visão geral*.
+. Em *IPspaces*, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Introduza um nome para o IPspace ou aceite o nome predefinido.
++
+Um nome IPspace não pode ser "All" porque "All" é um nome reservado ao sistema.
+
+. Selecione *Guardar*.
+
+
+.O que se segue?
+Agora que você criou um espaço IPspace, você pode usá-lo para criar uma sub-rede.
+
+
+
+== Crie sub-redes
+
+Uma sub-rede permite alocar blocos específicos de endereços IPv4 ou IPv6 para usar quando você cria um LIF (interface de rede) . Uma sub-rede simplifica a criação de LIF, permitindo que você especifique o nome da sub-rede em vez de um endereço IP específico e uma máscara de rede para cada LIF.
+
+.Antes de começar
+* Você deve ser um administrador de cluster para executar esta tarefa.
+* O link:../administer/manage-cluster-networking.html#add-a-broadcast-domain["domínio de transmissão"] e o espaço IPspace onde pretende adicionar a sub-rede já devem existir.
+
+
+.Passos
+. Selecione *rede > Visão geral*.
+. Selecione *sub-redes*; em seguida, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Introduza o nome da sub-rede.
++
+Todos os nomes de sub-rede devem ser exclusivos dentro de um espaço IPspace.
+
+. Introduza o endereço IP da sub-rede e a máscara de sub-rede.
+. Especifique o intervalo de endereços IP para a sub-rede.
++
+Quando especificar o intervalo de endereços IP para a sub-rede, não sobreponha endereços IP com outras sub-redes. Problemas de rede podem ocorrer quando os endereços IP de sub-rede se sobrepõem e diferentes sub-redes ou hosts tentam usar o mesmo endereço IP.
+
+. Selecione o domínio de broadcast para a sub-rede.
+. Selecione *Adicionar*.
+
+
+.O que se segue?
+Você criou uma sub-rede que agora pode usar para simplificar a criação de seus LIFs.
+
+
+
+== Criar um LIF (interface de rede)
+
+Um LIF (interface de rede) é um endereço IP associado a uma porta física ou lógica. Crie LIFs nas portas que você deseja usar para acessar dados. As VMs de storage fornecem dados aos clientes por meio de uma ou mais LIFs. Se houver uma falha de componente, um LIF pode falhar ou ser migrado para uma porta física diferente, de modo que a comunicação de rede não seja interrompida.
+
+Quando um LIF de dados IP é criado, ele pode atender o tráfego iSCSI e NVMe/TCP por padrão. É necessário criar LIFs de dados separados para o tráfego FC e NVMe/FC.
+
+.Antes de começar
+* Você deve ser um administrador de cluster para executar esta tarefa.
+* A porta de rede física ou lógica subjacente deve ter sido configurada para o status administrativo `up`.
+* Se você estiver planejando usar um nome de sub-rede para alocar o endereço IP e o valor de máscara de rede para um LIF, a sub-rede já deve existir.
+* Um tráfego entre nós que lida com LIF não deve estar na mesma sub-rede que um tráfego de gerenciamento de manipulação de LIF ou um tráfego de dados de manipulação de LIF.
+
+
+.Passos
+. Selecione *rede > Visão geral*.
+. Selecione *interfaces de rede*; em seguida, image:icon_add_blue_bg.png["retângulo azul com um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Selecione o tipo de interface e o protocolo e, em seguida, selecione a VM de armazenamento.
+. Introduza um nome para o LIF ou aceite o nome predefinido.
+. Selecione o nó inicial para a interface de rede e, em seguida, introduza o endereço IP e a máscara de sub-rede.
+. Selecione *Guardar*.
+
+
+.Resultado
+Você criou um LIF para acesso aos dados.
+
+
+
+== Modificar um LIF (interfaces de rede)
+
+Os LIFs podem ser desativados ou renomeados conforme necessário. Você também pode alterar o endereço IP de LIF e a máscara de sub-rede.
+
+.Passos
+. Selecione *rede > Visão geral*; em seguida, selecione *interfaces de rede*.
+. Passe o Mouse sobre a interface de rede que você deseja editar; em seguida, image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Selecione *Editar*.
+. Pode desativar a interface de rede, mudar o nome da interface de rede, alterar o endereço IP ou alterar a máscara de sub-rede.
+. Selecione *Guardar*.
+
+
+.Resultado
+Seu LIF foi modificado.

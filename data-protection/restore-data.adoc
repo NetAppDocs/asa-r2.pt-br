@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: data-protection/restore-data.html 
+keywords: restore data, asa r2, data restoration 
+summary: Se os dados de um grupo de consistência estiverem corrompidos ou perdidos, você poderá restaurar todo o grupo de consistência a partir de um snapshot remoto. 
+---
+= Restaure os dados em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os dados em um grupo de consistência ou unidade de armazenamento protegida por instantâneos podem ser restaurados se forem perdidos ou corrompidos.
+
+
+
+== Restaure um grupo de consistência
+
+A restauração de um grupo de consistência substitui os dados em todas as unidades de storage do grupo de consistência pelos dados de um snapshot. As alterações feitas nas unidades de armazenamento após a criação do instantâneo não são restauradas.
+
+É possível restaurar um grupo de consistência a partir de um instantâneo local ou remoto.
+
+[role="tabbed-block"]
+====
+.Restaurar a partir de um instantâneo local
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Clique duas vezes no grupo de consistência que contém os dados que você precisa restaurar.
++
+Abre-se a página de detalhes do grupo de consistência.
+
+. Selecione *Snapshots*.
+. Selecione o instantâneo que pretende restaurar e, em seguida, image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Selecione *Restore consistency group from this snapshot*; then Select *Restore*.
+
+
+--
+.Restaurar a partir de um instantâneo remoto
+--
+.Passos
+. No System Manager, selecione *proteção > replicação*.
+. Selecione *destinos locais*.
+. Selecione *fonte* que deseja restaurar e image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Selecione *Restaurar*.
+. Selecione o cluster, a VM de armazenamento e o grupo de consistência para o qual você deseja restaurar os dados.
+. Selecione o instantâneo a partir do qual pretende restaurar.
+. Quando solicitado, digite "Restore" (restaurar); em seguida, selecione *Restore* (Restaurar).
+
+
+--
+====
+.Resultado
+Seu grupo de consistência é restaurado ao ponto no tempo do snapshot usado para restauração.
+
+
+
+== Restaurar uma unidade de armazenamento
+
+A restauração de uma unidade de armazenamento substitui todos os dados da unidade de armazenamento pelos dados de um instantâneo. As alterações efetuadas na unidade de armazenamento após a criação do instantâneo não são restauradas.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Faça duplo clique na unidade de armazenamento que contém os dados que necessita de restaurar.
++
+Abre-se a página de detalhes da unidade de armazenamento.
+
+. Selecione *Snapshots*.
+. Selecione o instantâneo que pretende restaurar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Restore*.
+. Selecione *Use este instantâneo para restaurar a unidade de armazenamento*; em seguida, selecione *Restore*.
+
+
+.Resultado
+Sua unidade de armazenamento é restaurada até o ponto no tempo do instantâneo usado para restauração.

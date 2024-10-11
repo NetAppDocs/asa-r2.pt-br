@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: administer/increase-storage-capacity.html 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Adicione unidades a um nó ou gaveta para aumentar a capacidade das unidades de storage do ASA R2. 
+---
+= Aumentar a capacidade de storage em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Adicione unidades a um nó ou gaveta para aumentar a capacidade de storage do sistema ASA R2.
+
+
+
+== Use o NetApp Hardware Universe para se preparar para a instalação de uma nova unidade
+
+Antes de instalar uma nova unidade em um nó ou compartimento, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com sua plataforma ASA R2 e para identificar o slot correto para a nova unidade. Os slots corretos para adicionar unidades variam dependendo do modelo da plataforma e da versão do ONTAP. Em alguns casos, você precisa adicionar unidades a slots específicos em sequência.
+
+.Passos
+. Vá para link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+. Em *Produtos*, selecione suas configurações de hardware.
+. Selecione a sua plataforma ASA R2.
+. Selecione sua versão do ONTAP; em seguida, selecione *Mostrar resultados*.
+. Abaixo do gráfico, selecione *clique aqui para ver vistas alternativas*; em seguida, escolha a vista que corresponde à sua configuração.
+. Use a exibição de sua configuração para confirmar se sua nova unidade é suportada e o slot correto para instalação.
+
+
+.Resultado
+Você confirmou que sua nova unidade é suportada e você sabe o slot apropriado para instalação.
+
+
+
+== Instale uma nova unidade no ASA R2
+
+O número mínimo de unidades que você deve adicionar em um único procedimento é seis. Adicionar uma única unidade pode reduzir o desempenho.
+
+.Sobre esta tarefa
+Você deve repetir as etapas deste procedimento para cada unidade.
+
+.Passos
+. Aterre-se corretamente.
+. Retire cuidadosamente a moldura da parte frontal da plataforma.
+. Insira a nova unidade no slot correto.
++
+.. Com o manípulo do excêntrico na posição aberta, utilize as duas mãos para introduzir a nova transmissão.
+.. Prima até a unidade parar.
+.. Feche a pega do came de forma a que a unidade fique totalmente assente no plano intermédio e a pega encaixe no devido lugar.
++
+Certifique-se de que fecha lentamente a pega do excêntrico de forma a que fique corretamente alinhada com a face da unidade.
+
+
+
+. Verifique se o LED de atividade da unidade (verde) está aceso.
++
+** SE o LED estiver sólido, a unidade tem energia.
+** Se o LED estiver piscando, a unidade tem energia e e/S está em andamento. O LED também piscará se o firmware da unidade estiver sendo atualizado.
++
+O firmware da unidade é atualizado automaticamente (sem interrupções) em novas unidades que não tenham versões de firmware atuais.
+
+
+
+. Se o nó estiver configurado para atribuição automática de unidade, você poderá esperar que o ONTAP atribua automaticamente as novas unidades a um nó. Se o nó não estiver configurado para atribuição automática de unidade ou se preferir, você poderá atribuir as unidades manualmente.
++
+As novas unidades não são reconhecidas até que sejam atribuídas a um nó.
+
+
+
+.O que vem a seguir?
+Depois que as novas unidades tiverem sido reconhecidas, verifique se foram adicionadas e se sua propriedade está especificada corretamente.

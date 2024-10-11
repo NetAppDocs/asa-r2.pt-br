@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: administer/user-accounts-roles.html 
+keywords:  
+summary:  
+---
+= Gerenciar contas de usuários e funções em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o System Manager para configurar o acesso do controlador de domínio do diretório ativo, a autenticação LDAP e SAML para suas contas de usuário. Crie funções de conta de usuário para definir funções específicas que os usuários atribuídos às funções podem executar no cluster.
+
+
+
+== Configurar o acesso do controlador de domínio do diretório ativo
+
+Configure o acesso do controlador de domínio do ative Directory (AD) ao cluster ou à VM de armazenamento para que você possa habilitar o acesso à conta do AD.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Na seção *Segurança*, em *ative Directory*, selecione *Configurar*.
+
+
+.O que se segue?
+Agora você pode ativar o acesso à conta AD no seu sistema ASA R2.
+
+
+
+== Configurar o LDAP
+
+Configure um servidor LDAP (Lightweight Directory Access Protocol) para manter centralmente as informações do usuário para autenticação.
+
+.Antes de começar
+Você deve ter gerado uma solicitação de assinatura de certificado e adicionado um certificado digital de servidor assinado pela CA.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Na seção *Segurança*, ao lado de *LDAP*, image:icon_gear_white_bg.png["contorno de uma engrenagem mecânica azul"]selecione .
+. Introduza o servidor LDAP necessário e as informações de encadernação; em seguida, selecione *Guardar*.
+
+
+.O que se segue?
+Agora você pode usar o LDAP para informações e autenticação do usuário.
+
+
+
+== Configurar a autenticação SAML
+
+A autenticação SAML (Security Assertion Markup Language) permite que os usuários sejam autenticados por um provedor de identidade seguro (IDP) em vez dos provedores de serviços diretos, como ative Directory e LDAP.
+
+.Antes de começar
+* O IDP que pretende utilizar para autenticação remota tem de ser configurado.
++
+Consulte a documentação do IDP para obter a configuração.
+
+* Você deve ter o URI do IDP.
+
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Em *Segurança*, ao lado de *autenticação SAML*, image:icon_gear_white_bg.png["contorno azul de uma engrenagem mecânica"]selecione .
+. Selecione *Ativar autenticação SAML*.
+. Insira o URL do IDP e o endereço IP do sistema host; em seguida, selecione *Salvar*.
++
+Uma janela de confirmação exibe as informações de metadados, que foram copiadas automaticamente para a área de transferência.
+
+. Vá para o sistema IDP que você especificou; em seguida, copie os metadados da área de transferência para atualizar os metadados do sistema.
+. Retorne à janela de confirmação no System Manager; em seguida, selecione *Eu configurei o IDP com o URI do host ou metadados*.
+. Selecione *Logout* para ativar a autenticação baseada em SAML.
++
+O sistema IDP exibirá uma tela de autenticação.
+
+
+
+.O que se segue?
+Agora você pode usar a autenticação SAML para suas contas de usuário.
+
+
+
+== Criar funções de conta de usuário
+
+As funções para administradores de cluster e administradores de VM de storage são criadas automaticamente quando o cluster é inicializado. Crie funções de conta de usuário adicionais para definir funções específicas que os usuários atribuídos às funções podem executar no cluster.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Na seção *Segurança*, ao lado de *usuários e funções*, image:icon_arrow.gif["seta azul apontando para a direita"]selecione .
+. Em *funções*, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Selecione os atributos da função.
++
+Para adicionar vários atributos, image:icon_add.gif["sinal de adição seguido pela palavra adicionar em letras azuis"]selecione .
+
+. Selecione *Guardar*.
+
+
+.Resultado
+Uma nova conta de usuário é criada e está disponível para uso no sistema ASA R2.
+
+
+
+== Crie uma conta de administrador
+
+Crie uma conta de usuário administrador para permitir que o usuário da conta execute ações específicas no cluster com base na função atribuída à conta. Para melhorar a segurança da conta, configure a autenticação multifator (MFA) quando você criar a conta.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Na seção *Segurança*, ao lado de *usuários e funções*, image:icon_arrow.gif["seta azul apontando para a direita"]selecione .
+. Em *Users*, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Introduza um nome de utilizador e, em seguida, selecione uma função a atribuir ao utilizador.
+. Selecione o método de login do usuário e o método de autenticação.
+. Para ativar o MFA, image:icon_add.gif["sinal de adição seguido pela palavra adicionar em letras azuis"]selecione ; em seguida, selecione um método de login secundário e um método de autenticação
+. Introduza uma palavra-passe para o utilizador.
+. Selecione *Guardar*.
+
+
+.Resultado
+Uma nova conta de administrador é criada e está disponível para uso no cluster do ASA R2.

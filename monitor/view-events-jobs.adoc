@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: monitor/view-events-jobs.html 
+keywords: view cluster events, view cluster jobs, event log, system alerts, jobs, audit logs, asa r2, event notifications, email notifications 
+summary: Use o Gerenciador de sistema do ONTAP para exibir uma lista de erros ou alertas que ocorreram em seu sistema, juntamente com as ações corretivas recomendadas. 
+---
+= Exibir eventos e trabalhos de cluster em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Use o Gerenciador de sistema do ONTAP para exibir uma lista de erros ou alertas que ocorreram em seu sistema, juntamente com as ações corretivas recomendadas. Também pode visualizar registos de auditoria do sistema e uma lista de trabalhos ativos, concluídos ou com falha.
+
+.Passos
+. No System Manager, selecione *Eventos e trabalhos*.
+. Exibir eventos e trabalhos do cluster.
++
+[cols="2,4a"]
+|===
+| Para ver isto... | Faça isso... 
+
+
+| Eventos de cluster  a| 
+Selecione *Eventos*; em seguida, selecione *log de eventos*.
+
+
+
+| Sugestões de Active IQ  a| 
+Selecione *Eventos*; em seguida, selecione *sugestões Active IQ*.
+
+
+
+| Alertas do sistema  a| 
+.. Selecione *alertas do sistema*.
+.. Selecione o alerta do sistema para o qual pretende agir.
+.. Confirme ou suprime o alerta.
+
+
+
+
+| Trabalhos de cluster  a| 
+Selecione *trabalhos*.
+
+
+
+| Logs de auditoria  a| 
+Selecione *Registo de auditoria*.
+
+|===
+
+
+
+
+== Envie notificações por e-mail para eventos de cluster e logs de auditoria
+
+Configure o sistema para enviar uma notificação para endereços de e-mail específicos quando houver um evento de cluster ou entrada de log de auditoria.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Gerenciamento de notificações*, image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Para configurar um destino de evento, selecione *Ver destinos de eventos*; em seguida, selecione *destinos de eventos*. Para configurar um destino de log de auditoria, selecione *Exibir destinos de auditoria*; em seguida, selecione *destinos de log de auditoria*.
+. image:icon_add_blue_bg.png["retângulo azul com sinal de adição seguido da palavra adicionar em letras brancas"]Selecione .
+. Introduza as informações de destino e, em seguida, selecione *Add*.
+
+
+.Resultado
+O endereço de e-mail que você adicionou receberá agora as notificações de e-mail especificadas para eventos de cluster e logs de auditoria.

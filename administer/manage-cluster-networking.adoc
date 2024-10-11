@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: add a broadcast domain, broadcast domains, reassign ports, create a vlan, create vlans 
+summary: Use o Gerenciador de sistema do ONTAP para executar a administração básica da rede de storage no sistema ASA R2. 
+---
+= Gerenciar a rede de cluster em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o Gerenciador de sistema do ONTAP para executar a administração básica da rede de storage no sistema ASA R2. Por exemplo, você pode adicionar um domínio de broadcast ou reatribuir portas a um domínio de broadcast diferente.
+
+
+
+== Adicione um domínio de broadcast
+
+Use domínios de broadcast para simplificar o gerenciamento da rede de cluster agrupando portas de rede que pertencem à mesma rede de camada 2. As máquinas virtuais de armazenamento (VMs) podem então usar as portas do grupo para tráfego de dados ou gerenciamento.
+
+O domínio de broadcast "padrão" e o domínio de broadcast "Cluster" são criados durante a configuração do cluster. O domínio de broadcast "padrão" contém portas que estão no IPspace "padrão". Essas portas são usadas principalmente para fornecer dados. As portas de gerenciamento de clusters e de nós também estão neste domínio de transmissão. O domínio de broadcast "Cluster" contém portas que estão no espaço IPspace "Cluster". Essas portas são usadas para comunicação de cluster e incluem todas as portas de cluster de todos os nós no cluster.
+
+Você pode criar domínios de broadcast adicionais após o cluster ter sido inicializado. Quando você cria um domínio de broadcast, um grupo de failover que contém as mesmas portas é criado automaticamente.
+
+.Sobre esta tarefa
+A unidade máxima de transmissão (MTU) das portas adicionadas a um domínio de broadcast são atualizadas para o valor MTU definido no domínio de broadcast.
+
+.Passos
+. No System Manager, selecione *rede > Visão geral*.
+. Em domínios *Broadcast*, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
+. Introduza um nome para o domínio de difusão ou aceite o nome predefinido.
++
+Todos os nomes de domínio de broadcast devem ser exclusivos dentro de um espaço IPspace.
+
+. Selecione o espaço IPspace para o domínio de broadcast.
++
+Se você não especificar um nome de IPspace, o domínio de broadcast será criado no IPspace "padrão".
+
+. Introduza a unidade de transmissão máxima (MTU).
++
+MTU é o maior pacote de dados que pode ser aceito no seu domínio de broadcast.
+
+. Selecione as portas desejadas; em seguida, selecione *Salvar*.
+
+
+.Resultado
+Você adicionou um novo domínio de broadcast.
+
+
+
+== Reatribuir portas a um domínio de broadcast diferente
+
+As portas podem pertencer a apenas um domínio de broadcast. Se você quiser alterar o domínio de broadcast ao qual uma porta pertence, você precisa reatribuir a porta de seu domínio de broadcast existente a um novo domínio de broadcast.
+
+.Passos
+. No System Manager, selecione *rede > Visão geral*.
+. Em *Broadcast Domains*, image:icon_kabob.gif["três pontos azuis verticais"]selecione ao lado do nome de domínio; em seguida, selecione *Edit*.
+. Desmarque as portas Ethernet que você deseja reatribuir a outro domínio.
+. Selecione o domínio de broadcast ao qual deseja reatribuir a porta; em seguida, selecione *Reatribuir*.
+. Selecione *Guardar*.
+
+
+.Resultado
+Você reatribuiu portas a um domínio de broadcast diferente.
+
+
+
+== Crie uma VLAN
+
+Uma VLAN consiste em portas de switch agrupadas em um domínio de broadcast. As VLANs permitem aumentar a segurança, isolar problemas e limitar os caminhos disponíveis na infraestrutura de rede IP.
+
+.Antes de começar
+Os switches implantados na rede devem estar em conformidade com os padrões IEEE 802,1Q.1X ou ter uma implementação de VLANs específica do fornecedor.
+
+.Sobre esta tarefa
+* Uma VLAN não pode ser criada em uma porta de grupo de interfaces que não contém portas membro.
+* Quando você configura uma VLAN por uma porta pela primeira vez, a porta pode cair, resultando em uma desconexão temporária da rede. As adições subsequentes de VLAN à mesma porta não afetam o estado da porta.
+* Você não deve criar uma VLAN em uma interface de rede com o mesmo identificador que a VLAN nativa do switch. Por exemplo, se a interface de rede e0b estiver na VLAN 10 nativa, você não deverá criar uma VLAN e0b-10 nessa interface.
+
+
+.Passos
+. No System Manager, selecione *rede > portas Ethernet* e, em seguida, image:icon_vlan.png["um sinal de mais azul seguido da palavra vlan"]selecione .
+. Selecione o nó e o domínio de broadcast para a VLAN.
+. Selecione a porta para a VLAN.
++
+A VLAN não pode ser conetada a uma porta que hospeda um cluster LIF ou a portas atribuídas ao cluster IPspace.
+
+. Insira um ID de VLAN.
+. Selecione *Guardar*.
+
+
+.Resultado
+Você criou uma VLAN para aumentar a segurança, isolar problemas e limitar os caminhos disponíveis na sua infraestrutura de rede IP.

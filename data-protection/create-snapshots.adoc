@@ -1,0 +1,189 @@
+---
+sidebar: sidebar 
+permalink: data-protection/create-snapshots.html 
+keywords: protect data, snapshots, asa r2, data protection, create snapshots, snapshots, create consistency groups, consistency groups 
+summary: Crie um instantâneo para fazer backup de seus dados no sistema ASA R2. Você pode criar snapshots manuais ou usar um grupo de consistência para agendar snapshots automáticos. 
+searchtitle: Crie instantâneos para fazer backup de seus dados usando o Gerenciador de sistema do ONTAP | ASA R2 
+---
+= Crie snapshots para fazer backup de seus dados em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para fazer backup dos dados no seu sistema ASA R2, você precisa criar um snapshot. Você pode usar o Gerenciador do sistema do ONTAP para criar um instantâneo manual de uma única unidade de armazenamento ou para criar um grupo de consistência e agendar instantâneos automáticos de várias unidades de armazenamento ao mesmo tempo.
+
+
+
+== Passo 1: Opcionalmente, crie um grupo de consistência
+
+Um grupo de consistência é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade. Crie grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados para workloads de aplicações que abrangem várias unidades de storage. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento, você pode fazer backup de todo o banco de dados simplesmente adicionando proteção de dados snapshot ao grupo de consistência.
+
+Crie um grupo de consistência usando novas unidades de armazenamento ou crie um grupo de consistência usando unidades de armazenamento existentes.
+
+[role="tabbed-block"]
+====
+.Use novas unidades de armazenamento
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]Selecione ; em seguida, selecione *usando novas unidades de armazenamento*.
+. Introduza um nome para a nova unidade de armazenamento, o número de unidades e a capacidade por unidade.
++
+Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *mais opções*; em seguida, selecione *Adicionar uma capacidade diferente*.
+
+. Selecione o sistema operacional do host e o mapeamento do host.
+. Selecione *Adicionar*.
+
+
+.O que se segue?
+Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
+
+--
+.Use unidades de armazenamento existentes
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]Selecione ; em seguida, selecione *usando unidades de armazenamento existentes*.
+. Introduza um nome para o grupo de consistência; em seguida, procure e selecione as unidades de armazenamento que pretende incluir no grupo de consistência.
+. Selecione *Adicionar*.
+
+
+.O que se segue?
+Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
+
+--
+====
+
+
+== Passo 2: Crie um instantâneo
+
+Um instantâneo é uma cópia local e somente leitura de seus dados que você pode usar para restaurar unidades de armazenamento em pontos específicos no tempo.
+
+Os instantâneos podem ser criados sob demanda ou podem ser criados automaticamente em intervalos regulares com base em um link:https://review.docs.netapp.com/us-en/asa-r2_asa-r2-9160/data-protection/policies-schedules.html["política e agendamento de snapshot"]. A política e a programação de snapshot especificam quando criar os snapshots, quantas cópias devem ser mantidas, como nomeá-los e como rotulá-los para replicação. Por exemplo, um sistema pode criar um snapshot todos os dias às 12:10 da manhã, reter as duas cópias mais recentes, nomeá-las "diariamente" (anexado com um carimbo de data/hora) e rotulá-las "diariamente" para replicação.
+
+.Tipos de instantâneos
+Você pode criar um snapshot sob demanda de uma única unidade de armazenamento ou de um grupo de consistência. Você pode criar snapshots automatizados de um grupo de consistência que contém várias unidades de storage. Não é possível criar instantâneos automatizados de uma única unidade de armazenamento.
+
+* Snapshots sob demanda
++
+Um instantâneo sob demanda de uma unidade de armazenamento pode ser criado a qualquer momento. A unidade de armazenamento não precisa ser membro de um grupo de consistência para ser protegida por um instantâneo sob demanda. Se você criar um snapshot sob demanda de uma unidade de armazenamento que seja membro de um grupo de consistência, as outras unidades de armazenamento no grupo de consistência não serão incluídas no snapshot sob demanda. Se você criar um snapshot sob demanda de um grupo de consistência, todas as unidades de armazenamento no grupo de consistência serão incluídas no snapshot.
+
+* Snapshots automatizados
++
+Snapshots automatizados são criados usando políticas de snapshot. Para aplicar uma política de instantâneos a uma unidade de armazenamento para criação automática de instantâneos, a unidade de armazenamento deve ser membro de um grupo de consistência. Se você aplicar uma política de snapshot a um grupo de consistência, todas as unidades de storage do grupo de consistência serão protegidas com snapshots automatizados.
+
+
+
+Crie um instantâneo de um grupo de consistência ou de uma unidade de armazenamento.
+
+[role="tabbed-block"]
+====
+.Instantâneo de um grupo de consistência
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o nome do grupo de consistência que você deseja proteger.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *proteger*.
+. Se você quiser criar um instantâneo imediato sob demanda, em *proteção local*, selecione *Adicionar um instantâneo agora*.
++
+A proteção local cria o instantâneo no mesmo cluster que contém a unidade de armazenamento.
+
++
+.. Insira um nome para o instantâneo ou aceite o nome padrão; em seguida, opcionalmente, insira um rótulo SnapMirror.
++
+A etiqueta SnapMirror é utilizada pelo destino remoto.
+
+
+
+. Se você quiser criar snapshots automatizados usando uma política de snapshot, selecione *Agendar snapshots*.
++
+.. Selecione uma política de instantâneos.
++
+Aceite a política de instantâneos padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneos existente  a| 
+image:icon_dropdown_arrow.gif["seta azul apontando para baixo"]Selecione ao lado da política padrão e, em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Crie uma nova política de snapshot  a| 
+... image:icon_add.gif["sinal de mais azul seguido pela palavra add"]Selecione ; em seguida, introduza os parâmetros da política de instantâneos.
+... Selecione *Adicionar política*.
+
+
+|===
+
+
+. Se você quiser replicar seus snapshots para um cluster remoto, em *proteção remota*, selecione *replicar para um cluster remoto*.
++
+.. Selecione o cluster de origem e a VM de armazenamento e, em seguida, selecione a política de replicação.
++
+A transferência inicial de dados para replicação começa imediatamente por padrão.
+
+
+
+. Selecione *Guardar*.
+
+
+--
+.Instantâneo da unidade de armazenamento
+--
+.Passos
+. No System Manager, selecione *Storage*.
+. Passe o Mouse sobre o nome da unidade de armazenamento que você deseja proteger.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *proteger*. Se você quiser criar um instantâneo imediato sob demanda, em *proteção local*, selecione *Adicionar um instantâneo agora*.
++
+A proteção local cria o instantâneo no mesmo cluster que contém a unidade de armazenamento.
+
+. Insira um nome para o instantâneo ou aceite o nome padrão; em seguida, opcionalmente, insira um rótulo SnapMirror.
++
+A etiqueta SnapMirror é utilizada pelo destino remoto.
+
+. Se você quiser criar snapshots automatizados usando uma política de snapshot, selecione *Agendar snapshots*.
++
+.. Selecione uma política de instantâneos.
++
+Aceite a política de instantâneos padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneos existente  a| 
+image:icon_dropdown_arrow.gif["seta azul apontando para baixo"]Selecione ao lado da política padrão e, em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Crie uma nova política de snapshot  a| 
+... image:icon_add.gif["sinal de mais azul seguido pela palavra add"]Selecione ; em seguida, introduza os parâmetros da política de instantâneos.
+... Selecione *Adicionar política*.
+
+
+|===
+
+
+. Se você quiser replicar seus snapshots para um cluster remoto, em *proteção remota*, selecione *replicar para um cluster remoto*.
++
+.. Selecione o cluster de origem e a VM de armazenamento e, em seguida, selecione a política de replicação.
++
+A transferência inicial de dados para replicação começa imediatamente por padrão.
+
+
+
+. Selecione *Guardar*.
+
+
+--
+====
+.O que se segue?
+Agora que seus dados estão protegidos com snapshots, você deve link:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"]copiar seus grupos de consistência para um local geograficamente remoto para backup e recuperação de desastres.

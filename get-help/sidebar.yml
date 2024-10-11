@@ -1,0 +1,8 @@
+---
+section: get-help
+title: Obtenha ajuda
+entries:
+- title: Gerenciar o AutoSupport
+  url: "/get-help/manage-autosupport.html"
+- title: Envie e visualize casos de suporte
+  url: "/get-help/view-submit-support-case.html"

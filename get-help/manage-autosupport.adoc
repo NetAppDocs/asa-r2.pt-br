@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: get-help/manage-autosupport.html 
+keywords:  
+summary:  
+---
+= Gerencie o AutoSupport em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O AutoSupport é um mecanismo que monitora proativamente a integridade do sistema e envia mensagens automaticamente para o suporte técnico da NetApp, sua organização de suporte interno e um parceiro de suporte.
+
+As mensagens do AutoSupport para suporte técnico são ativadas por padrão quando você configura o cluster. Você deve definir as opções corretas e ter um host de e-mail válido para que as mensagens sejam enviadas para sua organização de suporte interna. O ONTAP começa a enviar mensagens AutoSupport 24 horas depois de ativado.
+
+.Antes de começar
+Você deve ser um administrador de cluster para gerenciar o AutoSupport.
+
+
+
+== Testar a conetividade do AutoSupport
+
+Depois de configurar o cluster, você deve testar a conetividade do AutoSupport para verificar se o suporte técnico receberá mensagens geradas pelo AutoSupport.
+
+.Passos
+. No System Manager, selecione *Cluster >Settings*.
+. Ao lado de *AutoSupport*, image:icon_kabob.gif["três pontos azuis verticais"]selecione ; em seguida, *testar conetividade*.
+. Digite um assunto para a mensagem AutoSupport; em seguida, selecione *Enviar mensagem AutoSupport de teste*.
+
+
+.O que se segue?
+Você confirmou que o suporte técnico pode receber mensagens do AutoSupport do seu sistema ASA R2, garantindo que eles tenham os dados necessários para ajudá-lo em caso de problemas.
+
+
+
+== Adicionar destinatários AutoSupport
+
+Adicione membros da sua organização de suporte interno à lista de endereços de e-mail que recebem mensagens do AutoSupport.
+
+.Passos
+. No System Manager, selecione *Cluster >Settings*.
+. Ao lado de *AutoSupport* image:icon_kabob.gif["três pontos azuis verticais"]selecione ; em seguida, selecione *mais opções*.
+. Ao lado de *Email*, image:icon_edit_pencil_blue_outline.png["ícone de lápis"]selecione ; em seguida, selecione image:icon_add.gif["Sinal de mais azul seguido da palavra Adicionar"].
+. Insira o endereço de e-mail do destinatário e, em seguida, a categoria de destinatário.
++
+Para parceiros, selecione *Parceiro* para a categoria de destinatários. Selecione *Geral* para membros da sua organização de suporte interno.
+
+. Selecione Guardar.
+
+
+.O que se segue?
+Os endereços de e-mail que você adicionou receberão novas mensagens do AutoSupport para sua categoria específica de destinatário.
+
+
+
+== Enviar dados AutoSupport
+
+Se ocorrer um problema no sistema ASA R2, os dados do AutoSupport podem diminuir significativamente o tempo necessário para identificar e resolver problemas.
+
+.Passos
+. No System Manager, selecione *Cluster >Settings*.
+. Ao lado de *AutoSupport*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Generate and send* (gerar e enviar).
+. Digite um assunto para a mensagem AutoSupport; em seguida, selecione *Enviar*.
+
+
+.O que se segue?
+Os seus dados AutoSupport são enviados para o suporte técnico.
+
+
+
+== Suprimir a geração de casos de suporte
+
+Se você estiver executando uma atualização ou manutenção em seu sistema ASA R2, talvez queira suprimir a geração de casos de suporte do AutoSupport até que sua atualização ou manutenção esteja concluída.
+
+.Passos
+. No System Manager, selecione *Cluster >Settings*.
+. Ao lado de *AutoSupport* image:icon_kabob.gif["três pontos azuis verticais"]selecione ; em seguida, selecione *suprimir geração de casos de suporte*.
+. Especifique o número de horas para suprimir a geração de casos de suporte e, em seguida, selecione os nós para os quais você não deseja que os casos sejam gerados.
+. Selecione *Enviar*.
+
+
+.O que se segue?
+Casos AutoSupport não serão gerados durante o tempo especificado. Se você concluir sua atualização ou manutenção antes que o tempo especificado expire, você deve retomar a geração de casos de suporte imediatamente.
+
+
+
+== Retomar a geração de casos de suporte
+
+Se tiver suprimido a geração de casos de suporte durante uma janela de atualização ou manutenção, deverá retomar a geração de casos de suporte imediatamente após a conclusão da atualização ou manutenção.
+
+.Passos
+. No System Manager, selecione *Cluster >Settings*.
+. Ao lado de *AutoSupport* image:icon_kabob.gif["três pontos azuis verticais"]selecione ; em seguida, selecione *Retomar geração de caso de suporte*.
+. Selecione os nós para os quais você deseja retomar os casos AutoSupport gerados.
+. Selecione *Enviar*.
+
+
+.Resultado
+Os casos do AutoSupport são gerados automaticamente para o seu sistema ASA R2, conforme necessário.

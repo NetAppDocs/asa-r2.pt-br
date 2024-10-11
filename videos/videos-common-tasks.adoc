@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: videos/videos-common-tasks.html 
+keywords: demo,asa r2, videos 
+summary: Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas do ONTAP para executar tarefas comuns de forma rápida e fácil em seus sistemas de storage ASA R2. 
+---
+= Demonstrações de vídeo do sistema de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas do ONTAP para executar tarefas comuns de forma rápida e fácil em seus sistemas de storage ASA R2.
+
+.Configure protocolos SAN no sistema ASA R2
+video::96cf3b2d-1cbd-4fff-a6e7-b1f0014ef793[panopto]
+link:video_transcript_configure_san_protocols.html["Transcrição de vídeo"]
+
+[#video_transcript_return_configure_san_protocols]
+.Provisione storage SAN em seu sistema ASA R2
+video::1d3e1a18-7dbe-44e9-a53d-b1f0014ef7c5[panopto]
+link:video_transcript_provision_san_storage.html["Transcrição de vídeo"]
+
+[#video_transcript_return_provision_san_storage]
+.Replique dados para um cluster remoto a partir de um sistema ASA R2
+video::4b78312d-1bfa-4df5-afac-b1f0014ef80e[panopto]
+link:video_transcript_replicate_data.html["Transcrição de vídeo"]

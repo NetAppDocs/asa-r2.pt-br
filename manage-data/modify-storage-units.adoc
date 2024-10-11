@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: manage-data/modify-storage-units.html 
+keywords: increase storage units, resize luns, resize namespaces, san, nvme,  increase lun size, increase namespace, increase, modify, edit, luns, namespaces, modify quality of service, qos, host mapping, mapping host 
+summary: 'Responda a alterações na performance e nos dados do sistema de storage editando unidades de storage para aumentar a capacidade, atualizar políticas de qualidade do serviço (QoS) ou alterar mapeamentos de hosts.' 
+---
+= Modificar unidades de storage em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para otimizar a performance do seu sistema ASA R2, talvez seja necessário modificar as unidades de storage para aumentar a capacidade, atualizar políticas de QoS ou alterar os hosts mapeados para as unidades. Por exemplo, se um novo workload de aplicativo crítico for adicionado a uma unidade de storage existente, talvez seja necessário alterar a política de qualidade do serviço (QoS) aplicada à unidade de storage para dar suporte ao nível de performance necessário para o novo aplicativo.
+
+.Aumentar a capacidade
+Aumente o tamanho de uma unidade de armazenamento antes de atingir a capacidade máxima para evitar a perda de acesso aos dados que pode ocorrer se a unidade de armazenamento ficar sem espaço gravável. A capacidade de uma unidade de armazenamento pode ser aumentada para 128 TB, que é o tamanho máximo permitido pela ONTAP.
+
+.Modifique mapeamentos de host
+Modifique os hosts mapeados para uma unidade de storage para auxiliar no balanceamento de cargas de trabalho ou na reconfiguração de recursos do sistema.
+
+.Modificar política de QoS
+As políticas de qualidade do serviço (QoS) garantem que a performance de workloads essenciais não seja degradada pelos workloads da concorrência. Você pode usar políticas de QoS para definir uma taxa de transferência de QoS _limit_ e uma taxa de transferência de QoS _guarantee_.
+
+* Limite de taxa de transferência de QoS
++
+A taxa de transferência de QoS _limit_ restringe o impacto de um workload nos recursos do sistema, limitando a taxa de transferência do workload a um número máximo de IOPS ou Mbps, ou IOPS e Mbps.
+
+* Garantia de taxa de transferência de QoS
++
+A taxa de transferência de QoS _guarantee_ garante que workloads críticos atendam aos destinos mínimos de taxa de transferência, independentemente da demanda por workloads da concorrência, garantindo que a taxa de transferência para o workload crítico não fique abaixo de um número mínimo de IOPS ou Mbps, ou IOPS e Mbps.
+
+
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Passe o Mouse sobre o nome da unidade de armazenamento que você deseja editar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Editar*.
+. Atualize os parâmetros da unidade de armazenamento conforme necessário para aumentar a capacidade, alterar a política de QoS e atualizar o mapeamento do host.
+
+
+.O que se segue?
+Se tiver aumentado o tamanho da sua unidade de armazenamento, tem de voltar a digitalizar a unidade de armazenamento no anfitrião para que o anfitrião reconheça a alteração de tamanho.

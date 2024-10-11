@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-storage-units.html 
+keywords: delete lun, delete namespace, delete storage unit, asa r2 
+summary: Exclua unidades de armazenamento para reduzir a quantidade de armazenamento físico de que você precisa ou liberar espaço necessário para outros aplicativos host. 
+---
+= Excluir unidades de armazenamento em sistemas de armazenamento ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Elimine uma unidade de armazenamento se já não necessitar de manter os dados contidos na unidade. A exclusão de unidades de armazenamento que não são mais necessárias pode ajudá-lo a liberar espaço necessário para outros aplicativos host.
+
+.Antes de começar
+Se a unidade de armazenamento que deseja excluir estiver em um grupo de consistência que esteja em relação de replicação, você deve link:../data-protection/manage-consistency-groups.html#remove-a-storage-unit-from-a-consistency-group["retire a unidade de armazenamento do grupo de consistência"] antes de excluí-la.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Passe o Mouse sobre o nome da unidade de armazenamento que você deseja excluir.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Delete*.
+. Reconheça que a exclusão não pode ser desfeita.
+. Selecione *Eliminar*.
+
+
+.O que se segue?
+Você pode usar o espaço liberado da unidade de armazenamento excluída para link:modify-storage-units.html["aumente o tamanho"]unidades de armazenamento que precisam de capacidade adicional.

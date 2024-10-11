@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about.html 
+keywords: asa r2, asa a1k, asa 70, asa 90 
+summary: 'Os sistemas ASA R2 (ASA A1K, ASA A70 e ASA A90) oferecem uma solução unificada de hardware e software que cria uma experiência simplificada para clientes somente de SAN.' 
+searchtitle: Saiba mais sobre os sistemas de storage ASA A1K, ASA A70 e ASA A90 
+---
+= Saiba mais sobre os sistemas de armazenamento ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os sistemas NetApp ASA R2 (ASA A1K, ASA A70 e ASA A90) fornecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes somente SAN.
+
+Os sistemas ASA R2 dão suporte a todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP) em uma única implantação de par de HA. Os protocolos SCSI (iSCSI e FC) usam uma arquitetura ativo-ativo simétrica para multipathing de modo que todos os caminhos entre os hosts e o storage estejam ativos/otimizados. Os protocolos NVMe são compatíveis com caminhos diretos entre os hosts e o storage.
+
+Em um sistema ASA R2, o software ONTAP e o Gerenciador de sistemas são otimizados para oferecer suporte à funcionalidade essencial de SAN, removendo recursos e funções não compatíveis em ambientes SAN.
+
+Os sistemas ASA R2 introduzem o uso de unidades de storage com grupos de consistência:
+
+* Uma _unidade de armazenamento_ torna o espaço de armazenamento disponível para seus hosts SAN para operações de dados. Uma unidade de storage refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe.
+* _Um grupo de consistência_ é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade.
+
+
+Os sistemas ASA R2 usam unidades de storage e grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento individualmente, você pode proteger todo o banco de dados fazendo backup do grupo de consistência.
+
+Para ajudar a proteger seus dados contra ataques mal-intencionados, como roubo ou ransomware, os sistemas ASA R2 oferecem suporte a um gerenciador de chaves integrado, criptografia de camada dupla, snapshots à prova de violação, autenticação multifator e verificação em vários administradores.
+
+Os sistemas ASA R2 não suportam a mistura de cluster com sistemas ASA, AFF ou FAS atuais.
+
+.Para mais informações
+* Saiba mais sobre o suporte e as limitações dos sistemas ASA R2 no link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+* Saiba mais link:../learn-more/hardware-comparison.html["Os sistemas ASA R2 em comparação com os sistemas ASA"]sobre o .
+* Saiba mais sobre o link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"].
+
