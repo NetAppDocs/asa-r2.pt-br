@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9160.html 
-keywords:  
-summary:  
+keywords: 'what"s new, release notes, 9.16.0, asa r2, asa a1k, asa 70, asa 90' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,0 para sistemas ASA R2. 
 ---
 = Novidades do ONTAP 9.16,0 para sistemas ASA R2
 :hardbreaks:

@@ -281,7 +281,6 @@
   <block id="e7c7a96626caf7f10a69abd91e0c9657" category="section-title">Passo 2: Crie um instantâneo</block>
   <block id="5ad8d455ea57e1690a8dd08af1513587" category="paragraph">Um instantâneo é uma cópia local e somente leitura de seus dados que você pode usar para restaurar unidades de armazenamento em pontos específicos no tempo.</block>
   <block id="a55eea56b3b5ac156631717b66974529" category="inline-link-macro">política e agendamento de snapshot</block>
-  <block id="aa2f9feb235086807c06e316a374c42b" category="paragraph">Os instantâneos podem ser criados sob demanda ou podem ser criados automaticamente em intervalos regulares com base em um <block ref="174ad3d131cf18990fcf462c1e80dea1" category="inline-link-macro-rx"></block>. A política e a programação de snapshot especificam quando criar os snapshots, quantas cópias devem ser mantidas, como nomeá-los e como rotulá-los para replicação. Por exemplo, um sistema pode criar um snapshot todos os dias às 12:10 da manhã, reter as duas cópias mais recentes, nomeá-las "diariamente" (anexado com um carimbo de data/hora) e rotulá-las "diariamente" para replicação.</block>
   <block id="778e49c36a4b37504a26fe297bcd89cd" category="paragraph-title">Tipos de instantâneos</block>
   <block id="d6acd69ed4935a0b24bcc6574f0a4d59" category="paragraph">Você pode criar um snapshot sob demanda de uma única unidade de armazenamento ou de um grupo de consistência. Você pode criar snapshots automatizados de um grupo de consistência que contém várias unidades de storage. Não é possível criar instantâneos automatizados de uma única unidade de armazenamento.</block>
   <block id="92cd7e74f8f496ce11ec549a066c7294" category="list-text">Snapshots sob demanda</block>
@@ -1590,4 +1589,25 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">Conexões NVMe seguras</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Notas de lançamento</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">O que há de novo no ONTAP 9.16,0</block>
+  <block id="82f8a3cbf0a93791bbbfc70a1b650bcf" category="paragraph">Os instantâneos podem ser criados sob demanda ou podem ser criados automaticamente em intervalos regulares com base em um <block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block>. A política e a programação de snapshot especificam quando criar os snapshots, quantas cópias devem ser mantidas, como nomeá-los e como rotulá-los para replicação. Por exemplo, um sistema pode criar um snapshot todos os dias às 12:10 da manhã, reter as duas cópias mais recentes, nomeá-las "diariamente" (anexado com um carimbo de data/hora) e rotulá-las "diariamente" para replicação.</block>
+  <block id="45572a9b40e369d2ef8629844808cced" category="summary">Saiba mais sobre as alterações nos limites e padrões que afetam os sistemas ASA R2.</block>
+  <block id="1103c7c9b683247c76b5f25f9cd64b74" category="doc">Alterações nos limites e padrões do ONTAP que afetam os sistemas ASA R2</block>
+  <block id="1daa1b3cc6e7b6b7a591ba10582085a8" category="paragraph">Saiba mais sobre as alterações nos limites e padrões que afetam os sistemas ASA R2. A NetApp se esforça para ajudar seus clientes a entender os padrões mais importantes e limitar as alterações em cada versão do ONTAP.</block>
+  <block id="d579ca395df40cbbb953cb531ce23a3d" category="section-title">Alterações nos limites do ONTAP</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Recurso</block>
+  <block id="4d209cddba5e4e3f517cda6d0180e867" category="cell">Limite de alteração</block>
+  <block id="b0aeee779af528e83de1fcb141fbbca7" category="cell">Alterado na versão...</block>
+  <block id="d705195acc2d17086d7e28da066d6c23" category="cell">Unidades de armazenamento</block>
+  <block id="6f758206269a4d26aaaac9a25afe7fe5" category="cell">O número máximo de unidades de storage é aumentado de 2500 por par de HA para 10.000 por par de HA.</block>
+  <block id="31272abf1c9209ab4acd0bf10f129338" category="cell">ONTAP 9.16,1</block>
+  <block id="456488f81b27ee2e1475e6d76ffad2ca" category="summary">Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas ASA R2.</block>
+  <block id="02b0c0371a6864d344959c06c5237165" category="doc">Novidades do ONTAP 9.16,1 para sistemas ASA R2</block>
+  <block id="fd18465573ec21a6218982055981f6b1" category="section-title">Eficiência de storage</block>
+  <block id="3a405933969f80a6182b8257c15c10ff" category="cell">Alocação de espaço NVMe habilitada por padrão</block>
+  <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">A alocação de espaço (também chamada de "perfuração" e "desmapear") é habilitada para namespaces NVMe por padrão. A desalocação de espaço permite que um host inutilize blocos de nomes para recuperar espaço.</block>
+  <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">Isso melhora muito a eficiência geral do storage, especialmente com sistemas de arquivos que têm alta rotatividade de dados.</block>
+  <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">Migrar chaves de criptografia de dados do ONTAP entre gerenciadores de chaves</block>
+  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">Se precisar alternar do gerenciador de chaves integrado para um gerenciador de chaves externo ou vice-versa, <block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>consulte .</block>
+  <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">O que há de novo no ONTAP 9.16,1</block>
+  <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Alterações aos padrões e limites do ONTAP</block>
 </blocks>

@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9161.html 
+keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa 70, asa 90' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas ASA R2. 
+---
+= Novidades do ONTAP 9.16,1 para sistemas ASA R2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas ASA R2.
+
+
+
+== Eficiência de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| Alocação de espaço NVMe habilitada por padrão  a| 
+A alocação de espaço (também chamada de "perfuração" e "desmapear") é habilitada para namespaces NVMe por padrão. A desalocação de espaço permite que um host inutilize blocos de nomes para recuperar espaço.
+
+Isso melhora muito a eficiência geral do storage, especialmente com sistemas de arquivos que têm alta rotatividade de dados.
+
+|===

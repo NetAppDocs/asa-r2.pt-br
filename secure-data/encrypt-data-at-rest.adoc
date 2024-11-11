@@ -51,3 +51,5 @@ Além do NSE, você também pode habilitar a criptografia de software para adici
 
 .O que se segue?
 Agora que você criptografou seus dados em repouso, se estiver usando o protocolo NVMe/TCP, poderá link:nvme-tcp-connections.html["criptografe todos os dados enviados pela rede"] entre o host NVMe/TCP e o sistema ASA R2.
+
+Se precisar alternar do gerenciador de chaves integrado para um gerenciador de chaves externo ou vice-versa, link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers["Migrar chaves de criptografia de dados do ONTAP entre gerenciadores de chaves"^]consulte .
