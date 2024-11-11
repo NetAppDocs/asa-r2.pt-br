@@ -1607,7 +1607,7 @@
   <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">A alocação de espaço (também chamada de "perfuração" e "desmapear") é habilitada para namespaces NVMe por padrão. A desalocação de espaço permite que um host inutilize blocos de nomes para recuperar espaço.</block>
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">Isso melhora muito a eficiência geral do storage, especialmente com sistemas de arquivos que têm alta rotatividade de dados.</block>
   <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">Migrar chaves de criptografia de dados do ONTAP entre gerenciadores de chaves</block>
-  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">Se precisar alternar do gerenciador de chaves integrado para um gerenciador de chaves externo ou vice-versa, <block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>consulte .</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">O que há de novo no ONTAP 9.16,1</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Alterações aos padrões e limites do ONTAP</block>
+  <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">Se precisar alternar do gerenciador de chaves integrado para um gerenciador de chaves externo ou vice-versa, <block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>consulte .</block>
 </blocks>
