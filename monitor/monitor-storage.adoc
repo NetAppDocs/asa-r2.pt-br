@@ -24,7 +24,7 @@ Monitore regularmente a quantidade de storage consumida pelo cluster para garant
 . No System Manager, selecione *Dashboard*.
 . Em *Capacity*, visualize a quantidade de espaço físico usado e a quantidade de espaço disponível no cluster.
 +
-A taxa de redução de dados representa a quantidade de espaço economizada com a eficiência de storage.
+A taxa de redução de dados representa a quantidade de espaço economizado com a eficiência de storage.
 
 
 

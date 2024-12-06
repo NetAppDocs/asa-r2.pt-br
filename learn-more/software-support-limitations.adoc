@@ -20,8 +20,8 @@ Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SA
 * MetroCluster
 * Protocolos de objetos
 * ONTAP S3 SnapMirror e S3 APIs
-* SnapMirror para nuvem
-* SnapMirror para sistemas não ASA R2
+* SnapMirror (assíncrono e síncrono) para a nuvem
+* SnapMirror (assíncrono e síncrono) para sistemas não ASA R2
 * Mapa LUN seletivo (SLM)
 
 
