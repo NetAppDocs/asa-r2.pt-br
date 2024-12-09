@@ -576,7 +576,6 @@
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">Saiba mais sobre o <block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>.</block>
   <block id="05b76f77eda2923699bcc5fed0226549" category="summary">Para começar a usar um sistema ASA R2 (ASA A1K, ASA A70, ASA A90), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.</block>
   <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">Instalar e configurar os sistemas de storage ASA A1K, ASA A70 e ASA A90</block>
-  <block id="ceb35ef309bc127d4f8d63986f004986" category="doc">Início rápido para sistemas de armazenamento ASA R2</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">Para começar a funcionar com o sistema ASA R2, instale os componentes de hardware, configure o cluster, configure o acesso aos dados dos hosts para o sistema de storage e provisione o storage.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Um</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Instale e configure o hardware</block>
@@ -1611,4 +1610,5 @@
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (assíncrono e síncrono) para sistemas não ASA R2</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">A taxa de redução de dados representa a quantidade de espaço economizado com a eficiência de storage.</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">O SnapMirror (assíncrono e síncrono) é compatível somente com sistemas ASA R2 para sistemas ASA R2. O SnapMirror não é compatível com sistemas ASA R2 para sistemas AFF ou FAS.</block>
+  <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Início rápido para sistemas de storage ASA R2</block>
 </blocks>
