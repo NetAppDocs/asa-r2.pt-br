@@ -3,7 +3,7 @@ sidebar: sidebar
 permalink: get-started/learn-about.html 
 keywords: asa r2, asa a1k, asa 70, asa 90 
 summary: 'Os sistemas ASA R2 (ASA A1K, ASA A70 e ASA A90) oferecem uma solução unificada de hardware e software que cria uma experiência simplificada para clientes somente de SAN.' 
-searchtitle: Saiba mais sobre os sistemas de storage ASA A1K, ASA A70 e ASA A90 
+searchtitle: 'Saiba mais sobre os sistemas de storage ASA R2: A1K, A90 e A70' 
 ---
 = Saiba mais sobre os sistemas de armazenamento ASA R2
 :allow-uri-read: 
