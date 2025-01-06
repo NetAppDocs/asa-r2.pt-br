@@ -1611,4 +1611,19 @@
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">O SnapMirror (assíncrono e síncrono) é compatível somente com sistemas ASA R2 para sistemas ASA R2. O SnapMirror não é compatível com sistemas ASA R2 para sistemas AFF ou FAS.</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Início rápido para sistemas de storage ASA R2</block>
   <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">Saiba mais sobre os sistemas de storage ASA R2: A1K, A90 e A70</block>
+  <block id="465ce601131c87fafd3a4a3da5836246" category="summary">Os sistemas ASA R2 seguem as mesmas recomendações e diretrizes para a configuração de host SAN que todos os outros sistemas ONTAP.</block>
+  <block id="9a364a877707d0b61983419895ba3632" category="doc">Configuração de host SAN com sistemas ASA R2</block>
+  <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">É recomendável usar dois ou mais switches para conetar seu sistema de storage a um ou mais hosts SAN. Para configurações iSCSI, a topologia de rede que coneta seus hosts, switches e sistema de armazenamento é chamada de _network_. Para configurações FC e FC-NVMe, essa mesma topologia de rede é chamada de _Fabric_.</block>
+  <block id="1ea2e359c5275499813dff319ee20baa" category="paragraph">As configurações de várias malhas de várias redes (aquelas que usam dois ou mais switches) são recomendadas porque fornecem redundância tanto no switch quanto na camada de armazenamento. Essa redundância torna seu sistema de storage mais tolerante a falhas e oferece suporte a operações ininterruptas.</block>
+  <block id="37fdee11e5eadf392d943f0a18609831" category="paragraph">A ilustração a seguir mostra um exemplo de configuração de FC com vários hosts que usam duas malhas para acessar um único par de HA. Os números de porta de destino FC (0C, 0d, 1a, 1b) também são exemplos. Os números reais das portas variam dependendo do modelo da plataforma e se você está usando adaptadores de expansão.</block>
+  <block id="cafd65a257cc24af0e84e8951ad9d9b5" category="image-alt">Duas malhas FC que conectam vários hosts a um único par de HA</block>
+  <block id="7934e04423cdef3122abed138d14e800" category="inline-link-macro">Configuração SAN para hosts iSCSI</block>
+  <block id="1697498835ad65fe0eb56d5a08926207" category="inline-link-macro">Configuração DE SAN para hosts FC e FC/NVMe</block>
+  <block id="ebd194f81358f792dec388e009d8bec3" category="paragraph">Saiba mais <block ref="9880b1feac4156c93ea0abed0c0efc7f" category="inline-link-macro-rx"></block>sobre o . Saiba mais <block ref="e620f7fdd29d4d62cc1639e7aa82a5ed" category="inline-link-macro-rx"></block>sobre o .</block>
+  <block id="f32de8a0d0833354764d0913e73367fa" category="section-title">Recomendação de zoneamento para hosts FC</block>
+  <block id="3efb87f7842540462326a834b157f4ab" category="paragraph">Você deve configurar seus hosts FC para usar o zoneamento. Os sistemas ASA R2 seguem as mesmas recomendações e diretrizes de zoneamento de host FC que todos os outros sistemas ONTAP.</block>
+  <block id="db6c51496ac3638e90475615dca619b4" category="paragraph">Uma zona é um agrupamento lógico de uma ou mais portas dentro de uma malha. Para que os dispositivos possam se descobrir, estabelecer sessões umas com as outras e se comunicar, ambas as portas precisam ter uma associação de zona comum.</block>
+  <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">Zoneamento FC/FC-NVMe</block>
+  <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">Saiba mais <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>sobre o .</block>
+  <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">Configurar a configuração do host SAN</block>
 </blocks>
