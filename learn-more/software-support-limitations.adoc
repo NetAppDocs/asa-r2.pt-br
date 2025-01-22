@@ -14,7 +14,13 @@ summary: Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para solu
 Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SAN, certos recursos de software ONTAP não são suportados.
 
 .Os sistemas ASA R2 não suportam o seguinte:
-* Failover de LIF iSCSI
+* Failover automático de iSCSI LIF predefinido
++
+Nos sistemas ASA R2, o LIF de rede padrão é compartilhado entre hosts NVMe e SCSI, portanto, não é compatível com failover automático. Para ativar o failover automático de LIF iSCSI, é link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Crie um LIF apenas iSCSI"]necessário . O failover automático é ativado no iSCSI Only LIFS por padrão.
+
++
+Quando o failover automático de LIF iSCSI é ativado, se ocorrer um failover de armazenamento, o iSCSI LIF é migrado automaticamente de seu nó ou porta inicial para seu nó ou porta parceiro de HA e, em seguida, volta assim que o failover for concluído. Ou, se a porta de um iSCSI LIF não for saudável, o LIF é migrado automaticamente para uma porta saudável em seu nó inicial atual e, em seguida, de volta para sua porta original quando a porta estiver funcionando novamente.
+
 * FabricPool
 * Provisionamento de espessura de LUN
 * MetroCluster
@@ -27,11 +33,15 @@ Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SA
 
 .Os sistemas ASA R2 suportam o seguinte:
 * SnapLock
++
+link:../secure-data/ransomware-protection.html["Saiba como bloquear instantâneos"] No seu sistema ASA R2.
+
 * Criptografia de camada dupla
++
+link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] Para dados no seu sistema ASA R2.
+
 
 
 .Para mais informações
 * Consulte o link:https://hwu.netapp.com/["NetApp Hardware Universe"^] para obter mais informações sobre o suporte e limitações de hardware do ASA R2.
-* link:../secure-data/ransomware-protection.html["Saiba como bloquear instantâneos"] No seu sistema ASA R2.
-* link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] Para dados no seu sistema ASA R2.
 

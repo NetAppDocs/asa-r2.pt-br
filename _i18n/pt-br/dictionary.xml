@@ -1105,7 +1105,6 @@
   <block id="769cac8936a099436eaf35a70beb7039" category="summary">Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SAN, certos recursos de software ONTAP não são suportados.</block>
   <block id="c305c29e81953bb01b7c42d73fc8099c" category="doc">Suporte e limitações do software ONTAP para sistemas de storage ASA R2</block>
   <block id="2f7f66e818d17cdf226ec888e94e2751" category="list-title">Os sistemas ASA R2 não suportam o seguinte:</block>
-  <block id="e2d11c222fd8d727dcdcff1a70a7c1c0" category="list-text">Failover de LIF iSCSI</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="e4bc96983300161ae3464466c0030db7" category="list-text">Provisionamento de espessura de LUN</block>
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
@@ -1639,4 +1638,10 @@
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
   <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">Os sistemas ASA R2 são suportados pela <block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block> e posteriores.</block>
+  <block id="ace9c44d680e3a8684441fd776f4db68" category="paragraph">Se pretender ativar o failover de LIF iSCSI automático, tem de criar um LIF apenas iSCSI. Quando o failover automático de LIF iSCSI é ativado, se ocorrer um failover de armazenamento, o iSCSI LIF é migrado automaticamente de seu nó ou porta inicial para seu nó ou porta parceiro de HA e, em seguida, volta assim que o failover for concluído. Ou, se a porta de um iSCSI LIF não for saudável, o LIF é migrado automaticamente para uma porta saudável em seu nó inicial atual e, em seguida, de volta para sua porta original quando a porta estiver funcionando novamente.</block>
+  <block id="38db38181d3edceaf9353ed23bb6a1d6" category="paragraph">Para criar um único protocolo LIF, selecione apenas um protocolo. Por exemplo, para criar um LIF apenas iSCSI, selecione *iSCSI*.</block>
+  <block id="f08b07b736a8c5201accc4549e8a0762" category="list-text">Failover automático de iSCSI LIF predefinido</block>
+  <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">Crie um LIF apenas iSCSI</block>
+  <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">Nos sistemas ASA R2, o LIF de rede padrão é compartilhado entre hosts NVMe e SCSI, portanto, não é compatível com failover automático. Para ativar o failover automático de LIF iSCSI, é <block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>necessário . O failover automático é ativado no iSCSI Only LIFS por padrão.</block>
+  <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">Quando o failover automático de LIF iSCSI é ativado, se ocorrer um failover de armazenamento, o iSCSI LIF é migrado automaticamente de seu nó ou porta inicial para seu nó ou porta parceiro de HA e, em seguida, volta assim que o failover for concluído. Ou, se a porta de um iSCSI LIF não for saudável, o LIF é migrado automaticamente para uma porta saudável em seu nó inicial atual e, em seguida, de volta para sua porta original quando a porta estiver funcionando novamente.</block>
 </blocks>
