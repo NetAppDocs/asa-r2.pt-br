@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: administer/upgrade-ontap.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: O ONTAP atualiza automaticamente o firmware em sistemas ASA R2. Você pode usar o System Manager para desativar as atualizações automáticas e exibir as atualizações antes de serem instaladas. 
+---
+= Atualizar o ONTAP em sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ao atualizar o software ONTAP no sistema ASA R2, você pode aproveitar os novos e aprimorados recursos do ONTAP que ajudam a reduzir custos, acelerar workloads críticos, melhorar a segurança e expandir o escopo de proteção de dados disponível para sua organização.
+
+As atualizações de software da ONTAP para sistemas ASA R2 seguem o mesmo processo que as atualizações para outros sistemas ONTAP. Se você tiver um contrato SupportEdge ativo para o consultor digital da Active IQ (também conhecido como consultor digital), você deve link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Prepare-se para atualizar com o Upgrade Advisor"^]. O Upgrade Advisor fornece inteligência que ajuda você a minimizar a incerteza e o risco, avaliando seu cluster e criando um plano de atualização específico para sua configuração. Se você não tiver um contrato SupportEdge ativo para o consultor digital da Active IQ, você deve link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["Prepare-se para atualizar sem o Upgrade Advisor"^].
+
+Depois de se preparar para a atualização, é recomendável que você execute atualizações usando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Atualização automatizada e sem interrupções (ANDU) do System Manager"]o . O ANDU aproveita a tecnologia de failover de alta disponibilidade (HA) da ONTAP para garantir que os clusters continuem fornecendo dados sem interrupção durante a atualização.
+
+Saiba mais link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Atualizações de software ONTAP"]sobre o .

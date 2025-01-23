@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: manage-data/move-storage-units.html 
+keywords: move lun, lun move, move namespace, move storage unit, asa r2 
+summary: Exclua unidades de armazenamento para reduzir a quantidade de armazenamento físico de que você precisa ou liberar espaço necessário para outros aplicativos host. 
+---
+= Mova unidades de storage nos sistemas de storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se uma zona de disponibilidade de storage estiver com pouco espaço, você poderá mover unidades de armazenamento para outra zona de disponibilidade de armazenamento para equilibrar a utilização de armazenamento no cluster.
+
+Você pode mover uma unidade de armazenamento enquanto a unidade de armazenamento está on-line e fornecendo dados. A operação de movimentação não causa interrupções.
+
+.Antes de começar
+* Você deve estar executando o ONTAP 9.16,1 ou posterior.
+* O cluster precisa ser composto por quatro ou mais nós.
+
+
+.Passos
+. No System Manager, selecione *Storage* (armazenamento) e, em seguida, selecione a unidade de armazenamento que pretende mover.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *mover*.
+. Selecione a zona de disponibilidade de armazenamento para a qual pretende mover a unidade de armazenamento; em seguida, selecione *mover*.
+

@@ -33,6 +33,31 @@ Se o cluster estiver com pouco espaço ou se não tiver capacidade para atender 
 
 
 
+== Monitorar a utilização de zona de disponibilidade de storage
+
+Cada par de HA em um sistema ASA R2 usa um pool comum de armazenamento chamado _zona de disponibilidade de armazenamento_. A zona de disponibilidade de storage tem acesso a todos os discos disponíveis no sistema de storage e é visível para ambos os nós do par de HA.
+
+Se você tiver 4 ou mais nós no cluster, poderá visualizar a quantidade de espaço usada pela zona de disponibilidade de storage para cada par de HA. Essa métrica não está disponível para clusters de 2 nós.
+
+.Passos
+. No System Manager, selecione *Cluster*; em seguida, selecione *Overview*.
++
+Um resumo da utilização da zona de disponibilidade de storage é exibido para cada par de HA no cluster.
+
+. Se você quiser métricas mais detalhadas, selecione uma disponibilidade de armazenamento específica.
++
+Em *Visão geral*, a capacidade da zona de disponibilidade de armazenamento, a quantidade de espaço usado e a taxa de redução de dados são exibidos.
+
++
+Em *unidades de armazenamento* é apresentada uma lista de todas as unidades de armazenamento na zona de disponibilidade de armazenamento.
+
+
+
+.O que se segue?
+Se sua zona de disponibilidade de storage estiver com pouco espaço, você deverá Planejar link:../manage-data/move-storage-units.html["mova as unidades de armazenamento"]outra zona de disponibilidade de storage para equilibrar a utilização de storage no cluster.
+
+
+
 == Monitorar a utilização da unidade de storage
 
 Monitore a quantidade de storage consumida por uma unidade de storage para que você possa aumentar proativamente o tamanho da unidade de storage de acordo com as necessidades da sua empresa.

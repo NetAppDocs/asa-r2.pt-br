@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: administer/add-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+---
+= Adicione nós do ASA R2 a um cluster do ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partir do ONTAP 9.16.1, os sistemas de storage ASA R2 oferecem suporte para até 12 nós por cluster. Depois que os novos nós de um par de HA tiverem sido cabeados e ativados, você precisará juntá-los ao cluster.
+
+.Antes de começar
+Reúna as seguintes informações:
+
+* O endereço IP do nó
+* O endereço IP da interface de rede entre clusters
+* A máscara de sub-rede entre clusters
+* O gateway de rede entre clusters
+* Se você quiser configurar o gerenciador de chaves integrado (OKM), você precisará da senha OKM.
+
+
+.Passos
+. No System Manager, selecione *Cluster > Overview*.
+. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ao lado do nó que deseja ingressar no cluster; em seguida, selecione *Adicionar nó*
+. Introduza o endereço IP de cada nó.
+. Introduza o endereço IP da interface de rede entre clusters, a máscara de sub-rede e o gateway.
+. Se você quiser configurar o gerenciador de chaves integrado (OKM), insira a senha OKM.
++
+*Configurar o gerenciador de chaves integrado para criptografia* é selecionado por padrão.
+
+. Selecione *Adicionar*.
+
+
+.Resultado
+O novo par de HA é Unido ao cluster.
+
+.O que se segue?
+Depois de adicionar o novo par de HA ao cluster, você pode link:../install-setup/set-up-data-access.html["Habilite o acesso a dados de seus hosts SAN"]nos novos nós.

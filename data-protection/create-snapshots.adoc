@@ -22,6 +22,8 @@ Um grupo de consistência é uma coleção de unidades de armazenamento que são
 
 Crie um grupo de consistência usando novas unidades de armazenamento ou crie um grupo de consistência usando unidades de armazenamento existentes.
 
+Ao criar um grupo de consistência usando novas unidades de armazenamento, você pode atribuir uma capacidade diferente a cada unidade de armazenamento, alterar o nível de serviço de desempenho padrão e criar até cinco grupos de consistência filho. Ao criar um grupo de consistência usando unidades de armazenamento existentes, você pode adicionar unidades de armazenamento que já estão em uso.
+
 [role="tabbed-block"]
 ====
 .Use novas unidades de armazenamento
@@ -31,14 +33,43 @@ Crie um grupo de consistência usando novas unidades de armazenamento ou crie um
 . image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]Selecione ; em seguida, selecione *usando novas unidades de armazenamento*.
 . Introduza um nome para a nova unidade de armazenamento, o número de unidades e a capacidade por unidade.
 +
-Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *mais opções*; em seguida, selecione *Adicionar uma capacidade diferente*.
+Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host por padrão. Opcionalmente, você pode atribuir uma capacidade diferente a cada unidade.
 
-. Selecione o sistema operacional do host e o mapeamento do host.
-. Selecione *Adicionar*.
+. Se você quiser fazer qualquer uma das seguintes opções, selecione *mais opções* e conclua as etapas necessárias.
++
+[cols="2, 4a"]
+|===
+| Opção | Passos 
+
+
+ a| 
+Atribua uma capacidade diferente a cada unidade de armazenamento
+ a| 
+Selecione *Adicionar uma capacidade diferente*.
+
+
+
+ a| 
+Altere o nível de serviço de desempenho padrão
+ a| 
+Em *nível de serviço de desempenho*, selecione um nível de serviço diferente.
+
+
+
+ a| 
+Crie um grupo de consistência filho
+ a| 
+Selecione *Adicionar grupo de consistência filho*.
+
+.. Selecione o sistema operacional do host e o mapeamento do host.
+.. Selecione *Adicionar*.
 
 
 .O que se segue?
 Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
+
+|===
+
 
 --
 .Use unidades de armazenamento existentes

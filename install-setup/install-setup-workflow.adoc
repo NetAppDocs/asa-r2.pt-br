@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: install-setup/install-setup-workflow.html 
 keywords: asa r2, install, setup, workflow 
-summary: Comece a instalar e configurar o sistema de storage ASA R2 e implante-o como um par de HA no ambiente ONTAP. 
+summary: Comece a instalar e configurar o sistema de storage ASA R2 e implante-o no ambiente ONTAP. 
 ---
 = Fluxo de trabalho de instalação e configuração para sistemas de storage ASA R2
 :allow-uri-read: 

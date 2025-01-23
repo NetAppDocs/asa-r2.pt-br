@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/quick-start.html 
-keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
-summary: 'Para começar a usar um sistema ASA R2 (ASA A1K, ASA A70, ASA A90), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.' 
-searchtitle: Instalar e configurar os sistemas de storage ASA A1K, ASA A70 e ASA A90 
+keywords: asa r2, asa a1k, asa a90, asa a70, get started, getting started, quick start, install, set up 
+summary: 'Para começar a usar um sistema ASA R2 (ASA A1K, A90, A70), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.' 
+searchtitle: Instalar e configurar os sistemas de storage ASA A1K, A90 e A70 
 ---
 = Início rápido para sistemas de storage ASA R2
 :allow-uri-read: 
@@ -16,7 +16,7 @@ Para começar a funcionar com o sistema ASA R2, instale os componentes de hardwa
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Instale e configure o hardware
 [role="quick-margin-para"]
-link:../install-setup/install-setup-workflow.html["Instale e configure"] Seu sistema ASA R2 e implantá-lo como um par de HA no ambiente ONTAP.
+link:../install-setup/install-setup-workflow.html["Instale e configure"] Seu sistema ASA R2 e implantá-lo em seu ambiente ONTAP.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] Configure o cluster
 [role="quick-margin-para"]

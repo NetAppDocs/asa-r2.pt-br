@@ -37,7 +37,7 @@ Se você criar mais de uma unidade de armazenamento, cada unidade será criada c
 *Mapeamento do host* refere-se ao grupo de hosts para o qual a nova unidade de armazenamento será mapeada. Se houver um grupo de hosts pré-existente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts pré-existente será selecionado automaticamente para o mapeamento do host. Você pode aceitar o grupo de host que é selecionado automaticamente para o mapeamento de host ou pode selecionar um grupo de host diferente.
 
 +
-Se não houver nenhum grupo de hosts pré-existente para hosts em execução no sistema operacional especificado, um novo grupo de hosts será criado automaticamente pelo ONTAP.
+Se não houver nenhum grupo de hosts pré-existente para hosts em execução no sistema operacional especificado, o ONTAP criará automaticamente um novo grupo de hosts.
 
 . Se você quiser fazer qualquer uma das seguintes opções, selecione *mais opções* e conclua as etapas necessárias.
 +
@@ -76,6 +76,17 @@ Definir uma taxa de transferência mínima e IOPS para uma unidade de storage ga
 
 
 .. Selecione *Adicionar*.
+
+
+
+
+ a| 
+Altere o nível de serviço de desempenho padrão.
+
+Os sistemas ASA R2 oferecem dois níveis de performance. O nível de desempenho padrão é *Extreme*, que é o nível mais alto disponível. Você pode reduzir o nível de desempenho para *desempenho*.
+ a| 
+.. Em *armazenamento e otimização*, ao lado do *nível de serviço de desempenho*, image:icon_dropdown_arrow.gif["ícone de seta azul apontando na direção descendente"]selecione .
+.. Selecione *desempenho*.
 
 
 

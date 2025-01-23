@@ -150,3 +150,19 @@ Clonou um grupo de consistência a partir da sua localização remota. O novo gr
 ====
 .O que se segue?
 Para proteger seus dados, você deve link:../data-protection/create-snapshots.html#step-2-create-a-snapshot["criar instantâneos"]do grupo de consistência clonada.
+
+
+
+== Clone de grupo de consistência dividida
+
+Quando você divide um clone de grupo de consistência, dissocia o clone do grupo de consistência de origem e aloca espaço em disco para o clone. O clone se torna um grupo de consistência autônomo que pode ser usado independentemente do grupo de consistência de origem.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o clone do grupo de consistência que você deseja dividir.
+. Selecione *Split clone*.
+. Selecione *Split*.
+
+
+.Resultado
+O clone é dissociado do grupo de consistência de origem e o espaço em disco é alocado para o clone.

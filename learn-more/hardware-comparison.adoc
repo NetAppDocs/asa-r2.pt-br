@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/hardware-comparison.html 
-keywords: compare asa r2, asa a1k, asa a70, asa a90 
+keywords: compare asa r2, asa a1k, asa a90, asa a70 
 summary: Os sistemas ASA oferecem suporte a hardware otimizado para soluções somente SAN. Os sistemas ASA R2 oferecem otimização de hardware e software. 
 searchtitle: Compare os sistemas ASA R2 com outros sistemas ONTAP 
 ---

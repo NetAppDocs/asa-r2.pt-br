@@ -13,6 +13,10 @@ summary: Use grupos de consistência para executar várias ações em várias un
 [role="lead"]
 Um grupo de consistência é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade. Use grupos de consistência para gerenciamento simplificado de storage. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento, você pode fazer backup de todo o banco de dados simplesmente adicionando proteção de dados snapshot ao grupo de consistência. Fazer backup das unidades de armazenamento como um grupo de consistência em vez de individualmente também fornece um backup consistente de todas as unidades, enquanto fazer backup de unidades individualmente pode potencialmente criar inconsistências.
 
+A partir do ONTAP 9.16.1, você pode usar o Gerenciador do sistema para criar grupos hierárquicos de consistência em seu sistema ASA R2. Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos sob um grupo de consistência pai.
+
+Os grupos hierárquicos de consistência permitem que você aplique políticas de snapshot individuais a cada grupo filho de consistência e replique os snapshots de todos os grupos filhos de consistência a um cluster remoto como uma única unidade replicando o pai. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas. Por exemplo, suponha que você crie um grupo de consistência pai chamado `SVM1_app` que contém dois grupos de consistência filhos: `SVM1app_data` Para dados de aplicativos e `SVM1app_logs` para logs de aplicativos. Os instantâneos de `SVM1app_data` são tirados a cada 15 minutos e os instantâneos de são tirados a `SVM1app_logs` cada hora. O grupo de consistência pai `SVM1_app,` tem uma política do SnapMirror que replica os snapshots de ambos `SVM1app_data` e `SVM1app_logs` para um cluster remoto a cada 24 horas. O grupo de consistência pai `SVM1_app` é gerenciado como uma única unidade e os grupos de consistência filho são gerenciados como unidades separadas.
+
 
 
 == Adicionar proteção de dados de snapshot a um grupo de consistência
@@ -139,6 +143,107 @@ A unidade de armazenamento já não é membro do grupo de consistência.
 
 .O que vem a seguir
 Se precisar continuar a proteção de dados para a unidade de armazenamento, adicione a unidade de armazenamento a outro grupo de consistência.
+
+
+
+== Converta um grupo de consistência existente em um grupo de consistência pai
+
+As unidades de armazenamento não podem ser diretamente associadas a um grupo de consistência pai. Se você converter um grupo de consistência existente em um pai, um novo grupo de consistência filho será criado e as unidades de armazenamento pertencentes ao grupo de consistência convertido serão movidas para o novo grupo de consistência filho.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja converter em um grupo de consistência pai.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *promover para o grupo de consistência pai*.
+. Insira um nome para o grupo de consistência pai ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione *promover*.
+
+
+.O que se segue?
+Você pode criar grupos de consistência filhos adicionais no grupo de consistência pai. Você também link:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"]pode copiar o grupo de consistência pai para um local geograficamente remoto para backup e recuperação de desastres.
+
+
+
+== Crie um grupo de consistência filho
+
+A criação de grupos de consistência filho permite aplicar políticas de snapshot individuais a cada filho enquanto aplica uma política de replicação a todos os grupos de consistência filho no nível pai.
+
+Você pode criar um grupo de consistência filho a partir de um grupo de consistência novo ou existente.
+
+[role="tabbed-block"]
+====
+.De um novo grupo de consistência
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência pai ao qual você deseja adicionar um grupo de consistência filho.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Adicionar um novo grupo de consistência filho*.
+. Insira um nome para o grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione para adicionar unidades de armazenamento existentes ao grupo de consistência filho ou para criar novas unidades de armazenamento.
++
+Se criar novas unidades de armazenamento, introduza o número de unidades que pretende criar e a capacidade por unidade; em seguida, introduza as informações do anfitrião.
+
++
+Se você criar mais de uma unidade de armazenamento, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.
+
+. Selecione *Adicionar*.
+
+
+--
+.De um grupo de consistência existente
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Selecione o grupo de consistência existente que você gostaria de criar um grupo de consistência filho.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *mover sob grupo de consistência diferente*.
++
+Se o grupo de consistência que você gostaria de usar já como filho de outro grupo de consistência, você deve separá-lo do grupo de consistência pai existente antes de movê-lo para um novo grupo de consistência pai.
+
+. Insira um novo nome para o grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione o grupo de consistência existente que você gostaria de fazer o grupo de consistência pai ou selecione para criar um novo grupo de consistência pai.
++
+Se você selecionar criar um novo grupo de consistência pai, digite um nome para o grupo de consistência pai ou aceite o nome padrão; em seguida, selecione o tipo de componente do aplicativo de consistência.
+
+. Selecione *mover*.
+
+
+--
+====
+.O que vem a seguir
+Depois de criar um grupo de consistência filho, você pode link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["aplicar políticas individuais de proteção de snapshot"] para cada grupo de consistência filho. Também é possível link:snapshot-replication.html["configure uma política de replicação"]no grupo de consistência pai replicar os instantâneos de todos os grupos de consistência filho para um cluster remoto como uma única unidade.
+
+
+
+== Demote um grupo de consistência pai para um único grupo de consistência
+
+Quando você _demote_ um grupo de consistência pai para um único grupo de consistência, as unidades de armazenamento dos grupos de consistência filho associados são adicionadas ao grupo de consistência pai. Os grupos de consistência filho são excluídos e o pai é gerenciado como um único grupo de consistência.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência pai que você deseja rebaixar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *demote para um único grupo de consistência*.
+. Selecione *demote*
+
+
+.O que se segue?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Adicionar uma política de instantâneos"] para o grupo de consistência rebaixado para proteger as unidades de armazenamento que foram gerenciadas anteriormente pelos grupos de consistência infantil.
+
+
+
+== Separe um grupo de consistência filho de um grupo de consistência pai
+
+Quando você desvincula um grupo de consistência filho de um grupo de consistência pai, o grupo de consistência filho é removido do grupo de consistência pai e gerenciado como um único grupo de consistência. A política de replicação aplicada ao pai não é mais aplicada ao grupo de consistência filho separado.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Selecione o grupo de consistência pai.
+. Selecione sobre o grupo de consistência filho que deseja separar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Desanexar do pai*.
+. Insira um novo nome para o grupo de consistência que você está desanexando ou aceite o nome padrão; em seguida, selecione o tipo de aplicativo do grupo de consistência.
+. Selecione *Desanexar*.
+
+
+.O que se segue?
+link:snapshot-replication.html["Configure uma política de replicação"] para replicar os snapshots do grupo de consistência filho separado para um cluster remoto como um único grupo de consistência.
 
 
 
