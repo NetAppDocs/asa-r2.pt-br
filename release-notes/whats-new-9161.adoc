@@ -25,7 +25,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas AS
 | Atualização | Descrição 
 
 
-| link:data-protection/manage-consistency-groups.html["Suporte para grupos hierárquicos de consistência"] | Os grupos hierárquicos de consistência permitem criar um grupo de consistência pai que contém vários grupos filhos de consistência. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas. 
+| link:../data-protection/manage-consistency-groups.html["Suporte para grupos hierárquicos de consistência"] | Os grupos hierárquicos de consistência permitem criar um grupo de consistência pai que contém vários grupos filhos de consistência. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas. 
 |===
 
 

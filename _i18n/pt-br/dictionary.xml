@@ -1754,7 +1754,6 @@
   <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">Se você estiver executando o ONTAP 9.16.1 com mais de 2 nós em um cluster, não será possível reverter para o ONTAP 9.16.0.</block>
   <block id="7e7397a7b79323762c61941fc0e6b5f9" category="section-title">Proteção de dados</block>
   <block id="52b359b5c00e0db3bdd91a9f5c05cf7a" category="inline-link-macro">Suporte para grupos hierárquicos de consistência</block>
-  <block id="410817362abc44b1b70bdc2f9f49fece" category="cell"><block ref="410817362abc44b1b70bdc2f9f49fece" category="inline-link-macro-rx"></block></block>
   <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">Os grupos hierárquicos de consistência permitem criar um grupo de consistência pai que contém vários grupos filhos de consistência. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas.</block>
   <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">Suporte para rebalanceamento automático de unidades de armazenamento</block>
   <block id="ec84fb814253e6779e1876e18f7db731" category="cell">O ONTAP reequilibrará automaticamente as unidades de storage nas zonas de disponibilidade de storage para obter performance e utilização de capacidade ideais.</block>
@@ -1763,4 +1762,5 @@
   <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">Adicionar nós</block>
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">Gerenciar unidades de armazenamento</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">Mova as unidades de armazenamento</block>
+  <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
 </blocks>
