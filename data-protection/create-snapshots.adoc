@@ -61,15 +61,13 @@ Crie um grupo de consistência filho
  a| 
 Selecione *Adicionar grupo de consistência filho*.
 
-.. Selecione o sistema operacional do host e o mapeamento do host.
-.. Selecione *Adicionar*.
+|===
+. Selecione o sistema operacional do host e o mapeamento do host.
+. Selecione *Adicionar*.
 
 
 .O que se segue?
 Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
-
-|===
-
 
 --
 .Use unidades de armazenamento existentes
