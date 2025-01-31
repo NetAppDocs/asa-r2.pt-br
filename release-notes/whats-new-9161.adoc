@@ -29,6 +29,17 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas AS
 |===
 
 
+== Suporte ao protocolo
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../get-started/learn-about.html["Suporte a NVMe para multipathing ativo-ativo simétrico"] | O NVMe/FC e o NVMe/TCP agora oferecem suporte à arquitetura ativo-ativo simétrica para multipathing de modo que todos os caminhos entre os hosts e o storage estejam ativos/otimizados. 
+|===
+
+
 == Eficiência de storage
 
 [cols="2,4"]
