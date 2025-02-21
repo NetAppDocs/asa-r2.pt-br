@@ -38,6 +38,8 @@ entries:
   entries:
   - title: Criptografia de dados em repouso
     url: "/secure-data/encrypt-data-at-rest.html"
+  - title: Migrar chaves de criptografia de dados entre gerenciadores de chaves
+    url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: Proteção contra ataques de ransomware
     url: "/secure-data/ransomware-protection.html"
   - title: Conexões NVMe seguras

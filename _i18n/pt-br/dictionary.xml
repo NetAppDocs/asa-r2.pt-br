@@ -1767,4 +1767,36 @@
   <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">Suporte a NVMe para multipathing ativo-ativo simétrico</block>
   <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
   <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">O NVMe/FC e o NVMe/TCP agora oferecem suporte à arquitetura ativo-ativo simétrica para multipathing de modo que todos os caminhos entre os hosts e o storage estejam ativos/otimizados.</block>
+  <block id="1b2a9f2a24a72c15335105126ba3c988" category="summary">Você pode usar o Gerenciador de chaves integrado do ONTAP no sistema ASA R2, um gerenciador de chaves externo ou ambos (em um caso) para gerenciar chaves de criptografia de dados.</block>
+  <block id="e99ed2862cc3fe1cd81a9f3a2dd33c56" category="doc">Migre chaves de criptografia de dados ONTAP entre gerenciadores de chaves no sistema ASA R2</block>
+  <block id="b5badfcddc250ad4fcc8251908f87e29" category="paragraph">Você pode gerenciar suas chaves de criptografia de dados usando o Gerenciador de chaves integrado do ONTAP no sistema ASA R2 ou um gerenciador de chaves externo (ou ambos). Os gerenciadores de chaves externos só podem ser ativados no nível de VM de armazenamento. No nível do cluster do ONTAP, você pode ativar o gerenciador de chaves integrado ou um gerenciador de chaves externo.</block>
+  <block id="afcb105c793faf5a2de8b7bec9a27701" category="cell">Se ativar o seu gestor de chaves na...</block>
+  <block id="0fe3023d00cc7e6a03e47a3c68ab74c5" category="cell">Você pode usar...</block>
+  <block id="5c5372da5c24091217c06cc0f6ec8d03" category="cell">Somente no nível do cluster</block>
+  <block id="ac4595d6d7fb8008d832bded40c17ce1" category="paragraph">O gerenciador de chaves integrado ou um gerenciador de chaves externo</block>
+  <block id="ee660d5fa0fcf5d6a9acb167806fbf93" category="cell">Somente nível SVM</block>
+  <block id="0553120d27a584be88a1ae3bd8c69d64" category="cell">Apenas um gerenciador de chaves externo</block>
+  <block id="81b9ace7cc0d5c4a18ed0debac590134" category="paragraph">Tanto o cluster quanto o nível da SVM</block>
+  <block id="a8baf82d452f3a828b4d58fae37b7d17" category="paragraph">Uma das seguintes combinações de gerenciador de chaves:</block>
+  <block id="fd577a8bfd88959b13dfc6803c7ef6ce" category="list-text">Opção 1</block>
+  <block id="08c0163f788e58353da3da5e9a5fa6c7" category="paragraph">Nível de cluster: Gerenciador de chaves integrado</block>
+  <block id="434835c03ec88a20257ade31cd0f6e40" category="paragraph">Nível da SVM: Gerente de chaves externo</block>
+  <block id="e24963e40778134b357f4a5eac58e1f5" category="list-text">Opção 2</block>
+  <block id="3a8a9355eb7486336283b79738409c86" category="paragraph">Nível de cluster: Gerenciador de chaves externo</block>
+  <block id="0210c164d56b9ee340b6de0f8bcc2d48" category="section-title">Migre chaves entre os gerenciadores-chave no nível do cluster do ONTAP</block>
+  <block id="fbcbd18b1b9340d453b1e6de03001b58" category="paragraph">A partir do ONTAP 9.16.1, você pode usar a interface de linha de comando (CLI) do ONTAP para migrar chaves entre gerenciadores de chaves no nível do cluster.</block>
+  <block id="ad149857660a2356599fe21affd4451d" category="open-title">De bordo para externo</block>
+  <block id="b5c6fde8816eb583a49b6c0314b82928" category="list-text">Defina o nível de privilégio como avançado:</block>
+  <block id="e1bb323a4b2b039ad5f3cab3ae012f34" category="list-text">Criar uma configuração de gerenciador de chaves externo inativo:</block>
+  <block id="d3004c556729998245acc90f8fa80c9c" category="list-text">Mude para o gerenciador de chaves externo:</block>
+  <block id="98e4d41b2a29ccd0b80651026a329d11" category="list-text">Exclua a configuração do gerenciador de chaves integrado:</block>
+  <block id="fe07e34b9c4a621f8012d19499fb4ea5" category="list-text">Defina o nível de privilégio como admin:</block>
+  <block id="e23deb899dce1ad56b34b17413e1b7ec" category="open-title">Do externo ao integrado</block>
+  <block id="8f2a471846efc7bf912e0fa539aa3330" category="list-text">Criar uma configuração inativa do gerenciador de chaves integrado:</block>
+  <block id="b0b9d1953037e9596f7d9b5447aeafb2" category="list-text">Ative a configuração do gerenciador de chaves integrado:</block>
+  <block id="dfa14df9c3238dad5e97f0b19204f7d3" category="list-text">Exclua a configuração do gerenciador de chaves externo</block>
+  <block id="8168a513576ac2e105ea5be6de6b1d72" category="section-title">Migre chaves entre gerenciadores de chaves em cluster ONTAP e níveis de VM de armazenamento</block>
+  <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">Você pode usar a interface de linha de comando (CLI) do ONTAP para migrar chaves entre o gerenciador de chaves no nível do cluster e um gerenciador de chaves no nível da VM de storage.</block>
+  <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">Migrar as chaves:</block>
+  <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">Migrar chaves de criptografia de dados entre gerenciadores de chaves</block>
 </blocks>
