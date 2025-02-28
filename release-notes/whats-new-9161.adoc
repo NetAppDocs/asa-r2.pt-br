@@ -43,6 +43,9 @@ Os seguintes sistemas NetApp ASA R2 são suportados a partir do ONTAP 9.16.1. Es
 | Atualização | Descrição 
 
 
+| link:../secure-data/migrate-encryption-keys-between-key-managers.html["Suporte para migração de chave de criptografia entre gerenciadores de chaves"] | Ao alternar do gerenciador de chaves integrado do ONTAP para um gerenciador de chaves externo no nível do cluster, você pode usar a interface de linha de comando (CLI) do ONTAP para migrar facilmente as chaves de criptografia de um gerenciador de chaves para o outro. 
+
+
 | link:../data-protection/manage-consistency-groups.html["Suporte para grupos hierárquicos de consistência"] | Os grupos hierárquicos de consistência permitem criar um grupo de consistência pai que contém vários grupos filhos de consistência. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas. 
 |===
 
