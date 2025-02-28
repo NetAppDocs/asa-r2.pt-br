@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
 summary: Saiba como instalar os kits de trilho para o sistema de armazenamento ASA R2 e as prateleiras de armazenamento e proteger o hardware ASA R2 no gabinete ou rack de telecomunicações. 
 ---
 = Instale o sistema de storage ASA R2
@@ -27,7 +27,12 @@ Depois de se preparar para instalar o sistema de storage ASA r2, instale o hardw
 .. Fixe o sistema de armazenamento ao gabinete ou rack de telecomunicações usando os parafusos de montagem incluídos.
 
 
-. Instale o compartimento de armazenamento:
+. Fixe o painel frontal à parte frontal do sistema de armazenamento.
+. Se o seu sistema ASA R2 veio com um dispositivo de gerenciamento de cabos, conete-o à parte traseira do sistema de armazenamento.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Instale o dispositivo de gerenciamento de cabos]
+
+. Instale e fixe a prateleira de armazenamento:
 +
 .. Posicione a parte de trás da prateleira de armazenamento sobre os trilhos e, em seguida, apoie a prateleira a partir da parte inferior e deslize-a para o gabinete ou rack de telecomunicações.
 +
@@ -36,11 +41,6 @@ Se você estiver instalando várias gavetas de storage, coloque o primeiro compa
 .. Fixe a prateleira de armazenamento no gabinete ou rack de telecomunicações usando os parafusos de montagem incluídos.
 
 
-. Ligue os dispositivos de gestão de cabos à parte de trás do sistema de armazenamento.
-+
-image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Instale o dispositivo de gerenciamento de cabos]
-
-. Fixe o painel frontal à parte frontal do sistema de armazenamento.
 
 
 .O que se segue?

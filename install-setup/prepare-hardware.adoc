@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/prepare-hardware.html 
-keywords: prepare, hardware installation, aff a1k, aff a70, aff a90, aff c80, asa r2, asa a1k, asa a90, asa a70 
+keywords: prepare, hardware installation, aff a1k, aff a70, aff a90, aff c80, asa r2, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
 summary: Prepare-se para instalar o sistema de storage ASA R2 em seu ambiente ONTAP e Registre o hardware para ter acesso aos benefícios de suporte. 
 ---
 = Prepare-se para instalar um sistema de storage ASA R2
@@ -20,11 +20,36 @@ Prepare-se para instalar seu sistema de armazenamento ASA r2, preparando o site,
 Para instalar o sistema de armazenamento ASA R2, certifique-se de que o local e o gabinete ou rack que você planeja usar atendam às especificações de sua configuração.
 
 .Passos
-. Use https://hwu.netapp.com["NetApp Hardware Universe"^] para confirmar se o local atende aos requisitos ambientais e elétricos do sistema de armazenamento ASA R2.
-. Certifique-se de que tem espaço de rack adequado:
+. Use https://hwu.netapp.com["NetApp Hardware Universe"^] para confirmar se o local atende aos requisitos ambientais e elétricos do sistema de armazenamento.
+. Certifique-se de ter espaço adequado para o gabinete ou rack para o seu sistema de armazenamento, prateleiras e todos os switches:
 +
-** 4U em uma configuração de HA para o sistema de storage
+[role="tabbed-block"]
+====
+.A1K
+--
+** 4U em uma configuração de HA
 ** 2U TB para cada compartimento de armazenamento de NS224 TB
+** 1U para a maioria dos interrutores
+
+
+--
+.A70 e A90
+--
+** 4U em uma configuração de HA
+** 2U TB para cada compartimento de armazenamento de NS224 TB
+** 1U para a maioria dos interrutores
+
+
+--
+.A20, A30 E A50
+--
+** 2U para um sistema de storage
+** 2U TB para cada compartimento de armazenamento de NS224 TB
+** 1U para a maioria dos interrutores
+
+
+--
+====
 
 
 . Instale todos os switches de rede necessários.
@@ -41,16 +66,12 @@ Depois de garantir que o local e o gabinete ou rack que você planeja usar para 
 
 .Passos
 . Abra cuidadosamente todas as caixas e coloque o conteúdo de forma organizada.
-. Compare o conteúdo que você descompactou com a lista no folheto de embalagem.
+. Compare o conteúdo que você descompactou com a lista no folheto de embalagem. Se houver discrepâncias, anote-as para outras ações.
 +
-
-NOTE: Você pode obter sua lista de embalagem digitalizando o código QR no lado da caixa de transporte.
+Você pode obter sua lista de embalagem digitalizando o código QR no lado da caixa de transporte.
 
 +
 Os itens a seguir são alguns dos conteúdos que você pode ver nas caixas.
-
-+
-Certifique-se de que tudo nas caixas corresponde à lista no folheto de embalagem. Se houver discrepâncias, anote-as para outras ações.
 
 +
 [cols="12,9,4"]
@@ -62,10 +83,9 @@ Certifique-se de que tudo nas caixas corresponde à lista no folheto de embalage
 
  a| 
 ** Painel frontal
-** Dispositivo de gerenciamento de cabos
 ** Sistema de storage
 ** Kits de trilhos com instruções (opcional)
-** Compartimento de armazenamento
+** Prateleira de armazenamento (se você pediu armazenamento adicional)
 
  a| 
 ** Cabos Ethernet de gerenciamento (cabos RJ-45)
@@ -85,12 +105,18 @@ Certifique-se de que tudo nas caixas corresponde à lista no folheto de embalage
 Depois de garantir que seu local atenda aos requisitos das especificações do sistema de storage ASA R2 e verificar se tem todas as peças que você solicitou, você deve Registrar seu sistema.
 
 .Passos
-. Localize o número de série do seu sistema de armazenamento.
+. Localize os números de série do seu sistema de armazenamento.
 +
-Você pode encontrar o número no boletim de embalagem, em seu e-mail de confirmação ou no módulo de gerenciamento do sistema do controlador depois de descompactá-lo.
+Você pode encontrar os números de série nos seguintes locais:
 
 +
-image::../media/drw_ssn_label.svg[Exemplo do número de série do sistema que mostra a localização do número]
+** Sobre o deslizamento da embalagem
+** No seu e-mail de confirmação
+** Em cada controlador ou em alguns sistemas, no módulo de gestão do sistema de cada controlador
++
+image::../media/drw_ssn_label.svg[Exemplo do número de série do sistema]
+
+
 
 . Vá para http://mysupport.netapp.com/["Site de suporte da NetApp"^] .
 . Determine se você precisa Registrar seu sistema de storage:
@@ -106,7 +132,7 @@ Cliente NetApp existente
 .. Inicie sessão com o seu nome de utilizador e palavra-passe.
 .. Selecione *sistemas* > *Meus sistemas*.
 .. Confirme se o novo número de série está listado.
-.. Se não estiver, siga as instruções para novos clientes NetApp.
+.. Se o número de série não estiver listado, siga as instruções para novos clientes NetApp.
 
 
 

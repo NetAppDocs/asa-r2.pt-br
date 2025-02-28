@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, power on 
-summary: Ligue cada compartimento de NS224 TB para atribuir um ID exclusivo da gaveta, ligar os controladores ASA R2 e fixar os cabos de alimentação. 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, power on 
+summary: Ligue cada gaveta para atribuir um ID exclusivo da gaveta, ligar os controladores ASA R2 e fixar os cabos de alimentação. 
 ---
 = Ligue o sistema de storage ASA R2
 :allow-uri-read: 
@@ -17,10 +17,13 @@ Depois de instalar o hardware de rack para seu sistema de storage ASA r2 e insta
 
 == Etapa 1: Ligue a prateleira e atribua o ID da prateleira
 
-Cada gaveta de NS224 TB é distinguida por um ID exclusivo da gaveta. Esse ID garante que o compartimento seja distinto na configuração do sistema de storage. Por padrão, as IDs de gaveta são atribuídas como "00" e "01", mas você pode precisar ajustar essas IDs para manter a exclusividade em todo o seu sistema de storage.
+Cada prateleira é distinguida por um ID de prateleira exclusivo. Esse ID garante que o compartimento seja distinto na configuração do sistema de storage.
 
 .Sobre esta tarefa
-* Um ID válido do compartimento é de 00 a 99.
+* Um ID válido do compartimento é de 01 a 99.
++
+Se você tiver compartimentos internos (storage), que estão integrados às controladoras, receberá um ID de compartimento fixo de 00 GB a elas.
+
 * É necessário desligar um compartimento (Desconete os dois cabos de energia, aguarde o tempo apropriado e, em seguida, conectá-los novamente) para que a ID do compartimento entre em vigor.
 
 
@@ -31,7 +34,7 @@ A prateleira liga-se e arranca automaticamente quando ligada à fonte de aliment
 
 . Remova a tampa da extremidade esquerda para acessar o botão ID da prateleira atrás da placa frontal.
 +
-image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[Altere o ID do compartimento NS224]
+image::../media/drw_change_ns224_shelf_id_ieops-836.svg[Alterar ID do compartimento]
 
 +
 [cols="20%,80%"]
@@ -39,28 +42,28 @@ image::../media/drw_a900_oie_change_ns224_shelf_id_ieops-836.svg[Altere o ID do 
 
 
  a| 
-image::../media/legend_icon_01.svg[Legenda número 1]
+image::../media/icon_round_1.png[Legenda número 1]
  a| 
 Tampa da extremidade da prateleira
 
 
 
  a| 
-image::../media/legend_icon_02.svg[[Legenda número 2]
+image::../media/icon_round_2.png[[Legenda número 2]
  a| 
 Placa frontal da prateleira
 
 
 
  a| 
-image::../media/legend_icon_03.svg[[Legenda número 3]
+image::../media/icon_round_3.png[[Legenda número 3]
  a| 
 Número de ID do compartimento
 
 
 
  a| 
-image::../media/legend_icon_04.svg[[Legenda número 4]
+image::../media/icon_round_4.png[[Legenda número 4]
  a| 
 Botão ID do compartimento
 
@@ -131,28 +134,63 @@ Depois de ativar os compartimentos de storage e atribuir a eles IDs exclusivos, 
 +
 .. Defina a porta do console serial no laptop para 115.200 baud com N-8-1.
 +
-
-NOTE: Consulte a ajuda on-line do seu laptop para obter instruções sobre como configurar a porta do console serial.
+Consulte a ajuda on-line do seu laptop para obter instruções sobre como configurar a porta do console serial.
 
 .. Conete o cabo do console ao laptop e conete a porta serial do console no controlador usando o cabo do console fornecido com o sistema de armazenamento.
 .. Conete o laptop ao switch na sub-rede de gerenciamento.
 +
+[role="tabbed-block"]
+====
+.A1K
+--
 image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Ligações da consola]
 
-.. Atribua um endereço TCP/IP ao laptop, usando um que esteja na sub-rede de gerenciamento.
+--
+.A70 e A90
+--
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Ligações da consola]
+
+--
+.A20, A30 E A50
+--
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Ligações da consola]
+
+--
+====
 
 
+
+
+. Atribua um endereço TCP/IP ao laptop, usando um que esteja na sub-rede de gerenciamento.
 . Conete os cabos de alimentação às fontes de alimentação do controlador e, em seguida, conete-os a fontes de alimentação em diferentes circuitos.
 +
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Diagrama de ligação de alimentação genérica]
+[role="tabbed-block"]
+====
+.A1K
+--
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
 
+--
+.A70 e A90
+--
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
+
+--
+.A20, A30 E A50
+--
+image::../media/drw_psu_layout_1_ieops-1886.svg[Diagrama de ligação de alimentação do sistema de armazenamento A20 ou A30 ou A50]
+
+--
+====
 +
-** O sistema de armazenamento começa a arrancar. A inicialização inicial pode levar até oito minutos.
+** O sistema começa a arrancar. A inicialização inicial pode levar até oito minutos.
 ** Os LEDs piscam e os ventiladores começam, o que indica que os controladores estão ligados.
 ** Os fãs podem ser muito barulhentos quando eles começam. O ruído da ventoinha durante o arranque é normal.
 
 
-. Fixe os cabos de alimentação utilizando o dispositivo de fixação em cada fonte de alimentação.
+
+
+. Fixe os cabos de alimentação usando o dispositivo de fixação em cada fonte de alimentação.
 
 
 .O que se segue?

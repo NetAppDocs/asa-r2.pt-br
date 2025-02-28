@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/quick-start.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, get started, getting started, quick start, install, set up 
-summary: 'Para começar a usar um sistema ASA R2 (ASA A1K, A90, A70), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.' 
-searchtitle: Instalar e configurar os sistemas de storage ASA A1K, A90 e A70 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, get started, getting started, quick start, install, set up 
+summary: 'Para começar a usar um sistema ASA R2 (ASA A1K, A90, A70, A50, A30, A20), instale o hardware, configure o cluster, configure o acesso aos dados e provisione o storage.' 
+searchtitle: Instalar e configurar os sistemas de storage ASA A1K, A90, A70, A50, A30 e A20 
 ---
 = Início rápido para sistemas de storage ASA R2
 :allow-uri-read: 

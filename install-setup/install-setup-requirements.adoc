@@ -23,7 +23,7 @@ Para instalar o sistema de storage ASA r2, você precisa dos seguintes equipamen
 * Fita de descarga eletrostática (ESD)
 * Lanterna
 * Computador portátil ou console com conexão USB/serial
-* Clipe de papel ou caneta esferográfica de ponta estreita para definir NS224 IDs de prateleira de armazenamento
+* Clipe de papel ou caneta esferográfica de ponta estreita para definir IDs de prateleira de armazenamento
 * Chave de fendas Phillips nº 2
 
 
@@ -31,7 +31,7 @@ Para instalar o sistema de storage ASA r2, você precisa dos seguintes equipamen
 
 == Precauções de elevação
 
-Os sistemas de storage da ASA r2 e NS224 compartimentos de storage são pesados. Tenha cuidado ao levantar e mover estes itens.
+Os sistemas de storage e as gavetas de storage do ASA R2 são pesados. Tenha cuidado ao levantar e mover estes itens.
 
 
 
@@ -41,29 +41,51 @@ Tome as precauções necessárias ao mover ou elevar o seu sistema de armazename
 
 [role="tabbed-block"]
 ====
-.ASA A1K
+.A1K
 --
-Um sistema de armazenamento ASA A1K pode pesar até 28,5 kg (62,83 lbs). Para levantar o sistema, utilize duas pessoas ou um elevador hidráulico.
+Um sistema de armazenamento ASA A1K pode pesar até 28,5 kg (62,83 lbs). Para levantar o sistema de armazenamento, utilize duas pessoas ou um elevador hidráulico.
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[Ícone de aviso de elevação do AFF A1K]
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Ícone de aviso de elevação do ASA A1K]
 
 --
-.ASA A70 e ASA A90
+.A70 e A90
 --
-Um sistema de armazenamento ASA A70 ou um sistema de armazenamento ASA A90 podem pesar até 68,8 kg (151,68 lbs). Para levantar o sistema, utilize quatro pessoas ou um elevador hidráulico.
+Um sistema de armazenamento ASA A70 ou ASA A90 pode pesar até 151,68 lbs (68,8 kg). Para levantar o sistema de armazenamento, utilize quatro pessoas ou um elevador hidráulico.
 
-image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90]
+
+--
+.A20, A30 E A50
+--
+Um sistema de armazenamento ASA A20, ASA A30 ou ASA A50 pode pesar até 27,9 kg (61,5 lbs). Para levantar o sistema de armazenamento, utilize duas pessoas ou um elevador hidráulico.
+
+image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20,A30,or an A50 weight caution icon]
 
 --
 ====
 
 
-=== Peso da prateleira de armazenamento
+=== Pesos da prateleira de armazenamento
 
-Uma prateleira de armazenamento de NS224 kg pode pesar até 66,78 lbs (30,29 kg). Para levantar a prateleira de armazenamento, utilize duas pessoas ou um elevador hidráulico. Mantenha todos os componentes na prateleira de armazenamento (dianteira e traseira) para evitar o desbalanceamento do peso da prateleira.
+Tome as precauções necessárias ao mover ou levantar a prateleira.
 
-image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 precaução de elevação]
+[role="tabbed-block"]
+====
+.NS224 gaveta
+--
+Uma prateleira de NS224 kg pode pesar até 66,78 lbs (30,29 kg). Para levantar a prateleira, use duas pessoas ou um elevador hidráulico. Mantenha todos os componentes na prateleira (dianteira e traseira) para evitar desequilibrar o peso da prateleira.
 
+image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 NSM100 precaução de elevação]
+
+--
+.NS224 gaveta com NSM100B módulos
+--
+Uma prateleira NS224 com NSM100B módulos pode pesar até 56,8 lbs (25,8 kg). Para levantar a prateleira, use duas pessoas ou um elevador hidráulico. Mantenha todos os componentes na prateleira (dianteira e traseira) para evitar desequilibrar o peso da prateleira.
+
+image::../media/drw_ns224_nsm100b_lifting_weight_ieops-1832.svg[NS224 com NSM100b cuidado de elevação]
+
+--
+====
 .Informações relacionadas
 * https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Informações de segurança e avisos regulamentares"^]
 
