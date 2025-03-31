@@ -1903,4 +1903,5 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Ao alternar do gerenciador de chaves integrado do ONTAP para um gerenciador de chaves externo no nível do cluster, você pode usar a interface de linha de comando (CLI) do ONTAP para migrar facilmente as chaves de criptografia de um gerenciador de chaves para o outro.</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">Descubra a sua rede de cluster</block>
+  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">Para sistemas de armazenamento ASAr2 A20, A30 ou A50, o visor de ID da prateleira na parte frontal do chassis do sistema não se acende. O ID interno do compartimento do sistema é fixado em 00.</block>
 </blocks>
