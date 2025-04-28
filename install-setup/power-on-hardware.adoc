@@ -183,10 +183,10 @@ image::../media/drw_psu_layout_1_ieops-1886.svg[Diagrama de ligação de aliment
 --
 ====
 +
-** O sistema começa a arrancar. A inicialização inicial pode levar até oito minutos.
-** Os LEDs piscam e os ventiladores começam, o que indica que os controladores estão ligados.
-** Os fãs podem ser muito barulhentos quando eles começam. O ruído da ventoinha durante o arranque é normal.
-** Para sistemas de armazenamento ASAr2 A20, A30 ou A50, o visor de ID da prateleira na parte frontal do chassis do sistema não se acende. O ID interno do compartimento do sistema é fixado em 00.
+** O sistema inicia o processo de inicialização. A sequência de arranque inicial pode demorar até oito minutos.
+** Durante o processo de inicialização, você observará os LEDs piscando e os ventiladores ativando, sinalizando que os controladores estão ligando.
+** Esteja ciente de que os ventiladores podem emitir um alto nível de ruído quando iniciarem pela primeira vez. O ruído da ventoinha durante o arranque é normal.
+** Para sistemas de storage ASA A20, ASA A30 e ASA A50, o visor de ID do compartimento na parte frontal do chassi do sistema não acende.
 
 
 
