@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30 
 summary: Saiba como instalar os kits de trilho para o sistema de armazenamento ASA R2 e as prateleiras de armazenamento e proteger o hardware ASA R2 no gabinete ou rack de telecomunicações. 
 ---
 = Instale o sistema de storage ASA R2
@@ -24,6 +24,7 @@ Depois de se preparar para instalar o sistema de storage ASA r2, instale o hardw
 . Instale e proteja seu sistema de armazenamento no gabinete ou rack de telecomunicações:
 +
 .. Posicione o sistema de armazenamento nos trilhos no meio do gabinete ou rack de telecomunicações e, em seguida, apoie o sistema de armazenamento a partir da parte inferior e deslize-o para o lugar.
+.. Certifique-se de que os pinos-guia no gabinete ou no rack de telecomunicações se encaixem com segurança nos slots-guia do sistema de armazenamento.
 .. Fixe o sistema de armazenamento ao gabinete ou rack de telecomunicações usando os parafusos de montagem incluídos.
 
 

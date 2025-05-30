@@ -52,14 +52,21 @@ image::../media/drw_a1k_weight_caution_ieops-1698.svg[Ícone de aviso de elevaç
 --
 Um sistema de armazenamento ASA A70 ou ASA A90 pode pesar até 151,68 lbs (68,8 kg). Para levantar o sistema de armazenamento, utilize quatro pessoas ou um elevador hidráulico.
 
-image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90]
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[Ícone de cuidado de peso ASA A90 ASA A70]
 
 --
 .A20, A30 E A50
 --
 Um sistema de armazenamento ASA A20, ASA A30 ou ASA A50 pode pesar até 27,9 kg (61,5 lbs). Para levantar o sistema de armazenamento, utilize duas pessoas ou um elevador hidráulico.
 
-image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20,A30,or an A50 weight caution icon]
+image::../media/drw_g_lifting_weight_ieops-1831.svg[Ícone de cuidado de peso ASA A20 A30 A50]
+
+--
+.C30
+--
+Um sistema de armazenamento ASA C30 pode pesar até 27,9 kg (61,5 lbs). Para levantar o sistema de armazenamento, utilize duas pessoas ou um elevador hidráulico.
+
+image::../media/drw_g_lifting_weight_ieops-1831.svg[Ícone de cuidado de peso ASA A20 A30 ou A50]
 
 --
 ====
