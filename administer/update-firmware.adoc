@@ -21,9 +21,9 @@ As atualizações recomendadas para firmware de armazenamento, firmware SP/BMC e
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Ativar*.
-. Leia e aceite o EULA.
-. Aceite as predefinições para atualizar automaticamente os ficheiros de firmware e de sistema. Opcionalmente, selecione para mostrar notificações ou para ignorar automaticamente as atualizações recomendadas.
+. Em *Atualizações de software*, selecione *Ativar*.
+. Leia o CLUF.
+. Aceite os padrões para *Mostrar notificação* de atualizações recomendadas. Opcionalmente, selecione *Atualizar automaticamente* ou *Descartar automaticamente* as atualizações recomendadas.
 . Selecione para confirmar que suas modificações de atualização serão aplicadas a todas as atualizações atuais e futuras.
 . Selecione *Guardar*.
 
@@ -39,7 +39,7 @@ Desative as atualizações automáticas se você quiser que a flexibilidade exib
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Desativar*.
+. Em *Atualizações de software*, selecione *Desativar*.
 
 
 .Resultado
@@ -53,7 +53,7 @@ Veja uma lista de atualizações de firmware e de ficheiros de sistema que foram
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Exibir todas as atualizações automáticas*.
+. Ao lado de *Atualizações de software* selecione image:icon_arrow.gif["seta azul apontando para a direita"] e selecione *Exibir todas as atualizações automáticas*.
 
 
 
@@ -64,7 +64,7 @@ Você pode optar por ter as atualizações recomendadas para o firmware de armaz
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Ao lado de *Atualização automática*, image:icon_kabob.gif["três pontos azuis verticais"]selecione *Editar atualizações automáticas*.
+. Ao lado de *Atualizações de software* selecione image:icon_arrow.gif["seta azul apontando para a direita"] e selecione *Todas as outras atualizações*.
 . Atualize as seleções para atualizações automáticas.
 . Selecione *Guardar*.
 
@@ -80,8 +80,9 @@ Se você quiser a flexibilidade de visualizar as atualizações recomendadas ant
 
 .Passos
 . Transfira o ficheiro de atualização do firmware para um servidor ou cliente local.
-. No System Manager, selecione *Cluster > Overview* e, em seguida, *Update*.
-. Selecione *Atualização de firmware*; image:icon_update_firmware.png["retângulo azul contendo um sinal de adição seguido das palavras atualizar firmware em letras brancas"]selecione .
+. No Gerenciador do Sistema, selecione *Cluster > Visão geral* e, em seguida, selecione *Todas as outras atualizações*.
+. Em *Atualizações manuais*, selecione *Adicionar arquivos de firmware*; depois selecione *Baixar do servidor* ou *Carregar do cliente local*.
+. Instale o arquivo de atualização de firmware.
 
 
 .Resultado

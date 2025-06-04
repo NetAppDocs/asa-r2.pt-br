@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/initialize-ontap-cluster.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, initialize cluster, set up cluster, ontap 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 initialize cluster, set up cluster, ontap 
 summary: Saiba como configurar o cluster ONTAP em um sistema ASA R2 usando o Gerenciador de sistema. 
 searchtitle: Configurar um cluster ONTAP usando o Gerenciador de sistema do ONTAP | ASA R2 
 ---

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/software-support-limitations.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa, a50, asa a30, asa a20, unsupported features 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa, a50, asa a30, asa a20, asa c30, unsupported features 
 summary: Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SAN, certos recursos de software ONTAP não são suportados. 
 ---
 = Suporte e limitações do software ONTAP para sistemas de storage ASA R2

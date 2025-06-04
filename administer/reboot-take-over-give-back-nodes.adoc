@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/reboot-take-over-give-back-nodes.html 
-keywords: reboot, take over, give back, nodes, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
+keywords: reboot, take over, give back, nodes, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
 summary: Talvez seja necessário reinicializar um nó para manutenção, solução de problemas, atualizações de software ou outros motivos administrativos. 
 ---
 = Reinicie um nó em um sistema de storage ASA R2

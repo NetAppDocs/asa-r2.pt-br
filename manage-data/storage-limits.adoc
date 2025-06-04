@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
-keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
+keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
 summary: As configurações do ASA R2 dão suporte a um máximo de 2 nós por cluster que executa os protocolos FC, iSCSI, NVMe/FC ou NVMe/TCP. 
 ---
 = Limites de armazenamento do ASA R2
