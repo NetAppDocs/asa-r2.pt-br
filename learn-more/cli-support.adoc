@@ -26,9 +26,42 @@ Os seguintes comandos e conjuntos de comandos não são suportados no ASA no R2:
 * `lun move`
 * `lun move-in-volume`
 +
-Este comando é substituído por lun rename/vserver nvme namespace rename.
+
+NOTE: O  `lun move-in-volume` o comando é substituído pelo  `lun rename` e o  `vserver nvme namespace rename` comandos.
 
 * `lun transition`
+
+
+====
+.Comandos <code>storage</code> não suportados
+[%collapsible]
+====
+* `storage failover show-takeover`
+* `storage failover show-giveback`
+* `storage aggregate relocation`
+* `storage disk assign`
+* `storage disk partition`
+* `storage disk reassign`
+
+
+====
+.Conjuntos de comandos <code>volume</code> não suportados
+[%collapsible]
+====
+* `volume activity-tracking`
+* `volume analytics`
+* `volume conversion`
+* `volume file`
+* `volume flexcache`
+* `volume flexgroup`
+* `volume inode-upgrade`
+* `volume object-store`
+* `volume qtree`
+* `volume quota`
+* `volume reallocation`
+* `volume rebalance`
+* `volume recovery-queue`
+* `volume schedule-style`
 
 
 ====
@@ -41,7 +74,7 @@ Este comando é substituído por lun rename/vserver nvme namespace rename.
 * `volume expand`
 * `volume modify`
 +
-Este comando não está disponível quando usado em conjunto com os seguintes parâmetros:
+O  `volume modify` o comando não está disponível quando usado em conjunto com os seguintes parâmetros:
 
 +
 ** `-anti-ransomware-state`
@@ -103,38 +136,6 @@ Este comando não está disponível quando usado em conjunto com os seguintes pa
 * `volume snapshot`
 * `volume snapshot autodelete modify`
 * `volume snapshot policy modify`
-
-
-====
-.Conjuntos de comandos <code>volume</code> não suportados
-[%collapsible]
-====
-* `volume activity-tracking`
-* `volume analytics`
-* `volume conversion`
-* `volume file`
-* `volume flexcache`
-* `volume flexgroup`
-* `volume inode-upgrade`
-* `volume object-store`
-* `volume qtree`
-* `volume quota`
-* `volume reallocation`
-* `volume rebalance`
-* `volume recovery-queue`
-* `volume schedule-style`
-
-
-====
-.Comandos <code>storage</code> não suportados
-[%collapsible]
-====
-* `storage failover show-takeover`
-* `storage failover show-giveback`
-* `storage aggregate relocation`
-* `storage disk assign`
-* `storage disk partition`
-* `storage disk reassign`
 
 
 ====

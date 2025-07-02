@@ -852,13 +852,9 @@
   <block id="a72b8be483491b0d1db823bb36907bfd" category="example-title">Comandos &lt;code&gt; lun&lt;/code&gt; não suportados</block>
   <block id="796b405c9879ad0e08e0cd88cd3b3e16" category="list-text"><block ref="792ce1786b8a3a128a82817b09eedada" prefix="" category="inline-code"></block></block>
   <block id="1388cc53eae6c07af7f412dcc77461a9" category="list-text"><block ref="845a2fac965d9f41d0e11a08d1c7197e" prefix="" category="inline-code"></block></block>
-  <block id="a678425b303b1c78848e9a35c2a8efed" category="list-text"><block ref="49825176b871bf1fa1ea240a4c0e80c0" prefix="" category="inline-code"></block></block>
-  <block id="138a48c530be7f4d427db326006579dc" category="list-text"><block ref="c88a845d3f2d62180e81c5ca0791ece4" prefix="" category="inline-code"></block></block>
-  <block id="80ba53db01788531a5ea38bc875ea25a" category="list-text"><block ref="c08e62a617ee76b9db618195e488efc3" prefix="" category="inline-code"></block></block>
   <block id="852cd11b2037d4dd0acd862bd2b9a5c9" category="list-text"><block ref="8a51b9d3d65c60087c0b81531c48360a" prefix="" category="inline-code"></block></block>
   <block id="800c3de4f10284b3da9be36c5b86898b" category="list-text"><block ref="60464fc4c055fe08ca731eab1dc2f87d" prefix="" category="inline-code"></block></block>
   <block id="ac96eb3372551e58a814ec8a5443e076" category="list-text"><block ref="787f67886dcefe1e2ad298992552116f" prefix="" category="inline-code"></block></block>
-  <block id="19aaf59eca0b457eb8afda83c65db41d" category="paragraph">Este comando é substituído por lun rename/vserver nvme namespace rename.</block>
   <block id="409d4da51e04f9d009857926014f1f37" category="list-text"><block ref="4def11aec86ba055ee41339ba1c11137" prefix="" category="inline-code"></block></block>
   <block id="2ea7bbd3ec6708c463a3dcac7475cf58" category="example-title">Comandos e parâmetros &lt;code&gt;volume&lt;/code&gt; não suportados</block>
   <block id="2a906a9efdb7cde720cd1b69964f71fa" category="list-text"><block ref="08607041eac05174afe1b626af31d17e" prefix="" category="inline-code"></block></block>
@@ -866,7 +862,6 @@
   <block id="80a7f4afc88dac6bf5cd511e7ef0628b" category="list-text"><block ref="d612b8e8dccca73b159ea44a402945a2" prefix="" category="inline-code"></block></block>
   <block id="9c0466552ede7ceccb2d111a3ea6a49a" category="list-text"><block ref="a16771dcf5c4a1b4cc61e867cb5c496b" prefix="" category="inline-code"></block></block>
   <block id="faeb16362aebc71b59f22777fa1f310b" category="list-text"><block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix="" category="inline-code"></block></block>
-  <block id="815606831020d956df025c86edf87cd4" category="paragraph">Este comando não está disponível quando usado em conjunto com os seguintes parâmetros:</block>
   <block id="cb155f4d5f8a9131448477feb45b8144" category="list-text"><block ref="3995205b73c95cf4655601532809ee8a" prefix="" category="inline-code"></block></block>
   <block id="76ad5e438b8e39b492eff70a01526a5a" category="list-text"><block ref="f2ed04497fb3c35266d07f3bc29cdad9" prefix="" category="inline-code"></block></block>
   <block id="77c18cea7f8f79214c57081598086362" category="list-text"><block ref="0da37a1d041b48a1054dcf98e3d74dcf" prefix="" category="inline-code"></block></block>
@@ -1961,4 +1956,6 @@
   <block id="c3993bfac3ec8dac794fe31c3a3f3195" category="summary">Certos comandos ONTAP não são suportados em sistemas ASA r2 (ASA A1K, ASA 90, ASA 70, ASA A50, ASA A30, ASA A20, ASA C30).</block>
   <block id="13af08b425d55aad64c53d60ae2a530a" category="sidebar">Os sistemas NetApp ASA r2 (ASA A1K, ASA A90, ASA A70, ASA A50, ASA A30, ASA A20, ASA C30) oferecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes somente SAN.</block>
   <block id="3087fbc39029f766e18398db33407a03" category="paragraph">Para ajudar a proteger seus dados contra ataques maliciosos, como roubo ou ransomware, os sistemas ASA r2 oferecem suporte a um gerenciador de chaves integrado, criptografia de camada dupla, autenticação multifator e verificação multiadministradora. Snapshots à prova de violação também são suportados em sistemas ASA r2 secundários.</block>
+  <block id="80b47f1753b3cb7e47c4279f47da1cd4" category="admonition">O <block ref="787f67886dcefe1e2ad298992552116f" prefix=" " category="inline-code"></block> o comando é substituído pelo <block ref="80d8c5e05b7dc47d7d3de5d888476621" prefix=" " category="inline-code"></block> e o <block ref="53707b9f629f540e205f4dfa772722ca" prefix=" " category="inline-code"></block> comandos.</block>
+  <block id="80c0eacc1ee22ae50cd37d4e7eaf12a0" category="paragraph">O <block ref="9f9fc58b577820fbcd41ff15739ed6f0" prefix=" " category="inline-code"></block> o comando não está disponível quando usado em conjunto com os seguintes parâmetros:</block>
 </blocks>
