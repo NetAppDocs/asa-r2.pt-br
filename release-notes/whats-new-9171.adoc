@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9171.html 
+keywords: 'what"s new, release notes, 9.17.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.17.1 para sistemas ASA r2. 
+---
+= Novidades no ONTAP 9.17.1 para sistemas ASA r2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis no ONTAP 9.17.1 para sistemas ASA r2.
+
+
+
+== Migração de dados SAN
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["Suporte para migração de dados de um sistema de armazenamento de terceiros"] | A migração de dados SAN usando Importação de LUN Estrangeiro (FLI) é compatível com sistemas ASA r2. A FLI permite migrar dados de um LUN em um sistema de armazenamento de terceiros para um sistema ASA r2. 
+|===
+
+
+== Proteção de dados
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../secure-data/enable-anti-ransomware-protection.html["Suporte para proteção autônoma contra ransomware com inteligência artificial (ARP/IA)"] | O ARP/AI pode ser habilitado em unidades de armazenamento ASA r2. O ARP/AI oferece proteção adicional de dados, detectando e reportando potenciais ataques de ransomware sem período de aprendizagem. 
+
+
+| link:../data-protection/snapmirror-active-sync.html["Sincronização Ativa SnapMirror"] | O SnapMirror Active Sync adiciona suporte para cargas de trabalho VMware com acesso a hosts NVMe/TCP e NVMe/FC para clusters ONTAP de dois nós. O suporte a cargas de trabalho VMware para NVMe/TCP depende da resolução do bug da VMware ID: TR1049746. 
+|===
+
+
+== Eficiência de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/hardware-comparison.html["Suporte para balanceamento automático de carga de trabalho"] | As cargas de trabalho são balanceadas automaticamente entre os nós de um par de HA para otimizar o desempenho e a utilização de recursos. 
+|===

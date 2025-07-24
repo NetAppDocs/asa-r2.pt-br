@@ -4,7 +4,7 @@ permalink: secure-data/ransomware-protection.html
 keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
 summary: Use snapshots à prova de violação para proteger seus dados. Os snapshots à prova de violação não podem ser excluídos e podem ser usados para recuperar dados comprometidos por um ataque de ransomware. 
 ---
-= Proteger contra ataques de ransomware em sistemas de storage ASA R2
+= Crie instantâneos à prova de violação para proteger contra ataques de ransomware em sistemas de armazenamento ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

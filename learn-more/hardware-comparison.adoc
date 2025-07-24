@@ -12,7 +12,22 @@ searchtitle: Compare os sistemas ASA R2 com outros sistemas ONTAP
 
 
 [role="lead"]
-Os sistemas ASA R2 oferecem uma solução de hardware e software para ambientes somente SAN desenvolvidos em plataformas all-flash. Os sistemas ASA R2 variam de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua camada de storage, protocolos compatíveis e personalidade do ONTAP.
+Os sistemas ASA r2 oferecem uma solução de hardware e software para ambientes somente SAN, construídos em plataformas totalmente flash. Os sistemas ASA r2 diferem de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua personalidade ONTAP , camada de armazenamento e protocolos suportados.
+
+As seguintes plataformas ASA são classificadas como sistemas ASA R2:
+
+* ASA A1K
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+* ASA C30
+
+
+
+
+== Diferenças de personalidade
 
 Em um sistema ASA R2, o software ONTAP é otimizado para oferecer suporte à funcionalidade essencial da SAN, ao mesmo tempo em que limita a visibilidade e a disponibilidade de recursos e funções que não sejam relacionados à SAN. Por exemplo, o Gerenciador de sistema em execução em um sistema ASA R2 não exibe opções para criar diretórios base para clientes nas. Esta versão simplificada do ONTAP é identificada como a personalidade _ASA R2_. O ONTAP executado em sistemas ASA é identificado como _ASA ONTAP Personality_. ONTAP executado em sistemas AFF e FAS ONTAP é identificado como a personalidade ONTAP unificada_. As diferenças entre as personalidades do ONTAP são referenciadas na referência de comando do ONTAP (páginas man), na especificação REST API e nas mensagens EMS, quando aplicável.
 
@@ -24,11 +39,35 @@ Você pode verificar a personalidade do seu storage da ONTAP no Gerenciador do s
 
 A personalidade do seu sistema de storage ONTAP não pode ser alterada.
 
-A camada de storage para sistemas ONTAP que executam a personalidade ONTAP unificada usa agregados como unidade base de storage. Um agregado possui um conjunto específico de discos disponíveis em um sistema de storage. O agregado aloca espaço nos discos que possui para volumes para LUNs e namespaces. Um usuário unificado do ONTAP pode usar a interface de linha de comando (CLI) para criar e modificar agregados, volumes, LUNs e namespaces.
 
-A camada de storage em sistemas ASA R2 usa uma zona de disponibilidade de storage em vez de agregados. Uma zona de disponibilidade de armazenamento é um pool comum de armazenamento que tem acesso a todos os discos disponíveis no sistema de armazenamento. A zona de disponibilidade de storage fica visível para ambos os nós em um par de HA ASA R2. Quando uma unidade de armazenamento (baseada em um LUN ou um namespace NVMe) é criada, o ONTAP cria automaticamente um volume dentro da máquina virtual de armazenamento (VM) selecionada na zona de disponibilidade de armazenamento para hospedar a unidade de armazenamento. Devido a essa abordagem automatizada e simplificada para o gerenciamento de storage, certas opções do System Manager, comandos ONTAP e pontos de extremidade da API REST não estão disponíveis ou têm uso limitado em um sistema ASA R2. Por exemplo, como a criação e o gerenciamento de volumes são automatizados para sistemas ASA R2, o menu *volumes* não aparece no Gerenciador de sistemas e o `volume create` comando não é suportado.
 
-O storage do ASA R2 é comparado a outros sistemas de storage da ONTAP das seguintes maneiras:
+== Diferenças na camada de armazenamento
+
+Os sistemas ASA r2 usam uma camada de armazenamento simplificada que é diferente da camada de armazenamento usada pelos sistemas FAS, AFF e ASA .
+
+.Sistemas FAS, AFF e ASA
+A camada de armazenamento para sistemas FAS, AFF e ASA utiliza agregados como unidade base de armazenamento. Um agregado possui um conjunto específico de discos disponíveis em um sistema de armazenamento. O agregado aloca espaço nos discos que possui para volumes para LUNs e namespaces. Com esses sistemas, os usuários do ONTAP podem criar e modificar agregados, volumes, LUNs e namespaces.
+
+.Sistemas ASA r2
+Em vez de agregados, a camada de armazenamento em sistemas ASA r2 utiliza zonas de disponibilidade de armazenamento. Uma zona de disponibilidade de armazenamento é um conjunto comum de armazenamento disponível para ambos os nós de um único par de alta disponibilidade. Ambos os nós no par de alta disponibilidade têm acesso a todos os discos disponíveis em sua zona de disponibilidade de armazenamento compartilhada. Por exemplo, em um cluster ONTAP de um sistema ASA r2 de 2 nós, há uma zona de disponibilidade de armazenamento, acessível por ambos os nós do cluster. Em um cluster ONTAP de um sistema ASA r2 de 4 nós, há duas zonas de disponibilidade de armazenamento. Cada par de alta disponibilidade no cluster tem acesso a uma das zonas de disponibilidade de armazenamento.
+
+Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. Dependendo da sua versão do ONTAP, os sistemas ASA r2 também suportam o rebalanceamento automático de unidades de armazenamento na zona de disponibilidade de armazenamento e o rebalanceamento automático de cargas de trabalho entre os nós em um par de HA.
+
+* Rebalanceamento automático de unidades de armazenamento
++
+A partir do ONTAP 9.16.1, se uma unidade de armazenamento aumentar ou diminuir de uma forma que crie um desequilíbrio na utilização do armazenamento na zona de disponibilidade de armazenamento, o ONTAP moverá automaticamente as unidades de armazenamento conforme necessário para reequilibrar a utilização e otimizar o desempenho.
+
+* Rebalanceamento automático de carga de trabalho
++
+A partir do ONTAP 9.17.1, o ONTAP rebalanceia automaticamente as cargas de trabalho entre os nós em um par de HA do sistema ASA r2 para otimizar o desempenho. Por exemplo, se a utilização em um nó aumentar para 70% enquanto a utilização em seu parceiro de HA for de apenas 30%, o ONTAP desloca automaticamente as cargas de trabalho para que a utilização de cada nó seja mais próxima. Como os nós do par de HA compartilham a mesma zona de disponibilidade de armazenamento, o rebalanceamento da carga de trabalho é uma operação sem cópias e sem impacto no desempenho. O rebalanceamento automático da carga de trabalho é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Você pode link:../administer/rebalance-workloads.html["alterar a configuração padrão"] para habilitar ou desabilitar o rebalanceamento automático da carga de trabalho ou para colocá-lo em um estado de consultoria para sinalizar cargas de trabalho que estão desequilibradas sem movê-las automaticamente.
+
+
+
+
+
+== Resumo das diferenças do sistema ASA R2
+
+Os sistemas ASA r2 diferem dos sistemas FAS, AFF e ASA nas seguintes maneiras:
 
 [cols="1h,2,2,2,2"]
 |===
@@ -54,26 +93,7 @@ O storage do ASA R2 é comparado a outros sistemas de storage da ONTAP das segui
 *Suporte de camada de armazenamento*
 | Zona de disponibilidade de armazenamento | Agregados | Agregados | Agregados 
 |===
-As seguintes plataformas ASA são classificadas como sistemas ASA R2:
-
-* ASA A1K
-* ASA A90
-* ASA A70
-* ASA A50
-* ASA A30
-* ASA A20
-* ASA C30
-
-
-.Para mais informações
-* Saiba mais link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["Sistemas de hardware ONTAP"^]sobre o .
-* Consulte o suporte completo à configuração e as limitações dos sistemas ASA e ASA R2 no link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
-* Saiba mais sobre o link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
-
-
-
-
-== Resumo das diferenças do sistema ASA R2
+Devido a essa abordagem automatizada e simplificada para o gerenciamento de armazenamento, certas opções do Gerenciador de Sistemas, comandos ONTAP e endpoints da API REST não estão disponíveis ou têm uso limitado em um sistema ASA r2. Por exemplo, como a criação e o gerenciamento de volumes são automatizados para sistemas ASA r2, o menu *Volumes* não aparece no Gerenciador de Sistemas e o  `volume create` O comando não é suportado. link:cli-support.html["Saiba mais sobre comandos ASA r2 não suportados"] .
 
 As principais diferenças entre os sistemas ASA R2 e os sistemas FAS, AFF e ASA relevantes para a interface de linha de comando (CLI) do ONTAP e API REST são descritas abaixo.
 
@@ -88,3 +108,9 @@ As unidades de storage são sempre provisionadas de forma fina nos sistemas de s
 
 .Alterações na compressão de dados
 A eficiência de storage sensível à temperatura não é aplicada em sistemas ASA R2. Em sistemas ASA R2, a compactação não é baseada em dados _hot_ (acessados com frequência) ou dados _cold_ (acessados com pouca frequência). A compactação começa sem esperar que os dados fiquem frios.
+
+.Para mais informações
+* Saiba mais link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["Sistemas de hardware ONTAP"^]sobre o .
+* Consulte o suporte completo à configuração e as limitações dos sistemas ASA e ASA R2 no link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+* Saiba mais sobre o link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^].
+

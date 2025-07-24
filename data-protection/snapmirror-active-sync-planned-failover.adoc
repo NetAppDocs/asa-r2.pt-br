@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-planned-failover.html 
+keywords: snapmirror active sync, planned failover, disaster recovery, business continuity, data replication, ONTAP, secondary site, continuous availability 
+summary: Aprenda a executar um failover planejado de relacionamentos de sincronização ativa do SnapMirror para garantir a continuidade dos negócios e a recuperação de desastres. 
+---
+= Executar um failover planejado de clusters ASA r2 em um relacionamento de sincronização ativa do SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O SnapMirror Active Sync oferece disponibilidade contínua para aplicativos críticos de negócios, criando uma cópia dos seus dados em um site secundário e permitindo que seus aplicativos host façam failover de forma automática e transparente em caso de desastre. Pode ser necessário executar um failover planejado do seu relacionamento com o SnapMirror Active Sync para testar o processo de failover ou realizar manutenção no site principal.
+
+.Antes de começar
+* O relacionamento de sincronização ativa do SnapMirror deve estar sincronizado.
+* Não é possível iniciar um failover planejado quando uma operação não disruptiva, como uma movimentação de unidade de armazenamento, estiver em andamento.
+* O ONTAP Mediator ou ONTAP Cloud Mediator deve estar configurado, conectado e em quorum.
+
+
+.Passos
+. Selecione *Proteção > Replicação*.
+. Selecione o relacionamento de sincronização ativa do SnapMirror no qual você deseja fazer failover.
+. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ; então selecione *Failover*.
+
+
+.O que vem a seguir
+Use o  `snapmirror failover show` comando na interface de linha de comando (CLI) do ONTAP para monitorar o status do failover.

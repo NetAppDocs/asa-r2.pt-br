@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: secure-data/pause-resume-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, pause, resume, suspend 
+summary: Se você estiver planejando um evento de carga de trabalho incomum, poderá suspender temporariamente a análise ARP/AI para evitar detecções de falsos positivos de ataques de ransomware. 
+---
+= Pause ou retome a proteção autônoma contra ransomware com IA em seus sistemas de armazenamento ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partir do ONTAP 9.17.1, você pode usar a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) para proteger os dados no seu sistema ASA r2. Se estiver planejando um evento de carga de trabalho incomum, você pode suspender temporariamente a análise de ARP/AI para evitar detecções de falsos positivos de ataques de ransomware. Após a conclusão do evento de carga de trabalho, você pode retomar a análise de ARP/AI.
+
+
+
+== Pausar ARP/AI
+
+Antes de iniciar um evento de carga de trabalho incomum, pode ser necessário suspender temporariamente a análise de ARP/AI para evitar detecções de falsos positivos de ataques de ransomware.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Selecione as unidades de armazenamento para as quais você deseja pausar o ARP/AI.
+. Selecione *Pausar anti-ransomware*.
+
+
+.Resultado
+A análise de ARP/AI é pausada para as unidades de armazenamento selecionadas, e nenhuma atividade suspeita é relatada a você no Gerenciador do Sistema até que você retome o ARP/AI.
+
+
+
+== Retomar ARP/AI
+
+Se você pausar o ARP/AI durante uma carga de trabalho incomum, após a conclusão da carga de trabalho, você deverá retomá-la para proteger seus dados contra ataques de ransomware.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Selecione as unidades de armazenamento para as quais você deseja retomar o ARP/AI.
+. Selecione *Retomar anti-ransomware*.
+
+
+.Resultado
+A análise de potenciais ataques de ransomware é retomada e atividades suspeitas são reportadas a você no Gerenciador do Sistema.

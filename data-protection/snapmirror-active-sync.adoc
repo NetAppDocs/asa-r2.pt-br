@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, zero rpo, zero rto, disaster recovery, symmetric active/active, workflow 
+summary: 'Use a sincronização ativa do SnapMirror para proteger aplicativos host que exigem um objetivo de ponto de recuperação zero (RPO) e um objetivo de tempo de recuperação zero (RTO) contra interrupções devido a uma interrupção inesperada ou desastre no site.' 
+---
+= Fluxo de trabalho de configuração de sincronização ativa do SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A proteção de dados de sincronização ativa do ONTAP SnapMirror permite que os serviços empresariais continuem operando mesmo em caso de falha total do site, permitindo que os aplicativos realizem failover de forma transparente usando uma cópia secundária. Com a sincronização ativa do SnapMirror , não é necessária intervenção manual ou script personalizado para acionar um failover.
+
+Embora os procedimentos do System Manager para configurar a sincronização ativa do SnapMirror sejam diferentes em sistemas ASA r2 do que em sistemas NetApp FAS, AFF e ASA que executam a personalidade ONTAP unificada, os requisitos, a arquitetura e a operação da sincronização ativa do SnapMirror são os mesmos.
+
+link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Saiba mais sobre a sincronização ativa do SnapMirror"^] .
+
+Em sistemas ASA r2, a sincronização ativa do SnapMirror suporta configurações simétricas ativa/ativa. Em uma configuração simétrica ativa/ativa, ambos os sites podem acessar o armazenamento local para E/S ativa.
+
+Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurações simétricas ativas/ativas"^] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Prepare-se para configurar a sincronização ativa do SnapMirror .
+[role="quick-margin-para"]
+Para link:snapmirror-active-sync-prepare.html["prepare-se para configurar a sincronização ativa do SnapMirror"] no seu sistema ASA r2, você deve revisar os pré-requisitos de configuração, confirmar o suporte para seus sistemas operacionais host e estar ciente dos limites de objetos que podem afetar a configuração específica.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Dois"] Confirme a configuração do seu cluster.
+[role="quick-margin-para"]
+Antes de configurar a sincronização ativa do SnapMirror , você deve link:snapmirror-active-sync-confirm-cluster-configuration.html["confirme se seus clusters ASA r2 estão nos relacionamentos de peering adequados e atendem a outros requisitos de configuração"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Três"] Instale o ONTAP Mediator.
+[role="quick-margin-para"]
+Você pode usar o ONTAP Mediator ou o ONTAP Cloud Mediator para monitorar a integridade do seu cluster e garantir a continuidade dos negócios. Se estiver usando o ONTAP Mediator, você deve: link:install-ontap-mediator.html["instale-o"] no seu host. Se estiver usando o ONTAP Cloud Mediator, você pode pular esta etapa.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"] Configure o ONTAP Mediator ou o ONTAP Cloud Mediator usando certificados autoassinados.
+[role="quick-margin-para"]
+Você deve link:configure-ontap-mediator.html["configurar o mediador ONTAP ou o mediador de nuvem ONTAP"] antes de poder começar a usá-lo com o SnapMirror Active Sync para monitoramento de cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Configurar sincronização ativa do SnapMirror .
+[role="quick-margin-para"]
+link:configure-snapmirror-active-sync.html["Configurar sincronização ativa do SnapMirror"] para criar uma cópia dos seus dados em um site secundário e permitir que seus aplicativos host façam failover de forma automática e transparente no caso de um desastre.

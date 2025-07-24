@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-host-groups.html 
+keywords: delete host groups, remove host groups, igroup, nvme subsystem, asa r2 
+summary: Exclua grupos de hosts para remover o acesso do host às unidades de armazenamento no seu sistema ASA r2. 
+---
+= Excluir um grupo de hosts no seu sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Em um sistema ASA r2, um grupo de hosts é o mecanismo usado para conceder aos hosts acesso às unidades de armazenamento. Um grupo de hosts refere-se a um igroup para hosts SCSI ou a um subsistema NVMe para hosts NVMe. Um host só pode ver as unidades de armazenamento mapeadas aos grupos de hosts aos quais pertence. Talvez você queira excluir um grupo de hosts se não quiser mais que os hosts do grupo tenham acesso às unidades de armazenamento mapeadas a ele.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Em *Mapeamento de host*, selecione o grupo de hosts que você deseja excluir.
+. Selecione *Armazenamento mapeado*.
+. Selecione *Mais*; depois selecione *Excluir*.
+. Selecione para verificar se você deseja continuar; depois selecione *Excluir*.
+
+
+.O que se segue?
+O grupo de hosts é excluído. Os hosts que estavam no grupo não têm mais acesso às unidades de armazenamento mapeadas para o grupo de hosts.

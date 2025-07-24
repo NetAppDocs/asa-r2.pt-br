@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: data-protection/create-svm-peer-relationship.html 
+keywords: restore data, asa r2, data restoration 
+summary: Se os dados de um grupo de consistência estiverem corrompidos ou perdidos, você poderá restaurar todo o grupo de consistência a partir de um snapshot remoto. 
+---
+= Crie um relacionamento de pares de VMs de armazenamento intercluster em sistemas de armazenamento ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um relacionamento de pares define conexões de rede que permitem que clusters e máquinas virtuais (VMs) de armazenamento troquem dados com segurança. Crie relacionamentos de pares entre VMs de armazenamento em diferentes clusters para permitir a proteção de dados e a recuperação de desastres usando o SnapMirror.
+
+link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Saiba mais sobre relacionamentos entre pares"^] .
+
+.Antes de começar
+Você deve ter estabelecido um relacionamento de par de cluster entre os clusters local e remoto antes de poder criar um relacionamento de par de VM de armazenamento. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Criar um relacionamento de pares de cluster"] se você ainda não o fez.
+
+.Passos
+. No Gerenciador do Sistema, selecione *Proteção > Visão geral*.
+. Em *Pares de VM de armazenamento* selecione *Adicionar um par de VM de armazenamento*.
+. Selecione a VM de armazenamento no cluster local; em seguida, selecione a VM de armazenamento no cluster remoto.
+. Selecione *Adicionar um peer de VM de armazenamento*.
+

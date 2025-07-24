@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: secure-data/respond-anti-ransomware-protection-alerts.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Veja avisos de possíveis ataques de ransomware e tome medidas no Gerenciador do Sistema. 
+---
+= Responda à proteção autônoma contra ransomware com alertas de IA em sistemas de armazenamento ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) detectar atividade anormal em uma ou mais unidades de armazenamento do seu sistema ASA r2, um aviso será gerado no painel do Gerenciador de Sistemas. Você deve visualizar o aviso, verificar a atividade e, se necessário, tomar medidas para impedir qualquer ameaça potencial aos seus dados.
+
+Se uma mensagem de aviso ARP/AI for exibida, antes de tomar qualquer medida, você deve usar o verificador de integridade do aplicativo apropriado para verificar a integridade dos dados na unidade de armazenamento. Verificar a integridade dos dados da unidade de armazenamento ajuda a determinar se a atividade é aceitável ou se se trata de um possível ataque de ransomware.
+
+[cols="2,2"]
+|===
+| Se a atividade anormal for ... | Então faça isto... 
+
+
+| Aceitável | Marque a atividade como um falso positivo. 
+
+
+| Um potencial ataque de ransomware | Marque a atividade como um possível ataque de ransomware. 
+
+
+| Indeterminado | Não tome medidas imediatas. Monitore a unidade de armazenamento por até 7 dias. Se a unidade de armazenamento continuar operando normalmente, marque a atividade como um falso positivo. Se a unidade de armazenamento continuar apresentando atividade anormal, marque a atividade como um possível ataque de ransomware. 
+|===
+.Passos
+. No System Manager, selecione *Dashboard*.
++
+Se o ARP detectar atividade anormal em uma ou mais unidades de armazenamento, uma mensagem será exibida em *Avisos*.
+
+. Selecione a mensagem de aviso.
+. Em *Visão geral de eventos*, selecione a mensagem *Avisos* que indica o número de unidades de armazenamento com atividade anormal.
+. Em *Unidades de armazenamento com atividade anormal*, selecione a unidade de armazenamento.
+. Selecione *Segurança*.
++
+Se houver atividade anormal na unidade de armazenamento, uma mensagem será exibida em *Anti-ransomware*.
+
+. Selecione *Escolher uma ação*.
+. Selecione *Marcar como falso positivo* ou selecione *Marcar como possível ataque de ransomware*.
+

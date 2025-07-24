@@ -19,10 +19,16 @@ Os sistemas ASA R2 suportam o seguinte:
 |===
 
 
-| Máximo de nós por cluster | 12 
+| Número máximo de nós por cluster | 12 
+
+
+| Número máximo de unidades de armazenamento por cluster | 30.000 
 
 
 | Tamanho máximo da unidade de armazenamento | 128 TB 
+
+
+| Tamanho máximo da zona de disponibilidade de armazenamento | 2 PB 
 |===
 .Para mais informações
 Para obter uma lista completa dos limites de armazenamento mais atuais do ASA R2, link:https://hwu.netapp.com/["NetApp Hardware Universe"^]consulte .

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: secure-data/modify-arp-snapshot-retention-period.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Aprenda como modificar os períodos de retenção de snapshots do ARP para atender às suas necessidades de armazenamento e negócios. 
+---
+= Modificar períodos de retenção de snapshots ARP/AI em sistemas de armazenamento ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) detectar atividade anormal em uma ou mais unidades de armazenamento do seu sistema ASA r2, ela criará automaticamente um snapshot ARP para proteger os dados da unidade de armazenamento. Dependendo da sua capacidade de armazenamento e dos requisitos de negócios para seus dados, você pode aumentar ou diminuir o período de retenção padrão do snapshot ARP. Por exemplo, você pode aumentar o período de retenção para aplicativos críticos para os negócios, de modo que, se necessário, tenha períodos de retenção mais longos para recuperação de dados, ou pode diminuir o período de retenção para aplicativos não críticos, economizando espaço de armazenamento.
+
+O período de retenção padrão para o snapshot do ARP varia dependendo da ação que você toma em resposta à atividade anormal.
+
+[cols="2,2"]
+|===
+| Se você tomar essa atitude... | Os instantâneos ARP são retidos por padrão para... 
+
+
+| Marcar como falso positivo | 12 horas 
+
+
+| Marcar como potencial ataque de ransomware | 7 dias 
+
+
+| Não tome medidas imediatas | 10 dias 
+|===
+Os períodos de retenção padrão podem ser modificados usando a interface de linha de comando (CLI) do ONTAP . Veja  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modificar opções para snapshots automáticos do ONTAP"] para saber as etapas para alterar o período de retenção padrão.
