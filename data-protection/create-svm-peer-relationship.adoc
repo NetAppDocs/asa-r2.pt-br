@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/create-svm-peer-relationship.html 
-keywords: restore data, asa r2, data restoration 
-summary: Se os dados de um grupo de consistência estiverem corrompidos ou perdidos, você poderá restaurar todo o grupo de consistência a partir de um snapshot remoto. 
+keywords: create, svm peer relationship, asa r2, data protection 
+summary: Crie relacionamentos de pares entre VMs de armazenamento em diferentes clusters para permitir a proteção de dados e a recuperação de desastres usando o SnapMirror. 
 ---
 = Crie um relacionamento de pares de VMs de armazenamento intercluster em sistemas de armazenamento ASA r2
 :allow-uri-read: 

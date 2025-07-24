@@ -398,7 +398,6 @@
   <block id="2aa13c213ee88c84d981559bd42eafe9" category="list-text">Passe o Mouse sobre a política de replicação que você deseja editar; em seguida, <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>selecione .</block>
   <block id="a5e06406af0ed5340393cd73877c6372" category="list-text">Atualize a política; em seguida, selecione *Salvar*.</block>
   <block id="c3fcac5f888af495cdddd6f927ac06f4" category="paragraph">Você modificou a política de replicação.</block>
-  <block id="bbc80da4f9de51946791e7637ce0a3d6" category="summary">Use o Astra Control para migrar aplicações e dados de um cluster Kubernetes para outro, replicar aplicações para sistemas remotos e clonar aplicações.</block>
   <block id="d24d04b05bbac5cac892cbefd2a83130" category="doc">Proteja suas aplicações Kubernetes em sistemas de storage ASA R2</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="paragraph-title">Para mais informações</block>
   <block id="8833f2f06409ffe6dc4a7935b76b0754" category="summary">Se os dados de um grupo de consistência estiverem corrompidos ou perdidos, você poderá restaurar todo o grupo de consistência a partir de um snapshot remoto.</block>
@@ -1989,8 +1988,6 @@
   <block id="2a8a59c901b916190a5f0c2fc9db590e" category="cell">Excluir os relacionamentos de importação ativos</block>
   <block id="2d1eaa6efdb3bbcbeddb0390177c033f" category="cell">Proteção anti-ransomware habilitada</block>
   <block id="e8718651f207e77e4c3719811e7c0cf4" category="cell">Desativar proteção anti-ransomware</block>
-  <block id="1996460c612249c4e9073063973db5cf" category="summary">Aprenda a configurar o ONTAP Mediator com certificados autoassinados para sistemas ASA r2.</block>
-  <block id="438b149138b2eb032ac73f3ee85a50f1" category="doc">Configurar o Mediador usando certificados autoassinados em sistemas ASA r2</block>
   <block id="46a90b9185317a19d7817a93ff7da452" category="paragraph">Você deve configurar o ONTAP Mediator ou o ONTAP Cloud Mediator antes de começar a usar a sincronização ativa do SnapMirror para monitoramento de cluster. O ONTAP Mediator e o ONTAP Cloud Mediator fornecem um armazenamento persistente e protegido para metadados de alta disponibilidade (HA) usados pelos clusters ONTAP em um relacionamento de sincronização ativa do SnapMirror . Além disso, ambos os mediadores fornecem uma funcionalidade de consulta de integridade de nó síncrona para auxiliar na determinação de quorum e servem como um proxy de ping para detecção de atividade do controlador.</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">pré-requisitos</block>
   <block id="e67055b6d8c65ffeed652e0147459791" category="list-text">Se você estiver usando o ONTAP Cloud Mediator, verifique se o seu sistema ASA r2 atende aos requisitos <block ref="efcd0c458e1c451926dd33228d1c1e37" category="inline-link-macro-rx"></block> .</block>
@@ -2018,7 +2015,6 @@
   <block id="842dcef5223aaf88ec80c981db6281af" category="list-text">Selecione a VM de armazenamento.</block>
   <block id="533fb0f30c2a24bf44c7a68b00aed588" category="list-text">Para a política de replicação, selecione *AutomatedFailOverDuplex*.</block>
   <block id="28dda6c6cd8928858d47bf343ece67f7" category="list-text">Se você estiver criando uma configuração ativa/ativa simétrica não uniforme, selecione *Configurações de destino*; em seguida, insira o nome do novo grupo de consistência de destino criado antes de iniciar este procedimento.</block>
-  <block id="2669d1e1577667b5c6ef9d1d66a9d293" category="paragraph">A sincronização ativa do SnapMirror é configurada para proteger seus dados para que você possa continuar as operações com objetivo de ponto de recuperação zero (RPO) e objetivo de tempo de recuperação zero (RTO) em caso de desastre.</block>
   <block id="9973b2dc6ff0d198b66645d9b9f56c95" category="doc">Crie um relacionamento de pares de VMs de armazenamento intercluster em sistemas de armazenamento ASA r2</block>
   <block id="2b85569d3702bb2d36113451710361a0" category="paragraph">Um relacionamento de pares define conexões de rede que permitem que clusters e máquinas virtuais (VMs) de armazenamento troquem dados com segurança. Crie relacionamentos de pares entre VMs de armazenamento em diferentes clusters para permitir a proteção de dados e a recuperação de desastres usando o SnapMirror.</block>
   <block id="96d54cd4dca11897495ae0700eabe4db" category="inline-link-macro">Saiba mais sobre relacionamentos entre pares</block>
@@ -2032,7 +2028,6 @@
   <block id="0fb74d2568d6cf20bc19115cdd606402" category="doc">Instalar o ONTAP Mediator em sistemas ASA r2</block>
   <block id="348ee35966a7b6c3421172402e2e9693" category="paragraph">Para instalar o ONTAP Mediator no seu sistema ASA r2, você deve seguir o mesmo procedimento usado para instalar o ONTAP Mediator em todos os outros sistemas ONTAP .</block>
   <block id="061335c3997dbcabda35dde0127379e4" category="paragraph">A instalação do ONTAP Mediator inclui a preparação para a instalação, a ativação do acesso aos repositórios, o download do pacote do ONTAP Mediator, a verificação da assinatura do código, a instalação do pacote no host e a execução de tarefas pós-instalação.</block>
-  <block id="093d47f75177924386f95fb70b12fd2a" category="paragraph"><block ref="093d47f75177924386f95fb70b12fd2a" category="inline-link-rx"></block></block>
   <block id="2750fca314c2c1638adaed4f8779bc87" category="inline-link-macro">este fluxo de trabalho</block>
   <block id="62c0f4c22bba3059d9f25e8564fbcaf6" category="paragraph">Para instalar o ONTAP Mediator, siga <block ref="282bbe8a51966ce59628339a2fff99b4" category="inline-link-macro-rx"></block></block>
   <block id="6fb5023500d2f772bfda250aee9189e3" category="inline-link-macro">configurar o ONTAP Mediator usando certificados autoassinados</block>
@@ -2049,7 +2044,6 @@
   <block id="5ab8d08c17560d60176a3e3a7d40a7b3" category="paragraph"><block ref="524396f856e0b8dc25625395aeecb268" category="inline-link-macro-rx"></block> .</block>
   <block id="ea0189f809d6b6d584c711fa45f5bd6a" category="list-text">Confirme se existe um relacionamento de mesmo nível entre as máquinas virtuais de armazenamento (VMs) em cada cluster.</block>
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">Criar um relacionamento entre pares de VMs de armazenamento entre clusters</block>
-  <block id="4e42f19925c81428eeaa35fccac4f6f6" category="paragraph"><block ref="f6108a5d392cfcd53dcdf7e788e56bab" category="inline-link-macro-rx"></block> .</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">Confirme se pelo menos um LIF foi criado em cada nó do cluster.</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">Criar um LIF</block>
   <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
@@ -2076,7 +2070,6 @@
   <block id="2d137e28030b86348fecb0ac2d1d45bc" category="inline-link-macro">Confirme se os sistemas operacionais do seu host são suportados</block>
   <block id="35257f18ebb7c478bcbdcb1cb37d5a07" category="list-text"><block ref="64203d3afd5f3fdaa90aa5469bd8129b" category="inline-link-macro-rx"></block> para sincronização ativa do SnapMirror .</block>
   <block id="280d8b4f4ce474c32dbebfe78cd8c2c7" category="inline-link-macro">limites do objeto</block>
-  <block id="ee2277c4271750d93880b2831e674a15" category="list-text">Revise o <block ref="65161ee8c272b1c94aad582682bf5791" category="inline-link-macro-rx"></block> que podem impactar sua configuração.</block>
   <block id="336e658898dafc01584991f35ca06ff9" category="list-text">Verifique o suporte do protocolo do host para sincronização ativa do SnapMirror no seu sistema ASA r2.</block>
   <block id="9d70dd832c82246e1a4170e782c9ee62" category="paragraph">O suporte para sincronização ativa do SnapMirror em sistemas ASA r2 varia de acordo com a versão do ONTAP e o protocolo do host.</block>
   <block id="bb946878eac9fb6750d6fedc775d6159" category="cell">Começando com ONTAP...</block>
@@ -2139,7 +2132,6 @@
   <block id="62a4788f7c7724a21bfbeadbf6f4d9c0" category="inline-link-macro">Configurar sincronização ativa do SnapMirror</block>
   <block id="210c669df337d7e9ea8a63eaa073bee9" category="paragraph"><block ref="5732f343d340c87b03b110910fa5222c" category="inline-link-macro-rx"></block> para criar uma cópia dos seus dados em um site secundário e permitir que seus aplicativos host façam failover de forma automática e transparente no caso de um desastre.</block>
   <block id="bcde3dcffb78cbdd7bcc34a9e7872629" category="inline-link-macro">Revise os pré-requisitos para o peering de cluster</block>
-  <block id="8eaf3fcd5f4c28c6a30f743eb3006656" category="paragraph">Os pré-requisitos para peering de cluster são os mesmos para sistemas ASA r2 e outros sistemas ONTAP . <block ref="a853a7230b75a880e0aeca10aa7028e4" category="inline-link-macro-rx"></block> .</block>
   <block id="1546c57263450319fef8d1d8de83e306" category="section-title">Migrar dados de um sistema de armazenamento de terceiros</block>
   <block id="99657bc66973f189d87f6d702b300b6e" category="paragraph">A partir do ONTAP 9.17.1, você pode usar a Importação de LUN Estrangeiro (FLI) para migrar dados de um LUN em um sistema de armazenamento de terceiros para um sistema ASA r2. Usar a FLI para a migração de dados pode ajudar a reduzir o risco de perda de dados e tempo de inatividade durante o processo de migração.</block>
   <block id="cd7fc10aafbc563ec83b036726716d53" category="paragraph">O FLI oferece suporte a migrações online e offline. Em uma migração online, o sistema cliente permanece online enquanto os dados são copiados do sistema de armazenamento de terceiros para o sistema de armazenamento ONTAP . As migrações online são suportadas pelos sistemas operacionais host Windows, Linux e ESXi. Em uma migração offline, o sistema cliente é colocado offline, os dados da LUN são copiados do sistema de armazenamento de terceiros para o sistema de armazenamento ONTAP e, em seguida, o sistema cliente é reativado.</block>
@@ -2217,8 +2209,6 @@
   <block id="fc8d37b5de0a3458dc2fe8a1da741c5a" category="inline-link-macro">Suporte para proteção autônoma contra ransomware com inteligência artificial (ARP/IA)</block>
   <block id="3808c918aa048ef04ca543387e9d19bc" category="cell"><block ref="3808c918aa048ef04ca543387e9d19bc" category="inline-link-macro-rx"></block></block>
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">O ARP/AI pode ser habilitado em unidades de armazenamento ASA r2. O ARP/AI oferece proteção adicional de dados, detectando e reportando potenciais ataques de ransomware sem período de aprendizagem.</block>
-  <block id="319d07699c758b34ad0e77793fc529af" category="inline-link-macro">Sincronização Ativa SnapMirror</block>
-  <block id="fc1121afc2b3c5f62592309d85da4ca5" category="cell"><block ref="fc1121afc2b3c5f62592309d85da4ca5" category="inline-link-macro-rx"></block></block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">O SnapMirror Active Sync adiciona suporte para cargas de trabalho VMware com acesso a hosts NVMe/TCP e NVMe/FC para clusters ONTAP de dois nós. O suporte a cargas de trabalho VMware para NVMe/TCP depende da resolução do bug da VMware ID: TR1049746.</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">Suporte para balanceamento automático de carga de trabalho</block>
   <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
@@ -2307,7 +2297,6 @@
   <block id="40fadaf9e9b5a2ea060ac57be669def8" category="sidebar">Preparar para configurar a sincronização ativa do SnapMirror</block>
   <block id="4dafe14c736e023b90f1e3edec0ec907" category="sidebar">Confirme a configuração do seu cluster</block>
   <block id="305e7e49ade15c0cfc57375e188c0f62" category="sidebar">Instalar o ONTAP Mediator</block>
-  <block id="61ef80ea8d9e92d0a652bb75148884d3" category="sidebar">Configurar o Mediador ONTAP</block>
   <block id="9f2970594362084647462609d4b2d054" category="sidebar">Gerenciar sincronização ativa do SnapMirror</block>
   <block id="e39b47ff21b06cf5168c2115e34abb73" category="sidebar">Execute um failover planejado com sincronização ativa do SnapMirror</block>
   <block id="e9a1e0623ef8495e8c5eb4f577eebc56" category="sidebar">Reestabelecer a sincronização ativa do SnapMirror após um failover não planejado</block>
@@ -2317,4 +2306,16 @@
   <block id="2a1d671c971c0af470fbdc7401172b0f" category="sidebar">Responder a alertas ARP/AI</block>
   <block id="65af6614b420bd97b9cd190dea5aea32" category="sidebar">Pausar ou retomar ARP/AI</block>
   <block id="db63e5e7d34efa3840098020c2d030bc" category="sidebar">Novidades no ONTAP 9.17.1</block>
+  <block id="7d456ea58781d907d2b20d5b2aca677d" category="summary">Aprenda a configurar o ONTAP Mediator ou o ONTAP Cloud Mediator com certificados autoassinados para sistemas ASA r2.</block>
+  <block id="851790a9f21b5ff71a9331c624658b8f" category="doc">Configurar o ONTAP Mediator ou o ONTAP Cloud Mediator usando certificados autoassinados em sistemas ASA r2</block>
+  <block id="3d1a9a8962bb1e463a972fd3eef1a2d7" category="paragraph">A sincronização ativa do SnapMirror é configurada para proteger seus dados para que você possa continuar as operações com objetivo de ponto de recuperação próximo de zero (RPO) e objetivo de tempo de recuperação próximo de zero (RTO) em caso de desastre.</block>
+  <block id="19e274092e78148b7f8f40a16e4e4b47" category="summary">Crie relacionamentos de pares entre VMs de armazenamento em diferentes clusters para permitir a proteção de dados e a recuperação de desastres usando o SnapMirror.</block>
+  <block id="ce17aceb2c7b8c41256df32bd57c85e3" category="summary">Use o Trident Protect para migrar aplicativos e dados de um cluster Kubernetes para outro, replicar aplicativos para sistemas remotos e clonar aplicativos.</block>
+  <block id="e7a712b62a3b9917efcf632c95771bf8" category="summary">Antes de configurar a sincronização ativa do SnapMirror , você deve confirmar se seus clusters ASA r2 estão em um relacionamento de pareamento compatível e atendem a outros requisitos de configuração.</block>
+  <block id="df990990a5ec1d2de43a7f0d3883ace1" category="paragraph"><block ref="518fe62c2bcad9680c7b9bc17854f068" category="inline-link-macro-rx"></block> .</block>
+  <block id="fd2001c44ae139d4e281a0cdd502224a" category="list-text">Revise o <block ref="6fb29c3af745e27506f2b8729349d0f4" category="inline-link-macro-rx"></block> que podem impactar sua configuração.</block>
+  <block id="222e2cd23b65b26198298edef09e6653" category="paragraph">Os pré-requisitos para peering de cluster são os mesmos para sistemas ASA r2 e outros sistemas ONTAP . <block ref="bbba0a6c9386ee840a26b101e54e4db2" category="inline-link-macro-rx"></block> .</block>
+  <block id="521fe9d2abe779913bdc56fbd86e8714" category="inline-link-macro">Suporte SnapMirror Active Sync para protocolos NVMe</block>
+  <block id="e06d24391fbc504b412b98e695d20dac" category="cell"><block ref="e06d24391fbc504b412b98e695d20dac" category="inline-link-macro-rx"></block></block>
+  <block id="dea3a75107d7790747be36ffd87dfafd" category="sidebar">Configurar o ONTAP Mediator ou o ONTAP Cloud Mediator</block>
 </blocks>

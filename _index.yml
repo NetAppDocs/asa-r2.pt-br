@@ -30,6 +30,8 @@ indexpage:
       url: "/data-protection/create-snapshots.html"
     - title: Configurar a replicação de instantâneos
       url: "/data-protection/snapshot-replication.html"
+    - title: Configurar sincronização ativa do SnapMirror
+      url: "/data-protection/snapmirror-active-sync.html"
     - title: Criptografia de dados em repouso
       url: "/secure-data/encrypt-data-at-rest.html"
   - title: Mais recursos do ASA R2

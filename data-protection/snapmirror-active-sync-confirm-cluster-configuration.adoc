@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
 keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
-summary: Veja avisos de possíveis ataques de ransomware e tome medidas no Gerenciador do Sistema. 
+summary: Antes de configurar a sincronização ativa do SnapMirror , você deve confirmar se seus clusters ASA r2 estão em um relacionamento de pareamento compatível e atendem a outros requisitos de configuração. 
 ---
 = Confirme a configuração do cluster ASA r2 antes de configurar a sincronização ativa do SnapMirror
 :allow-uri-read: 
@@ -24,7 +24,7 @@ link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Criar 
 
 . Confirme se existe um relacionamento de mesmo nível entre as máquinas virtuais de armazenamento (VMs) em cada cluster.
 +
-link:create-svm-peer-relationship.html["Criar um relacionamento entre pares de VMs de armazenamento entre clusters"^] .
+link:create-svm-peer-relationship.html["Criar um relacionamento entre pares de VMs de armazenamento entre clusters"] .
 
 . Confirme se pelo menos um LIF foi criado em cada nó do cluster.
 +
