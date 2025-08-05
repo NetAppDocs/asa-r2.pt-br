@@ -54,3 +54,10 @@ indexpage:
     links:
     - title: Documentação para outros sistemas ONTAP
       url: https://docs.netapp.com/us-en/ontap-family/
+    - title: Saiba mais sobre as vantagens de usar o ONTAP para vSphere
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html
+    - title: Recuperação de site VMware Live com ONTAP
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html
+    - title: Saiba mais sobre soluções de disponibilidade contínua para ambientes
+        vSphere
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html
