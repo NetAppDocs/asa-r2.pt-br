@@ -1,20 +1,8 @@
 ---
-sidebar: sidebar 
 permalink: data-protection/protect-kubernetes.html 
-keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, kubernetes, trident protect 
-summary: Use o Trident Protect para migrar aplicativos e dados de um cluster Kubernetes para outro, replicar aplicativos para sistemas remotos e clonar aplicativos. 
+redirect: asa-r2/index.html 
 ---
-= Proteja suas aplicações Kubernetes em sistemas de storage ASA R2
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
-Use o Trident Protect para proteger seus aplicativos Kubernetes. O Trident Protect permite migrar aplicativos e dados de um cluster Kubernetes para outro, replicar aplicativos para um sistema remoto usando a tecnologia NetApp SnapMirror e clonar aplicativos do ambiente de preparação para a produção.
-
-
-NOTE: O SnapMirror (assíncrono e síncrono) é compatível apenas com sistemas ASA r2 e ASA . O SnapMirror não é compatível com sistemas ASA r2 e AFF ou FAS .
-
-.Para mais informações
-link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["Saiba mais sobre como proteger aplicativos Kubernetes usando o Trident Protect"^] .

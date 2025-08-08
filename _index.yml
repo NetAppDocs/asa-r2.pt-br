@@ -38,11 +38,11 @@ indexpage:
     links:
     - title: Datasheet do ASA
       url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
-    - title: Melhores práticas do NetApp ASA
+    - title: Melhores práticas para sistemas NetApp ASA
       url: https://www.netapp.com/pdf.html?item=/media/137426-tr-5009-best-practices-for-netapp-asa.pdf
     - title: FlexPod no NetApp ASA
       url: https://www.netapp.com/pdf.html?item=/media/135828-flexpod-san-ucs-xdirect-asa-nva-deploy-guide.pdf
-    - title: Guia de transição do RestfulAPI de ASA/ AFF para ASA r2
+    - title: Guia de transição da API REST
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
     - title: Operações SnapCenter para sistemas ASA r2
       url: https://docs.netapp.com/us-en/snapcenter/get-started/learn-about-snapcenter-support-for-asa-r2-systems.html
