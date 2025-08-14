@@ -29,6 +29,9 @@ Certas configurações de cluster ASA r2 exigem que você execute ações espec�
 
 Se você estiver revertendo do ONTAP 9.17.1 em um sistema ASA r2, execute as seguintes ações antes de iniciar a reversão:
 
+
+NOTE: link:administer/rebalance-workloads.html["Rebalanceamento automático de carga de trabalho"]é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2.  Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 após o rebalanceamento automático da carga de trabalho ter sido habilitado.
+
 [cols="2"]
 |===
 | Se você tem... | Antes de reverter você deve... 

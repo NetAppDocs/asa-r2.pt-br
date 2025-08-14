@@ -19,6 +19,9 @@ A partir do ONTAP 9.17.1, o ONTAP rebalanceia automaticamente as cargas de traba
 
 O rebalanceamento automático da carga de trabalho é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Você pode usar a interface de linha de comando (CLI) do ONTAP para aumentar ou diminuir o período de avaliação padrão, de acordo com suas necessidades operacionais.
 
+
+NOTE: Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 depois que o rebalanceamento automático da carga de trabalho estiver habilitado.
+
 .Passos
 . Verifique o número de dias restantes no período de avaliação:
 +

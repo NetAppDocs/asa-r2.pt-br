@@ -2327,4 +2327,7 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">Saiba mais sobre soluções de disponibilidade contínua para ambientes vSphere</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">Melhores práticas para sistemas NetApp ASA</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">Guia de transição da API REST</block>
+  <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 depois que o rebalanceamento automático da carga de trabalho estiver habilitado.</block>
+  <block id="1d7bf5cce50a0aa006e2b9e2f1d44b49" category="admonition"><block ref="8ec31ee3652bc36cd00ea6f536446af7" category="inline-link-macro-rx"></block>é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2.  Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 após o rebalanceamento automático da carga de trabalho ter sido habilitado.</block>
+  <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">Em sistemas ASA r2, os SEDs são suportados apenas para protocolos NVMe.</block>
 </blocks>
