@@ -35,7 +35,7 @@ Os sistemas ASA R2 introduzem o uso de unidades de storage com grupos de consist
 * _Um grupo de consistência_ é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade.
 
 
-Os sistemas ASA R2 usam unidades de storage e grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento individualmente, você pode proteger todo o banco de dados fazendo backup do grupo de consistência.
+Os sistemas ASA r2 usam unidades de armazenamento com grupos de consistência para simplificar o gerenciamento de armazenamento e a proteção de dados.  Por exemplo, suponha que você tenha um banco de dados com 10 unidades de armazenamento em um grupo de consistência e precise fazer backup de todo o banco de dados.  Em vez de fazer backup de cada unidade de armazenamento individualmente, você pode proteger todo o banco de dados fazendo backup do grupo de consistência.
 
 Para ajudar a proteger seus dados contra ataques maliciosos, como roubo ou ransomware, os sistemas ASA r2 oferecem suporte a um gerenciador de chaves integrado, criptografia de camada dupla, autenticação multifator e verificação multiadministradora. Snapshots à prova de violação também são suportados em sistemas ASA r2 secundários.
 
