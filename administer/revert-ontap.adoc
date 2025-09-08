@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/revert-ontap.html 
 keywords: update, revert, ontap, asa r2 
-summary: O ONTAP atualiza automaticamente o firmware em sistemas ASA R2. Você pode usar o System Manager para desativar as atualizações automáticas e exibir as atualizações antes de serem instaladas. 
+summary: As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo processo de reversões para outros sistemas ONTAP . A reversão de um cluster ONTAP é disruptiva. 
 ---
 = Reverter ONTAP em sistemas de armazenamento ASA r2
 :allow-uri-read: 
@@ -30,14 +30,14 @@ Certas configurações de cluster ASA r2 exigem que você execute ações espec�
 Se você estiver revertendo do ONTAP 9.17.1 em um sistema ASA r2, execute as seguintes ações antes de iniciar a reversão:
 
 
-NOTE: link:../administer/rebalance-workloads.html["Rebalanceamento automático de carga de trabalho"]é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 após o rebalanceamento automático da carga de trabalho ter sido habilitado.
+NOTE: link:rebalance-workloads.html["Rebalanceamento automático de carga de trabalho"]é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 após o rebalanceamento automático da carga de trabalho ter sido habilitado.
 
 [cols="2"]
 |===
 | Se você tem... | Antes de reverter você deve... 
 
 
-| Grupos de consistência hierárquica em um relacionamento de sincronização ativa do SnapMirror | Remover o relacionamento de sincronização ativa do SnapMirror 
+| Grupos de consistência hierárquica em um relacionamento de sincronização ativa do SnapMirror | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Excluir o relacionamento de sincronização ativa do SnapMirror"] 
 
 
 | Relacionamentos de importação ativos | Excluir os relacionamentos de importação ativos 

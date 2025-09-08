@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/user-accounts-roles.html 
-keywords:  
-summary:  
+keywords: manage, user accounts, admin account, roles, active directory, ad, saml, authentication 
+summary: Use o System Manager para configurar o acesso do controlador de domínio do diretório ativo, a autenticação LDAP e SAML para suas contas de usuário. Crie funções de conta de usuário para definir funções específicas que os usuários atribuídos às funções podem executar no cluster. 
 ---
 = Gerenciar contas de usuários e funções em sistemas de storage ASA R2
 :allow-uri-read: 

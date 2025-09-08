@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
+summary: Aumente ou diminua o tamanho de um grupo de consistência modificando o número de unidades de armazenamento no grupo de consistência. 
+---
+= Modifique o tamanho dos grupos de consistência no seu sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aumente ou diminua o tamanho de um grupo de consistência modificando o número de unidades de armazenamento no grupo de consistência.
+
+
+
+== Adicione unidades de armazenamento a um grupo de consistência
+
+Expanda a quantidade de storage gerenciada por um grupo de consistência adicionando unidades de armazenamento ao grupo de consistência.
+
+Você pode adicionar unidades de armazenamento existentes ao seu grupo de consistência ou criar novas unidades de armazenamento para adicionar ao grupo de consistência.
+
+.Antes de começar
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja expandir estiver em um relacionamento de sincronização ativo do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes de poder adicionar unidades de armazenamento.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder expandir o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+
+[role="tabbed-block"]
+====
+.Adicionar unidades de armazenamento existentes
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja expandir.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *expandir*.
+. Selecione *usando unidades de armazenamento existentes*.
+. Selecione as unidades de armazenamento a serem adicionadas ao grupo de consistência; em seguida, selecione *expandir*.
+
+
+--
+.Adicione novas unidades de armazenamento
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja expandir.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *expandir*.
+. Selecione *usando novas unidades de armazenamento*.
+. Introduza o número de unidades que pretende criar e a capacidade por unidade.
++
+Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente* para atribuir uma capacidade diferente a cada unidade.
+
+. Selecione *expandir*.
+
+
+.O que vem a seguir
+Depois de criar uma nova unidade de armazenamento, link:../manage-data/provision-san-storage.html#add-host-initiators["adicione iniciadores de host"]deverá e link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mapeie a unidade de armazenamento recém-criada para um host"]. A adição de iniciadores de host torna os hosts elegíveis para acessar as unidades de armazenamento e executar operações de dados. O mapeamento de uma unidade de armazenamento para um host permite que a unidade de armazenamento comece a fornecer dados para o host para o qual está mapeado.
+
+--
+====
+.O que se segue?
+Os instantâneos existentes do grupo de consistência não incluem as unidades de armazenamento recém-adicionadas. Você deve link:create-snapshots.html#step-2-create-a-snapshot["crie um instantâneo imediato"]do seu grupo de consistência para proteger suas unidades de storage recém-adicionadas até que o próximo snapshot agendado seja criado automaticamente.
+
+
+
+== Remova uma unidade de armazenamento de um grupo de consistência
+
+Você deve remover uma unidade de armazenamento de um grupo de consistência se quiser excluir a unidade de armazenamento, se quiser gerenciá-la como parte de um grupo de consistência diferente ou se não precisar mais proteger os dados que ela contém. Remover uma unidade de armazenamento de um grupo de consistência quebra a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Clique duas vezes no grupo de consistência do qual você deseja remover uma unidade de armazenamento.
+. Na seção *Visão geral*, em *unidades de armazenamento*, selecione a unidade de armazenamento que deseja remover; em seguida, selecione *Remover do grupo de consistência*.
+
+
+.Resultado
+A unidade de armazenamento já não é membro do grupo de consistência.
+
+.O que vem a seguir
+Se precisar continuar a proteção de dados para a unidade de armazenamento, adicione a unidade de armazenamento a outro grupo de consistência.

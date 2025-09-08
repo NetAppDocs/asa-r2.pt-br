@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-hierarchical-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Use grupos de consistência para executar várias ações em várias unidades de armazenamento ao mesmo tempo, em vez de executar ações individualmente em cada unidade.  Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos em um grupo de consistência pai. 
+---
+= Gerenciar grupos de consistência hierárquica no seu sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partir do ONTAP 9.16.1, você pode usar o System Manager para criar grupos de consistência hierárquicos no seu sistema ASA r2.  Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos em um grupo de consistência pai.  Você pode aplicar políticas de instantâneos individuais a cada grupo de consistência filho e replicar os instantâneos de todos os grupos de consistência filho para um cluster remoto como uma única unidade replicando o pai.  Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas.
+
+
+
+== Promover um grupo de consistência existente para um grupo de consistência pai
+
+Se você promover um grupo de consistência existente para um pai, um novo grupo de consistência filho será criado e as unidades de armazenamento pertencentes ao grupo de consistência promovido serão movidas para o novo grupo de consistência filho.  Unidades de armazenamento não podem ser associadas diretamente a um grupo de consistência pai.
+
+.Antes de começar
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja promover estiver em um relacionamento de sincronização ativa do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser promovido.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder promover o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de promover um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja converter em um grupo de consistência pai.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *promover para o grupo de consistência pai*.
+. Insira um nome para o novo grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione *promover*.
+
+
+.O que se segue?
+Você pode criar grupos de consistência filhos adicionais sob o grupo de consistência pai.  Você também podelink:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"] para copiar os grupos de consistência pai e filho para um local geograficamente remoto para backup e recuperação de desastres.
+
+
+
+== Demote um grupo de consistência pai para um único grupo de consistência
+
+Quando você rebaixa um grupo de consistência pai para um único grupo de consistência, as unidades de armazenamento dos grupos de consistência filho associados são adicionadas ao grupo de consistência pai.  Os grupos de consistência filhos são excluídos e o pai é então gerenciado como um único grupo de consistência.
+
+.Antes de começar
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja rebaixar estiver em um relacionamento de sincronização ativa do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser rebaixado.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder rebaixar o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência pai que você deseja rebaixar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *demote para um único grupo de consistência*.
+. Selecione *demote*
+
+
+.O que se segue?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Adicionar uma política de instantâneos"] para o grupo de consistência rebaixado para proteger as unidades de armazenamento que foram gerenciadas anteriormente pelos grupos de consistência infantil.
+
+
+
+== Crie um grupo de consistência filho
+
+A criação de grupos de consistência filho permite que você aplique políticas de instantâneo individuais a cada filho.  A partir do ONTAP 9.17.1, você também pode aplicar políticas de replicação individuais diretamente a cada filho.  No ONTAP 9.16.1, as políticas de replicação podem ser aplicadas somente no nível pai.
+
+Você pode criar um grupo de consistência filho a partir de um grupo de consistência novo ou existente.
+
+[role="tabbed-block"]
+====
+.De um novo grupo de consistência
+--
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência pai ao qual você deseja adicionar um grupo de consistência filho.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Adicionar um novo grupo de consistência filho*.
+. Insira um nome para o grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione para adicionar unidades de armazenamento existentes ao grupo de consistência filho ou para criar novas unidades de armazenamento.
++
+Se criar novas unidades de armazenamento, introduza o número de unidades que pretende criar e a capacidade por unidade; em seguida, introduza as informações do anfitrião.
+
++
+Se você criar mais de uma unidade de armazenamento, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.
+
+. Selecione *Adicionar*.
+
+
+--
+.De um grupo de consistência existente
+--
+.Antes de começar
+Se o grupo de consistência que você deseja usar já for filho de outro grupo de consistência, você develink:manage-hierarchical-consistency-groups.html#detach-a-child-consistency-group-from-a-parent-consistency-group["desconectá-lo do grupo de consistência pai existente"] antes de poder movê-lo para um novo grupo de consistência pai.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Selecione o grupo de consistência existente que você gostaria de criar um grupo de consistência filho.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *mover sob grupo de consistência diferente*.
+. Insira um novo nome para o grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
+. Selecione o grupo de consistência existente que você gostaria de fazer o grupo de consistência pai ou selecione para criar um novo grupo de consistência pai.
++
+Se você selecionar criar um novo grupo de consistência pai, digite um nome para o grupo de consistência pai ou aceite o nome padrão; em seguida, selecione o tipo de componente do aplicativo de consistência.
+
+. Selecione *mover*.
+
+
+--
+====
+.O que vem a seguir
+Depois de criar um grupo de consistência filho, você podelink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["aplicar políticas individuais de proteção de snapshot"] para cada grupo de consistência infantil.  Você também podelink:snapshot-replication.html["configurar políticas de replicação"] nos grupos de consistência pai e filho para replicar os grupos de consistência em um local remoto.
+
+
+
+== Separe um grupo de consistência filho de um grupo de consistência pai
+
+Quando você separa um grupo de consistência filho de um grupo de consistência pai, o grupo de consistência filho é removido do grupo de consistência pai e é gerenciado como um único grupo de consistência.  A política de replicação aplicada ao pai não é mais aplicada ao grupo de consistência filho desanexado.
+
+.Antes de começar
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja destacar estiver em um relacionamento de sincronização ativo do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser destacado.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder desanexar o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Selecione o grupo de consistência pai.
+. Selecione sobre o grupo de consistência filho que deseja separar.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Desanexar do pai*.
+. Insira um novo nome para o grupo de consistência que você está desanexando ou aceite o nome padrão; em seguida, selecione o tipo de aplicativo do grupo de consistência.
+. Selecione *Desanexar*.
+
+
+.O que se segue?
+link:snapshot-replication.html["Configure uma política de replicação"]para replicar os instantâneos do grupo de consistência filho desanexado em um cluster remoto.

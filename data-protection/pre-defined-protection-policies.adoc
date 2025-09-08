@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: data-protection/pre-defined-protection-policies.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
+summary: A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação. 
+---
+= Saiba mais sobre as políticas de proteção de dados predefinidas do ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação.
+
+Se as políticas predefinidas não atenderem às suas necessidades, você podelink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["criar uma política de replicação personalizada"] .
+
+Os sistemas ASA r2 suportam as seguintes políticas de proteção predefinidas.
+
+[cols="3,4,1"]
+|===
+| Política | Descrição | Tipo de política 
+
+
+| Assíncrono | Uma política unificada de cofre e assíncrona do SnapMirror para espelhar o sistema de arquivos ativo mais recente e instantâneos diários e semanais com um cronograma de transferência por hora. | Assíncrono 
+
+
+| FailOverDuplex Automatizado | Política para SnapMirror síncrono com garantia de RTO zero e replicação de sincronização bidirecional. | Sincronização ativa do SnapMirror 
+
+
+| CloudBackupPadrão | Política de cofre com regra diária. | Assíncrono 
+
+
+| Backup diário | Política de cofre com uma regra diária e um cronograma de transferência diário. | Assíncrono 
+
+
+| DPDefault | Política assíncrona do SnapMirror para espelhar todos os instantâneos e o último sistema de arquivos ativo. | Assíncrono 
+
+
+| MirrorAllSnapshots | Política assíncrona do SnapMirror para espelhar todos os instantâneos e o último sistema de arquivos ativo. | Assíncrono 
+
+
+| MirrorAllSnapshotsDiscardNetwork | Política assíncrona do SnapMirror para espelhar todos os instantâneos e o último sistema de arquivos ativo, excluindo as configurações de rede. | Assíncrono 
+
+
+| Espelho e Cofre | Uma política unificada assíncrona e de cofre do SnapMirror para espelhar o sistema de arquivos ativo mais recente e instantâneos diários e semanais. | Assíncrono 
+
+
+| Rede de descarte de espelho e cofre | Uma política unificada de cofre e assíncrona do SnapMirror para espelhar o sistema de arquivos ativo mais recente e instantâneos diários e semanais, excluindo as configurações de rede. | Assíncrono 
+
+
+| MirrorLatest | Política assíncrona do SnapMirror para espelhar o último sistema de arquivos ativo. | Assíncrono 
+
+
+| Unified7year | Política unificada do SnapMirror com retenção de 7 anos. | Assíncrono 
+
+
+| XDPPadrão | Política de cofre com regras diárias e semanais. | Assíncrono 
+|===

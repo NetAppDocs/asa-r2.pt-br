@@ -34,8 +34,10 @@ Em um sistema ASA R2, o software ONTAP é otimizado para oferecer suporte à fun
 Você pode verificar a personalidade do seu storage da ONTAP no Gerenciador do sistema ou na CLI do ONTAP.
 
 * No menu System Manager, selecione *Cluster > Overview*.
-* Na CLI, digite: `san config show`
+* Na CLI, digite: `system node show -personality -is-disaggregated`
 
+
+Para sistemas ASA r2, a _personalidade_ é _ASA r2_ e o status de _é-desagregado_ é _verdadeiro_.
 
 A personalidade do seu sistema de storage ONTAP não pode ser alterada.
 

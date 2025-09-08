@@ -33,7 +33,13 @@ entries:
   - title: Criar um relacionamento de pares SVM
     url: "/data-protection/create-svm-peer-relationship.html"
   - title: Configurar a replicação de instantâneos
-    url: "/data-protection/snapshot-replication.html"
+    entries:
+    - title: Replicar snapshots para um cluster remoto
+      url: "/data-protection/snapshot-replication.html"
+    - title: Saiba mais sobre políticas de proteção predefinidas
+      url: "/data-protection/pre-defined-protection-policies.html"
+    - title: Quebrar um relacionamento de replicação
+      url: "/data-protection/snapmirror-active-sync-break-relationship.html"
   - title: Configurar sincronização ativa do SnapMirror
     entries:
     - title: Fluxo de trabalho
@@ -50,15 +56,32 @@ entries:
       url: "/data-protection/configure-snapmirror-active-sync.html"
   - title: Gerenciar sincronização ativa do SnapMirror
     entries:
+    - title: Reconfigure o ONTAP Mediator ou o ONTAP Cloud Mediator para usar um certificado
+        de terceiros
+      url: "/data-protection/reconfigure-ontap-mediator-ca-certificate.html"
     - title: Execute um failover planejado com sincronização ativa do SnapMirror
       url: "/data-protection/snapmirror-active-sync-planned-failover.html"
     - title: Reestabelecer a sincronização ativa do SnapMirror após um failover não
         planejado
       url: "/data-protection/snapmirror-active-sync-unplanned-failover.html"
+    - title: Excluir um relacionamento de sincronização ativo do SnapMirror
+      url: "/data-protection/snapmirror-active-sync-delete-relationship.html"
+    - title: Remover o ONTAP Mediator ou o ONTAP Cloud Mediator
+      url: "/data-protection/snapmirror-active-sync-remove-mediator.html"
   - title: Restaurar dados
     url: "/data-protection/restore-data.html"
   - title: Gerenciar grupos de consistência
-    url: "/data-protection/manage-consistency-groups.html"
+    entries:
+    - title: Aprenda sobre grupos de consistência
+      url: "/data-protection/manage-consistency-groups.html"
+    - title: Use snapshots para proteger grupos de consistência
+      url: "/data-protection/manage-consistency-groups-add-remove-snapshots.html"
+    - title: Adicionar ou remover unidades de armazenamento para grupos de consistência
+      url: "/data-protection/manage-consistency-groups-add-remove-storage-units.html"
+    - title: Excluir grupos de consistência
+      url: "/data-protection/manage-consistency-groups-delete.html"
+    - title: Gerenciar grupos de consistência hierárquica
+      url: "/data-protection/manage-hierarchical-consistency-groups.html"
   - title: Gerenciar políticas e programações de proteção
     url: "/data-protection/policies-schedules.html"
 - title: Proteja seus dados

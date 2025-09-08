@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Crie instantâneos dos grupos de consistência para proteger os dados nas unidades de armazenamento que fazem parte do grupo de consistência.  Se não precisar mais proteger os dados em nenhuma das unidades de armazenamento no grupo de consistência, você poderá remover a proteção de instantâneo. 
+---
+= Proteja grupos de consistência no seu sistema ASA r2 com instantâneos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Crie instantâneos dos grupos de consistência no seu sistema de armazenamento ASA r2 para proteger os dados nas unidades de armazenamento que fazem parte do grupo de consistência.  Se não precisar mais proteger os dados em nenhuma das unidades de armazenamento no grupo de consistência, você poderá remover a proteção de instantâneo do grupo de consistência.
+
+Se não precisar mais proteger os dados de unidades de armazenamento específicas no grupo de consistência, você poderá remover essas unidades de armazenamento do grupo de consistência.
+
+
+
+== Adicionar proteção de dados de snapshot a um grupo de consistência
+
+Quando você adiciona proteção de dados de snapshot a um grupo de consistência, os snapshots locais do grupo de consistência são feitos em intervalos regulares com base em uma programação predefinida.
+
+Você pode usar snapshots que link:restore-data.html["restaurar dados"]estão perdidos ou corrompidos.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja proteger.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Editar*.
+. Em *proteção local*, selecione *Agendar instantâneos*.
+. Selecione uma política de instantâneos.
++
+Aceite a política de instantâneos padrão, selecione uma política existente ou crie uma nova política.
+
++
+[cols="2,6a"]
+|===
+| Opção | Passos 
+
+
+| Selecione uma política de instantâneos existente  a| 
+image:icon_dropdown_arrow.gif["seta azul apontando para baixo"]Selecione ao lado da política padrão e, em seguida, selecione a política existente que você deseja usar.
+
+
+
+| Crie uma nova política de snapshot  a| 
+.. image:icon_add.gif["sinal de mais azul seguido pela palavra add"]Selecione ; em seguida, introduza o novo nome da política.
+.. Selecione o escopo da política.
+.. Em *horários*, image:icon_add.gif["sinal de mais azul seguido pela palavra add"]selecione .
+.. Selecione o nome que aparece em *Nome da agenda*;
++
+em seguida, image:icon_dropdown_arrow.gif["seta azul apontando na direção para baixo"]selecione .
+
+.. Selecione o agendamento da política.
+.. Em *máximo de instantâneos*, insira o número máximo de instantâneos que você deseja manter do grupo de consistência.
+.. Opcionalmente, sob *SnapMirror label*, digite um rótulo SnapMirror.
+.. Selecione *Guardar*.
+
+
+|===
+. Selecione *Guardar*.
+
+
+.O que vem a seguir
+Agora que seus dados estão protegidos com snapshots, você deve link:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"]copiar seus grupos de consistência para um local geograficamente remoto para backup e recuperação de desastres.
+
+
+
+== Remova a proteção de dados do snapshot de um grupo de consistência
+
+Quando você remove a proteção de dados de snapshot de um grupo de consistência, os snapshots são desabilitados para todas as unidades de armazenamento no grupo de consistência.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja parar de proteger.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Editar*.
+. Em *proteção local*, desmarque Agendar instantâneos.
+. Selecione *Editar*.
+
+
+.Resultado
+Os instantâneos não serão tirados para nenhuma das unidades de armazenamento no grupo consistência.

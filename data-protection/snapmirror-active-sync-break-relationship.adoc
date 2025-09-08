@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-break-relationship.html 
+keywords: asa r2, data protection, business continuity, remove, delete, break, relationship, snapmirror active sync, disaster recovery 
+summary: Em certas situações, pode ser necessário interromper um relacionamento de replicação assíncrona. 
+---
+= Interrompa um relacionamento de replicação assíncrona no seu sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Em certas situações, pode ser necessário interromper um relacionamento de replicação assíncrona.  Por exemplo, se você estiver executando o ONTAP 9.16.1 e quiser aumentar o tamanho de um grupo de consistência que está em um relacionamento de replicação assíncrona, será necessário quebrar o relacionamento antes de poder modificar o tamanho do grupo de consistência.
+
+.Passos
+. No System Manager, selecione *proteção > replicação*.
+. Selecione *Destinos locais* ou *Fontes locais*.
+. Ao lado do relacionamento que você deseja interromper, selecioneimage:icon_kabob.gif["três pontos azuis verticais"] ; então selecione *Quebrar*.
+. Selecione *Quebrar*.
+
+
+.Resultado
+O relacionamento assíncrono entre o grupo de consistência primário e secundário é quebrado.

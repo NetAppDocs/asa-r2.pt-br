@@ -11,7 +11,7 @@ summary: Talvez seja necessário renomear um nó para alinhar com as convençõe
 
 
 [role="lead"]
-A partir do ONTAP 9.16.1, os sistemas de storage ASA R2 oferecem suporte para até 12 nós por cluster. Depois que os novos nós de um par de HA tiverem sido cabeados e ativados, você precisará juntá-los ao cluster.
+A partir do ONTAP 9.16.1, os sistemas de armazenamento ASA r2 suportam até 12 nós por cluster.  Depois que os novos nós de um par HA forem cabeados e ligados, você precisará conectá-los ao cluster.
 
 .Antes de começar
 Reúna as seguintes informações:

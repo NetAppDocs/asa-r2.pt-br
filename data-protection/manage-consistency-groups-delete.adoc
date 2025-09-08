@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-delete.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace 
+summary: Se não precisar mais gerenciar os membros de um grupo de consistência como uma única unidade, você poderá excluir o grupo de consistência. 
+---
+= Excluir grupos de consistência no seu sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se não precisar mais gerenciar os membros de um grupo de consistência como uma única unidade, você poderá excluir o grupo de consistência.  Depois que um grupo de consistência é excluído, as unidades de armazenamento que estavam anteriormente no grupo permanecem ativas no cluster.  Se o grupo de consistência estiver em um relacionamento de replicação, as cópias replicadas permanecerão no cluster remoto.
+
+.Antes de começar
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja excluir estiver em um relacionamento de sincronização ativo do SnapMirror , você deverálink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes de excluir o grupo de consistência.  Excluir esse relacionamento antes de modificar um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+
+.Passos
+. No System Manager, selecione *proteção > grupos de consistência*.
+. Passe o Mouse sobre o grupo de consistência que você deseja excluir.
+. image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Delete*.
+. Aceite o aviso e, em seguida, selecione *Delete*.
+
+
+.O que se segue?
+Depois de excluir um grupo de consistência, as unidades de armazenamento anteriormente no grupo de consistência não serão mais protegidas por instantâneos. Considere adicionar essas unidades de armazenamento a outro grupo de consistência para protegê-las contra a perda de dados.

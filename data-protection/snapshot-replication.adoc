@@ -15,9 +15,13 @@ searchtitle: Replique snapshots para um cluster remoto usando o Gerenciador de s
 A replicação de instantâneos é um processo no qual os grupos de consistência no seu sistema ASA R2 são copiados para um local remoto geograficamente. Após a replicação inicial, as alterações aos grupos de consistência são copiadas para o local remoto com base em uma política de replicação. Grupos de consistência replicados podem ser usados para recuperação de desastres ou migração de dados.
 
 
-NOTE: A replicação de snapshot para um sistema de storage ASA R2 só é compatível com outros sistemas de storage ASA R2. Não é possível replicar snapshots de um sistema ASA R2 para um sistema ASA, AFF ou FAS atual ou de um sistema ASA, AFF ou FAS atual para um sistema ASA R2.
+NOTE: A replicação de instantâneos para um sistema de armazenamento ASA r2 só é suportada de e para outro sistema de armazenamento ASA r2.  Não é possível replicar instantâneos de um sistema ASA r2 para um sistema ASA, AFF ou FAS ou de um sistema ASA, AFF ou FAS para um sistema ASA r2.
 
 Para configurar a replicação Snapshot, é necessário estabelecer uma relação de replicação entre o sistema ASA R2 e o local remoto. A relação de replicação é regida por uma política de replicação. Uma política padrão para replicar todos os snapshots é criada durante a configuração do cluster. Você pode usar a política padrão ou, opcionalmente, criar uma nova política.
+
+A partir do ONTAP 9.17.1, você pode aplicar políticas de replicação assíncrona a grupos de consistência em um relacionamento hierárquico.  A replicação assíncrona não é suportada para grupos de consistência em relacionamentos hierárquicos no ONTAP 9.16.1.
+
+link:manage-hierarchical-consistency-groups.html["Saiba mais sobre grupos de consistência hierárquicos (pai/filho)"] .
 
 
 
@@ -42,9 +46,11 @@ Você fez um pedido para o cluster ASA R2 local com um cluster remoto. Agora voc
 
 
 
-== Etapa 2: Opcionalmente, crie uma política de replicação
+== Etapa 2: Opcionalmente, crie uma política de replicação personalizada
 
-A política de replicação de instantâneos define quando as atualizações executadas no cluster do ASA R2 são replicadas para o local remoto.
+A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação.  Se as políticas predefinidas não atenderem às suas necessidades, você poderá criar uma política de replicação personalizada.
+
+Aprenda sobrelink:pre-defined-protection-policies.html["políticas de proteção de dados ONTAP predefinidas"] .
 
 .Passos
 . No System Manager, selecione *proteção > políticas*; em seguida, selecione *políticas de replicação*.
@@ -93,7 +99,12 @@ Uma relação de replicação de snapshot estabelece uma conexão entre o sistem
 Para proteção contra ataques de ransomware, ao configurar sua relação de replicação, você pode optar por bloquear os snapshots de destino. Os instantâneos bloqueados não podem ser eliminados acidentalmente ou maliciosamente. Use snapshots bloqueados para recuperar dados se uma unidade de storage for comprometida por um ataque de ransomware.
 
 .Antes de começar
-Se quiser bloquear os instantâneos de destino, tem de link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inicialize o relógio de conformidade do Snapshot"] antes de criar a relação de replicação.
+* link:pre-defined-protection-policies.html["Saiba mais sobre políticas de replicação"] .
++
+Ao criar um relacionamento de replicação, você deve selecionar a política de replicação apropriada para seu relacionamento de replicação.  Você pode usar uma política predefinida ou criar uma política personalizada.
+
+* Se quiser bloquear os instantâneos de destino, tem de link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inicialize o relógio de conformidade do Snapshot"] antes de criar a relação de replicação.
+
 
 Crie uma relação de replicação com ou sem instantâneos de destino bloqueados.
 
@@ -149,9 +160,6 @@ O grupo de consistência _source_ refere-se ao grupo de consistência no cluster
 | Fontes locais  a| 
 .. Selecione *fontes locais* e, em seguida, image:icon_replicate_blue_bg.png["retângulo com fundo azul e a palavra replica em letras brancas"] selecione .
 .. Procure e selecione o grupo de consistência de origem.
-+
-O grupo de consistência _source_ refere-se ao grupo de consistência no cluster local que você deseja replicar.
-
 .. Em *destino de replicação*, selecione o cluster para o qual replicar; em seguida, selecione a VM de armazenamento.
 
 

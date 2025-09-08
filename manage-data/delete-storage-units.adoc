@@ -14,7 +14,7 @@ summary: Exclua unidades de armazenamento para reduzir a quantidade de armazenam
 Elimine uma unidade de armazenamento se já não necessitar de manter os dados contidos na unidade. A exclusão de unidades de armazenamento que não são mais necessárias pode ajudá-lo a liberar espaço necessário para outros aplicativos host.
 
 .Antes de começar
-Se a unidade de armazenamento que deseja excluir estiver em um grupo de consistência que esteja em relação de replicação, você deve link:../data-protection/manage-consistency-groups.html#remove-a-storage-unit-from-a-consistency-group["retire a unidade de armazenamento do grupo de consistência"] antes de excluí-la.
+Se a unidade de armazenamento que você deseja excluir estiver em um grupo de consistência que esteja em um relacionamento de replicação, você deverálink:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["retire a unidade de armazenamento do grupo de consistência"] antes de excluí-lo.
 
 .Passos
 . No System Manager, selecione *Storage*.
