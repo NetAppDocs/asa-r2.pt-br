@@ -25,7 +25,7 @@ As seguintes plataformas ASA são classificadas como sistemas ASA R2:
 * ASA C30
 
 
-Os sistemas ASA R2 são compatíveis com todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP). Os protocolos iSCSI, FC, NVMe/FC e NVMe/TCP são compatíveis com arquitetura ativo-ativo simétrica para multipathing, de modo que todos os caminhos entre os hosts e o storage fiquem ativos/otimizados. Os protocolos iSCSI e NVMe/TCP dão suporte a caminhos diretos entre os hosts e o storage.
+Os sistemas ASA r2 suportam todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).  Os protocolos iSCSI, FC, NVMe/FC e NVMe/TCP oferecem suporte à arquitetura simétrica ativa-ativa para multicaminhos, de modo que todos os caminhos entre os hosts e o armazenamento sejam ativos/otimizados.  Os protocolos iSCSI e NVMe/TCP suportam conexão direta entre os hosts e o armazenamento.  Para os protocolos Fibre Channel e NVMe/FC, a conexão direta não é suportada.
 
 Em um sistema ASA R2, o software ONTAP e o Gerenciador de sistemas são otimizados para oferecer suporte à funcionalidade essencial de SAN, removendo recursos e funções não compatíveis em ambientes SAN.
 
