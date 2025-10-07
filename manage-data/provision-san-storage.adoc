@@ -34,10 +34,10 @@ Se você criar mais de uma unidade de armazenamento, cada unidade será criada c
 . Introduza a capacidade da unidade de armazenamento e, em seguida, selecione o sistema operativo anfitrião.
 . Aceite o *mapeamento de host* selecionado automaticamente ou selecione um grupo de host diferente para a unidade de armazenamento a ser mapeada.
 +
-*Mapeamento do host* refere-se ao grupo de hosts para o qual a nova unidade de armazenamento será mapeada. Se houver um grupo de hosts pré-existente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts pré-existente será selecionado automaticamente para o mapeamento do host. Você pode aceitar o grupo de host que é selecionado automaticamente para o mapeamento de host ou pode selecionar um grupo de host diferente.
+*Mapeamento de host* refere-se ao grupo de hosts ao qual a nova unidade de armazenamento será mapeada.  Se houver um grupo de hosts preexistente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts preexistente será selecionado automaticamente para seu mapeamento de hosts.  Você pode aceitar o grupo de hosts selecionado automaticamente ou pode selecionar um grupo de hosts diferente.
 
 +
-Se não houver nenhum grupo de hosts pré-existente para hosts em execução no sistema operacional especificado, o ONTAP criará automaticamente um novo grupo de hosts.
+Se não houver um grupo de hosts preexistente para hosts em execução no sistema operacional especificado, o ONTAP criará automaticamente um novo grupo de hosts.
 
 . Se você quiser fazer qualquer uma das seguintes opções, selecione *mais opções* e conclua as etapas necessárias.
 +
@@ -82,11 +82,12 @@ Definir uma taxa de transferência mínima e IOPS para uma unidade de storage ga
 
  a| 
 Altere o nível de serviço de desempenho padrão.
-
-Os sistemas ASA R2 oferecem dois níveis de performance. O nível de desempenho padrão é *Extreme*, que é o nível mais alto disponível. Você pode reduzir o nível de desempenho para *desempenho*.
  a| 
 .. Em *armazenamento e otimização*, ao lado do *nível de serviço de desempenho*, image:icon_dropdown_arrow.gif["ícone de seta azul apontando na direção descendente"]selecione .
 .. Selecione *desempenho*.
++
+Os sistemas ASA r2 oferecem dois níveis de desempenho.  O nível de desempenho padrão é *Extremo*, que é o nível mais alto disponível.  Você pode diminuir o nível para *Desempenho*.
+
 
 
 
