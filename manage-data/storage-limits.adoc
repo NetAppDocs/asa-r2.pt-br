@@ -41,7 +41,7 @@ Os sistemas ASA r2 suportam os seguintes limites de armazenamento:
 | Tamanho da unidade de armazenamento | 128 TB | 128 TB 
 
 
-| Unidades de armazenamento por grupo de consistência | 80 | 80 
+| Unidades de armazenamento por grupo de consistência | 256 | 256 
 
 
 | Máquinas virtuais | 800 | 1200 
