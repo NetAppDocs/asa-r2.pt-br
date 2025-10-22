@@ -68,12 +68,15 @@ Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistê
 
 Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação de sincronização ativa do SnapMirror .  A sincronização ativa do SnapMirror é suportada a partir do ONTAP 9.17.1 somente em clusters de 2 nós.
 
-[cols="3"]
+[cols="2"]
 |===
-| Limite máximo | Por par de HA | Grupos de consistência 
+| Limite máximo | Por par de HA 
 
 
-| 50 | Unidades de armazenamento | 400 
+| Grupos de consistência | 50 
+
+
+| Unidades de armazenamento | 400 
 |===
 .Para mais informações
 Para obter uma lista completa dos limites de armazenamento mais atuais do ASA R2, link:https://hwu.netapp.com/["NetApp Hardware Universe"^]consulte .
