@@ -147,6 +147,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Conexões do c
 --
 Crie as conexões do cluster do ONTAP. Para clusters sem switch, conecte as controladoras umas às outras. Para clusters comutados, conete os controladores aos switches de rede do cluster.
 
+[NOTE]
+====
+Os exemplos de cabeamento de cluster/HA mostram configurações comuns.
+
+Se você não vê sua configuração aqui, vá para link:https://hwu.netapp.com["NetApp Hardware Universe"^] para obter informações abrangentes sobre configuração e prioridade de slots para cabear seu sistema de armazenamento.
+
+====
 *Cabeamento de cluster sem switch*
 
 Conete os controladores uns aos outros para criar as conexões do cluster do ONTAP.
@@ -329,6 +336,13 @@ image::../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg[diagrama de
 --
 Crie as conexões do cluster do ONTAP. Para clusters sem switch, conecte as controladoras umas às outras. Para clusters comutados, conete os controladores aos switches de rede do cluster.
 
+[NOTE]
+====
+Os exemplos de cabeamento de cluster/HA mostram configurações comuns.
+
+Se você não vê sua configuração aqui, vá para link:https://hwu.netapp.com["NetApp Hardware Universe"^] para obter informações abrangentes sobre configuração e prioridade de slots para cabear seu sistema de armazenamento.
+
+====
 *Cabeamento de cluster sem switch*
 
 Conete os controladores uns aos outros para criar as conexões do cluster do ONTAP.
@@ -537,6 +551,13 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Cabo para rede Etherne
 --
 Conete as portas do módulo Ethernet ou as portas do módulo Fibre Channel (FC) à rede do host.
 
+[NOTE]
+====
+Os exemplos de cabeamento de rede do host mostram configurações comuns.
+
+Se você não vê sua configuração aqui, vá para link:https://hwu.netapp.com["NetApp Hardware Universe"^] para obter informações abrangentes sobre configuração e prioridade de slots para cabear seu sistema de armazenamento.
+
+====
 *Cabeamento de host Ethernet*
 
 .ASA A30 e ASA A50 com dois módulos de e/S de 40/100 GbE de 2 portas
@@ -585,6 +606,13 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cabo para
 --
 Conete as portas do módulo Ethernet ou as portas do módulo Fibre Channel (FC) à rede do host.
 
+[NOTE]
+====
+Os exemplos de cabeamento de rede do host mostram configurações comuns.
+
+Se você não vê sua configuração aqui, vá para link:https://hwu.netapp.com["NetApp Hardware Universe"^] para obter informações abrangentes sobre configuração e prioridade de slots para cabear seu sistema de armazenamento.
+
+====
 *Cabeamento de host Ethernet*
 
 .ASA C30 com dois módulos de E/S 40/100 GbE de 2 portas
