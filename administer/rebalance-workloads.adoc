@@ -11,7 +11,7 @@ summary: A partir do ONTAP 9.17.1, o ONTAP reequilibra automaticamente as cargas
 
 
 [role="lead"]
-A partir do ONTAP 9.17.1, o ONTAP rebalanceia automaticamente as cargas de trabalho entre os nós em um par de HA do sistema ASA r2 para otimizar o desempenho. Por exemplo, se a utilização em um nó aumentar para 70% enquanto a utilização em seu parceiro de HA for de apenas 30%, o ONTAP desloca automaticamente as cargas de trabalho para que a utilização de cada nó seja mais equilibrada. Como os nós do par de HA compartilham a mesma zona de disponibilidade de armazenamento, o rebalanceamento da carga de trabalho é uma operação sem cópias e sem impacto no desempenho.
+A partir do ONTAP 9.17.1, o ONTAP rebalanceia automaticamente as cargas de trabalho entre os nós em um par de HA do sistema ASA r2 para otimizar o desempenho. Por exemplo, se a utilização do espaço em um nó aumentar para 70% enquanto a utilização em seu parceiro de HA for de apenas 30%, o ONTAP desloca automaticamente as cargas de trabalho para que a utilização do espaço de cada nó seja mais compatível. Como os nós do par de HA compartilham a mesma zona de disponibilidade de armazenamento, o rebalanceamento da carga de trabalho é uma operação sem cópias e sem impacto no desempenho.
 
 
 
