@@ -60,27 +60,14 @@ Aprenda sobrelink:pre-defined-protection-policies.html["políticas de proteção
 +
 Se quiser aplicar a política de replicação a todo o cluster, selecione *Cluster*. Se desejar que a diretiva de replicação seja aplicada apenas às unidades de armazenamento em uma VM de armazenamento específica, selecione *Storage VM*.
 
-. Selecione o *tipo de política*.
+. Para o *Tipo de política*, selecione *Assíncrono*.
 +
-[cols="2,6a"]
-|===
-| Opção | Passos 
 
+NOTE: Com a política assíncrona, os dados são copiados para o site remoto depois de serem gravados na origem. A replicação síncrona não é suportada para sistemas ASA r2.
 
-| Copie os dados para o local remoto depois de gravados na fonte.  a| 
-.. Selecione *assíncrono*.
-.. Em *Transferir instantâneos da fonte*, aceite o agendamento de transferência padrão ou selecione outro.
-.. Selecione para transferir todos os instantâneos ou para criar regras para determinar quais instantâneos transferir.
-.. Opcionalmente, ative a compactação de rede.
-
-
-
-
-| Gravar dados na origem e em locais remotos simultaneamente.  a| 
-.. Selecione *Synchronous*.
-
-
-|===
+. Em *Transferir instantâneos da fonte*, aceite o agendamento de transferência padrão ou selecione outro.
+. Selecione para transferir todos os instantâneos ou para criar regras para determinar quais instantâneos transferir.
+. Opcionalmente, ative a compactação de rede.
 . Selecione *Guardar*.
 
 

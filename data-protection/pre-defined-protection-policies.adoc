@@ -15,6 +15,9 @@ A política de replicação define quando as atualizações executadas no cluste
 
 Se as políticas predefinidas não atenderem às suas necessidades, você podelink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["criar uma política de replicação personalizada"] .
 
+
+NOTE: Os sistemas ASA r2 não suportam replicação síncrona.
+
 Os sistemas ASA r2 suportam as seguintes políticas de proteção predefinidas.
 
 [cols="3,4,1"]
