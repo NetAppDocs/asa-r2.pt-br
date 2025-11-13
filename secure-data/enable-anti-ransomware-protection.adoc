@@ -25,9 +25,9 @@ Depois de habilitar o ARP/AI, você deve link:../administer/update-firmware.html
 
 
 
-== Habilitar ARP/AI em todas as unidades de armazenamento em um SVM
+== Habilite ARP/AI em todas as unidades de armazenamento em uma VM de armazenamento.
 
-Você pode habilitar o ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (SVM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na SVM terá o ARP/AI habilitado automaticamente. Você também pode aplicar o ARP/AI às unidades de armazenamento existentes na SVM.
+Você pode habilitar o ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (VM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na máquina virtual de armazenamento terá o ARP/AI ativado automaticamente.  Você também pode aplicar ARP/AI a unidades de armazenamento existentes na VM de armazenamento.
 
 .Passos
 . No Gerenciador do Sistema, selecione *Cluster > VMs de Armazenamento*.
@@ -42,13 +42,13 @@ Isso habilita ARP/AI em todas as futuras unidades de armazenamento criadas na VM
 
 
 .Resultado
-Todas as novas unidades de armazenamento que você cria no SVM são protegidas contra ataques de ransomware por padrão, e atividades suspeitas são reportadas a você no Gerenciador do Sistema.
+Todas as novas unidades de armazenamento que você criar na máquina virtual de armazenamento são protegidas contra ataques de ransomware por padrão, e qualquer atividade suspeita será relatada a você no Gerenciador de Sistemas.
 
 
 
-== Habilitar ARP/AI em unidades de armazenamento específicas em uma SVM
+== Habilite ARP/AI em unidades de armazenamento específicas em uma VM de armazenamento.
 
-Se não quiser que o ARP/AI seja habilitado em todas as unidades de armazenamento em um SVM, você pode selecionar as unidades específicas que deseja habilitar.
+Se você não deseja que o ARP/AI esteja habilitado em todas as unidades de armazenamento de uma VM de armazenamento, pode selecionar as unidades específicas que deseja habilitar.
 
 .Passos
 . No System Manager, selecione *Storage*.

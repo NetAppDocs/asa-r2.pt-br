@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9181.html 
+keywords: 'what"s new, release notes, 9.18.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.18.1 para sistemas ASA r2. 
+---
+= Novidades no ONTAP 9.18.1 para sistemas ASA r2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis no ONTAP 9.18.1 para sistemas ASA r2.
+
+
+
+== Proteção de dados
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../data-protection/snapmirror-active-sync.html["Suporte aprimorado para configurações de sincronização ativa do SnapMirror."] | O suporte para sincronização ativa do SnapMirror foi ampliado de clusters de dois nós para clusters de quatro nós. 
+|===
+
+
+== Rede
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../secure-data/iscsi-nvme-tcp-connections.html["Descarregamento de hardware IPsec Suporte a IPv6"] | O suporte ao descarregamento de hardware IPsec foi estendido ao IPv6. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fips-compliance["Algoritmos OpenSSL PQC"] | O ONTAP oferece suporte a algoritmos criptográficos de computação pós-quântica para SSL.  Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo SSL FIPS está desativado. 
+|===
+
+
+== Migração de dados SAN
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../manage-data/migrate-svm.html["Suporte para migração de VMs de armazenamento"] | Você pode migrar uma máquina virtual (VM) de armazenamento de um cluster ASA para um cluster ASA R2 sem interrupções.  Isso permite que cargas de trabalho em bloco sejam migradas para sistemas ASA r2, preservando a integridade dos dados e garantindo que não haja impacto nos aplicativos.  O processo de migração foi projetado para manter os mapeamentos de host e as configurações de LUN existentes, reduzindo o esforço operacional e o risco durante a migração. 
+|===
+
+
+== Eficiência de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["Suporte para descarregamento de cópia NVMe"] | O recurso de descarregamento de cópia NVMe permite que um host NVMe transfira as operações de cópia de sua CPU para a CPU do controlador de armazenamento ONTAP .  O host pode copiar dados de um namespace NVMe para outro, reservando seus recursos de CPU para cargas de trabalho de aplicativos. 
+
+
+| link:../data-protection/snapshot-reserve-modify.html["Suporte para modificação da reserva de snapshots e exclusão automática de snapshots."] | Você pode modificar a reserva de snapshots e ativar a exclusão automática de snapshots para limitar a quantidade de espaço usada para snapshots em suas unidades de armazenamento ASA r2.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso evita interrupções nos aplicativos, impedindo que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário. 
+|===

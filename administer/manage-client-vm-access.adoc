@@ -138,7 +138,7 @@ set -privilege advanced
 +
 [source, cli]
 ----
-network interface service-policy create -vserver <SVM_name> -policy <service_policy_name> -services data-core,data-iscsi
+network interface service-policy create -vserver <storage_VM_name> -policy <service_policy_name> -services data-core,data-iscsi
 ----
 . Verifique se a política de serviço foi criada:
 +
@@ -158,7 +158,7 @@ set -privilege admin
 
 === Crie LIFs somente iSCSI com failover automático de LIF
 
-Se houver iSCSI LIFs na SVM que não estejam habilitadas para failover automático de LIF, seus LIFs recém-criados também não serão ativados para failover automático de LIF. Se o failover automático de LIF não estiver ativado e houver um evento de failover, seus iSCSI LIFs não serão migrados.
+Se existirem LIFs iSCSI na VM de armazenamento que não estejam habilitadas para failover automático de LIF, as LIFs recém-criadas também não serão habilitadas para failover automático de LIF.  Se o failover automático de LIF não estiver habilitado e ocorrer um evento de failover, suas LIFs iSCSI não serão migradas.
 
 .Antes de começar
 Você deve ter criado uma política de serviço LIF personalizada somente iSCSI.
@@ -168,7 +168,7 @@ Você deve ter criado uma política de serviço LIF personalizada somente iSCSI.
 +
 [source, cli]
 ----
-network interface create -vserver <SVM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
+network interface create -vserver <storage_VM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
 ----
 +
 ** Recomenda-se criar dois iSCSI LIFs em cada nó, um para a malha A e outro para a malha B. Isso proporciona redundância e balanceamento de carga para o tráfego iSCSI. No exemplo a seguir, são criados um total de quatro iSCSI LIFs, dois em cada nó e um para cada malha.

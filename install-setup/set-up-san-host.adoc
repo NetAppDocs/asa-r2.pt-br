@@ -17,7 +17,7 @@ Os sistemas ASA R2 seguem as mesmas recomendações e diretrizes para a configur
 
 As configurações de várias malhas de várias redes (aquelas que usam dois ou mais switches) são recomendadas porque fornecem redundância tanto no switch quanto na camada de armazenamento. Essa redundância torna seu sistema de storage mais tolerante a falhas e oferece suporte a operações ininterruptas.
 
-A ilustração a seguir mostra um exemplo de configuração de FC com vários hosts que usam duas malhas para acessar um único par de HA. Os números de porta de destino FC (0C, 0d, 1a, 1b) também são exemplos. Os números reais das portas variam dependendo do modelo da plataforma e se você está usando adaptadores de expansão.
+A ilustração a seguir é um exemplo de uma configuração FC com vários hosts usando duas fabrics para acessar um único par HA.  Os números de porta de destino FC (0c, 0d, 1a, 1b) também são exemplos.  Os números de porta reais variam dependendo do modelo do seu sistema e se você está usando adaptadores de expansão.
 
 image::multi-fabric-san-configuration.png[Duas malhas FC que conectam vários hosts a um único par de HA]
 

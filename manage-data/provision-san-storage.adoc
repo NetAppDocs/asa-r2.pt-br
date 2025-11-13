@@ -18,11 +18,15 @@ Quando você provisiona o storage, permite que seus hosts SAN leiam e gravem dad
 
 == Crie unidades de armazenamento
 
-Em um sistema ASA R2, uma unidade de armazenamento disponibiliza espaço de armazenamento aos seus hosts SAN para operações de dados. Uma unidade de storage refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe. Se o cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN. Se o cluster estiver configurado para oferecer suporte a hosts NVMe, você será solicitado a criar um namespace NVMe. Uma unidade de armazenamento ASA R2 tem uma capacidade máxima de 128TB TB.
+Em um sistema ASA r2, uma unidade de armazenamento disponibiliza espaço de armazenamento para os hosts SAN realizarem operações de dados.  Uma unidade de armazenamento refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe.  Se o seu cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN.  Se o seu cluster estiver configurado para suportar hosts NVMe, você será solicitado a criar um namespace NVMe.  Uma unidade de armazenamento ASA r2 tem uma capacidade máxima de 128 TB.
 
 Consulte a link:https://hwu.netapp.com/["NetApp Hardware Universe"^] para obter os limites de armazenamento mais atuais para sistemas ASA R2.
 
 Os iniciadores do host são adicionados e mapeados para a unidade de armazenamento como parte do processo de criação da unidade de armazenamento. Você também pode link:provision-san-storage.html#add-host-initiators["adicione iniciadores de host"]elink:provision-san-storage.html#map-the-storage-unit-to-a-host["mapa"]-los para suas unidades de armazenamento depois que as unidades de armazenamento são criadas.
+
+A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots e habilitar a exclusão automática de snapshots ao criar uma unidade de armazenamento.  A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.
+
+link:../data-protection/snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas ASA r2."].
 
 .Passos
 . No System Manager, selecione *Storage* (armazenamento) e, em seguida, image:icon_add_blue_bg.png["ícone retangular com fundo azul e a palavra adicionar centrado em letras brancas"]selecione .
@@ -88,6 +92,15 @@ Altere o nível de serviço de desempenho padrão.
 +
 Os sistemas ASA r2 oferecem dois níveis de desempenho.  O nível de desempenho padrão é *Extremo*, que é o nível mais alto disponível.  Você pode diminuir o nível para *Desempenho*.
 
+
+
+
+
+ a| 
+Modifique a reserva de snapshots padrão e habilite a exclusão automática de snapshots.
+ a| 
+.. Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.
+.. Selecione *Excluir automaticamente snapshots antigos*.
 
 
 

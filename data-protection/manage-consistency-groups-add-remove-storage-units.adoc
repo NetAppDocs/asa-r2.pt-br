@@ -17,9 +17,23 @@ Aumente ou diminua o tamanho de um grupo de consistência modificando o número 
 
 == Adicione unidades de armazenamento a um grupo de consistência
 
-Expanda a quantidade de storage gerenciada por um grupo de consistência adicionando unidades de armazenamento ao grupo de consistência.
+Expanda a quantidade de armazenamento gerenciado por um grupo de consistência adicionando unidades de armazenamento novas ou existentes ao grupo.
 
-Você pode adicionar unidades de armazenamento existentes ao seu grupo de consistência ou criar novas unidades de armazenamento para adicionar ao grupo de consistência.
+A partir do ONTAP 9.18.1, você pode configurar a reserva de snapshots e a exclusão automática de snapshots para limitar a quantidade de espaço usada pelos snapshots em suas unidades de armazenamento.  Ao adicionar uma unidade de armazenamento a um grupo de consistência existente, a reserva de snapshots e a exclusão automática de snapshots são definidas da seguinte forma por padrão.
+
+[cols="3"]
+|===
+| Se você adicionar... | A porcentagem de reserva instantânea está definida como... | A exclusão automática de instantâneos é... 
+
+
+| Novas unidades de armazenamento | 0 | Desabilitado 
+
+
+| Unidades de armazenamento existentes | Inalterado | Inalterado 
+|===
+Você pode modificar as configurações padrão para novas unidades de armazenamento ao criá-las.  Você também podelink:snapshot-reserve-modify.html["modificar unidades de armazenamento existentes"] para atualizar suas configurações atuais.
+
+link:snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas de armazenamento ASA r2."].
 
 .Antes de começar
 Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja expandir estiver em um relacionamento de sincronização ativo do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes de poder adicionar unidades de armazenamento.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder expandir o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
@@ -46,7 +60,7 @@ Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja
 . Selecione *usando novas unidades de armazenamento*.
 . Introduza o número de unidades que pretende criar e a capacidade por unidade.
 +
-Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente* para atribuir uma capacidade diferente a cada unidade.
+Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host.  Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.
 
 . Selecione *expandir*.
 
@@ -63,7 +77,7 @@ Os instantâneos existentes do grupo de consistência não incluem as unidades d
 
 == Remova uma unidade de armazenamento de um grupo de consistência
 
-Você deve remover uma unidade de armazenamento de um grupo de consistência se quiser excluir a unidade de armazenamento, se quiser gerenciá-la como parte de um grupo de consistência diferente ou se não precisar mais proteger os dados que ela contém. Remover uma unidade de armazenamento de um grupo de consistência quebra a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.
+Remova uma unidade de armazenamento de um grupo de consistência para excluí-la, gerenciá-la como parte de um grupo de consistência diferente ou interromper a proteção de seus dados.  Remover uma unidade de armazenamento de um grupo de consistência rompe a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.
 
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.

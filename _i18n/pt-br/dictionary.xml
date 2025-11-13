@@ -4,12 +4,10 @@
   <block id="7dee5324bfa4a865b9f803cb87a5033c" category="doc">Aumentar a capacidade de storage em sistemas de storage ASA R2</block>
   <block id="ac2c93dc09d777746f4eb0be24d69344" category="paragraph">Adicione unidades a um nó ou gaveta para aumentar a capacidade de storage do sistema ASA R2.</block>
   <block id="d1566cdda155967b81fd9a70bd3c4fb5" category="section-title">Use o NetApp Hardware Universe para se preparar para a instalação de uma nova unidade</block>
-  <block id="0781fe35244a615a967521c3c38562c3" category="paragraph">Antes de instalar uma nova unidade em um nó ou compartimento, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com sua plataforma ASA R2 e para identificar o slot correto para a nova unidade. Os slots corretos para adicionar unidades variam dependendo do modelo da plataforma e da versão do ONTAP. Em alguns casos, você precisa adicionar unidades a slots específicos em sequência.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Passos</block>
   <block id="e5e09031843479ef9ef8cbbd4c2f404c" category="inline-link-macro">NetApp Hardware Universe</block>
   <block id="71ce934da626f129b18da1d468eb6ec0" category="list-text">Vá para <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>.</block>
   <block id="df9551630bd3ed1534543645b69f8c03" category="list-text">Em *Produtos*, selecione suas configurações de hardware.</block>
-  <block id="6f9b9df730c535d946c72327cf939e99" category="list-text">Selecione a sua plataforma ASA R2.</block>
   <block id="38df0ee5fe54dd6c758252b6c0d10ca2" category="list-text">Selecione sua versão do ONTAP; em seguida, selecione *Mostrar resultados*.</block>
   <block id="2a1ce808a258d214a002629c6379e420" category="list-text">Abaixo do gráfico, selecione *clique aqui para ver vistas alternativas*; em seguida, escolha a vista que corresponde à sua configuração.</block>
   <block id="8879ae602a103ebb018f02c741b13bc6" category="list-text">Use a exibição de sua configuração para confirmar se sua nova unidade é suportada e o slot correto para instalação.</block>
@@ -20,7 +18,6 @@
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Sobre esta tarefa</block>
   <block id="ab8d4a8595207b62032f838aac5d0ec5" category="paragraph">Você deve repetir as etapas deste procedimento para cada unidade.</block>
   <block id="42fceed144d93d382eb9bdcc9b1254d2" category="list-text">Aterre-se corretamente.</block>
-  <block id="30bc8715fab2eca793d47ebeb9b97131" category="list-text">Retire cuidadosamente a moldura da parte frontal da plataforma.</block>
   <block id="80177dc7bdbbbc02b9ce8afc2b88ec50" category="list-text">Insira a nova unidade no slot correto.</block>
   <block id="e0c83787dff0404e30c533312ac6d655" category="list-text">Com o manípulo do excêntrico na posição aberta, utilize as duas mãos para introduzir a nova transmissão.</block>
   <block id="07107f94f54a6a09df951d28b2b9d729" category="list-text">Prima até a unidade parar.</block>
@@ -254,7 +251,6 @@
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">Crie um instantâneo para fazer backup de seus dados no sistema ASA R2. Você pode criar snapshots manuais ou usar um grupo de consistência para agendar snapshots automáticos.</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">Crie instantâneos para fazer backup de seus dados usando o Gerenciador de sistema do ONTAP | ASA R2</block>
   <block id="054d41e4a716977ca191fd8200811262" category="doc">Crie snapshots para fazer backup de seus dados em sistemas de storage ASA R2</block>
-  <block id="c54a8c5c3612eb9292700d6127c38aae" category="paragraph">Para fazer backup dos dados no seu sistema ASA R2, você precisa criar um snapshot. Você pode usar o Gerenciador do sistema do ONTAP para criar um instantâneo manual de uma única unidade de armazenamento ou para criar um grupo de consistência e agendar instantâneos automáticos de várias unidades de armazenamento ao mesmo tempo.</block>
   <block id="b4989e9cd4759ac2e6093d9980748a69" category="section-title">Passo 1: Opcionalmente, crie um grupo de consistência</block>
   <block id="63530a16b44af6a1998622cd19c75435" category="paragraph">Um grupo de consistência é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade. Crie grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados para workloads de aplicações que abrangem várias unidades de storage. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento, você pode fazer backup de todo o banco de dados simplesmente adicionando proteção de dados snapshot ao grupo de consistência.</block>
   <block id="36a26aba8b5d6874507e60d8aec48f50" category="paragraph">Crie um grupo de consistência usando novas unidades de armazenamento ou crie um grupo de consistência usando unidades de armazenamento existentes.</block>
@@ -263,7 +259,6 @@
   <block id="edb9e8b079cc1bbba23675ed2fb9ee82" category="list-text"><block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>Selecione ; em seguida, selecione *usando novas unidades de armazenamento*.</block>
   <block id="52121a2aaeb6d47d15d81e8ee203b5f7" category="list-text">Introduza um nome para a nova unidade de armazenamento, o número de unidades e a capacidade por unidade.</block>
   <block id="7028b1e3a2021d39c73b8824b7bc9a9d" category="list-text">Selecione o sistema operacional do host e o mapeamento do host.</block>
-  <block id="97b6e4a76453272c0f1f20a9a7e57b6b" category="paragraph">Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.</block>
   <block id="c8ea84d9e7c3634b93976499f8f58956" category="open-title">Use unidades de armazenamento existentes</block>
   <block id="7e316dc54c2e1709ad364e8019e289ee" category="list-text"><block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>Selecione ; em seguida, selecione *usando unidades de armazenamento existentes*.</block>
   <block id="2e61619ab9c0ca788e345712609869b9" category="list-text">Introduza um nome para o grupo de consistência; em seguida, procure e selecione as unidades de armazenamento que pretende incluir no grupo de consistência.</block>
@@ -273,7 +268,6 @@
   <block id="778e49c36a4b37504a26fe297bcd89cd" category="paragraph-title">Tipos de instantâneos</block>
   <block id="d6acd69ed4935a0b24bcc6574f0a4d59" category="paragraph">Você pode criar um snapshot sob demanda de uma única unidade de armazenamento ou de um grupo de consistência. Você pode criar snapshots automatizados de um grupo de consistência que contém várias unidades de storage. Não é possível criar instantâneos automatizados de uma única unidade de armazenamento.</block>
   <block id="92cd7e74f8f496ce11ec549a066c7294" category="list-text">Snapshots sob demanda</block>
-  <block id="db61b5e3845d577b00452465aebf140c" category="paragraph">Um instantâneo sob demanda de uma unidade de armazenamento pode ser criado a qualquer momento. A unidade de armazenamento não precisa ser membro de um grupo de consistência para ser protegida por um instantâneo sob demanda. Se você criar um snapshot sob demanda de uma unidade de armazenamento que seja membro de um grupo de consistência, as outras unidades de armazenamento no grupo de consistência não serão incluídas no snapshot sob demanda. Se você criar um snapshot sob demanda de um grupo de consistência, todas as unidades de armazenamento no grupo de consistência serão incluídas no snapshot.</block>
   <block id="1964699fd01a4c2ddcef9f17b9f6d567" category="list-text">Snapshots automatizados</block>
   <block id="7492dacea4eeb2d5921e9922d2b4507f" category="paragraph">Snapshots automatizados são criados usando políticas de snapshot. Para aplicar uma política de instantâneos a uma unidade de armazenamento para criação automática de instantâneos, a unidade de armazenamento deve ser membro de um grupo de consistência. Se você aplicar uma política de snapshot a um grupo de consistência, todas as unidades de storage do grupo de consistência serão protegidas com snapshots automatizados.</block>
   <block id="1ccdfa3ac7a08ca84e85557100c8e747" category="paragraph">Crie um instantâneo de um grupo de consistência ou de uma unidade de armazenamento.</block>
@@ -328,8 +322,6 @@
   <block id="4e79f33a9e0adc472ceaf99ed602b652" category="list-text">Em *proteção local*, desmarque Agendar instantâneos.</block>
   <block id="ca8e731d9e6dc4ba5a84e247c0d6d021" category="paragraph">Os instantâneos não serão tirados para nenhuma das unidades de armazenamento no grupo consistência.</block>
   <block id="a01135c71d8b94ac55a2da9cf501ab6b" category="section-title">Adicione unidades de armazenamento a um grupo de consistência</block>
-  <block id="22226930fd23f1a9d384da5f9b324b54" category="paragraph">Expanda a quantidade de storage gerenciada por um grupo de consistência adicionando unidades de armazenamento ao grupo de consistência.</block>
-  <block id="803580fce7a145b0005207254f703485" category="paragraph">Você pode adicionar unidades de armazenamento existentes ao seu grupo de consistência ou criar novas unidades de armazenamento para adicionar ao grupo de consistência.</block>
   <block id="9915e342b5df3a47dd8be45e6db325d1" category="open-title">Adicionar unidades de armazenamento existentes</block>
   <block id="7c05d8396bced6918c322e75b3d7987f" category="list-text">Passe o Mouse sobre o grupo de consistência que você deseja expandir.</block>
   <block id="beaf54a53c2f1698f45d4c0b98c04a2d" category="list-text"><block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>Selecione ; em seguida, selecione *expandir*.</block>
@@ -338,7 +330,6 @@
   <block id="1f27e0116140e973720d82f7ba2ab218" category="open-title">Adicione novas unidades de armazenamento</block>
   <block id="236d027a29735ea241017b984070febe" category="list-text">Selecione *usando novas unidades de armazenamento*.</block>
   <block id="49cc1302e1d4a9fc25e79b21e9b9390d" category="list-text">Introduza o número de unidades que pretende criar e a capacidade por unidade.</block>
-  <block id="0770b0d8eb6a68b2d6ebc8f812dd5c48" category="paragraph">Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente* para atribuir uma capacidade diferente a cada unidade.</block>
   <block id="6810fc9a2124dfae445328ea12c8054a" category="list-text">Selecione *expandir*.</block>
   <block id="0a20c90d5270bed19fcaf851778c663b" category="paragraph-title">O que vem a seguir</block>
   <block id="dca1bf967ef02ec6ead04262fe0c5dfd" category="inline-link-macro">adicione iniciadores de host</block>
@@ -347,7 +338,6 @@
   <block id="99700bd2ab6af15decb17885d5856657" category="inline-link-macro">crie um instantâneo imediato</block>
   <block id="883fa8b44943472ff82c4b395e3207ba" category="paragraph">Os instantâneos existentes do grupo de consistência não incluem as unidades de armazenamento recém-adicionadas. Você deve <block ref="bde1d2fc6fbace4be56bc1d078ee60f6" category="inline-link-macro-rx"></block>do seu grupo de consistência para proteger suas unidades de storage recém-adicionadas até que o próximo snapshot agendado seja criado automaticamente.</block>
   <block id="eb3d9524e99cab26e24c94b8d7a74f7b" category="section-title">Remova uma unidade de armazenamento de um grupo de consistência</block>
-  <block id="e3572ea3b49259043177e2c8ecae6ad4" category="paragraph">Você deve remover uma unidade de armazenamento de um grupo de consistência se quiser excluir a unidade de armazenamento, se quiser gerenciá-la como parte de um grupo de consistência diferente ou se não precisar mais proteger os dados que ela contém. Remover uma unidade de armazenamento de um grupo de consistência quebra a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.</block>
   <block id="f0717f353ffc00d2e4c1e2eaa33e7aa8" category="list-text">Clique duas vezes no grupo de consistência do qual você deseja remover uma unidade de armazenamento.</block>
   <block id="c7908abb23b7065aef5b318dd60abe7b" category="list-text">Na seção *Visão geral*, em *unidades de armazenamento*, selecione a unidade de armazenamento que deseja remover; em seguida, selecione *Remover do grupo de consistência*.</block>
   <block id="f3a864061c7c167216cb7e02d3f90cf4" category="paragraph">A unidade de armazenamento já não é membro do grupo de consistência.</block>
@@ -538,7 +528,6 @@
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">Os sistemas ASA R2 em comparação com os sistemas ASA</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">Saiba mais <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>sobre o .</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
-  <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">Saiba mais sobre o <block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>.</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">Para começar a funcionar com o sistema ASA R2, instale os componentes de hardware, configure o cluster, configure o acesso aos dados dos hosts para o sistema de storage e provisione o storage.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">Um</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Instale e configure o hardware</block>
@@ -942,7 +931,6 @@
   <block id="32cb0862435d6372c4c3486000755753" category="paragraph">*Suporte de camada de armazenamento*</block>
   <block id="5ded9d660c20efc47120134164abb3de" category="cell">Zona de disponibilidade de armazenamento</block>
   <block id="d5350d8759b1ec84607e47908809058e" category="cell">Agregados</block>
-  <block id="0627b8d84f59389e615cd7169d2cb392" category="paragraph">As seguintes plataformas ASA são classificadas como sistemas ASA R2:</block>
   <block id="cd527b2aadf2bebf28ba082002724ab0" category="list-text">ASA A70</block>
   <block id="009f19d7e9e80eda1c7dbf7374519e58" category="list-text">ASA A90</block>
   <block id="e039aa1be61543fd84f1c4eb5d3e9f6b" category="inline-link-macro">Sistemas de hardware ONTAP</block>
@@ -951,8 +939,6 @@
   <block id="2734568aee16bf6e5d8b1dae1295b6bd" category="list-text">Saiba mais sobre o <block ref="b827a6cff8052295f0cbdcb7ea0abba2" category="inline-link-macro-rx"></block>.</block>
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">Resumo das diferenças do sistema ASA R2</block>
   <block id="396a0ea87d82ffa45a3a3dc95544f118" category="paragraph">As principais diferenças entre os sistemas ASA R2 e os sistemas FAS, AFF e ASA relevantes para a interface de linha de comando (CLI) do ONTAP e API REST são descritas abaixo.</block>
-  <block id="4e7270ba884019dc8b8fddd430315f25" category="paragraph-title">Criação padrão de SVM com serviços de protocolo</block>
-  <block id="d62021d97a236605afe9b7862d64509e" category="paragraph">Os novos clusters contêm automaticamente um SVM de dados padrão com os protocolos SAN ativados. Os LIFs de dados IP suportam protocolos iSCSI e NVMe/TCP e usam a<block ref="6ee97f4349d48b4c53372dfd08835169" prefix=" " category="inline-code"></block> política de serviço por padrão.</block>
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">Criação automática de volume</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">A criação de uma unidade de armazenamento (LUN ou namespace) cria automaticamente um volume a partir da zona de disponibilidade de armazenamento. Isso resulta em um namespace simplificado e comum. Eliminar uma unidade de armazenamento elimina automaticamente o volume associado.</block>
   <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">Alterações no provisionamento fino e espesso</block>
@@ -1106,7 +1092,6 @@
   <block id="21ba50dbf4007619e7e1e3d1d4890d04" category="doc">Provisione storage SAN ONTAP nos sistemas ASA R2</block>
   <block id="5130efcbab54e3de0826ab521946e46d" category="paragraph">Quando você provisiona o storage, permite que seus hosts SAN leiam e gravem dados nos sistemas de storage ASA R2. Para provisionar o armazenamento, use o Gerenciador do sistema do ONTAP para criar unidades de armazenamento, adicionar iniciadores de host e mapear o host para uma unidade de armazenamento. Você também precisa executar etapas no host para ativar as operações de leitura/gravação.</block>
   <block id="765e871d79c6c686febb0d212efcee42" category="section-title">Crie unidades de armazenamento</block>
-  <block id="e8ebd98873731ad8648e10093bffa519" category="paragraph">Em um sistema ASA R2, uma unidade de armazenamento disponibiliza espaço de armazenamento aos seus hosts SAN para operações de dados. Uma unidade de storage refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe. Se o cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN. Se o cluster estiver configurado para oferecer suporte a hosts NVMe, você será solicitado a criar um namespace NVMe. Uma unidade de armazenamento ASA R2 tem uma capacidade máxima de 128TB TB.</block>
   <block id="2c9e1fb1b8b3b0713d51e8ae575f96cf" category="paragraph">Consulte a <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> para obter os limites de armazenamento mais atuais para sistemas ASA R2.</block>
   <block id="1d78dc8ed51214e518b5114fe24490ae" category="inline-link-macro">mapa</block>
   <block id="07de3115f268ee32f824fa17392a0fcc" category="paragraph">Os iniciadores do host são adicionados e mapeados para a unidade de armazenamento como parte do processo de criação da unidade de armazenamento. Você também pode <block ref="8a23e2c4e7cc30673e8b314a4ba4f4ed" category="inline-link-macro-rx"></block>e<block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>-los para suas unidades de armazenamento depois que as unidades de armazenamento são criadas.</block>
@@ -1126,7 +1111,6 @@
   <block id="9b4adc8f209fe1ca07853989d48af3c0" category="paragraph">Crie uma nova política de QoS</block>
   <block id="89434c8406398c368cd7d10c247065ce" category="list-text">Selecione *Definir nova política*.</block>
   <block id="b74fc9d9c59f41be10173fdbb1700290" category="list-text">Introduza um nome para a nova política de QoS.</block>
-  <block id="b34d54ae4685c8e077999235123045a8" category="list-text">Defina um limite de QoS, uma garantia de QoS ou ambos.</block>
   <block id="6fcff5e2923098e24687f3697b183c43" category="list-text">Opcionalmente, em *limit*, insira um limite máximo de throughput, um limite máximo de IOPS ou ambos.</block>
   <block id="7305685d9954c87c03f3ef6f8ce00770" category="paragraph">A configuração de uma taxa de transferência máxima e de IOPS para uma unidade de storage restringe o impacto nos recursos do sistema, de modo que não prejudique o desempenho de workloads críticos.</block>
   <block id="23ad2f0aae96967cea4d44b68bd84695" category="list-text">Opcionalmente, em *Guarantee*, insira uma taxa de transferência mínima, um mínimo de IOPS ou ambos.</block>
@@ -1207,7 +1191,6 @@
   <block id="94751ffa48a4135b11ac22ac2dae643e" category="inline-link-macro">Documentação do host SAN ONTAP</block>
   <block id="88e865c72412e4a1327806858c6d2784" category="paragraph">Para obter mais detalhes sobre a configuração do lado do host, consulte <block ref="5045572e3d187366935cbd2a743bcd07" category="inline-link-macro-rx"></block>o para seu host específico.</block>
   <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">Limites de armazenamento do ASA R2</block>
-  <block id="abe1583ce937db07d8d0619331789f3c" category="paragraph">Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de storage do ASA R2.</block>
   <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128 TB</block>
   <block id="bebabfeb2bb62750bf38ee33a0e54982" category="paragraph">Para obter uma lista completa dos limites de armazenamento mais atuais do ASA R2, <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>consulte .</block>
   <block id="fcfb17e140eb359d2e4bf0ffb8fc90f2" category="summary">Monitore o desempenho do cluster e das unidades de storage para determinar como a latência, o IOPS e a taxa de transferência estão impactando suas aplicações essenciais aos negócios.</block>
@@ -1285,10 +1268,8 @@
   <block id="e175dd30709c0589a580475db0f0f8fb" category="paragraph">Execute todas as ações necessárias para implementar as práticas recomendadas e otimizar a segurança e o desempenho do cluster.</block>
   <block id="826af48aa0c4b34379a1a65ba5721ebe" category="doc">Novidades do ONTAP 9.16,0 para sistemas ASA R2</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,0 para sistemas ASA R2.</block>
-  <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">Plataformas</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">Atualização</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descrição</block>
-  <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">Estão disponíveis os seguintes sistemas NetApp ASA R2. Essas plataformas fornecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades dos clientes somente de SAN.</block>
   <block id="26ed02718973e705cd69ee6e109400e0" category="section-title">System Manager</block>
   <block id="43216e15c49bb3bc0da538a8d830f901" category="inline-link-macro">Suporte otimizado para clientes somente de SAN</block>
   <block id="60dc71f158c44e4e34a36dec8e3210a5" category="cell"><block ref="60dc71f158c44e4e34a36dec8e3210a5" category="inline-link-macro-rx"></block></block>
@@ -1483,7 +1464,6 @@
   <block id="9a364a877707d0b61983419895ba3632" category="doc">Configuração de host SAN com sistemas ASA R2</block>
   <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">É recomendável usar dois ou mais switches para conetar seu sistema de storage a um ou mais hosts SAN. Para configurações iSCSI, a topologia de rede que coneta seus hosts, switches e sistema de armazenamento é chamada de _network_. Para configurações FC e FC-NVMe, essa mesma topologia de rede é chamada de _Fabric_.</block>
   <block id="1ea2e359c5275499813dff319ee20baa" category="paragraph">As configurações de várias malhas de várias redes (aquelas que usam dois ou mais switches) são recomendadas porque fornecem redundância tanto no switch quanto na camada de armazenamento. Essa redundância torna seu sistema de storage mais tolerante a falhas e oferece suporte a operações ininterruptas.</block>
-  <block id="37fdee11e5eadf392d943f0a18609831" category="paragraph">A ilustração a seguir mostra um exemplo de configuração de FC com vários hosts que usam duas malhas para acessar um único par de HA. Os números de porta de destino FC (0C, 0d, 1a, 1b) também são exemplos. Os números reais das portas variam dependendo do modelo da plataforma e se você está usando adaptadores de expansão.</block>
   <block id="cafd65a257cc24af0e84e8951ad9d9b5" category="image-alt">Duas malhas FC que conectam vários hosts a um único par de HA</block>
   <block id="7934e04423cdef3122abed138d14e800" category="inline-link-macro">Configuração SAN para hosts iSCSI</block>
   <block id="1697498835ad65fe0eb56d5a08926207" category="inline-link-macro">Configuração DE SAN para hosts FC e FC/NVMe</block>
@@ -1535,7 +1515,6 @@
   <block id="d351531ad851e21d1ccbc812e54540ff" category="paragraph">Depois de se preparar para a atualização, é recomendável que você execute atualizações usando <block ref="a93595527d1144b0b27a701c939efa63" category="inline-link-macro-rx"></block>o . O ANDU aproveita a tecnologia de failover de alta disponibilidade (HA) da ONTAP para garantir que os clusters continuem fornecendo dados sem interrupção durante a atualização.</block>
   <block id="8b7f4f92636306e034e67a0098393065" category="inline-link-macro">Atualizações de software ONTAP</block>
   <block id="db24448a282517925d7637e0ab57fb35" category="paragraph">Saiba mais <block ref="ee50b0384392ffd34e721693cf1abb90" category="inline-link-macro-rx"></block>sobre o .</block>
-  <block id="fff17537d9a4bdde67e260b49d17c884" category="paragraph">Ao criar um grupo de consistência usando novas unidades de armazenamento, você pode atribuir uma capacidade diferente a cada unidade de armazenamento, alterar o nível de serviço de desempenho padrão e criar até cinco grupos de consistência filho. Ao criar um grupo de consistência usando unidades de armazenamento existentes, você pode adicionar unidades de armazenamento que já estão em uso.</block>
   <block id="06b783ccc728f89654eb406f121a920e" category="paragraph">Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host por padrão. Opcionalmente, você pode atribuir uma capacidade diferente a cada unidade.</block>
   <block id="c714809f14fa9d9c65c38961426d89e3" category="paragraph">Atribua uma capacidade diferente a cada unidade de armazenamento</block>
   <block id="b079c5d39925229ba3c754aec7200bfe" category="paragraph">Selecione *Adicionar uma capacidade diferente*.</block>
@@ -1631,13 +1610,10 @@
   <block id="0fe3023d00cc7e6a03e47a3c68ab74c5" category="cell">Você pode usar...</block>
   <block id="5c5372da5c24091217c06cc0f6ec8d03" category="cell">Somente no nível do cluster</block>
   <block id="ac4595d6d7fb8008d832bded40c17ce1" category="paragraph">O gerenciador de chaves integrado ou um gerenciador de chaves externo</block>
-  <block id="ee660d5fa0fcf5d6a9acb167806fbf93" category="cell">Somente nível SVM</block>
   <block id="0553120d27a584be88a1ae3bd8c69d64" category="cell">Apenas um gerenciador de chaves externo</block>
-  <block id="81b9ace7cc0d5c4a18ed0debac590134" category="paragraph">Tanto o cluster quanto o nível da SVM</block>
   <block id="a8baf82d452f3a828b4d58fae37b7d17" category="paragraph">Uma das seguintes combinações de gerenciador de chaves:</block>
   <block id="fd577a8bfd88959b13dfc6803c7ef6ce" category="list-text">Opção 1</block>
   <block id="08c0163f788e58353da3da5e9a5fa6c7" category="paragraph">Nível de cluster: Gerenciador de chaves integrado</block>
-  <block id="434835c03ec88a20257ade31cd0f6e40" category="paragraph">Nível da SVM: Gerente de chaves externo</block>
   <block id="e24963e40778134b357f4a5eac58e1f5" category="list-text">Opção 2</block>
   <block id="3a8a9355eb7486336283b79738409c86" category="paragraph">Nível de cluster: Gerenciador de chaves externo</block>
   <block id="0210c164d56b9ee340b6de0f8bcc2d48" category="section-title">Migre chaves entre os gerenciadores-chave no nível do cluster do ONTAP</block>
@@ -1813,13 +1789,10 @@
   <block id="c10f6cdf89366933afe9e0a05f726423" category="paragraph">Se você estiver usando o protocolo IP no sistema ASA R2, poderá configurar a segurança IP (IPsec) para melhorar a segurança dos dados. O IPsec é um padrão da Internet que fornece criptografia de dados em trânsito, autenticação para o tráfego que flui entre os pontos de extremidade da rede em um nível IP e proteção contra repetição e ataques mal-intencionados contra seus dados.</block>
   <block id="602c5938acf67898ca9af2011ec2c721" category="paragraph">Para sistemas ASA R2, o IPsec está disponível para hosts iSCSI e NVMe/TCP.</block>
   <block id="a0304825371175c4b6363207289817a6" category="paragraph">Em determinados sistemas ASA R2, várias operações criptográficas, como verificações de criptografia e integridade, podem ser descarregadas para uma placa de controlador de interface de rede (NIC) suportada. A taxa de transferência para operações descarregadas para a placa NIC é de aproximadamente 5% ou menos. Isso pode melhorar significativamente o desempenho e a taxa de transferência do tráfego de rede protegido pelo IPsec.</block>
-  <block id="1d0cc018fd5504976c79bca7bbffc647" category="paragraph">As seguintes placas NIC são suportadas para descarga de hardware nos seguintes sistemas ASA R2:</block>
   <block id="90dda976d3b078f124db5239495ee246" category="cell">Placa NIC suportada</block>
   <block id="fde1abb5537b55c34521d414267b3f70" category="cell">Sistemas ASA r2</block>
   <block id="9709e8dba9666b1074d2084b0d7f0020" category="paragraph">X50131A - (controlador Ethernet 2P, 40G/100g/200g/400G)</block>
   <block id="078fcdf403281df3fd9849a79a715dc5" category="paragraph">X60132A - (controlador Ethernet 4P, 10G/25G)</block>
-  <block id="68852b93a73d565bf943b2e28d4c653b" category="inline-link-macro">Configure a segurança IP para a rede ONTAP</block>
-  <block id="22935e4bd8297da6bdfa32067fc7243c" category="paragraph"><block ref="22935e4bd8297da6bdfa32067fc7243c" category="inline-link-macro-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">Conexões IP seguras</block>
   <block id="8272f5b23e79d0ee33bd5151dcddc454" category="section-title">Crie uma VM de storage</block>
   <block id="628df41697616cee6d5c865542d342ad" category="paragraph">Durante a configuração do cluster, sua máquina virtual de armazenamento de dados (VM) padrão é criada. Todas as novas unidades de armazenamento são criadas dentro da VM de armazenamento de dados padrão, a menos que você crie e selecione uma VM de armazenamento diferente. Você pode criar uma VM de armazenamento adicional para segregar suas unidades de armazenamento para diferentes aplicativos, departamentos ou clientes. Por exemplo, você pode querer criar uma VM de storage para seu ambiente de desenvolvimento e outra VM de storage para seu ambiente de produção ou criar uma VM de storage para seu departamento financeiro e outra VM de storage para seu departamento de marketing.</block>
@@ -1830,7 +1803,6 @@
   <block id="7829236e8ef56480b7f29df2b14afa3a" category="list-text">Em *Storage VM Administration*, selecione *Manage administrator account* (gerir conta de administrador); em seguida, introduza o nome de utilizador e a palavra-passe da conta de administrador.</block>
   <block id="ff5f233f84c798fec376d29c4c3db0a9" category="list-text">Adicione uma interface de rede para a VM de storage.</block>
   <block id="b1481e6f17d8c80e8f17d881ac08a5a1" category="paragraph">Você criou uma VM de storage. Agora você pode usar a VM de storage para <block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>.</block>
-  <block id="7dca75f4415194c135e180d8fe8fa1a8" category="paragraph">Se houver iSCSI LIFs na SVM que não estejam habilitadas para failover automático de LIF, seus LIFs recém-criados também não serão ativados para failover automático de LIF. Se o failover automático de LIF não estiver ativado e houver um evento de failover, seus iSCSI LIFs não serão migrados.</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">Passo</block>
   <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">Esses procedimentos mostram configurações comuns. O cabeamento específico depende dos componentes solicitados para o seu sistema de storage. Para obter detalhes abrangentes de configuração e prioridade de slot, <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>consulte .</block>
   <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">Os procedimentos de cabeamento de rede de cluster/HA e host mostram configurações comuns.</block>
@@ -1942,9 +1914,7 @@
   <block id="4c018311b80f4cb91ab6f57f2e32f309" category="cell">Antes de reverter você deve...</block>
   <block id="e270dd0b11b4d60d2faa3a4912f99f8e" category="cell">Grupos de consistência hierárquica em um relacionamento de sincronização ativa do SnapMirror</block>
   <block id="5ac0fbbc053ed720aacdf3f3af276820" category="cell">Relacionamentos de importação ativos</block>
-  <block id="2a8a59c901b916190a5f0c2fc9db590e" category="cell">Excluir os relacionamentos de importação ativos</block>
   <block id="2d1eaa6efdb3bbcbeddb0390177c033f" category="cell">Proteção anti-ransomware habilitada</block>
-  <block id="e8718651f207e77e4c3719811e7c0cf4" category="cell">Desativar proteção anti-ransomware</block>
   <block id="46a90b9185317a19d7817a93ff7da452" category="paragraph">Você deve configurar o ONTAP Mediator ou o ONTAP Cloud Mediator antes de começar a usar a sincronização ativa do SnapMirror para monitoramento de cluster. O ONTAP Mediator e o ONTAP Cloud Mediator fornecem um armazenamento persistente e protegido para metadados de alta disponibilidade (HA) usados pelos clusters ONTAP em um relacionamento de sincronização ativa do SnapMirror . Além disso, ambos os mediadores fornecem uma funcionalidade de consulta de integridade de nó síncrona para auxiliar na determinação de quorum e servem como um proxy de ping para detecção de atividade do controlador.</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">pré-requisitos</block>
   <block id="e67055b6d8c65ffeed652e0147459791" category="list-text">Se você estiver usando o ONTAP Cloud Mediator, verifique se o seu sistema ASA r2 atende aos requisitos <block ref="efcd0c458e1c451926dd33228d1c1e37" category="inline-link-macro-rx"></block> .</block>
@@ -2093,30 +2063,16 @@
   <block id="97deade833d7f54a1cb2037da41d63c5" category="summary">Como os sistemas ASA r2 executam uma versão simplificada do ONTAP, muitas tarefas comuns do ONTAP e funções do System Manager são executadas da mesma forma nos sistemas ASA r2 e em outros sistemas ONTAP .</block>
   <block id="f01fcb252b22a1393a193f28b22135fc" category="doc">Recursos comuns do ONTAP suportados em sistemas ASA r2</block>
   <block id="8b9b16acd91241c2b1259b842284faa4" category="paragraph">Para obter mais informações sobre recursos e funções comuns, consulte a seguinte documentação do ONTAP .</block>
-  <block id="c4fd082344c864eb467313e95b8d180c" category="section-title">Administração ONTAP</block>
-  <block id="3509f6a6548f231b598862e6a86c1905" category="inline-link-macro">Aprenda a pesquisar, filtrar e classificar informações no ONTAP System Manager</block>
-  <block id="f2c261d38e3cd00f0f4e94421784b1c6" category="list-text"><block ref="14e0c069f1ce9a6bcbd5a7df29a2f8fa" category="inline-link-macro-rx"></block> .</block>
-  <block id="a51cd3bd8dc9efabd4808d4faa54cb85" category="inline-link-macro">Combine portas físicas para criar grupos de interface</block>
-  <block id="bb49d6d1b08cda0c0a08c09d33a7c5ad" category="list-text"><block ref="3b74de5ea1634b6a41e3bfcec30781fb" category="inline-link-macro-rx"></block> .</block>
-  <block id="fa565bb0f000cb6c2f4790cc6d198f5a" category="inline-link-macro">Saiba mais sobre o provisionamento NVMe sobre Fabrics (NVMe-oF)</block>
-  <block id="fbaf80b440c9475337dc9e4759d7f3f6" category="list-text"><block ref="b18d43e42a2f36395933e07f26510186" category="inline-link-macro-rx"></block> .</block>
   <block id="5e186296c44faa92e08310523592d277" category="inline-link-macro">Saiba mais sobre a autenticação OAuth 2.0</block>
   <block id="8775ccec3600b02bc634bcbb8ba5e109" category="list-text"><block ref="ec172948fda0143f24d4db53cd9b14f1" category="inline-link-macro-rx"></block> .</block>
   <block id="7b29684a24c951f2e44f7a93c7c99fd9" category="inline-link-macro">Aprenda sobre autenticação e autorização de clientes</block>
   <block id="11e319d037d43f26f71069d5289f8ec6" category="list-text"><block ref="aeb46d3470ec900658111632167b8d96" category="inline-link-macro-rx"></block> .</block>
   <block id="756155b463dd9147968af2f671375a22" category="inline-link-macro">Aprenda a configurar a autenticação SAML</block>
   <block id="797e8e388c1c72ea3c94ad3f43cdc0ae" category="list-text"><block ref="0fe1b6a617afbb42e49809656c42af43" category="inline-link-macro-rx"></block> .</block>
-  <block id="58041b2f45444949e7b4871ad73aeb6f" category="inline-link-macro">Gerenciar acesso de administrador do ONTAP</block>
-  <block id="443ed96b47b7626b0d359622170c6b5c" category="list-text"><block ref="8a9b262a3a970f32ef8f3fcfa2d5487f" category="inline-link-macro-rx"></block> .</block>
-  <block id="22bc88cc75a5ceda95e27b57bd8d8212" category="inline-link-macro">Configurar servidores de chaves externas em cluster no ONTAP</block>
-  <block id="36cf56382919ce09bdebc7d6a992d028" category="list-text"><block ref="eef33f44ae38e600b1020ec94fcea51b" category="inline-link-macro-rx"></block> .</block>
-  <block id="1ebc817a05720a1abb9f656508f8441a" category="inline-link-macro">Habilitar gerenciamento de chaves externas (baseado em HW)</block>
-  <block id="a4c3f1041012639fca700fc79daf617a" category="list-text"><block ref="8b15e52d8b5bf1d7860ec95d1c498ba0" category="inline-link-macro-rx"></block> .</block>
   <block id="45c4115685375f9ea0f373a67af25085" category="inline-link-macro">Habilitar gerenciamento de chaves externas (NVE)</block>
   <block id="664014ba2ab1dd9087554c403aa6238d" category="list-text"><block ref="e752d6bc9a92f21dbd903e565fda63f7" category="inline-link-macro-rx"></block> .</block>
   <block id="f3ef1f7fdfc583741c6a8188e9dfb445" category="paragraph">Em vez de agregados, a camada de armazenamento em sistemas ASA r2 utiliza zonas de disponibilidade de armazenamento. Uma zona de disponibilidade de armazenamento é um conjunto comum de armazenamento disponível para um único par de HA. Ambos os nós no par de HA têm acesso a todos os discos disponíveis em sua zona de disponibilidade de armazenamento compartilhada. Quando uma unidade de armazenamento (LUN ou namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para hospedar a unidade de armazenamento.</block>
   <block id="0ef6451ec8cfc30e01bce69e0bf6efb8" category="paragraph">Devido a esta abordagem simplificada à gestão do armazenamento, <block ref="ba2a83cd4de4eb43c31f434bfb5213e0" prefix=" " category="inline-code"></block> Os comandos não são suportados em sistemas ASA r2. Suporte para certos <block ref="03628ea331120176369891df319619e8" prefix=" " category="inline-code"></block> , <block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> e <block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block> comandos e parâmetros também são limitados.</block>
-  <block id="af4845c29fdbebc62f60e117a63c8845" category="paragraph">Os sistemas ASA r2 oferecem uma solução de hardware e software para ambientes somente SAN, construídos em plataformas totalmente flash. Os sistemas ASA r2 diferem de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua personalidade ONTAP , camada de armazenamento e protocolos suportados.</block>
   <block id="36b194790f06e57d90bfae2eb92a9c33" category="section-title">Diferenças de personalidade</block>
   <block id="fcc4b08d8168ca1d956ed17e80bd8724" category="section-title">Diferenças na camada de armazenamento</block>
   <block id="25c5603af3c40392278c531c778d7240" category="paragraph">Os sistemas ASA r2 usam uma camada de armazenamento simplificada que é diferente da camada de armazenamento usada pelos sistemas FAS, AFF e ASA .</block>
@@ -2170,17 +2126,12 @@
   <block id="4098ab2b124dfc2ac9a7199398f039bf" category="paragraph">O suporte ARP/AI está incluído no <block ref="eac36fc822e433078e178d83ea6ed140" category="inline-link-macro-rx"></block> .</block>
   <block id="7c5c3f99ed72f08e7f6f630c025f7421" category="inline-link-macro">habilite atualizações automáticas para seus arquivos de segurança</block>
   <block id="7bf442f597bb780cab2172469bcd405b" category="paragraph">Depois de habilitar o ARP/AI, você deve <block ref="971fc8e8932b9ad22b117124ef17e0e3" category="inline-link-macro-rx"></block> para receber automaticamente novas atualizações de segurança.</block>
-  <block id="8c870a7721d112ea9029b4225c4b2398" category="section-title">Habilitar ARP/AI em todas as unidades de armazenamento em um SVM</block>
-  <block id="8cf6c86e44f4bbf8c5c3712d2e92726e" category="paragraph">Você pode habilitar o ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (SVM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na SVM terá o ARP/AI habilitado automaticamente. Você também pode aplicar o ARP/AI às unidades de armazenamento existentes na SVM.</block>
   <block id="23382ae2bf9ad92b5129752771e9eb59" category="list-text">No Gerenciador do Sistema, selecione *Cluster &gt; VMs de Armazenamento*.</block>
   <block id="b502edc604a8f8fd1b3c2cc6117754a9" category="list-text">Selecione a VM de armazenamento na qual você deseja habilitar o ARP/AI.</block>
   <block id="b6a8e3744a84b7e274045f1fb2b2a01f" category="list-text">Na seção *Segurança*, ao lado de *Anti-ransomware*, selecione <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ; então selecione *Editar configurações anti-ransomware*.</block>
   <block id="7b20acc0bf93643898ded7fce1b817d4" category="list-text">Selecione *Ativar anti-ransomware*.</block>
   <block id="686885262857338ab82b17944017c6c3" category="paragraph">Isso habilita ARP/AI em todas as futuras unidades de armazenamento criadas na VM de armazenamento selecionada por padrão.</block>
   <block id="94c45ed0718db6792c081c03764dc053" category="list-text">Para aplicar o ARP às unidades de armazenamento existentes na VM de armazenamento selecionada, selecione *Aplicar esta alteração a todas as unidades de armazenamento existentes aplicáveis nesta VM de armazenamento*.</block>
-  <block id="c2bde7ba2cedbb767829ec764e57f2c7" category="paragraph">Todas as novas unidades de armazenamento que você cria no SVM são protegidas contra ataques de ransomware por padrão, e atividades suspeitas são reportadas a você no Gerenciador do Sistema.</block>
-  <block id="5099a3926643e6e712ec0b88e70add4e" category="section-title">Habilitar ARP/AI em unidades de armazenamento específicas em uma SVM</block>
-  <block id="95c8866e822de5caddcd4942ff742c28" category="paragraph">Se não quiser que o ARP/AI seja habilitado em todas as unidades de armazenamento em um SVM, você pode selecionar as unidades específicas que deseja habilitar.</block>
   <block id="af5cd1d2455e60ce033f8eb4852994df" category="list-text">Selecione as unidades de armazenamento para as quais você deseja habilitar ARP/AI.</block>
   <block id="fae33ee02a26eebefa7a991754dd4784" category="list-text">Selecione <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ; então selecione *Ativar anti-ransomware*.</block>
   <block id="71377237946a16cc4981e8007b83be9b" category="list-text">Selecione *Ativar*.</block>
@@ -2238,7 +2189,6 @@
   <block id="861a3dc8d4cd1ed4472591f4c462b0ee" category="sidebar">Suporte para recursos comuns do ONTAP</block>
   <block id="fd2b7af0b1efe7980f890d1f7de70549" category="sidebar">Gerenciar grupos de hosts</block>
   <block id="ed3e0c3253c203840c9491b3d4651269" category="sidebar">Excluir grupos de hosts</block>
-  <block id="4e639b56a35915b63a83131451f9a2ab" category="sidebar">Criar um relacionamento de pares SVM</block>
   <block id="b45b18dba8253579ca6ebfd4a9cc8b1a" category="sidebar">Configurar sincronização ativa do SnapMirror</block>
   <block id="24f47cdbe9ddba774a7cc53e51d9032e" category="sidebar">Fluxo de trabalho</block>
   <block id="40fadaf9e9b5a2ea060ac57be669def8" category="sidebar">Preparar para configurar a sincronização ativa do SnapMirror</block>
@@ -2285,7 +2235,6 @@
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo processo de reversões para outros sistemas ONTAP . A reversão de um cluster ONTAP é disruptiva.</block>
   <block id="4145a02c95a799fdae111c620990d210" category="admonition"><block ref="78cd7e79034e394d9b3e1aacaa777a70" category="inline-link-macro-rx"></block>é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Não é possível reverter do ONTAP 9.17.1 no seu sistema ASA r2 após o rebalanceamento automático da carga de trabalho ter sido habilitado.</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">Excluir o relacionamento de sincronização ativa do SnapMirror</block>
-  <block id="3151003a976b1d39b8d92ef0ca3c387c" category="cell"><block ref="3151003a976b1d39b8d92ef0ca3c387c" category="inline-link-macro-rx"></block></block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">As atualizações de software ONTAP para sistemas ASA r2 seguem o mesmo processo de atualizações para outros sistemas ONTAP .  Ao atualizar seu software ONTAP no seu sistema ASA r2, você pode aproveitar os novos e aprimorados recursos do ONTAP .</block>
   <block id="676b55575e438300a6a0242a0e2d75e1" category="summary">Aprenda a configurar o ONTAP Mediator ou o ONTAP Cloud Mediator com certificados autoassinados ou de terceiros para sistemas ASA r2.</block>
   <block id="891f36b135a18ccbdefecd4dd19a3c84" category="doc">Configurar o ONTAP Mediator ou o ONTAP Cloud Mediator em sistemas ASA r2</block>
@@ -2427,7 +2376,6 @@
   <block id="55394a49231c00367e205c42b064e980" category="list-text"><block ref="55394a49231c00367e205c42b064e980" category="inline-link-macro-rx"></block></block>
   <block id="7827b7923d6e45ba19022ef0a9878628" category="inline-link-macro">Saiba mais sobre as personalidades da ONTAP</block>
   <block id="67cc47e8f050e98e23b1a714f17238ec" category="paragraph"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block> .</block>
-  <block id="e9afa2f162b90f572cc67d4d4b43b24f" category="admonition">Para sistemas ASA r2, a sincronização ativa do SnapMirror é suportada apenas em configurações de cluster de dois nós.</block>
   <block id="2e50e3f8a8554bd854e544e6dc52462d" category="admonition">A replicação de instantâneos para um sistema de armazenamento ASA r2 só é suportada de e para outro sistema de armazenamento ASA r2.  Não é possível replicar instantâneos de um sistema ASA r2 para um sistema ASA, AFF ou FAS ou de um sistema ASA, AFF ou FAS para um sistema ASA r2.</block>
   <block id="8e0a212a3ccb8f506b309ea2b6cbd1f7" category="paragraph">A partir do ONTAP 9.17.1, você pode aplicar políticas de replicação assíncrona a grupos de consistência em um relacionamento hierárquico.  A replicação assíncrona não é suportada para grupos de consistência em relacionamentos hierárquicos no ONTAP 9.16.1.</block>
   <block id="de095ac7880431e9449dcced8cecbd9a" category="inline-link-macro">Saiba mais sobre grupos de consistência hierárquicos (pai/filho)</block>
@@ -2448,7 +2396,6 @@
   <block id="6d6dc550f66f75893e42478842ea745f" category="cell">Limite máximo</block>
   <block id="690fbea35c70c2451fa2a171900ea6a7" category="cell">Por par de HA</block>
   <block id="dd1714009b4f40cdf1943390ef2782eb" category="cell">Por cluster</block>
-  <block id="ae9e13b66877a85be97724063f459ec2" category="cell">Grupo de consistência</block>
   <block id="f718499c1c8cef6730f9fd03c8125cab" category="cell">256</block>
   <block id="b0dae11b82e63781abdc8f893c41b3c0" category="cell">Aplicações empresariais</block>
   <block id="f899139df5e1059396431415e770c6dd" category="cell">100</block>
@@ -2458,7 +2405,6 @@
   <block id="d5fbc4c880281f3e9c4fff78066996a5" category="cell">Grupos de replicação</block>
   <block id="c0c7c76d30bd3dcaefc96f40275bdc0a" category="cell">50</block>
   <block id="8ee7e496c0e2a65e2ee8666fe7de92f0" category="cell">Tamanho da zona de disponibilidade de armazenamento</block>
-  <block id="76a4dd9b098f9a8877b8b79d0c80c5d3" category="cell">2PB</block>
   <block id="04207e7bb62b9b5d14bdb603f74e683c" category="cell">10.000</block>
   <block id="40b9cfa6016513b4c254ea34fe34198c" category="cell">Tamanho da unidade de armazenamento</block>
   <block id="9afb5dac442eac92e8a891cc81c846f3" category="cell">Unidades de armazenamento por grupo de consistência</block>
@@ -2466,16 +2412,13 @@
   <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
   <block id="fe2d010308a6b3799a3d9c728ee74244" category="cell">1200</block>
   <block id="e935f176337f588ca3f944c87464e3be" category="section-title">Limites para relacionamentos assíncronos do SnapMirror</block>
-  <block id="9148fad1f9a8b37e9527a1f329b82af2" category="paragraph">Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação assíncrona do SnapMirror .</block>
   <block id="6165c4352e1504dbaeef34d0cc50c187" category="cell">Grupos de consistência</block>
   <block id="6c9882bbac1c7093bd25041881277658" category="cell">250</block>
   <block id="b137fdd1f79d56c7edf3365fea7520f2" category="cell">750</block>
   <block id="a078c2a6f2d4313df0b942ebf9d6b940" category="cell">4.000</block>
   <block id="3339aa4f121546a4cdc082621ff25a06" category="cell">6.000</block>
   <block id="2500434603f5238c62790336bd12c2b3" category="section-title">Limites para relacionamento de sincronização ativa do SnapMirror</block>
-  <block id="a4f389e6acbb4e2e523aabcd827ac730" category="paragraph">Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação de sincronização ativa do SnapMirror .  A sincronização ativa do SnapMirror é suportada a partir do ONTAP 9.17.1 somente em clusters de 2 nós.</block>
   <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
-  <block id="520d35e96fb17bcc138fb02a60b18935" category="paragraph">Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1.  Essas plataformas oferecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes somente SAN.</block>
   <block id="b50f5f8469f7f4269e80570d419c9f8e" category="inline-link-macro">Suporte para alterações de geometria em grupos de consistência em relacionamentos de replicação</block>
   <block id="42071aa0f3867fbd6baf2685ca27c2ff" category="cell"><block ref="42071aa0f3867fbd6baf2685ca27c2ff" category="inline-link-macro-rx"></block></block>
   <block id="65476b287593ea7b99cab3c73a759847" category="cell">Os sistemas ASA r2 oferecem suporte a alterações de geometria em grupos de consistência em uma sincronização ativa do SnapMirror ou em um relacionamento de replicação assíncrona sem excluir o relacionamento de sincronização ativa do SnapMirror ou interromper o relacionamento assíncrono.  Quando ocorre uma alteração na geometria do grupo de consistência primário, a alteração é replicada para o grupo de consistência secundário.</block>
@@ -2515,4 +2458,272 @@
   <block id="5ebade231442483b3d9dd2848baa6ccc" category="inline-link-macro">Sincronização ativa do SnapMirror em sistemas ASA r2</block>
   <block id="423f4fe0f55d76e8fcf2a8817bd3ae34" category="paragraph">Saiba mais sobre<block ref="53c394728f3be1f907f95f13ec9262d9" category="inline-link-macro-rx"></block> .</block>
   <block id="458b57297f8e6e4338182adf0156897b" category="paragraph">Saiba mais sobre<block ref="d17aeaf6b3cbd3580129852f8106bfe6" category="inline-link-macro-rx"></block> .</block>
+  <block id="1aa27e548926ddcd6302762a8969ac70" category="paragraph">Antes de instalar uma nova unidade em um nó ou chassi, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com o seu sistema ASA r2 e para identificar o slot correto para a nova unidade.  Os slots corretos para adicionar unidades variam dependendo do modelo do sistema e da versão do ONTAP .  Em alguns casos, é necessário adicionar unidades a slots específicos em sequência.</block>
+  <block id="8166ee61f44dadb1490d12e6d19db8d1" category="list-text">Selecione o seu sistema ASA r2.</block>
+  <block id="14118424a52e5faf27de83ea1ae0b462" category="list-text">Remova cuidadosamente a moldura da parte frontal do sistema.</block>
+  <block id="667f84288468da12d93807057967a3d5" category="paragraph">Se existirem LIFs iSCSI na VM de armazenamento que não estejam habilitadas para failover automático de LIF, as LIFs recém-criadas também não serão habilitadas para failover automático de LIF.  Se o failover automático de LIF não estiver habilitado e ocorrer um evento de failover, suas LIFs iSCSI não serão migradas.</block>
+  <block id="9a44429a1187d19af63f6055071c6f51" category="cell"><block ref="3151003a976b1d39b8d92ef0ca3c387c" category="inline-link-macro-rx"></block>.</block>
+  <block id="612e15a252b552b4f1a691dcf559bd2f" category="inline-link-macro">Saiba mais sobre relações de importação</block>
+  <block id="aac7492833a857a8b4c5206032836546" category="cell">Exclua os relacionamentos de importação ativos. <block ref="a36e5e6c083c81494c70601f299e7a00" category="inline-link-macro-rx"></block>.</block>
+  <block id="fc117733d5bf95c0139e1bc7fb47402a" category="inline-link-macro">Desative a proteção contra ransomware.</block>
+  <block id="68d82971e18ae285c3545db3392fb02d" category="cell"><block ref="586465f47cc689b69578bfa78bae2526" category="inline-link-macro-rx"></block>.</block>
+  <block id="54552e48bc6d578c009fd992b8b06a98" category="paragraph">Crie um snapshot para fazer backup dos dados no seu sistema ASA r2.  Utilize o ONTAP System Manager para criar um snapshot manual de uma única unidade de armazenamento ou para criar um grupo de consistência e agendar snapshots automáticos de várias unidades de armazenamento simultaneamente.</block>
+  <block id="8cd098a9fcb7b5e2a106337dfc35ddc9" category="paragraph">A partir do ONTAP 9.18.1, você pode definir a porcentagem de reserva de snapshots e habilitar a exclusão automática de snapshots ao criar um grupo de consistência com novas unidades de armazenamento.  A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Se a reserva de snapshots e a exclusão automática de snapshots estiverem ativadas em um grupo de consistência pai, elas serão ativadas em todos os grupos de consistência filho existentes.  Se novos grupos de consistência filhos forem adicionados, eles não herdarão as configurações de reserva e exclusão de instantâneos do grupo pai.</block>
+  <block id="3b34504f2a5ca1bcf5ee7604a53c73c6" category="inline-link-macro">Saiba mais sobre a reserva de snapshots em sistemas de armazenamento ASA r2.</block>
+  <block id="8caf85c6e8569582ba34f628913fb1ac" category="paragraph"><block ref="82eeebd8f26e5c1bba0e8228d0651252" category="inline-link-macro-rx"></block>.</block>
+  <block id="9c859532bec1d27748e966c373dc670d" category="inline-link-macro">Saiba mais sobre grupos de consistência infantil em sistemas ASA r2</block>
+  <block id="60b02b43a7d05d018304b4628d676397" category="paragraph">A partir do ONTAP 9.16.1, ao criar grupos de consistência usando novas unidades de armazenamento, você pode configurar até cinco grupos de consistência filhos. <block ref="f1a0f4ed0f432768de2b840c9e2d3a9d" category="inline-link-macro-rx"></block>.</block>
+  <block id="36c4a42b2b90a9d08bf06c6dbdca6f18" category="paragraph">Os sistemas ASA r2 oferecem dois níveis de desempenho.  O nível de desempenho padrão é *Extremo*, que é o nível mais alto disponível.  Você pode reduzir o nível de desempenho para *Desempenho*.</block>
+  <block id="eef3eb3d811e00eac97b123dd64b8767" category="paragraph">Modifique a reserva de snapshots padrão e habilite a exclusão automática de snapshots.</block>
+  <block id="d1ab4768c39b624802ab6dec9f10bec4" category="list-text">Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.</block>
+  <block id="a067e5c7729708eee47a3ee1590ac9d3" category="list-text">Selecione *Excluir automaticamente snapshots antigos*.</block>
+  <block id="acaab2dd71602942c40de3ec01738fb3" category="paragraph">Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger.  Agora você pode criar um instantâneo.</block>
+  <block id="e354dfb4e95847a580d71cf5ce97f197" category="paragraph">Você pode criar um instantâneo sob demanda de uma unidade de armazenamento a qualquer momento.  A unidade de armazenamento não precisa ser membro de um grupo de consistência para ser protegida por um snapshot sob demanda.  Se você criar um snapshot sob demanda de uma unidade de armazenamento que seja membro de um grupo de consistência, as outras unidades de armazenamento no grupo de consistência não serão incluídas no snapshot sob demanda.  Se você criar um instantâneo sob demanda de um grupo de consistência, todas as unidades de armazenamento do grupo de consistência serão incluídas no instantâneo.</block>
+  <block id="21faaaa973fd790fb28cb96d38124855" category="paragraph">Expanda a quantidade de armazenamento gerenciado por um grupo de consistência adicionando unidades de armazenamento novas ou existentes ao grupo.</block>
+  <block id="efd016651c5b53d2665f9b468db1a2ca" category="paragraph">A partir do ONTAP 9.18.1, você pode configurar a reserva de snapshots e a exclusão automática de snapshots para limitar a quantidade de espaço usada pelos snapshots em suas unidades de armazenamento.  Ao adicionar uma unidade de armazenamento a um grupo de consistência existente, a reserva de snapshots e a exclusão automática de snapshots são definidas da seguinte forma por padrão.</block>
+  <block id="9a02c9ddf8af5cda3d71a1c3a771ed0b" category="cell">Se você adicionar...</block>
+  <block id="a623ef78567abb0ddd8b59ba61d0fc2b" category="cell">A porcentagem de reserva instantânea está definida como...</block>
+  <block id="5b8c1691bc2159e3a08f9b27270e5f6f" category="cell">A exclusão automática de instantâneos é...</block>
+  <block id="323903f32c558e9829e5bcc49233879f" category="cell">Novas unidades de armazenamento</block>
+  <block id="cfcd208495d565ef66e7dff9f98764da" category="cell">0</block>
+  <block id="b9f5c797ebbf55adccdd8539a65a0241" category="cell">Desabilitado</block>
+  <block id="4d93b199afa704a8f83926924fd60fbc" category="cell">Unidades de armazenamento existentes</block>
+  <block id="5ff3c6978f87d96febfdc8ed3899a97e" category="cell">Inalterado</block>
+  <block id="93ded6168ebc47c61c15d8b37685df65" category="inline-link-macro">modificar unidades de armazenamento existentes</block>
+  <block id="35526c34f8127477c026b2b67deba764" category="paragraph">Você pode modificar as configurações padrão para novas unidades de armazenamento ao criá-las.  Você também pode<block ref="f493119830b5759fa0d7548453c60a08" category="inline-link-macro-rx"></block> para atualizar suas configurações atuais.</block>
+  <block id="41d75b64e6a2c00028eb1dabb5c07f02" category="paragraph">Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host.  Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.</block>
+  <block id="43cdcd82eb8e02f0fb7e70bf640bf6d4" category="paragraph">Remova uma unidade de armazenamento de um grupo de consistência para excluí-la, gerenciá-la como parte de um grupo de consistência diferente ou interromper a proteção de seus dados.  Remover uma unidade de armazenamento de um grupo de consistência rompe a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.</block>
+  <block id="65ad4106b926b41e4e7eaf59f9724fa2" category="admonition">A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.</block>
+  <block id="ab6056636e222ec0ecfe06ed2d78b5c9" category="summary">A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.</block>
+  <block id="44f00c9123e1ba441ad6b508c16148bc" category="doc">Modificar a reserva de snapshots em um sistema de armazenamento ASA r2</block>
+  <block id="2363560224e2306db70c16592ac6ab88" category="paragraph">A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Por padrão, a reserva de snapshots está definida como 0%.  A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots padrão da unidade de armazenamento e ativar a exclusão automática de snapshots.  A exclusão automática de instantâneos está desativada por padrão.  Quando um valor de reserva de snapshots é definido e a exclusão automática de snapshots está ativada, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso impede que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.</block>
+  <block id="43f4378854425b13a1ecea1c64746fed" category="section-title">Modificar reserva de snapshots em unidades de armazenamento</block>
+  <block id="db52a24088b9f14f9364b31919ff0e2c" category="paragraph">Para definir valores de reserva de snapshots diferentes, configure cada unidade de armazenamento individualmente.  Para usar o mesmo valor em todas as unidades de armazenamento, modifique a reserva de snapshots na máquina virtual de armazenamento.</block>
+  <block id="5551b8e1b3c347bd3727869ff1adb31f" category="list-text">Passe o cursor sobre o nome da unidade de armazenamento para a qual deseja definir a reserva de snapshots.</block>
+  <block id="e869c65cac64d9b8956268987199910d" category="inline-image-macro">três pontos verticais</block>
+  <block id="7c80084140abe8345618601c9015b95f" category="list-text">Selecione<block ref="ea08f7a0a99302dbbfd0c8a2575314f3" category="inline-image-macro-rx" type="image"></block> Em seguida, selecione *Editar*.</block>
+  <block id="2d18d488f7c75f598e7bcdffd6a28f22" category="list-text">Verifique se a opção *Excluir automaticamente snapshots antigos* está selecionada.</block>
+  <block id="6c5e417db087be19663883e38bf05f4a" category="paragraph">A reserva de snapshots está definida para a porcentagem que você especificou.  Se o espaço consumido pelos snapshots atingir o limite reservado, os snapshots mais antigos serão excluídos automaticamente.</block>
+  <block id="39916f9b79d8f4c53d05159f658754f1" category="section-title">Modificar a reserva de snapshots em uma VM de armazenamento</block>
+  <block id="64b5cdbfc82b37ad00ec6b1e83ee2b2f" category="paragraph">Para definir a mesma reserva de snapshots para todas as unidades de armazenamento em uma VM de armazenamento, aplique a porcentagem desejada à VM de armazenamento. .  Quando a reserva de snapshots é aplicada à máquina virtual de armazenamento, ela é aplicada a todas as unidades de armazenamento recém-criadas dentro da máquina virtual de armazenamento.  Essa configuração não se aplica a unidades de armazenamento criadas antes da modificação da configuração.</block>
+  <block id="bfbfee5b7921da567b4e7f4846f074a4" category="list-text">No Gerenciador de Sistemas, selecione *Cluster &gt; VMs de Armazenamento*; em seguida, selecione *Configurações*.</block>
+  <block id="82083a09f8e30e28eb5bea2adf44745b" category="list-text">Em *Políticas*, ao lado de *Instantâneos*, selecione<block ref="ea08f7a0a99302dbbfd0c8a2575314f3" category="inline-image-macro-rx" type="image"></block> Em seguida, selecione *Definir/editar reserva de instantâneo padrão*.</block>
+  <block id="154d9d875cdce0523c156baad6b9aaf9" category="paragraph">A reserva de snapshots para unidades de armazenamento recém-criadas é definida com a porcentagem especificada.  Se a quantidade de espaço consumida pelos snapshots nessas unidades de armazenamento atingir a reserva, os snapshots mais antigos serão excluídos automaticamente.</block>
+  <block id="8ac521aa288da78824531c0731c9f2ce" category="doc">Saiba mais sobre a reserva de snapshots do ONTAP no armazenamento ASA r2.</block>
+  <block id="b172b37fc1d3aaa39402471d5fe32da8" category="paragraph">A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso impede que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.</block>
+  <block id="dc4385ccf12373b89768d8f0604ac921" category="paragraph">A reserva de snapshots é definida como uma porcentagem do tamanho total da unidade de armazenamento.  Por exemplo, se a unidade de armazenamento for de 50 GB e você definir a reserva de snapshots para 10%, a quantidade de espaço reservada para snapshots será de 5 GB.  Quando o espaço utilizado pelos snapshots atinge 5 GB, os snapshots mais antigos são excluídos automaticamente para liberar espaço para novos snapshots.  Se o tamanho da unidade de armazenamento aumentar para 100 GB, a reserva de snapshots aumentará para 10 GB.  A reserva máxima de snapshots que você pode definir é de 200%.  Se sua unidade de armazenamento atingir o tamanho máximo de 128 TB, uma reserva de snapshots de 200% permite que você faça 2 snapshots completos.</block>
+  <block id="b5c51b506b8606572637075d65d777dd" category="paragraph">Por padrão, a reserva de snapshots está definida como 0% e a exclusão automática de snapshots não está habilitada.</block>
+  <block id="1a0ddae726eb7d24b72d457031657247" category="paragraph">A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots padrão durante ou após a criação de unidades de armazenamento e durante a criação de grupos de consistência.  Você também pode modificar a reserva de snapshots padrão em máquinas virtuais (VMs) de armazenamento existentes.  No ONTAP 9.17.1 e versões anteriores, não é possível modificar essas configurações.</block>
+  <block id="3e827502016431e28c410bc498c2a416" category="paragraph">A reserva de snapshots é definida com a mesma porcentagem para todas as unidades de armazenamento em um grupo de consistência no momento em que o grupo de consistência é criado.  A reserva de snapshots deve ser configurada individualmente em todas as unidades de armazenamento adicionadas posteriormente.</block>
+  <block id="28349a0b468b99da7a472b0d4c16e6ee" category="paragraph">Os seguintes sistemas são classificados como sistemas ASA r2:</block>
+  <block id="43b8a9db5392b7dee9842cb0e7e1155d" category="paragraph">A ilustração a seguir é um exemplo de uma configuração FC com vários hosts usando duas fabrics para acessar um único par HA.  Os números de porta de destino FC (0c, 0d, 1a, 1b) também são exemplos.  Os números de porta reais variam dependendo do modelo do seu sistema e se você está usando adaptadores de expansão.</block>
+  <block id="7ae21cadd263178648c997416019850c" category="paragraph">Saiba mais sobre os recursos comuns de proteção de dados compatíveis com os sistemas ASA r2.</block>
+  <block id="ce42c71243f06fc614542e0e55a275e8" category="section-title">Servidores de chave externa agrupados</block>
+  <block id="5f7c44cb2c8485bb82150a336201223d" category="paragraph">Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento.  Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento.  Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.</block>
+  <block id="d45192a9dbc8a2cb6e487c863af22bbb" category="inline-link-macro">Aprenda a configurar servidores de chaves externas em cluster.</block>
+  <block id="b5fde6611f98dcb7f68f83b340b778b9" category="paragraph"><block ref="774d74de870375f3b6eceda1ffb399f2" category="inline-link-macro-rx"></block>.</block>
+  <block id="398ff0a12bc1e99d6ac1e3b9a33d9ed1" category="section-title">Gerenciamento de chaves externas para criptografia em repouso</block>
+  <block id="56aa2b0ed6cc538bfa602ddd8d5c6545" category="paragraph">Você pode usar um ou mais servidores KMIP para proteger as chaves que o cluster usa para acessar dados criptografados.</block>
+  <block id="cc95127c670c2658b56367b5e30be9af" category="inline-link-macro">Habilitar gerenciamento de chaves externas</block>
+  <block id="377613b56706bef7905081d967e14ddf" category="list-text"><block ref="adce0dbb4fcb277fb4cff259fa74595d" category="inline-link-macro-rx"></block>.</block>
+  <block id="271424445d10af78588640d9e08d012d" category="paragraph">Saiba mais sobre os recursos comuns de segurança de dados compatíveis com os sistemas ASA r2.</block>
+  <block id="6e2d4f1e836acfa7aced647fb04f49db" category="section-title">Gerenciamento de acesso de administrador</block>
+  <block id="68dbf042f840056a4fe3495add1d9389" category="paragraph">A função atribuída a um administrador determina quais tarefas ele pode executar.  O Gerenciador de Sistemas fornece funções predefinidas para administradores de cluster e administradores de máquinas virtuais de armazenamento.  Você atribui a função ao criar a conta de administrador, ou pode atribuir uma função diferente posteriormente.</block>
+  <block id="8b455aa69a4604903c428960c83af70c" category="inline-link-macro">Aprenda a gerenciar o acesso de administrador com o Gerenciador de Sistemas.</block>
+  <block id="93b9642ff825b1e9b228137a0b5fb196" category="list-text"><block ref="d22715431fadae00173771e8a7c73fdf" category="inline-link-macro-rx"></block>.</block>
+  <block id="433ada5728fed24feb793368608d952d" category="section-title">Autenticação e autorização do cliente</block>
+  <block id="bf2edd9be4468fad0f079700bf9cf17f" category="paragraph">O ONTAP utiliza métodos padrão para proteger o acesso de clientes e administradores ao armazenamento e para proteção contra vírus.  Tecnologias avançadas estão disponíveis para criptografia de dados em repouso e para armazenamento de WORM.  O ONTAP autentica uma máquina cliente e um usuário, verificando suas identidades com uma fonte confiável.  O ONTAP autoriza um usuário a acessar um arquivo ou diretório comparando as credenciais do usuário com as permissões configuradas no arquivo ou diretório.</block>
+  <block id="ddcbe4d8bd4db8bb601aa770e20ff536" category="section-title">Autenticação OAuth 2.0</block>
+  <block id="cd0690c85c7c3b05f799c4c440781692" category="paragraph">Você pode usar a estrutura de Autorização Aberta (OAuth 2.0) para controlar o acesso aos seus clusters ONTAP .  O OAuth 2.0 restringe e controla o acesso a recursos protegidos usando tokens de acesso assinados.</block>
+  <block id="7a0f217730b9ce5fb022c0e8c02fe785" category="section-title">Autenticação SAML e acesso de administrador</block>
+  <block id="a59439393bbcd498031041b8046dfee9" category="paragraph">Você pode configurar e habilitar a autenticação SAML (Security Assertion Markup Language) para serviços web.  O SAML autentica usuários por meio de um provedor de identidade (IdP) externo, em vez de provedores de serviços de diretório como Active Directory e LDAP.</block>
+  <block id="a5fa5746370b608090b994a97b49e98b" category="section-title">Rede</block>
+  <block id="adcbd436a1b357e39b7ae30dc6f4ea85" category="paragraph">Saiba mais sobre os recursos de rede comuns suportados nos sistemas ASA r2.</block>
+  <block id="912008f846838b55bb1317ee6c2fe5aa" category="section-title">Conformidade com o FIPS</block>
+  <block id="6bafdd1f6bb057a2f36be8431367b211" category="paragraph">O ONTAP está em conformidade com o padrão FIPS 140-2 (Federal Information Processing Standards) para todas as conexões SSL.  Você pode ativar e desativar o modo SSL FIPS, definir protocolos SSL globalmente e desativar quaisquer cifras fracas, como RC4, dentro do ONTAP.</block>
+  <block id="a3feba850e295ef89d0ff278063f67bb" category="paragraph">A partir da versão 9.18.1 do ONTAP , os algoritmos criptográficos de computação pós-quântica são suportados para SSL.  Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo SSL FIPS está desativado.</block>
+  <block id="adb63f8b488f18267724ae7cdc626773" category="inline-link-macro">Aprenda a configurar o FIPS para todas as conexões SSL.</block>
+  <block id="0316162bbfed207eb384168b8350ddd6" category="list-text"><block ref="d0644dc39229104e22aa6bb6d6a478f4" category="inline-link-macro-rx"></block>.</block>
+  <block id="ef03bcaf0b687e83a4e8a8e29658d741" category="section-title">Grupos de agregação de links (LAGs)</block>
+  <block id="8fba9eeba4601dcc3bec144a6108b2d7" category="paragraph">Um grupo de interfaces, também conhecido como Grupo de Agregação de Links (LAG, na sigla em inglês), é criado combinando duas ou mais portas físicas no mesmo nó em uma única porta lógica.  A porta lógica proporciona maior resiliência, maior disponibilidade e compartilhamento de carga.</block>
+  <block id="17650c27efc82009f86f594946460fee" category="inline-link-macro">Saiba mais sobre Grupos de Agregação de Links</block>
+  <block id="f1d3f39b8e1d9d512a5fe0394a403ef6" category="paragraph"><block ref="4d9ae81fed2b948a21844c88f237bfe3" category="inline-link-macro-rx"></block>.</block>
+  <block id="0644ca1348f050c063c4658b1cba82dd" category="section-title">Protocolos SAN</block>
+  <block id="acf59617ccd71525d753eae7963d7bae" category="paragraph">Os sistemas ASA r2 suportam todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).</block>
+  <block id="4d27da98cd8aca2f2656987efba23017" category="inline-link-macro">Saiba mais sobre o protocolo iSCSI</block>
+  <block id="367eece1b3233ae0067b16222765d1f6" category="list-text"><block ref="beed66304854c6eb093b17aa67468ff3" category="inline-link-macro-rx"></block>.</block>
+  <block id="db2108eab374f814660724f365a86525" category="inline-link-macro">Saiba mais sobre o protocolo Fibre Channel (FC)</block>
+  <block id="f3b24b27d0cca690d36d388cb7cb044f" category="list-text"><block ref="b187bbd6b4bedec2348e85f89dc4d2df" category="inline-link-macro-rx"></block>.</block>
+  <block id="b5b594eb27520a6160f143bed65b6c2c" category="inline-link-macro">Saiba mais sobre o protocolo NVMe</block>
+  <block id="3786242807cfc701e2b8bfc7a3c710d1" category="list-text"><block ref="07694b0698fc87f5a4e626b2490d7e2d" category="inline-link-macro-rx"></block>.</block>
+  <block id="8005df3abb230176fa18e1569a8e6353" category="inline-link-macro">Aprenda a configurar o descarregamento de cópia NVMe</block>
+  <block id="70c0f02b1e583ccb5a366fbc89dfb4ad" category="list-text"><block ref="307e0cde843c0fbef962be5389b2e20f" category="inline-link-macro-rx"></block>.</block>
+  <block id="c905c19407f1199314c89c0f4d1c41a9" category="paragraph">A partir do ONTAP 9.18.1, o descarregamento de cópia NVMe é suportado.  O recurso de descarregamento de cópia NVMe permite que um host NVMe transfira as operações de cópia de sua CPU para a CPU do controlador de armazenamento ONTAP .  O host pode copiar dados de um namespace NVMe para outro, reservando seus recursos de CPU para cargas de trabalho de aplicativos.</block>
+  <block id="c9b809a8a0be01452bcb4a9a44b9e75d" category="inline-link-macro">Saiba mais sobre alocação de espaço (desmapeamento) para NVMe.</block>
+  <block id="8b12cbcd3cfef46fc75a23bfedc38c3a" category="list-text"><block ref="b0eb582fadc9931c22d97f580dd17d74" category="inline-link-macro-rx"></block>.</block>
+  <block id="c4a348629a843b9ec255aeca1b2a216f" category="paragraph">A partir do ONTAP 9.16.1, a desalocação de espaço (também chamada de "hole punching" e "unmap") está habilitada por padrão para namespaces NVMe. A desalocação de espaço permite que um host desaloque blocos não utilizados de namespaces para recuperar espaço.</block>
+  <block id="605b329c2e4d92dfa41efad4fb67c2e8" category="paragraph">Você pode pesquisar diversas ações, objetos e tópicos de informação no Gerenciador de Sistemas.  Você também pode pesquisar dados da tabela para entradas específicas.</block>
+  <block id="3b8c82465a3bb473ba8ae90f8a4faaaa" category="inline-link-macro">Aprenda a pesquisar, filtrar e classificar informações no Gerenciador de Sistemas.</block>
+  <block id="85d4853309c62a311e378a627ddffad5" category="paragraph"><block ref="407717bfd2e65c0cf889e5f6c4b0921d" category="inline-link-macro-rx"></block>.</block>
+  <block id="6c2e53189649bd6687dddbe41deae368" category="paragraph">Os sistemas ASA r2 oferecem uma solução de hardware e software para ambientes exclusivamente SAN, construída com base em soluções all-flash. Os sistemas ASA r2 diferem de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua personalidade ONTAP , camada de armazenamento e protocolos suportados.</block>
+  <block id="5c1b41ebe7dbb796571241a2573537df" category="paragraph-title">Criação de VM de armazenamento padrão com serviços de protocolo</block>
+  <block id="23b1f43da700200258ce094b112f1151" category="paragraph">Os novos clusters contêm automaticamente uma máquina virtual (VM) de armazenamento de dados padrão com os protocolos SAN ativados.  Os LIFs de dados IP suportam os protocolos iSCSI e NVMe/TCP e utilizam o<block ref="6ee97f4349d48b4c53372dfd08835169" prefix=" " category="inline-code"></block> Política de serviço por padrão.</block>
+  <block id="5394908cf8d6f0ebb49c495b8cb4d0dd" category="doc">Migrar uma VM de armazenamento de um cluster ASA para um cluster ASA R2.</block>
+  <block id="8130504a4a07dbee2f22de1dad3dd3b8" category="paragraph">A partir do ONTAP 9.18.1, você pode migrar uma máquina virtual (VM) de armazenamento de qualquer cluster ASA para qualquer cluster ASA R2 sem interrupções.  A migração de um cluster ASA para um cluster ASA r2 permite adotar a arquitetura simplificada e otimizada dos sistemas ASA r2 para ambientes exclusivamente SAN.</block>
+  <block id="ec8bccf423bcef2e309e4956040ccb3f" category="paragraph">A migração de máquinas virtuais de armazenamento entre sistemas de armazenamento ASA e ASA R2 é suportada da seguinte forma:</block>
+  <block id="42327235fd87e6d620f2ee816e9d6149" category="cell">De qualquer um dos seguintes sistemas ASA :</block>
+  <block id="275e0eab272c57c148cc1d5c3b82d7b7" category="cell">Para qualquer um dos seguintes sistemas ASA r2:</block>
+  <block id="fd395a2e4925de0736e72f97908d353b" category="list-text">ASA C800</block>
+  <block id="8be061f2ffd8e5438d395c1e9844b4ff" category="list-text">ASA C400</block>
+  <block id="efb7d807a9229170619783564ab9a186" category="list-text">ASA C250</block>
+  <block id="0e096ce16590ab86950913510752010e" category="list-text">ASA A900</block>
+  <block id="dffbd09beb5f8e9746ed2e56e4ff77c5" category="list-text">ASA A800</block>
+  <block id="5efea76f9855288a2e4056189fbdd4f4" category="list-text">ASA A400</block>
+  <block id="58bdeb56c4a59fe27bedb60d1f1b8b90" category="list-text">ASA A250</block>
+  <block id="0814a528a6e09bdfa454da4598d03b6a" category="list-text">ASA A150</block>
+  <block id="7ddb32a2b45e07e265f9e454f57d2eb0" category="list-text">ASA AFF A800</block>
+  <block id="dbcea936b7738470872ff3cbf35ec7c3" category="list-text">ASA AFF A700</block>
+  <block id="b5efaabac2b0776c5f0ca29587d418e4" category="list-text">ASA AFF A400</block>
+  <block id="2ce90a39656cd7489bede7894c2a9943" category="list-text">ASA AFF A250</block>
+  <block id="9ec4d2132be2cef54f754db806bdc33e" category="list-text">ASA AFF A220</block>
+  <block id="16f80895ea6c143faa5ed2f0a2dd2a1c" category="admonition">Para obter a lista mais atualizada de sistemas ASA e ASA r2, consulte<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> .  Os sistemas ASA r2 estão listados no NetApp Hardware Universe como "ASA Série A/Série C (Novo)".</block>
+  <block id="e86d997330a5fc79d71bcbfceb252fbc" category="paragraph">Você só pode migrar uma VM de armazenamento para um cluster ASA r2 a partir de um cluster ASA .  A migração de qualquer outro tipo de sistema ONTAP não é suportada.</block>
+  <block id="f3f7d7b257c829fffdd303017c736b78" category="paragraph">Todos os nós do cluster ASA r2 e o próprio cluster ASA devem estar executando o ONTAP 9.18.1 ou posterior.  As versões de patch do ONTAP 9.18.1 nos nós do cluster podem variar.</block>
+  <block id="e313bd3fa23adcb5b94fa754c82a763b" category="section-title">Etapa 1: Verifique o status da VM de armazenamento ASA</block>
+  <block id="4240bb1cf7a5e3c27fc9a174b2a4cb79" category="paragraph">Antes de migrar uma VM de armazenamento de um sistema ASA , não deve haver namespaces NVMe ou vVols presentes, e cada volume na VM de armazenamento deve conter apenas um LUN.  A migração de namespaces NVMe e vVols não é suportada.  A arquitetura dos sistemas ASA r2 exige que os volumes contenham um único LUN.</block>
+  <block id="22496727dca6696fd00fec8700debece" category="list-text">Verifique se não há namespaces NVMe presentes na máquina virtual de armazenamento:</block>
+  <block id="befde6e50dbc157f3963dde221712959" category="inline-link-macro">convertido</block>
+  <block id="ccc0593ad249a27f815bc3fbd28ce2e0" category="paragraph">Se as entradas forem exibidas, os objetos NVMe devem ser<block ref="5e7c67d2e12013ef99f54cf7a47ef23e" category="inline-link-macro-rx"></block> para LUNs ou removidos.  Veja o<block ref="2f1643f9765ca129db181c979855afde" prefix=" " category="inline-code"></block> e o<block ref="b8fb0fcda8587c246b90c437232193d6" prefix=" " category="inline-code"></block> comandos no<block ref="db46e2281b09af97f6a81f32f0a3dbfb" category="inline-link-macro-rx"></block> Para obter mais informações.</block>
+  <block id="389fe6dbcaa3e25bbefa06ebf4c82cec" category="list-text">Verifique se não há vVols presentes na VM de armazenamento:</block>
+  <block id="19fcc237ba129a2c877f32c4b9e4e415" category="paragraph">Caso existam vVols , eles devem ser copiados para outra VM de armazenamento e, em seguida, excluídos da VM de armazenamento a ser migrada.  Veja o<block ref="792ce1786b8a3a128a82817b09eedada" prefix=" " category="inline-code"></block> e<block ref="8a23874ab60f8231362a504593af5de9" prefix=" " category="inline-code"></block> comandos no<block ref="db46e2281b09af97f6a81f32f0a3dbfb" category="inline-link-macro-rx"></block> Para obter mais informações.</block>
+  <block id="0c22b3aa1a47700621e538ad427e2508" category="list-text">Verifique se cada volume na máquina virtual de armazenamento contém um único LUN:</block>
+  <block id="a7b354a0526a16414e1baa3a4e247e3d" category="paragraph">Se um volume contiver mais de um LUN, use o<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block> e<block ref="60464fc4c055fe08ca731eab1dc2f87d" prefix=" " category="inline-code"></block> comandos para criar uma relação de volume para LUN de 1:1. Veja o<block ref="db46e2281b09af97f6a81f32f0a3dbfb" category="inline-link-macro-rx"></block> para mais informações.</block>
+  <block id="795f104c1ad7d012e3ab5bb10caca11f" category="paragraph">Você está pronto para criar uma relação de pares de cluster entre seus clusters ASA e ASA R2.</block>
+  <block id="1504370999e138fc4afe6f3c51127a7b" category="section-title">Etapa 2: Crie uma relação de pares de cluster entre seus clusters ASA e ASA R2.</block>
+  <block id="ccffa54a41b5de7e78c0470b00349c8e" category="paragraph">Antes de migrar uma VM de armazenamento de um cluster ASA para um cluster ASA R2, você precisa criar uma relação de pares.  Uma relação ponto a ponto define conexões de rede que permitem que clusters ONTAP e máquinas virtuais de armazenamento troquem dados com segurança.</block>
+  <block id="1a16d0dcdfd465a3fca7c56023251f79" category="paragraph">Você deve ter criado LIFs intercluster em todos os nós dos clusters que estão sendo interligados, usando um dos seguintes métodos.</block>
+  <block id="ab056c78d8c23a404707c177275f0ea5" category="inline-link-macro">Configure LIFs intercluster em portas de dados compartilhadas.</block>
+  <block id="2cef56e4b665a34f2dc81c6f5afe4078" category="list-text"><block ref="2cef56e4b665a34f2dc81c6f5afe4078" category="inline-link-macro-rx"></block></block>
+  <block id="3f10fe27209a4241ace33fdf7e0a7750" category="inline-link-macro">Configure LIFs intercluster em portas de dados dedicadas.</block>
+  <block id="d76d013977e56429afb2a4642ddfaa46" category="list-text"><block ref="d76d013977e56429afb2a4642ddfaa46" category="inline-link-macro-rx"></block></block>
+  <block id="8fc07dd8ef621693cb81dd87f4f8a88b" category="inline-link-macro">Configure LIFs entre clusters em espaços IP personalizados.</block>
+  <block id="018a1755a4d1c9a377787e1f9f9b98b5" category="list-text"><block ref="018a1755a4d1c9a377787e1f9f9b98b5" category="inline-link-macro-rx"></block></block>
+  <block id="559b5429bf321ef02afb76561f46f6ce" category="list-text">No cluster ASA r2, crie uma relação de pares com o cluster ASA e gere uma senha:</block>
+  <block id="92d9770068a9793d94318031dc7aa5e2" category="paragraph">O exemplo a seguir cria uma relação de pares entre o cluster 1 e o cluster 2 e gera uma senha automática pelo sistema:</block>
+  <block id="64d2e8cdc91475f92f026c8033d55fa3" category="list-text">Copie a senha gerada.</block>
+  <block id="a2545a878e0a20a8628f0c67b4cda706" category="list-text">No cluster ASA , crie uma relação de pares com o cluster ASA r2:</block>
+  <block id="9e0d0ea7a364534616afc545eee841e6" category="list-text">Digite a senha gerada no cluster ASA r2.</block>
+  <block id="7884d95ebb45087ddd710a8ab4835ba1" category="list-text">Verifique se a relação de pares do cluster foi criada:</block>
+  <block id="3cf2561ed8bb43ae7dc60cf8af15dd2f" category="paragraph">O exemplo a seguir exibe a saída esperada para clusters emparelhados com sucesso.</block>
+  <block id="3c499c997fa9259a83a27a6ac107bcda" category="paragraph">Os clusters ASA e ASA R2 estão interligados e os dados das máquinas virtuais de armazenamento podem ser transferidos com segurança.</block>
+  <block id="f79751ca905920f2ac9956f10229dc8f" category="paragraph">Você está pronto para preparar sua VM de armazenamento ASA para migração.</block>
+  <block id="216c309570be06e8bf47ded6a9935197" category="section-title">Etapa 3: Prepare-se para a migração da VM de armazenamento de um cluster ASA para um cluster ASA R2.</block>
+  <block id="e31c0a5dbae02288f83fa6af5bce6ce4" category="paragraph">Antes de migrar uma máquina virtual (VM) de armazenamento de um cluster ASA para um cluster ASA R2, você deve executar uma verificação prévia de migração e corrigir quaisquer problemas necessários.  Não é possível realizar a migração até que a verificação prévia seja concluída com sucesso.</block>
+  <block id="351e9f339eb79674390af4a3f1c2ff1e" category="list-text">A partir do seu cluster ASA r2, execute a verificação prévia de migração:</block>
+  <block id="f69bb10ef5c71f1822dc519caec16663" category="paragraph">Caso precise corrigir algum problema para preparar seu cluster ASA para migração, o problema e a ação corretiva serão exibidos.  Corrija o problema e repita a verificação prévia até que ela seja concluída com sucesso.</block>
+  <block id="66bd41748f0136f40140cb32f6ad9ae2" category="paragraph">Você está pronto para migrar sua VM de armazenamento do seu cluster ASA para um cluster ASA R2.</block>
+  <block id="d0d7f20044d1f98b7361cb3e2eaa4369" category="section-title">Etapa 4: Migrar uma VM de armazenamento ASA para um cluster ASA R2</block>
+  <block id="4d3190b98843b96e5dfac1c70dab24ad" category="paragraph">Após preparar o cluster ASA e criar a relação de pares necessária com o cluster ASA R2, você pode iniciar a migração da VM de armazenamento.</block>
+  <block id="acb1a18c0054d21d94b005b415506a83" category="paragraph">Ao realizar uma migração de VM de armazenamento, é uma prática recomendada deixar 30% de folga na CPU tanto no cluster ASA quanto no cluster ASA R2 para permitir a execução da carga de trabalho da CPU.</block>
+  <block id="7e1c22a5100cc31b9fd3868976668461" category="paragraph">Após a migração da máquina virtual de armazenamento, os clientes são automaticamente transferidos para o cluster ASA r2 e a máquina virtual de armazenamento no cluster ASA é removida automaticamente.  A migração automática e a remoção automática de máquinas virtuais de armazenamento estão ativadas por padrão.  Opcionalmente, você pode desativá-los e realizar a migração e a remoção da máquina virtual de armazenamento manualmente.</block>
+  <block id="689dc5a79cf019c818438babdab8303e" category="list-text">O cluster ASA r2 deve ter espaço livre suficiente para acomodar a VM de armazenamento migrada.</block>
+  <block id="fc40bcc5684aef58727ef803557161a5" category="list-text">Se a máquina virtual de armazenamento do ASA contiver volumes criptografados, o gerenciador de chaves integrado ou o gerenciador de chaves externo no sistema ASA r2 deverá ser configurado no nível do cluster.</block>
+  <block id="828fb449d397d082077ea5ccc142971b" category="list-text">As seguintes operações não podem ser executadas no cluster ASA de origem:</block>
+  <block id="ecdb9f049efa78621687543e40ddb5e6" category="list-text">operações de failover</block>
+  <block id="4af87f9a2b73167cc476a4d58173638d" category="list-text">WAFLIRON</block>
+  <block id="536c0c9bcd09855d120989eee2aed942" category="list-text">Impressão digital</block>
+  <block id="7ccdca44124c885599f8dfc3d91ecf71" category="list-text">Movimentação, rehospedagem, clonagem, criação, conversão ou análise de volume</block>
+  <block id="5b98400e72be9e536c92fc37233f2dc2" category="list-text">A partir do cluster ASA r2, inicie a migração da VM de armazenamento:</block>
+  <block id="01c7bd74a415a0aecc42046c56fd2521" category="paragraph">Para desativar a transição automática, use o<block ref="c35ffd3cc8ec242fe771b6c8342ff18f" prefix=" " category="inline-code"></block> parâmetro.  Para desativar a remoção automática da VM de armazenamento ASA , use o<block ref="dc1b581de95515eb75905f1d6f9a0871" prefix=" " category="inline-code"></block> parâmetro.</block>
+  <block id="3fb135bc6b75f65e260ed2a579aa59c9" category="list-text">Acompanhe o andamento da migração.</block>
+  <block id="25e1a72b32e724ba03d497aa060fd2c7" category="paragraph">Quando a migração estiver concluída, o *status* será exibido como *migration-complete*.</block>
+  <block id="9bdd71e813734cd91bd9de1eb31f66ca" category="admonition">Se precisar pausar ou cancelar a migração antes do início da transição automática, use o<block ref="9d6db8b5ee359d175a01a18c98e81144" prefix=" " category="inline-code"></block> e o<block ref="de83f1d008d2f2a17132d73774af6a5a" prefix=" " category="inline-code"></block> comandos.  Você deve pausar a migração antes de cancelá-la.  Não é possível cancelar a migração após o início do processo de transição.</block>
+  <block id="903547f07fd29a1a471a450bf6698e9a" category="paragraph">A máquina virtual de armazenamento foi migrada do cluster ASA para o cluster ASA R2.  O nome e o UUID da máquina virtual de armazenamento, o nome da LIF de dados, o endereço IP e os nomes dos objetos, como o nome do volume, permanecem inalterados.  Os UUIDs dos objetos migrados na VM de armazenamento são atualizados.</block>
+  <block id="8dc31ca5dc4646efeb787bf14002d2d0" category="inline-link-macro">Migre manualmente seus clientes ASA para o cluster ASA R2 e remova a VM de armazenamento do cluster ASA.</block>
+  <block id="9577daaa5fbfbab99b56d58ee2c172df" category="paragraph">Se você desativou a migração automática e a remoção automática de máquinas virtuais de armazenamento,<block ref="76ae15ac4a72520ba2cd15274463fca3" category="inline-link-macro-rx"></block> .</block>
+  <block id="9582e4c48479798f4f4f9ce46d09c93b" category="paragraph">Em um sistema ASA r2, uma unidade de armazenamento disponibiliza espaço de armazenamento para os hosts SAN realizarem operações de dados.  Uma unidade de armazenamento refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe.  Se o seu cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN.  Se o seu cluster estiver configurado para suportar hosts NVMe, você será solicitado a criar um namespace NVMe.  Uma unidade de armazenamento ASA r2 tem uma capacidade máxima de 128 TB.</block>
+  <block id="c9c3efe2f110833ad53d587066554d58" category="paragraph">A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots e habilitar a exclusão automática de snapshots ao criar uma unidade de armazenamento.  A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.</block>
+  <block id="7501352b37c8930919c10e645c388272" category="inline-link-macro">Saiba mais sobre a reserva de snapshots em sistemas ASA r2.</block>
+  <block id="7fdd4a506c158d387464fd16f4e65f8e" category="paragraph"><block ref="614a34b4f7a807cea02dd4507adb351a" category="inline-link-macro-rx"></block>.</block>
+  <block id="819b58028cbb8d32e35c5a6d2a9ed247" category="list-text">Defina um limite de QoS, uma garantia de QoS ou ambos.</block>
+  <block id="5ae2b91104e852585ddf073635450cf8" category="paragraph">Modifique a reserva de snapshots padrão e habilite a exclusão automática de snapshots.</block>
+  <block id="715a6e64eed03295b4e2bc3df4da2dc6" category="list-text">Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.</block>
+  <block id="162edb1432d7c690ed0b5b42fa399a29" category="summary">Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de armazenamento do ASA r2.</block>
+  <block id="fd846e358dfb9fb7815602e30d94cc0e" category="paragraph">Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de armazenamento do ASA r2.</block>
+  <block id="7c7efee58e6438c6a2c454a7ad4f04a8" category="cell">Máximo por par de HA</block>
+  <block id="28cd6ded3f5c67ae3840cefeae4e70b9" category="cell">Máximo por grupo</block>
+  <block id="4d2caccc34711835f6ff99da411ac04e" category="cell">Máquinas virtuais de armazenamento</block>
+  <block id="420472b5a3fa74ab8271c101fdf7bf31" category="list-text">256 (ONTAP 9.18.1 e posterior)</block>
+  <block id="153ab40caa18652c7730f5cfc37c32f7" category="list-text">32 (ONTAP 9.17.1 e versões anteriores)</block>
+  <block id="43d910e74e713c9754f63f6931e45d1b" category="paragraph">Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação assíncrona do SnapMirror . Para obter uma lista completa dos limites de armazenamento mais recentes do ASA r2,<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> .</block>
+  <block id="4272202cbf36ae010c1042426026ae36" category="paragraph">Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação de sincronização ativa do SnapMirror . A sincronização ativa do SnapMirror é suportada a partir do ONTAP 9.17.1, somente em clusters de dois nós.  A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em clusters de quatro nós.</block>
+  <block id="37b8b62a5ecb1339bc961c051f24141d" category="paragraph">Para obter uma lista completa dos limites de armazenamento mais recentes do ASA r2,<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> .</block>
+  <block id="9027c61cfac0613d2e6d2a3e9f8dce46" category="doc">Migrar clientes e limpar a VM de armazenamento de origem após a migração para um sistema ASA r2.</block>
+  <block id="a36422a2f9f3777ca6a112c936b8ffc7" category="paragraph">Após uma máquina virtual (VM) de armazenamento ser migrada de um cluster ASA para um cluster ASA R2, por padrão, os clientes são automaticamente transferidos para o cluster ASA R2 e a VM de armazenamento no cluster ASA é removida automaticamente.  Se você optou por desativar a transferência e remoção automáticas da VM de armazenamento ASA durante a migração, será necessário executar essas etapas manualmente após a conclusão da migração.</block>
+  <block id="b1a60764d65e294c75af5b4d8f70838b" category="section-title">Migrar manualmente os clientes para um sistema ASA r2 após a migração de uma máquina virtual de armazenamento.</block>
+  <block id="aac22a8dfae9665f2f3c5a2f9431abe7" category="paragraph">Se você desativar a transição automática de clientes durante a migração de uma VM de armazenamento de um cluster ASA para um cluster ASA R2, após a conclusão bem-sucedida da migração, execute a transição manualmente para que a VM de armazenamento ASA R2 possa fornecer dados aos clientes.</block>
+  <block id="eaf0531ce62bf82545d312620512def9" category="list-text">No cluster ASA r2, execute manualmente a migração do cliente:</block>
+  <block id="0b0cbd8d0f0d2f28f4334c6a8f47bd98" category="list-text">Verifique se a operação de transição foi concluída:</block>
+  <block id="b684044facf39ce4ded9e0026771b555" category="paragraph">Os dados estão sendo fornecidos aos seus clientes a partir da máquina virtual de armazenamento no seu cluster ASA r2.</block>
+  <block id="277b43483075c56785282d8be82da2e4" category="paragraph">Agora você está pronto para remover a VM de armazenamento do cluster ASA de origem.</block>
+  <block id="94d97e684838844cbcfd60feb005f844" category="section-title">Remover manualmente uma VM de armazenamento ASA após a migração para um cluster ASA R2</block>
+  <block id="d8787f4bdadb3cfbeea108ee9f6022e2" category="paragraph">Se você desativar a limpeza automática da origem durante a migração de uma VM de armazenamento de um cluster ASA para um cluster ASA R2, após a conclusão da migração, remova a VM de armazenamento do cluster ASA para liberar espaço de armazenamento.</block>
+  <block id="794e019310a63e0ff6f4a79339fdac75" category="paragraph">Seus clientes devem estar fornecendo dados do cluster ASA r2.</block>
+  <block id="18bc71e4ea10925876b400edadda624b" category="list-text">No cluster ASA , verifique se o status da VM de armazenamento ASA é *Pronto para limpeza de origem*:</block>
+  <block id="539ccf8b62b4725c3337acf9f5d3b481" category="list-text">Remova a VM de armazenamento ASA :</block>
+  <block id="b65128ffba75bdb9ebe4ab61ff988a88" category="paragraph">A máquina virtual de armazenamento no seu cluster ASA foi removida.</block>
+  <block id="88b492110e1066f5d49d63281dd0882b" category="cell">VMs de armazenamento por cluster</block>
+  <block id="693b04a116e2728c124dc2e59e7f14c6" category="cell">O número máximo de máquinas virtuais (VMs) de armazenamento suportadas por par HA foi aumentado de 32 para 256.</block>
+  <block id="e48e73e576f724fd4213ab1eca7edb4a" category="cell">ONTAP 9.18.1</block>
+  <block id="fec98ca7c75ede1dbe8ec2dbf74a75dc" category="cell">SnapMirror sincronização ativa</block>
+  <block id="be626395ab5a6e8fbc73b5c1f349921d" category="cell">O suporte para sincronização ativa do SnapMirror foi ampliado de clusters de dois nós para clusters de quatro nós.</block>
+  <block id="d685640410801eb03bb5dcb58186458f" category="section-title">Sistemas</block>
+  <block id="0d291a2ea60d9d25b3a4f09a5f365a43" category="paragraph">Os seguintes sistemas NetApp ASA r2 estão disponíveis.  Esses sistemas oferecem uma solução unificada de hardware e software que cria uma experiência simplificada, específica para as necessidades de clientes que utilizam apenas SAN.</block>
+  <block id="93a626427237c85ea03fde6fc4a425b5" category="paragraph">Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1. Esses sistemas oferecem uma solução unificada de hardware e software que cria uma experiência simplificada, específica para as necessidades de clientes que utilizam apenas SAN.</block>
+  <block id="a1c606c091c78f8289fd7ef913308100" category="cell"><block ref="a1c606c091c78f8289fd7ef913308100" category="inline-link-macro-rx"></block></block>
+  <block id="2472d60819513154e59ca41b7654d303" category="summary">Saiba mais sobre os novos recursos disponíveis no ONTAP 9.18.1 para sistemas ASA r2.</block>
+  <block id="d02d59776b352a45f305f7228a26b1d9" category="doc">Novidades no ONTAP 9.18.1 para sistemas ASA r2</block>
+  <block id="78723e9ae40776bea3976aba07b9e90b" category="inline-link-macro">Suporte aprimorado para configurações de sincronização ativa do SnapMirror.</block>
+  <block id="5014548ac5e9df6e2fa9814789e97c98" category="cell"><block ref="5014548ac5e9df6e2fa9814789e97c98" category="inline-link-macro-rx"></block></block>
+  <block id="d05a2d539f90847b13cd725a7994bd41" category="inline-link-macro">Descarregamento de hardware IPsec Suporte a IPv6</block>
+  <block id="3c32419df87cc4620533b30df3a3edac" category="cell"><block ref="3c32419df87cc4620533b30df3a3edac" category="inline-link-macro-rx"></block></block>
+  <block id="0e512d1b0e0eec22d9c82690b21dc8e3" category="cell">O suporte ao descarregamento de hardware IPsec foi estendido ao IPv6.</block>
+  <block id="ede4669cfb2a3ce0ca4d7c301653f267" category="inline-link-macro">Algoritmos OpenSSL PQC</block>
+  <block id="2d7ae2ebac0fc539c64785efa2e3a208" category="cell"><block ref="2d7ae2ebac0fc539c64785efa2e3a208" category="inline-link-macro-rx"></block></block>
+  <block id="4f6ab42dbc66c329bdc56764d3561476" category="cell">O ONTAP oferece suporte a algoritmos criptográficos de computação pós-quântica para SSL.  Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo SSL FIPS está desativado.</block>
+  <block id="5d8caeaede63e2cdba6715a163d09892" category="inline-link-macro">Suporte para migração de VMs de armazenamento</block>
+  <block id="3a31f796d9b9b7604c4cc1ff27c8ecad" category="cell"><block ref="3a31f796d9b9b7604c4cc1ff27c8ecad" category="inline-link-macro-rx"></block></block>
+  <block id="f7ca3edda90c83910368543606d51de1" category="cell">Você pode migrar uma máquina virtual (VM) de armazenamento de um cluster ASA para um cluster ASA R2 sem interrupções.  Isso permite que cargas de trabalho em bloco sejam migradas para sistemas ASA r2, preservando a integridade dos dados e garantindo que não haja impacto nos aplicativos.  O processo de migração foi projetado para manter os mapeamentos de host e as configurações de LUN existentes, reduzindo o esforço operacional e o risco durante a migração.</block>
+  <block id="9aadb3b3caef845fcfc592aff7d36cdd" category="inline-link-macro">Suporte para descarregamento de cópia NVMe</block>
+  <block id="d6f28095569106a5a6eca8b0180a8fb1" category="cell"><block ref="d6f28095569106a5a6eca8b0180a8fb1" category="inline-link-macro-rx"></block></block>
+  <block id="42eb07c74e24625c353bbed93a01ffb4" category="cell">O recurso de descarregamento de cópia NVMe permite que um host NVMe transfira as operações de cópia de sua CPU para a CPU do controlador de armazenamento ONTAP .  O host pode copiar dados de um namespace NVMe para outro, reservando seus recursos de CPU para cargas de trabalho de aplicativos.</block>
+  <block id="c65375b9e9461021110e7878164c1353" category="inline-link-macro">Suporte para modificação da reserva de snapshots e exclusão automática de snapshots.</block>
+  <block id="74bb636063257a476aa70d6beb1b78a0" category="cell"><block ref="74bb636063257a476aa70d6beb1b78a0" category="inline-link-macro-rx"></block></block>
+  <block id="bb6f2042d7b561ef22513dcacc071c68" category="cell">Você pode modificar a reserva de snapshots e ativar a exclusão automática de snapshots para limitar a quantidade de espaço usada para snapshots em suas unidades de armazenamento ASA r2.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso evita interrupções nos aplicativos, impedindo que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.</block>
+  <block id="d5dbf89be96c1d99854bd0585a1c44fb" category="section-title">Habilite ARP/AI em todas as unidades de armazenamento em uma VM de armazenamento.</block>
+  <block id="05e7e1680bf144077a0c95dc04ecfe70" category="paragraph">Você pode habilitar o ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (VM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na máquina virtual de armazenamento terá o ARP/AI ativado automaticamente.  Você também pode aplicar ARP/AI a unidades de armazenamento existentes na VM de armazenamento.</block>
+  <block id="afc9ff5f825988208f6c59ba04c2c2d2" category="paragraph">Todas as novas unidades de armazenamento que você criar na máquina virtual de armazenamento são protegidas contra ataques de ransomware por padrão, e qualquer atividade suspeita será relatada a você no Gerenciador de Sistemas.</block>
+  <block id="239fd0403ac267048794a15cbef5b1dc" category="section-title">Habilite ARP/AI em unidades de armazenamento específicas em uma VM de armazenamento.</block>
+  <block id="62700fbbbfe12bea2a0aa0890f568f6d" category="paragraph">Se você não deseja que o ARP/AI esteja habilitado em todas as unidades de armazenamento de uma VM de armazenamento, pode selecionar as unidades específicas que deseja habilitar.</block>
+  <block id="8ae754caf3a2f6cacd2c696b8292a020" category="paragraph">A partir do ONTAP 9.18.1, o suporte para descarregamento de hardware IPsec foi estendido ao tráfego IPv6.</block>
+  <block id="39fa9e9872335fa886f58deacacdaf75" category="paragraph">As seguintes placas de rede são compatíveis com o descarregamento de hardware nos seguintes sistemas ASA r2 e versões do ONTAP :</block>
+  <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">Versão ONTAP</block>
+  <block id="4a5de9d6a058ff88b7a7bc223e95c9ad" category="paragraph">X50135A (Controlador Ethernet 2p, 40G/100G)</block>
+  <block id="bd08aa9041b76073e0bee18ce1ba8f3b" category="paragraph">ONTAP 9.17.1 e posterior</block>
+  <block id="12632730705c69a23b48c4bb255ea800" category="paragraph">X60135A (Controlador Ethernet 2p, 40G/100G)</block>
+  <block id="68f3f4229fb38200453da13af034b117" category="paragraph">ONTAP 9.16.1 e posterior</block>
+  <block id="aaed910f208128854827833caf0f9d6b" category="paragraph">Veja o<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> Para obter mais informações sobre os sistemas e placas suportados.</block>
+  <block id="b73a4478ceeb8906001c1f76559a3230" category="inline-link-macro">Prepare-se para configurar a segurança IP para a rede ONTAP.</block>
+  <block id="885db99c1ec39adee0a36fc56e59271f" category="paragraph">O IPsec é configurado no seu sistema ASA r2 da mesma forma que em outros sistemas ONTAP . Para mais informações, consulte <block ref="47b81466afb83e59005e032b9ab5000a" category="inline-link-macro-rx"></block>.</block>
+  <block id="8532cef2a017f8d93c2471d531c27a33" category="cell">Somente no nível de VM de armazenamento</block>
+  <block id="aa19851350bd897b99389c2d23c0da09" category="paragraph">Tanto no nível do cluster quanto no nível da VM de armazenamento</block>
+  <block id="e1a06c047b1d9008ede9d40260b302fd" category="paragraph">Nível de VM de armazenamento: Gerenciador de chaves externo</block>
+  <block id="ef2e8350e8588c6113d0cd14bca9aa8e" category="sidebar">Migrar VMs de armazenamento</block>
+  <block id="ae59590d5e236012182c94f4cbe3d748" category="sidebar">Migrar uma VM de armazenamento de um cluster ASA</block>
+  <block id="491f64c73a661c61dd8df1715dbe612b" category="sidebar">Migrar clientes e limpar a VM de armazenamento de origem.</block>
+  <block id="17dd0aa64fbdd042489b5c0fffcd25bb" category="sidebar">Gerenciar reserva de instantâneos</block>
+  <block id="3c0f4fa7666b61f86ab42a6f65750f20" category="sidebar">Saiba mais sobre a reserva instantânea.</block>
+  <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">Modificar reserva de instantâneo</block>
+  <block id="d36af7beb354a2c45f47821d695da277" category="sidebar">Criar uma relação de pares entre máquinas virtuais de armazenamento</block>
+  <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">Novidades no ONTAP 9.18.1</block>
 </blocks>

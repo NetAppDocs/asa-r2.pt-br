@@ -12,7 +12,7 @@ searchtitle: Crie instantâneos para fazer backup de seus dados usando o Gerenci
 
 
 [role="lead"]
-Para fazer backup dos dados no seu sistema ASA R2, você precisa criar um snapshot. Você pode usar o Gerenciador do sistema do ONTAP para criar um instantâneo manual de uma única unidade de armazenamento ou para criar um grupo de consistência e agendar instantâneos automáticos de várias unidades de armazenamento ao mesmo tempo.
+Crie um snapshot para fazer backup dos dados no seu sistema ASA r2.  Utilize o ONTAP System Manager para criar um snapshot manual de uma única unidade de armazenamento ou para criar um grupo de consistência e agendar snapshots automáticos de várias unidades de armazenamento simultaneamente.
 
 
 
@@ -22,7 +22,11 @@ Um grupo de consistência é uma coleção de unidades de armazenamento que são
 
 Crie um grupo de consistência usando novas unidades de armazenamento ou crie um grupo de consistência usando unidades de armazenamento existentes.
 
-Ao criar um grupo de consistência usando novas unidades de armazenamento, você pode atribuir uma capacidade diferente a cada unidade de armazenamento, alterar o nível de serviço de desempenho padrão e criar até cinco grupos de consistência filho. Ao criar um grupo de consistência usando unidades de armazenamento existentes, você pode adicionar unidades de armazenamento que já estão em uso.
+A partir do ONTAP 9.18.1, você pode definir a porcentagem de reserva de snapshots e habilitar a exclusão automática de snapshots ao criar um grupo de consistência com novas unidades de armazenamento.  A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Se a reserva de snapshots e a exclusão automática de snapshots estiverem ativadas em um grupo de consistência pai, elas serão ativadas em todos os grupos de consistência filho existentes.  Se novos grupos de consistência filhos forem adicionados, eles não herdarão as configurações de reserva e exclusão de instantâneos do grupo pai.
+
+link:snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas de armazenamento ASA r2."].
+
+A partir do ONTAP 9.16.1, ao criar grupos de consistência usando novas unidades de armazenamento, você pode configurar até cinco grupos de consistência filhos. link:manage-hierarchical-consistency-groups.html["Saiba mais sobre grupos de consistência infantil em sistemas ASA r2"].
 
 [role="tabbed-block"]
 ====
@@ -54,6 +58,17 @@ Altere o nível de serviço de desempenho padrão
  a| 
 Em *nível de serviço de desempenho*, selecione um nível de serviço diferente.
 
+Os sistemas ASA r2 oferecem dois níveis de desempenho.  O nível de desempenho padrão é *Extremo*, que é o nível mais alto disponível.  Você pode reduzir o nível de desempenho para *Desempenho*.
+
+
+
+ a| 
+Modifique a reserva de snapshots padrão e habilite a exclusão automática de snapshots.
+ a| 
+.. Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.
+.. Selecione *Excluir automaticamente snapshots antigos*.
+
+
 
 
  a| 
@@ -67,7 +82,7 @@ Selecione *Adicionar grupo de consistência filho*.
 
 
 .O que se segue?
-Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
+Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger.  Agora você pode criar um instantâneo.
 
 --
 .Use unidades de armazenamento existentes
@@ -80,7 +95,7 @@ Você criou um grupo de consistência contendo as unidades de armazenamento que 
 
 
 .O que se segue?
-Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger. Agora você está pronto para criar um instantâneo.
+Você criou um grupo de consistência contendo as unidades de armazenamento que deseja proteger.  Agora você pode criar um instantâneo.
 
 --
 ====
@@ -97,7 +112,7 @@ Você pode criar um snapshot sob demanda de uma única unidade de armazenamento 
 
 * Snapshots sob demanda
 +
-Um instantâneo sob demanda de uma unidade de armazenamento pode ser criado a qualquer momento. A unidade de armazenamento não precisa ser membro de um grupo de consistência para ser protegida por um instantâneo sob demanda. Se você criar um snapshot sob demanda de uma unidade de armazenamento que seja membro de um grupo de consistência, as outras unidades de armazenamento no grupo de consistência não serão incluídas no snapshot sob demanda. Se você criar um snapshot sob demanda de um grupo de consistência, todas as unidades de armazenamento no grupo de consistência serão incluídas no snapshot.
+Você pode criar um instantâneo sob demanda de uma unidade de armazenamento a qualquer momento.  A unidade de armazenamento não precisa ser membro de um grupo de consistência para ser protegida por um snapshot sob demanda.  Se você criar um snapshot sob demanda de uma unidade de armazenamento que seja membro de um grupo de consistência, as outras unidades de armazenamento no grupo de consistência não serão incluídas no snapshot sob demanda.  Se você criar um instantâneo sob demanda de um grupo de consistência, todas as unidades de armazenamento do grupo de consistência serão incluídas no instantâneo.
 
 * Snapshots automatizados
 +

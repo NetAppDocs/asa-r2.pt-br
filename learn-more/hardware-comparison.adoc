@@ -12,9 +12,9 @@ searchtitle: Compare os sistemas ASA R2 com outros sistemas ONTAP
 
 
 [role="lead"]
-Os sistemas ASA r2 oferecem uma solução de hardware e software para ambientes somente SAN, construídos em plataformas totalmente flash. Os sistemas ASA r2 diferem de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua personalidade ONTAP , camada de armazenamento e protocolos suportados.
+Os sistemas ASA r2 oferecem uma solução de hardware e software para ambientes exclusivamente SAN, construída com base em soluções all-flash. Os sistemas ASA r2 diferem de outros sistemas ONTAP (ASA, AFF e FAS) na implementação de sua personalidade ONTAP , camada de armazenamento e protocolos suportados.
 
-As seguintes plataformas ASA são classificadas como sistemas ASA R2:
+Os seguintes sistemas são classificados como sistemas ASA r2:
 
 * ASA A1K
 * ASA A90
@@ -99,8 +99,8 @@ Devido a essa abordagem automatizada e simplificada para o gerenciamento de arma
 
 As principais diferenças entre os sistemas ASA R2 e os sistemas FAS, AFF e ASA relevantes para a interface de linha de comando (CLI) do ONTAP e API REST são descritas abaixo.
 
-.Criação padrão de SVM com serviços de protocolo
-Os novos clusters contêm automaticamente um SVM de dados padrão com os protocolos SAN ativados. Os LIFs de dados IP suportam protocolos iSCSI e NVMe/TCP e usam a `default-data-blocks` política de serviço por padrão.
+.Criação de VM de armazenamento padrão com serviços de protocolo
+Os novos clusters contêm automaticamente uma máquina virtual (VM) de armazenamento de dados padrão com os protocolos SAN ativados.  Os LIFs de dados IP suportam os protocolos iSCSI e NVMe/TCP e utilizam o `default-data-blocks` Política de serviço por padrão.
 
 .Criação automática de volume
 A criação de uma unidade de armazenamento (LUN ou namespace) cria automaticamente um volume a partir da zona de disponibilidade de armazenamento. Isso resulta em um namespace simplificado e comum. Eliminar uma unidade de armazenamento elimina automaticamente o volume associado.

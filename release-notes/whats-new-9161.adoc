@@ -18,15 +18,15 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas AS
 
 
 
-== Plataformas
+== Sistemas
 
 [cols="2,4"]
 |===
 | Atualização | Descrição 
 
 
-| Plataformas  a| 
-Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1.  Essas plataformas oferecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes somente SAN.
+| Sistemas  a| 
+Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1. Esses sistemas oferecem uma solução unificada de hardware e software que cria uma experiência simplificada, específica para as necessidades de clientes que utilizam apenas SAN.
 
 * ASA A50
 * ASA A30
@@ -72,7 +72,7 @@ Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1.  E
 | link:../learn-more/hardware-comparison.html["Suporte para rebalanceamento automático de unidades de armazenamento"] | O ONTAP reequilibrará automaticamente as unidades de storage nas zonas de disponibilidade de storage para obter performance e utilização de capacidade ideais. 
 
 
-| Alocação de espaço NVMe habilitada por padrão  a| 
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["Alocação de espaço NVMe habilitada por padrão"]  a| 
 A alocação de espaço (também chamada de "perfuração" e "desmapear") é habilitada para namespaces NVMe por padrão. A desalocação de espaço permite que um host inutilize blocos de nomes para recuperar espaço.
 
 Isso melhora muito a eficiência geral do storage, especialmente com sistemas de arquivos que têm alta rotatividade de dados.

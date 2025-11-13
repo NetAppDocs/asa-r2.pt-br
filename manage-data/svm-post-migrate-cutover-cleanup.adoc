@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: manage-data/svm-post-migrate-cutover-cleanup.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
+summary: Se uma zona de disponibilidade de storage estiver com pouco espaço, você poderá mover unidades de armazenamento para outra zona de disponibilidade de armazenamento para equilibrar a utilização de armazenamento no cluster. 
+---
+= Migrar clientes e limpar a VM de armazenamento de origem após a migração para um sistema ASA r2.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Após uma máquina virtual (VM) de armazenamento ser migrada de um cluster ASA para um cluster ASA R2, por padrão, os clientes são automaticamente transferidos para o cluster ASA R2 e a VM de armazenamento no cluster ASA é removida automaticamente.  Se você optou por desativar a transferência e remoção automáticas da VM de armazenamento ASA durante a migração, será necessário executar essas etapas manualmente após a conclusão da migração.
+
+
+
+== Migrar manualmente os clientes para um sistema ASA r2 após a migração de uma máquina virtual de armazenamento.
+
+Se você desativar a transição automática de clientes durante a migração de uma VM de armazenamento de um cluster ASA para um cluster ASA R2, após a conclusão bem-sucedida da migração, execute a transição manualmente para que a VM de armazenamento ASA R2 possa fornecer dados aos clientes.
+
+.Passos
+. No cluster ASA r2, execute manualmente a migração do cliente:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verifique se a operação de transição foi concluída:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Resultado
+Os dados estão sendo fornecidos aos seus clientes a partir da máquina virtual de armazenamento no seu cluster ASA r2.
+
+.O que vem a seguir?
+Agora você está pronto para remover a VM de armazenamento do cluster ASA de origem.
+
+
+
+== Remover manualmente uma VM de armazenamento ASA após a migração para um cluster ASA R2
+
+Se você desativar a limpeza automática da origem durante a migração de uma VM de armazenamento de um cluster ASA para um cluster ASA R2, após a conclusão da migração, remova a VM de armazenamento do cluster ASA para liberar espaço de armazenamento.
+
+.Antes de começar
+Seus clientes devem estar fornecendo dados do cluster ASA r2.
+
+.Passos
+. No cluster ASA , verifique se o status da VM de armazenamento ASA é *Pronto para limpeza de origem*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Remova a VM de armazenamento ASA :
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Resultado
+A máquina virtual de armazenamento no seu cluster ASA foi removida.

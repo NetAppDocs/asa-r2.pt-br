@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve-modify.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots. 
+---
+= Modificar a reserva de snapshots em um sistema de armazenamento ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Por padrão, a reserva de snapshots está definida como 0%.  A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots padrão da unidade de armazenamento e ativar a exclusão automática de snapshots.  A exclusão automática de instantâneos está desativada por padrão.  Quando um valor de reserva de snapshots é definido e a exclusão automática de snapshots está ativada, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso impede que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.
+
+link:snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas de armazenamento ASA r2."].
+
+
+
+== Modificar reserva de snapshots em unidades de armazenamento
+
+Para definir valores de reserva de snapshots diferentes, configure cada unidade de armazenamento individualmente.  Para usar o mesmo valor em todas as unidades de armazenamento, modifique a reserva de snapshots na máquina virtual de armazenamento.
+
+.Passos
+. No System Manager, selecione *Storage*.
+. Passe o cursor sobre o nome da unidade de armazenamento para a qual deseja definir a reserva de snapshots.
+. Selecioneimage:icon_kabob.gif["três pontos verticais"] Em seguida, selecione *Editar*.
+. Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.
+. Verifique se a opção *Excluir automaticamente snapshots antigos* está selecionada.
+. Selecione *Guardar*.
+
+
+.Resultado
+A reserva de snapshots está definida para a porcentagem que você especificou.  Se o espaço consumido pelos snapshots atingir o limite reservado, os snapshots mais antigos serão excluídos automaticamente.
+
+
+
+== Modificar a reserva de snapshots em uma VM de armazenamento
+
+Para definir a mesma reserva de snapshots para todas as unidades de armazenamento em uma VM de armazenamento, aplique a porcentagem desejada à VM de armazenamento. .  Quando a reserva de snapshots é aplicada à máquina virtual de armazenamento, ela é aplicada a todas as unidades de armazenamento recém-criadas dentro da máquina virtual de armazenamento.  Essa configuração não se aplica a unidades de armazenamento criadas antes da modificação da configuração.
+
+.Passos
+. No Gerenciador de Sistemas, selecione *Cluster > VMs de Armazenamento*; em seguida, selecione *Configurações*.
+. Em *Políticas*, ao lado de *Instantâneos*, selecioneimage:icon_kabob.gif["três pontos verticais"] Em seguida, selecione *Definir/editar reserva de instantâneo padrão*.
+. Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.
+. Verifique se a opção *Excluir automaticamente snapshots antigos* está selecionada.
+. Selecione *Guardar*.
+
+
+.Resultado
+A reserva de snapshots para unidades de armazenamento recém-criadas é definida com a porcentagem especificada.  Se a quantidade de espaço consumida pelos snapshots nessas unidades de armazenamento atingir a reserva, os snapshots mais antigos serão excluídos automaticamente.

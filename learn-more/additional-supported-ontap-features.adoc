@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/additional-supported-ontap-features.html 
-keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
+keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, command line interface, clustered external key servers, external key management, encryption at rest, administrator access management, client authentication, oauth 2.0, saml authentication, fips compliance, link aggregation groups, iscsi, fibre channel, fc, nvme, nvme unmap, hole punch, deallocation, system manager 
 summary: Como os sistemas ASA r2 executam uma versão simplificada do ONTAP, muitas tarefas comuns do ONTAP e funções do System Manager são executadas da mesma forma nos sistemas ASA r2 e em outros sistemas ONTAP . 
 ---
 = Recursos comuns do ONTAP suportados em sistemas ASA r2
@@ -17,28 +17,118 @@ Para obter mais informações sobre recursos e funções comuns, consulte a segu
 
 
 
-== Administração ONTAP
+== Proteção de dados
 
-* link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Aprenda a pesquisar, filtrar e classificar informações no ONTAP System Manager"^] .
-* link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Combine portas físicas para criar grupos de interface"^] .
-* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["Saiba mais sobre o provisionamento NVMe sobre Fabrics (NVMe-oF)"^] .
+Saiba mais sobre os recursos comuns de proteção de dados compatíveis com os sistemas ASA r2.
+
+
+
+=== Servidores de chave externa agrupados
+
+Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento.  Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento.  Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.
+
+link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Aprenda a configurar servidores de chaves externas em cluster."^].
+
+
+
+=== Gerenciamento de chaves externas para criptografia em repouso
+
+Você pode usar um ou mais servidores KMIP para proteger as chaves que o cluster usa para acessar dados criptografados.
+
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["Habilitar gerenciamento de chaves externas"^].
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["Habilitar gerenciamento de chaves externas (NVE)"^] .
 
 
 
 
 == Segurança dos dados
 
-* link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Saiba mais sobre a autenticação OAuth 2.0"^] .
-* link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["Aprenda sobre autenticação e autorização de clientes"^] .
-* link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["Aprenda a configurar a autenticação SAML"^] .
-* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["Gerenciar acesso de administrador do ONTAP"^] .
+Saiba mais sobre os recursos comuns de segurança de dados compatíveis com os sistemas ASA r2.
+
+
+
+=== Gerenciamento de acesso de administrador
+
+A função atribuída a um administrador determina quais tarefas ele pode executar.  O Gerenciador de Sistemas fornece funções predefinidas para administradores de cluster e administradores de máquinas virtuais de armazenamento.  Você atribui a função ao criar a conta de administrador, ou pode atribuir uma função diferente posteriormente.
+
+* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["Aprenda a gerenciar o acesso de administrador com o Gerenciador de Sistemas."^].
 
 
 
 
-== Proteção de dados
+=== Autenticação e autorização do cliente
 
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Configurar servidores de chaves externas em cluster no ONTAP"^] .
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["Habilitar gerenciamento de chaves externas (baseado em HW)"^] .
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["Habilitar gerenciamento de chaves externas (NVE)"^] .
+O ONTAP utiliza métodos padrão para proteger o acesso de clientes e administradores ao armazenamento e para proteção contra vírus.  Tecnologias avançadas estão disponíveis para criptografia de dados em repouso e para armazenamento de WORM.  O ONTAP autentica uma máquina cliente e um usuário, verificando suas identidades com uma fonte confiável.  O ONTAP autoriza um usuário a acessar um arquivo ou diretório comparando as credenciais do usuário com as permissões configuradas no arquivo ou diretório.
 
+link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["Aprenda sobre autenticação e autorização de clientes"^] .
+
+
+
+=== Autenticação OAuth 2.0
+
+Você pode usar a estrutura de Autorização Aberta (OAuth 2.0) para controlar o acesso aos seus clusters ONTAP .  O OAuth 2.0 restringe e controla o acesso a recursos protegidos usando tokens de acesso assinados.
+
+link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Saiba mais sobre a autenticação OAuth 2.0"^] .
+
+
+
+=== Autenticação SAML e acesso de administrador
+
+Você pode configurar e habilitar a autenticação SAML (Security Assertion Markup Language) para serviços web.  O SAML autentica usuários por meio de um provedor de identidade (IdP) externo, em vez de provedores de serviços de diretório como Active Directory e LDAP.
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["Aprenda a configurar a autenticação SAML"^] .
+
+
+
+== Rede
+
+Saiba mais sobre os recursos de rede comuns suportados nos sistemas ASA r2.
+
+
+
+=== Conformidade com o FIPS
+
+O ONTAP está em conformidade com o padrão FIPS 140-2 (Federal Information Processing Standards) para todas as conexões SSL.  Você pode ativar e desativar o modo SSL FIPS, definir protocolos SSL globalmente e desativar quaisquer cifras fracas, como RC4, dentro do ONTAP.
+
+A partir da versão 9.18.1 do ONTAP , os algoritmos criptográficos de computação pós-quântica são suportados para SSL.  Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo SSL FIPS está desativado.
+
+* link:https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_fips.html["Aprenda a configurar o FIPS para todas as conexões SSL."^].
+
+
+
+
+=== Grupos de agregação de links (LAGs)
+
+Um grupo de interfaces, também conhecido como Grupo de Agregação de Links (LAG, na sigla em inglês), é criado combinando duas ou mais portas físicas no mesmo nó em uma única porta lógica.  A porta lógica proporciona maior resiliência, maior disponibilidade e compartilhamento de carga.
+
+link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Saiba mais sobre Grupos de Agregação de Links"^].
+
+
+
+== Protocolos SAN
+
+Os sistemas ASA r2 suportam todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).
+
+* link:https://docs.netapp.com/us-en/ontap/san-admin/san-host-provisioning-concept.html["Saiba mais sobre o protocolo iSCSI"^].
+* link:https://docs.netapp.com/us-en/ontap/san-admin/san-provisioning-fc-concept.html["Saiba mais sobre o protocolo Fibre Channel (FC)"^].
+* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["Saiba mais sobre o protocolo NVMe"^].
++
+** link:https://docs.netapp.com/us-en/ontap/san-admin/nvme-copy-offload.html["Aprenda a configurar o descarregamento de cópia NVMe"^].
++
+A partir do ONTAP 9.18.1, o descarregamento de cópia NVMe é suportado.  O recurso de descarregamento de cópia NVMe permite que um host NVMe transfira as operações de cópia de sua CPU para a CPU do controlador de armazenamento ONTAP .  O host pode copiar dados de um namespace NVMe para outro, reservando seus recursos de CPU para cargas de trabalho de aplicativos.
+
+** link:https://docs.netapp.com/us-en/ontap/san-admin/enable-space-allocation.html["Saiba mais sobre alocação de espaço (desmapeamento) para NVMe."^].
++
+A partir do ONTAP 9.16.1, a desalocação de espaço (também chamada de "hole punching" e "unmap") está habilitada por padrão para namespaces NVMe. A desalocação de espaço permite que um host desaloque blocos não utilizados de namespaces para recuperar espaço.
+
+
+
+
+
+
+
+== System Manager
+
+Você pode pesquisar diversas ações, objetos e tópicos de informação no Gerenciador de Sistemas.  Você também pode pesquisar dados da tabela para entradas específicas.
+
+link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Aprenda a pesquisar, filtrar e classificar informações no Gerenciador de Sistemas."^].

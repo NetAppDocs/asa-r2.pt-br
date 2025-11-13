@@ -17,11 +17,37 @@ Para sistemas ASA R2, o IPsec está disponível para hosts iSCSI e NVMe/TCP.
 
 Em determinados sistemas ASA R2, várias operações criptográficas, como verificações de criptografia e integridade, podem ser descarregadas para uma placa de controlador de interface de rede (NIC) suportada. A taxa de transferência para operações descarregadas para a placa NIC é de aproximadamente 5% ou menos. Isso pode melhorar significativamente o desempenho e a taxa de transferência do tráfego de rede protegido pelo IPsec.
 
-As seguintes placas NIC são suportadas para descarga de hardware nos seguintes sistemas ASA R2:
+A partir do ONTAP 9.18.1, o suporte para descarregamento de hardware IPsec foi estendido ao tráfego IPv6.
 
-[cols="2"]
+As seguintes placas de rede são compatíveis com o descarregamento de hardware nos seguintes sistemas ASA r2 e versões do ONTAP :
+
+[cols="3"]
 |===
-| Placa NIC suportada | Sistemas ASA r2 
+| Placa NIC suportada | Sistemas ASA r2 | Versão ONTAP 
+
+
+ a| 
+X50135A (Controlador Ethernet 2p, 40G/100G)
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+ a| 
+ONTAP 9.17.1 e posterior
+
+
+
+ a| 
+X60135A (Controlador Ethernet 2p, 40G/100G)
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+ a| 
+ONTAP 9.17.1 e posterior
+
 
 
  a| 
@@ -31,6 +57,8 @@ X50131A - (controlador Ethernet 2P, 40G/100g/200g/400G)
 * ASA A90
 * ASA A70
 
+ a| 
+ONTAP 9.16.1 e posterior
 
 
 
@@ -41,7 +69,11 @@ X60132A - (controlador Ethernet 4P, 10G/25G)
 * ASA A30
 * ASA A20
 
+ a| 
+ONTAP 9.16.1 e posterior
 
 |===
+Veja olink:https://hwu.netapp.com/["NetApp Hardware Universe"^] Para obter mais informações sobre os sistemas e placas suportados.
+
 .O que se segue?
-link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["Configure a segurança IP para a rede ONTAP"]
+O IPsec é configurado no seu sistema ASA r2 da mesma forma que em outros sistemas ONTAP . Para mais informações, consulte link:https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepare-se para configurar a segurança IP para a rede ONTAP."^].

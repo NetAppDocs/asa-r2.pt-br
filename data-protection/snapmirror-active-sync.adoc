@@ -18,7 +18,7 @@ Embora os procedimentos do System Manager para configurar a sincronização ativ
 link:../learn-more/hardware-comparison.html#personality-differences["Saiba mais sobre as personalidades da ONTAP"] .
 
 
-NOTE: Para sistemas ASA r2, a sincronização ativa do SnapMirror é suportada apenas em configurações de cluster de dois nós.
+NOTE: A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Saiba mais sobre a sincronização ativa do SnapMirror"^] .
 

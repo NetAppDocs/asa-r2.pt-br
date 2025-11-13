@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots. 
+---
+= Saiba mais sobre a reserva de snapshots do ONTAP no armazenamento ASA r2.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso impede que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.
+
+A reserva de snapshots é definida como uma porcentagem do tamanho total da unidade de armazenamento.  Por exemplo, se a unidade de armazenamento for de 50 GB e você definir a reserva de snapshots para 10%, a quantidade de espaço reservada para snapshots será de 5 GB.  Quando o espaço utilizado pelos snapshots atinge 5 GB, os snapshots mais antigos são excluídos automaticamente para liberar espaço para novos snapshots.  Se o tamanho da unidade de armazenamento aumentar para 100 GB, a reserva de snapshots aumentará para 10 GB.  A reserva máxima de snapshots que você pode definir é de 200%.  Se sua unidade de armazenamento atingir o tamanho máximo de 128 TB, uma reserva de snapshots de 200% permite que você faça 2 snapshots completos.
+
+Por padrão, a reserva de snapshots está definida como 0% e a exclusão automática de snapshots não está habilitada.
+
+A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots padrão durante ou após a criação de unidades de armazenamento e durante a criação de grupos de consistência.  Você também pode modificar a reserva de snapshots padrão em máquinas virtuais (VMs) de armazenamento existentes.  No ONTAP 9.17.1 e versões anteriores, não é possível modificar essas configurações.
+
+A reserva de snapshots é definida com a mesma porcentagem para todas as unidades de armazenamento em um grupo de consistência no momento em que o grupo de consistência é criado.  A reserva de snapshots deve ser configurada individualmente em todas as unidades de armazenamento adicionadas posteriormente.

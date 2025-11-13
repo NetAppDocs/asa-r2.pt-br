@@ -17,12 +17,12 @@ Adicione unidades a um nó ou gaveta para aumentar a capacidade de storage do si
 
 == Use o NetApp Hardware Universe para se preparar para a instalação de uma nova unidade
 
-Antes de instalar uma nova unidade em um nó ou compartimento, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com sua plataforma ASA R2 e para identificar o slot correto para a nova unidade. Os slots corretos para adicionar unidades variam dependendo do modelo da plataforma e da versão do ONTAP. Em alguns casos, você precisa adicionar unidades a slots específicos em sequência.
+Antes de instalar uma nova unidade em um nó ou chassi, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com o seu sistema ASA r2 e para identificar o slot correto para a nova unidade.  Os slots corretos para adicionar unidades variam dependendo do modelo do sistema e da versão do ONTAP .  Em alguns casos, é necessário adicionar unidades a slots específicos em sequência.
 
 .Passos
 . Vá para link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 . Em *Produtos*, selecione suas configurações de hardware.
-. Selecione a sua plataforma ASA R2.
+. Selecione o seu sistema ASA r2.
 . Selecione sua versão do ONTAP; em seguida, selecione *Mostrar resultados*.
 . Abaixo do gráfico, selecione *clique aqui para ver vistas alternativas*; em seguida, escolha a vista que corresponde à sua configuração.
 . Use a exibição de sua configuração para confirmar se sua nova unidade é suportada e o slot correto para instalação.
@@ -42,7 +42,7 @@ Você deve repetir as etapas deste procedimento para cada unidade.
 
 .Passos
 . Aterre-se corretamente.
-. Retire cuidadosamente a moldura da parte frontal da plataforma.
+. Remova cuidadosamente a moldura da parte frontal do sistema.
 . Insira a nova unidade no slot correto.
 +
 .. Com o manípulo do excêntrico na posição aberta, utilize as duas mãos para introduzir a nova transmissão.

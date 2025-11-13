@@ -24,13 +24,25 @@ entries:
       url: "/manage-data/move-storage-units.html"
     - title: Eliminar unidades de armazenamento
       url: "/manage-data/delete-storage-units.html"
+  - title: Migrar VMs de armazenamento
+    entries:
+    - title: Migrar uma VM de armazenamento de um cluster ASA
+      url: "/manage-data/migrate-svm.html"
+    - title: Migrar clientes e limpar a VM de armazenamento de origem.
+      url: "/manage-data/svm-post-migrate-cutover-cleanup.html"
   - title: Limites de armazenamento
     url: "/manage-data/storage-limits.html"
 - title: Proteja seus dados
   entries:
   - title: Criar instantâneos
     url: "/data-protection/create-snapshots.html"
-  - title: Criar um relacionamento de pares SVM
+  - title: Gerenciar reserva de instantâneos
+    entries:
+    - title: Saiba mais sobre a reserva instantânea.
+      url: "/data-protection/snapshot-reserve.html"
+    - title: Modificar reserva de instantâneo
+      url: "/data-protection/snapshot-reserve-modify.html"
+  - title: Criar uma relação de pares entre máquinas virtuais de armazenamento
     url: "/data-protection/create-svm-peer-relationship.html"
   - title: Configurar a replicação de instantâneos
     entries:

@@ -25,6 +25,12 @@ Saiba mais sobre as alterações nos limites e padrões que afetam os sistemas A
 | Recurso | Limite de alteração | Alterado na versão... 
 
 
+| VMs de armazenamento por cluster | O número máximo de máquinas virtuais (VMs) de armazenamento suportadas por par HA foi aumentado de 32 para 256. | ONTAP 9.18.1 
+
+
+| SnapMirror sincronização ativa | O suporte para sincronização ativa do SnapMirror foi ampliado de clusters de dois nós para clusters de quatro nós. | ONTAP 9.18.1 
+
+
 | Nós por cluster  a| 
 O número máximo de nós por cluster aumenta de 2 para 12.
 
