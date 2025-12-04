@@ -27,10 +27,13 @@ Consulte a documentação do host SAN ONTAP para link:https://docs.netapp.com/us
 
 Se você precisar migrar sua carga de trabalho de VM de um sistema de armazenamento ASA para um sistema de armazenamento ASA r2, a NetApp recomenda que você uselink:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere vMotion"^] para realizar uma migração ao vivo e sem interrupções dos seus dados.
 
+As unidades de armazenamento ASA r2 são provisionadas dinamicamente por padrão.  Ao migrar sua carga de trabalho de máquinas virtuais, os discos virtuais (VMDKs) também devem ser provisionados dinamicamente.
+
 .Informações relacionadas
 * Saiba mais sobre link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["as vantagens de usar ONTAP para vSphere"^] .
 * Aprenda sobrelink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["Recuperação de site VMware Live com ONTAP"^] .
 * Aprenda sobrelink:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["soluções de disponibilidade contínua para ambientes vSphere"^] .
+* Saiba mais sobrelink:https://kb.netapp.com/on-prem/ontap/da/SAN/SAN-KBs/How_to_setup_Broadcom_VMware_ESXi_iSCSI_MPIO_with_ONTAP_SAN_ASA["Como configurar o Broadcom VMware ESXi iSCSI MPIO com sistemas de armazenamento ONTAP SAN ASA"^] .
 
 
 
