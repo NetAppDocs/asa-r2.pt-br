@@ -17,7 +17,7 @@ Ao criptografar dados em repouso, não é possível ler se um meio de storage é
 O NetApp Storage Encryption (NSE) é compatível com a criptografia de hardware usando unidades de autocriptografia (SEDs). Os SEDs criptografam dados conforme são gravados. Cada SED contém uma chave de criptografia exclusiva. Os dados criptografados armazenados no SED não podem ser lidos sem a chave de criptografia do SED. Os nós que tentam ler de um SED devem ser autenticados para acessar a chave de criptografia do SED. Os nós são autenticados pela obtenção de uma chave de autenticação de um gerenciador de chaves e, em seguida, apresentando a chave de autenticação à SED. Se a chave de autenticação for válida, o SED dará ao nó a sua chave de encriptação para aceder aos dados que contém.
 
 
-NOTE: Em sistemas ASA r2, os SEDs são suportados apenas para protocolos NVMe.
+NOTE: Nos sistemas ASA r2, os SEDs são suportados apenas para SSDs baseados em NVMe.
 
 Use o gerenciador de chaves integrado do ASA R2 ou um gerenciador de chaves externo para fornecer chaves de autenticação aos nós.
 
