@@ -53,21 +53,7 @@ A camada de armazenamento para sistemas FAS, AFF e ASA utiliza agregados como un
 .Sistemas ASA r2
 Em vez de agregados, a camada de armazenamento em sistemas ASA r2 utiliza zonas de disponibilidade de armazenamento. Uma zona de disponibilidade de armazenamento é um conjunto comum de armazenamento disponível para ambos os nós de um único par de alta disponibilidade. Ambos os nós no par de alta disponibilidade têm acesso a todos os discos disponíveis em sua zona de disponibilidade de armazenamento compartilhada. Por exemplo, em um cluster ONTAP de um sistema ASA r2 de 2 nós, há uma zona de disponibilidade de armazenamento, acessível por ambos os nós do cluster. Em um cluster ONTAP de um sistema ASA r2 de 4 nós, há duas zonas de disponibilidade de armazenamento. Cada par de alta disponibilidade no cluster tem acesso a uma das zonas de disponibilidade de armazenamento.
 
-Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. Dependendo da sua versão do ONTAP, os sistemas ASA r2 também suportam o rebalanceamento automático de unidades de armazenamento na zona de disponibilidade de armazenamento e o rebalanceamento automático de cargas de trabalho entre os nós em um par de HA.
-
-* Rebalanceamento automático de unidades de armazenamento
-+
-A partir do ONTAP 9.16.1, se uma unidade de armazenamento aumentar ou diminuir de uma forma que crie um desequilíbrio na utilização do armazenamento na zona de disponibilidade de armazenamento, o ONTAP moverá automaticamente as unidades de armazenamento conforme necessário para reequilibrar a utilização e otimizar o desempenho.
-
-* Rebalanceamento automático de carga de trabalho
-+
-A partir do ONTAP 9.17.1, o ONTAP rebalanceia automaticamente as cargas de trabalho entre os nós em um par de HA do sistema ASA r2 para otimizar o desempenho. Por exemplo, se a utilização em um nó aumentar para 70% enquanto a utilização em seu parceiro de HA for de apenas 30%, o ONTAP desloca automaticamente as cargas de trabalho para que a utilização de cada nó seja mais próxima. Como os nós do par de HA compartilham a mesma zona de disponibilidade de armazenamento, o rebalanceamento da carga de trabalho é uma operação sem cópias e sem impacto no desempenho. O rebalanceamento automático da carga de trabalho é habilitado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2. Você pode link:../administer/rebalance-workloads.html["alterar a configuração padrão"] para habilitar ou desabilitar o rebalanceamento automático da carga de trabalho ou para colocá-lo em um estado de consultoria para sinalizar cargas de trabalho que estão desequilibradas sem movê-las automaticamente.
-
-
-
-
-
-== Resumo das diferenças do sistema ASA R2
+Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. == Resumo das diferenças do sistema ASA r2
 
 Os sistemas ASA r2 diferem dos sistemas FAS, AFF e ASA nas seguintes maneiras:
 
