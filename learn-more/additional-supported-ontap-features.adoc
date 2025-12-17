@@ -25,7 +25,7 @@ Saiba mais sobre os recursos comuns de proteção de dados compatíveis com os s
 
 === Servidores de chave externa agrupados
 
-Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento.  Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento.  Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.
+Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento. Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento. Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Aprenda a configurar servidores de chaves externas em cluster."^].
 

@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: administer/space-balancing.html 
+keywords: capacity, space, rebalancing, balanced, placement, balance, asa r2 
+summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+---
+= Saiba mais sobre balanceamento de capacidade do ONTAP em um cluster ASA r2.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para sistemas ASA r2, o ONTAP utiliza o _posicionamento balanceado_ para alocar automaticamente as unidades de armazenamento recém-criadas na melhor zona de disponibilidade de armazenamento, visando o desempenho ideal e a utilização equilibrada do espaço de armazenamento.  Se você estiver executando o ONTAP 9.17.1 ou posterior, o espaço consumido pelas unidades de armazenamento existentes será balanceado usando o _balanceamento dinâmico de espaço_.  Se você estiver executando o ONTAP 9.16.1, o espaço consumido pelas unidades de armazenamento existentes será balanceado usando o _rebalanceamento de carga de trabalho baseado em cópia_.
+
+[cols="2"]
+|===
+| Recurso | Apoiado em... 
+
+
+| Posicionamento equilibrado | ONTAP 9.16.1 e posterior 
+
+
+| Equilíbrio espacial dinâmico | ONTAP 9.17.1 e posterior 
+
+
+| Rebalanceamento de carga de trabalho baseado em cópias | Somente ONTAP 9.16.1 
+|===
+.Posicionamento equilibrado
+Com o recurso de _posicionamento balanceado_, as unidades de armazenamento recém-criadas são automaticamente posicionadas na zona de melhor disponibilidade de armazenamento para otimizar o desempenho e o uso equilibrado do espaço.  O posicionamento balanceado está ativado por padrão no ONTAP 9.16.1 e versões posteriores.
+
+.Equilíbrio espacial dinâmico
+Com o _balanceamento dinâmico de espaço_, o ONTAP monitora ativamente a quantidade de espaço livre no cluster e move automaticamente as unidades de armazenamento dentro das zonas de disponibilidade de armazenamento para manter a utilização equilibrada do espaço.  Um aviso do EMS é emitido automaticamente se a utilização da capacidade em todo o cluster atingir 80% e um alerta do EMS é emitido automaticamente se atingir 90%.
+
+O balanceamento dinâmico de espaço é ativado por padrão 14 dias após a atualização ou instalação do ONTAP 9.17.1 ou posterior.  Caso precise modificar o período de ativação padrão de 14 dias, entre em contato com o Suporte da NetApp .  Não é possível reverter da ONTAP 9.17.1 após a ativação do balanceamento dinâmico de espaço.
+
+O balanceamento dinâmico de espaço opera no _modo normal_ ou no _modo de pouco espaço_, com base na média geral de espaço livre em todos os nós do cluster (média global).
+
+* *Modo normal*
++
+No modo normal, o ONTAP verifica a cada três minutos se é necessário balanceamento dinâmico de espaço.  O balanceamento dinâmico de espaço opera no modo normal quando as seguintes condições são verdadeiras:
+
++
+** A média global de espaço livre é de 10% ou mais.
+** Pelo menos um nó no cluster possui mais espaço livre do que a média global.
+** Pelo menos um nó no cluster tem 20% menos espaço livre do que a média global.
+
+
+* *Modo de baixo consumo de espaço*
++
+No modo de baixo espaço, o ONTAP verifica a cada minuto se é necessário balanceamento dinâmico de espaço.  O balanceamento dinâmico de espaço opera no modo de espaço reduzido quando as seguintes condições são verdadeiras:
+
++
+** A média global de espaço livre é inferior a 10%.
+** Pelo menos um nó no cluster possui mais espaço livre do que a média global.
+** Pelo menos um nó no cluster tem menos espaço livre do que a média global.
+
+
+
+
+.Rebalanceamento de carga de trabalho baseado em cópias
+Com o _rebalanceamento de carga de trabalho baseado em cópia_, se ocorrer um desequilíbrio na utilização do armazenamento dentro das zonas de disponibilidade de armazenamento, o ONTAP copia automaticamente a unidade de armazenamento que está causando o desequilíbrio para uma zona de disponibilidade de armazenamento com mais espaço livre.  Se não houver espaço livre suficiente na zona de disponibilidade de armazenamento de destino, o ONTAP não executará nenhuma ação de balanceamento.  O rebalanceamento de carga de trabalho baseado em cópias aplica-se apenas ao sistema ASA r2 que executa o ONTAP 9.16.1 e está ativado por padrão nesses sistemas.  No ONTAP 9.17.1 e versões posteriores, ele foi substituído pelo balanceamento dinâmico de espaço.
+
+Caso precise modificar as configurações padrão para o rebalanceamento de cargas de trabalho baseado em cópias, entre em contato com o Suporte da NetApp .

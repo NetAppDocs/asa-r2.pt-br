@@ -53,7 +53,11 @@ A camada de armazenamento para sistemas FAS, AFF e ASA utiliza agregados como un
 .Sistemas ASA r2
 Em vez de agregados, a camada de armazenamento em sistemas ASA r2 utiliza zonas de disponibilidade de armazenamento. Uma zona de disponibilidade de armazenamento é um conjunto comum de armazenamento disponível para ambos os nós de um único par de alta disponibilidade. Ambos os nós no par de alta disponibilidade têm acesso a todos os discos disponíveis em sua zona de disponibilidade de armazenamento compartilhada. Por exemplo, em um cluster ONTAP de um sistema ASA r2 de 2 nós, há uma zona de disponibilidade de armazenamento, acessível por ambos os nós do cluster. Em um cluster ONTAP de um sistema ASA r2 de 4 nós, há duas zonas de disponibilidade de armazenamento. Cada par de alta disponibilidade no cluster tem acesso a uma das zonas de disponibilidade de armazenamento.
 
-Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. == Resumo das diferenças do sistema ASA r2
+Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. A utilização da capacidade é equilibrada dentro da zona de disponibilidade de armazenamento com base na sua versão do ONTAP. link:administer/space-balancing.html["Aprenda sobre balanceamento de capacidade em um cluster ASA r2"^].
+
+
+
+== Resumo das diferenças do sistema ASA r2
 
 Os sistemas ASA r2 diferem dos sistemas FAS, AFF e ASA nas seguintes maneiras:
 

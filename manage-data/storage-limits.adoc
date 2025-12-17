@@ -46,6 +46,9 @@ Os sistemas ASA r2 suportam os seguintes limites de armazenamento:
 | Unidades de armazenamento por grupo de consistência | 256 | 256 
 
 
+| Grupos de consistência infantil por grupo de consistência parental | 64 | 64 
+
+
 | Máquinas virtuais de armazenamento  a| 
 * 256 (ONTAP 9.18.1 e posterior)
 * 32 (ONTAP 9.17.1 e versões anteriores)
