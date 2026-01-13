@@ -56,5 +56,5 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.17.1 para sistemas AS
 | Atualização | Descrição 
 
 
-| link:../learn-more/hardware-comparison.html["Suporte para balanceamento automático de carga de trabalho"] | As cargas de trabalho são balanceadas automaticamente entre os nós de um par de HA para otimizar o desempenho e a utilização de recursos. 
+| link:../administer/space-balancing.html["Suporte para balanceamento automático de carga de trabalho"] | As cargas de trabalho são balanceadas automaticamente entre os nós de um par de HA para otimizar o desempenho e a utilização de recursos. 
 |===

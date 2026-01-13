@@ -2085,7 +2085,6 @@
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">O ARP/AI pode ser habilitado em unidades de armazenamento ASA r2. O ARP/AI oferece proteção adicional de dados, detectando e reportando potenciais ataques de ransomware sem período de aprendizagem.</block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">O SnapMirror Active Sync adiciona suporte para cargas de trabalho VMware com acesso a hosts NVMe/TCP e NVMe/FC para clusters ONTAP de dois nós. O suporte a cargas de trabalho VMware para NVMe/TCP depende da resolução do bug da VMware ID: TR1049746.</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">Suporte para balanceamento automático de carga de trabalho</block>
-  <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">As cargas de trabalho são balanceadas automaticamente entre os nós de um par de HA para otimizar o desempenho e a utilização de recursos.</block>
   <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">Habilite o ARP/AI para detectar potenciais ameaças de ransomware, tomar medidas automaticamente para proteger seus dados e exibir uma mensagem de aviso no Gerenciador do Sistema para alertá-lo sobre atividades suspeitas.</block>
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">Habilite a proteção autônoma contra ransomware com IA em seus sistemas de armazenamento ASA r2</block>
@@ -2735,4 +2734,5 @@
   <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">Se você não deseja que o ARP/AI esteja habilitado em todas as unidades de armazenamento de uma VM de armazenamento, pode selecionar as unidades específicas que deseja habilitar.</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Aprenda sobre equilíbrio de espaço</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Criar uma relação de pares entre máquinas virtuais de armazenamento</block>
+  <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
 </blocks>
