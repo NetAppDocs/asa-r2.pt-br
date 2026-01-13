@@ -17,7 +17,7 @@ entries:
 - title: Monitorar o uso e aumentar a capacidade
   entries:
   - title: Aprenda sobre equilíbrio de espaço
-    url: administer/space-balancing.html
+    url: "/administer/space-balancing.html"
   - title: Monitorar a performance de storage
     url: "/monitor/monitor-performance.html"
   - title: Monitorar a utilização do storage
