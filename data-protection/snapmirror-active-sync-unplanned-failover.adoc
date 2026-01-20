@@ -17,6 +17,7 @@ Uma operação de failover automático não planejado (AUFO) ocorre quando o clu
 * O relacionamento de sincronização ativa do SnapMirror deve estar sincronizado.
 * Não é possível iniciar um failover planejado quando uma operação não disruptiva, como uma movimentação de unidade de armazenamento, estiver em andamento.
 * O Mediador ONTAP deve estar configurado, conectado e em quorum.
+* Para recuperar caminhos de E/S perdidos ou atualizar os estados dos caminhos de E/S em seus hosts, você precisa executar uma nova verificação de armazenamento/adaptador nos hosts após o cluster de armazenamento primário retomar a operação.
 
 
 .Passos
@@ -25,6 +26,3 @@ Uma operação de failover automático não planejado (AUFO) ocorre quando o clu
 . Aguarde até que o status do relacionamento exiba *InSync*.
 . Selecione image:icon_kabob.gif["três pontos azuis verticais"] ; em seguida, selecione *Failover* para retomar as operações no cluster primário original.
 
-
-.O que vem a seguir
-Para evitar a perda de caminhos de E/S para seus hosts, você precisa verificar novamente os caminhos do host após retomar as operações no cluster primário.

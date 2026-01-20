@@ -2004,7 +2004,6 @@
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">Selecione o relacionamento de sincronização ativa do SnapMirror que você precisa restabelecer.</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">Aguarde até que o status do relacionamento exiba *InSync*.</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">Selecione <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ; em seguida, selecione *Failover* para retomar as operações no cluster primário original.</block>
-  <block id="b69b57f7782b4b37cff72f353a59ac84" category="paragraph">Para evitar a perda de caminhos de E/S para seus hosts, você precisa verificar novamente os caminhos do host após retomar as operações no cluster primário.</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">Use a sincronização ativa do SnapMirror para proteger aplicativos host que exigem um objetivo de ponto de recuperação zero (RPO) e um objetivo de tempo de recuperação zero (RTO) contra interrupções devido a uma interrupção inesperada ou desastre no site.</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">Fluxo de trabalho de configuração de sincronização ativa do SnapMirror</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">A proteção de dados de sincronização ativa do ONTAP SnapMirror permite que os serviços empresariais continuem operando mesmo em caso de falha total do site, permitindo que os aplicativos realizem failover de forma transparente usando uma cópia secundária. Com a sincronização ativa do SnapMirror , não é necessária intervenção manual ou script personalizado para acionar um failover.</block>
@@ -2735,4 +2734,7 @@
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Aprenda sobre equilíbrio de espaço</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Criar uma relação de pares entre máquinas virtuais de armazenamento</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
+  <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">Para recuperar caminhos de E/S perdidos ou atualizar os estados dos caminhos de E/S em seus hosts, você precisa executar uma nova verificação de armazenamento/adaptador nos hosts após o cluster de armazenamento primário retomar a operação.</block>
+  <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">Utilize a interface de linha de comando (CLI) do ONTAP para configurar seu cluster.</block>
+  <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">Em certos casos, você poderá precisar de <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>. Você deve usar a CLI, por exemplo, se seus protocolos de segurança não permitirem que você conecte um laptop aos seus switches de gerenciamento ou se estiver usando um sistema operacional que não seja Windows.</block>
 </blocks>
