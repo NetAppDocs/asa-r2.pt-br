@@ -43,3 +43,6 @@ Se houver atividade anormal na unidade de armazenamento, uma mensagem será exib
 . Selecione *Escolher uma ação*.
 . Selecione *Marcar como falso positivo* ou selecione *Marcar como possível ataque de ransomware*.
 
+
+.O que se segue?
+Se você observar picos na atividade de suas unidades de armazenamento, sejam eles pontuais ou característicos de um novo padrão, você deve reportá-los como seguros. Reportar esses picos manualmente como seguros ajuda a melhorar a precisão das avaliações de ameaças do ARP. Saiba como link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["relatar picos conhecidos de ARP/AI"^].

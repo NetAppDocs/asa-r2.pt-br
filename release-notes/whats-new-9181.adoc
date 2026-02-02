@@ -54,6 +54,17 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.18.1 para sistemas AS
 |===
 
 
+== Segurança
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../secure-data/disable-default-anti-ransomware-protection.html["Suporte para capacitação automática de ARP/AI"] | Ao inicializar um novo cluster ASA r2 9.18.1 ou atualizar seu cluster para 9.18.1, o ARP/AI é ativado automaticamente por padrão em todas as unidades de armazenamento recém-criadas após um período de carência de 12 horas. Se você não desativar o ARP/AI durante o período de carência, ele será ativado em todo o cluster para as unidades de armazenamento recém-criadas quando o período de carência terminar. 
+|===
+
+
 == Eficiência de storage
 
 [cols="2,4"]

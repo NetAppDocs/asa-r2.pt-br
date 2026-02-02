@@ -13,21 +13,39 @@ summary: Habilite o ARP/AI para detectar potenciais ameaças de ransomware, toma
 [role="lead"]
 A partir do ONTAP 9.17.1, você pode usar a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) para proteger os dados no seu sistema ASA r2. A ARP/AI detecta rapidamente potenciais ameaças de ransomware, cria automaticamente um snapshot da ARP para proteger seus dados e exibe uma mensagem de aviso no Gerenciador do Sistema para alertá-lo sobre atividades suspeitas.
 
-A partir do ONTAP 9.17.1, o ARP aprimora a resiliência cibernética adotando um modelo de aprendizado de máquina para análises anti-ransomware que detecta formas de ransomware em constante evolução com 98% de precisão para ambientes SAN. O modelo de aprendizado de máquina do ARP é pré-treinado em um grande conjunto de dados de arquivos antes e depois de um ataque de ransomware simulado. Esse treinamento intensivo em recursos é realizado fora do ONTAP, e o modelo pré-treinado resultante desse treinamento está incluído na caixa do ONTAP. Este modelo não é acessível nem modificável.  O ARP/AI fica ativo imediatamente após a ativação; não hálink:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["período de aprendizagem"^] .
+O ARP aprimora a resiliência cibernética ao adotar um modelo de aprendizado de máquina para análise antiransomware que detecta formas de ransomware em constante evolução com 98% de precisão em ambientes SAN. O modelo de aprendizado de máquina do ARP é pré-treinado em um grande conjunto de dados de arquivos, tanto antes quanto depois de um ataque de ransomware simulado. Esse treinamento que exige muitos recursos é realizado fora do ONTAP, e o modelo pré-treinado resultante desse treinamento é incluído on-box com o ONTAP. Esse modelo não é acessível nem modificável. O ARP/AI é ativado imediatamente após a capacitação; não há link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["período de aprendizagem"^].
 
 
-NOTE: Nenhum sistema de detecção ou prevenção de ransomware pode garantir completamente a segurança contra um ataque de ransomware. Embora seja possível que um ataque passe despercebido, o ARP/IA atua como uma importante camada adicional de defesa caso o software antivírus não consiga detectar uma intrusão.
+NOTE: Nenhum sistema de detecção ou prevenção de ransomware pode garantir completamente a segurança contra um ataque de ransomware. Embora um ataque possa passar despercebido, ARP/AI atua como uma importante camada adicional de defesa caso o software antivírus falhe em detectar uma intrusão.
 
 .Sobre esta tarefa
-O suporte ARP/AI está incluído no link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["Licença ONTAP One"] .
+* O suporte ARP/AI está incluído no link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["Licença ONTAP One"] .
+* ARP/AI não é compatível com unidades de armazenamento protegidas por SnapMirror active sync, SnapMirror synchronous ou SnapLock.
+* A partir do ONTAP 9.18.1, o ARP/AI é ativado por padrão em todas as unidades de armazenamento recém-criadas 12 horas após a atualização para o ONTAP 9.18.1 ou a inicialização de um novo cluster ASA r2 com ONTAP 9.18.1.
+* Depois de habilitar o ARP/AI, você deve link:../administer/update-firmware.html#enable-automatic-updates["habilite atualizações automáticas para seus arquivos de segurança"] para receber automaticamente novas atualizações de segurança.
 
-Depois de habilitar o ARP/AI, você deve link:../administer/update-firmware.html#enable-automatic-updates["habilite atualizações automáticas para seus arquivos de segurança"] para receber automaticamente novas atualizações de segurança.
+
+
+
+== Ative o ARP/AI em todas as unidades de armazenamento no cluster
+
+Se você estiver executando ONTAP 9.17.1, você pode habilitar ARP/AI em todas as unidades de armazenamento criadas no cluster por padrão.
+
+No ONTAP 9.18.1 e versões posteriores, ARP/AI está habilitado por padrão em todas as novas unidades de armazenamento. Se você tiver unidades de armazenamento criadas no ONTAP 9.17.1 para as quais ARP/AI não está habilitado, você pode habilitá-lo manualmente.
+
+.Passos
+. No System Manager, selecione *Cluster > Settings*.
+. Ao lado de *Anti-ransomware*, selecione image:icon_kabob.gif["Editar configurações anti-ransomware"] e, em seguida, selecione *Ativar em todas as unidades de armazenamento existentes*.
+. Selecione *Ativar*.
+
 
 
 
 == Habilite ARP/AI em todas as unidades de armazenamento em uma VM de armazenamento.
 
-Você pode habilitar o ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (VM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na máquina virtual de armazenamento terá o ARP/AI ativado automaticamente.  Você também pode aplicar ARP/AI a unidades de armazenamento existentes na VM de armazenamento.
+Se você estiver executando ONTAP 9.17.1, poderá habilitar ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (VM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na máquina virtual de armazenamento terá ARP/AI habilitado automaticamente. Você também pode aplicar ARP/AI a unidades de armazenamento existentes na máquina virtual de armazenamento.
+
+No ONTAP 9.18.1 e versões posteriores, ARP/AI está habilitado por padrão em todas as novas unidades de armazenamento. Se você tiver unidades de armazenamento criadas no ONTAP 9.17.1 para as quais ARP/AI não está habilitado, você pode habilitá-lo manualmente.
 
 .Passos
 . No Gerenciador do Sistema, selecione *Cluster > VMs de Armazenamento*.
@@ -48,7 +66,9 @@ Todas as novas unidades de armazenamento que você criar na máquina virtual de 
 
 == Habilite ARP/AI em unidades de armazenamento específicas em uma VM de armazenamento.
 
-Se você não deseja que o ARP/AI esteja habilitado em todas as unidades de armazenamento de uma VM de armazenamento, pode selecionar as unidades específicas que deseja habilitar.
+Se você estiver executando ONTAP 9.17.1 e não quiser que ARP/AI esteja habilitado em todas as unidades de armazenamento em uma storage VM, você pode selecionar as unidades específicas que deseja habilitar.
+
+No ONTAP 9.18.1 e versões posteriores, ARP/AI está habilitado por padrão em todas as novas unidades de armazenamento. Se você tiver unidades de armazenamento criadas no ONTAP 9.17.1 para as quais ARP/AI não está habilitado, você pode habilitá-lo manualmente.
 
 .Passos
 . No System Manager, selecione *Storage*.
