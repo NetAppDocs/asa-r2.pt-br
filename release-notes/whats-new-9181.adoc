@@ -65,7 +65,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.18.1 para sistemas AS
 |===
 
 
-== Eficiência de storage
+== Gerenciamento de storage
 
 [cols="2,4"]
 |===

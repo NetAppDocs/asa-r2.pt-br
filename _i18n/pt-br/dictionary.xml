@@ -2768,4 +2768,5 @@
   <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">relatar picos conhecidos de ARP/AI</block>
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">Se você observar picos na atividade de suas unidades de armazenamento, sejam eles pontuais ou característicos de um novo padrão, você deve reportá-los como seguros. Reportar esses picos manualmente como seguros ajuda a melhorar a precisão das avaliações de ameaças do ARP. Saiba como <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">Desativar a capacitação padrão de ARP/AI</block>
+  <block id="74c34cd79314b0b0543df58dce891912" category="cell">O suporte para SnapMirror active sync foi ampliado de clusters de dois nós para clusters de quatro nós.</block>
 </blocks>
