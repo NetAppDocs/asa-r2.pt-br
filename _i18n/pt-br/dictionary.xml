@@ -184,7 +184,6 @@
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Selecione para confirmar que suas modificações de atualização serão aplicadas a todas as atualizações atuais e futuras.</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">As atualizações recomendadas são transferidas e instaladas automaticamente no sistema ASA R2 com base nas seleções de atualização.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Desativar as atualizações automáticas</block>
-  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Desative as atualizações automáticas se você quiser que a flexibilidade exiba as atualizações recomendadas antes que elas sejam instaladas. Se desativar as atualizações automáticas, terá de efetuar manualmente atualizações de firmware e de ficheiros de sistema.</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">As atualizações automáticas estão desativadas. Deve verificar regularmente as atualizações recomendadas e decidir se pretende efetuar uma instalação manual.</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">Ver atualizações automáticas</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">Veja uma lista de atualizações de firmware e de ficheiros de sistema que foram transferidas para o cluster e que estão agendadas para instalação automática. Veja também as atualizações que foram instaladas automaticamente anteriormente.</block>
@@ -1943,7 +1942,6 @@
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">Criar um relacionamento entre pares de VMs de armazenamento entre clusters</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">Confirme se pelo menos um LIF foi criado em cada nó do cluster.</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">Criar um LIF</block>
-  <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
   <block id="b04d1fe353930783cf68fb978624b212" category="list-text">Confirme se as unidades de armazenamento necessárias foram criadas e mapeadas para grupos de hosts.</block>
   <block id="12aa04a968692be25285a9fc7234d0d5" category="inline-link-macro">Criar uma unidade de armazenamento</block>
   <block id="0dcd2c45a0db6a5c91ed22efb559bd29" category="inline-link-macro">mapear a unidade de armazenamento para um grupo de hosts</block>
@@ -2769,4 +2767,6 @@
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">Se você observar picos na atividade de suas unidades de armazenamento, sejam eles pontuais ou característicos de um novo padrão, você deve reportá-los como seguros. Reportar esses picos manualmente como seguros ajuda a melhorar a precisão das avaliações de ameaças do ARP. Saiba como <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">Desativar a capacitação padrão de ARP/AI</block>
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">O suporte para SnapMirror active sync foi ampliado de clusters de dois nós para clusters de quatro nós.</block>
+  <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">Desative as atualizações automáticas somente se você quiser gerenciar as atualizações inteiramente por conta própria. Com as atualizações automáticas desativadas, o sistema não notificará, baixará ou instalará atualizações. Você é responsável por monitorar, baixar, agendar e instalar todas as atualizações manualmente.</block>
+  <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>.</block>
 </blocks>

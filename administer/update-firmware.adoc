@@ -35,7 +35,7 @@ As atualizações recomendadas são transferidas e instaladas automaticamente no
 
 == Desativar as atualizações automáticas
 
-Desative as atualizações automáticas se você quiser que a flexibilidade exiba as atualizações recomendadas antes que elas sejam instaladas. Se desativar as atualizações automáticas, terá de efetuar manualmente atualizações de firmware e de ficheiros de sistema.
+Desative as atualizações automáticas somente se você quiser gerenciar as atualizações inteiramente por conta própria. Com as atualizações automáticas desativadas, o sistema não notificará, baixará ou instalará atualizações. Você é responsável por monitorar, baixar, agendar e instalar todas as atualizações manualmente.
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
