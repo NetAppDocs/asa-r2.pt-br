@@ -28,7 +28,7 @@ A partir do ONTAP 9.18.1, você pode modificar a reserva de snapshots e habilita
 
 link:../data-protection/snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas ASA r2."].
 
-As unidades de armazenamento são provisionadas dinamicamente por padrão.  O provisionamento dinâmico permite que a unidade de armazenamento cresça até o tamanho alocado, mas não reserva o espaço antecipadamente.  O espaço é alocado dinamicamente a partir do espaço livre disponível, conforme a necessidade.  Isso permite que você obtenha maior eficiência de armazenamento ao _provisionar em excesso_ o espaço disponível.  Por exemplo, suponha que você tenha 1 TB de espaço livre e precise criar quatro unidades de armazenamento de 1 TB.  Em vez de adicionar imediatamente 3 TB de capacidade de armazenamento adicional ao seu sistema, você pode criar as unidades de armazenamento, monitorar a utilização do espaço e aumentar sua capacidade de armazenamento à medida que as unidades de armazenamento consomem espaço real. Saiba mais sobrelink:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["provisionamento fino"^] .
+As unidades de storage são provisionadas de forma thin por padrão. O thin provisioning permite que a unidade de storage cresça até o tamanho alocado, mas não reserva o espaço antecipadamente. O espaço é alocado dinamicamente a partir do espaço livre, conforme necessário. Isso permite que você obtenha maior eficiência de storage ao _provisionar em excesso_ o espaço disponível. Por exemplo, suponha que você tenha 1 TB de espaço livre e precise criar quatro unidades de storage de 1 TB. Em vez de adicionar imediatamente 3 TB de capacidade de storage ao seu sistema, você pode criar as unidades de storage, monitorar a utilização do espaço e aumentar sua capacidade de storage à medida que as unidades de storage consomem espaço real. Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["provisionamento fino"^].
 
 .Passos
 . No System Manager, selecione *Storage* (armazenamento) e, em seguida, image:icon_add_blue_bg.png["ícone retangular com fundo azul e a palavra adicionar centrado em letras brancas"]selecione .
@@ -43,14 +43,14 @@ Para otimizar o balanceamento da carga de trabalho em toda a zona de disponibili
 . Introduza a capacidade da unidade de armazenamento e, em seguida, selecione o sistema operativo anfitrião.
 +
 
-CAUTION: Se você estiver criando mais de uma unidade de armazenamento, cada unidade será criada com a mesma capacidade.  Multiplique o número de unidades de armazenamento que você está criando pela capacidade desejada para garantir que tenha espaço útil suficiente.  Se você não tiver espaço livre suficiente e optar por provisionar em excesso, monitore a utilização atentamente para evitar ficar sem espaço e perder dados.
+CAUTION: Se você estiver criando mais de uma unidade de storage, cada unidade será criada com a mesma capacidade. Multiplique o número de unidades de storage que você está criando pela capacidade desejada para garantir que você tenha espaço utilizável suficiente. Se você não tiver espaço livre e optar por provisionar em excesso, monitore a utilização atentamente para evitar ficar sem espaço e perder dados.
 
 . Aceite o *mapeamento de host* selecionado automaticamente ou selecione um grupo de host diferente para a unidade de armazenamento a ser mapeada.
 +
 *Mapeamento de host* refere-se ao grupo de hosts ao qual a nova unidade de armazenamento será mapeada.  Se houver um grupo de hosts preexistente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts preexistente será selecionado automaticamente para seu mapeamento de hosts.  Você pode aceitar o grupo de hosts selecionado automaticamente ou pode selecionar um grupo de hosts diferente.
 
 +
-Se não existir um grupo de hosts pré-existente para hosts em execução no sistema operacional especificado, o ONTAP criará um novo grupo de hosts automaticamente.
+Caso não exista um grupo de hosts pré-existente para hosts em execução no sistema operacional que você especificou, ONTAP cria um novo grupo de hosts automaticamente.
 
 . Se você quiser fazer qualquer uma das seguintes opções, selecione *mais opções* e conclua as etapas necessárias.
 +
