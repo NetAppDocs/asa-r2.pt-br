@@ -15,8 +15,8 @@ Configure a sincronização ativa do SnapMirror para criar uma cópia dos seus d
 
 Em sistemas ASA r2, a sincronização ativa do SnapMirror suporta configurações simétricas ativa/ativa. Em uma configuração simétrica ativa/ativa, ambos os sites podem acessar o armazenamento local para E/S ativa.
 
-
-NOTE: Se você estiver usando o protocolo iSCSI ou FC e usar ferramentas ONTAP para VMware Sphere, você pode opcionalmente link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["use o ONTAP Tools para VMware para configurar a sincronização ativa do SnapMirror"^] .
+.Sobre esta tarefa
+Se você estiver usando o protocolo iSCSI ou FC e usar ferramentas ONTAP para VMware Sphere, você pode opcionalmente link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["use o ONTAP Tools para VMware para configurar a sincronização ativa do SnapMirror"^] .
 
 .Antes de começar
 link:create-snapshots.html#step-1-optionally-create-a-consistency-group["Criar um grupo de consistência"] no site primário com novas unidades de armazenamento. Se você quiser criar uma configuração ativa/ativa simétrica não uniforme, crie também um grupo de consistência no site secundário com novas unidades de armazenamento.

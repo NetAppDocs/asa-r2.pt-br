@@ -4,7 +4,7 @@ permalink: secure-data/disable-default-anti-ransomware-protection.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
 summary: 'Se você tiver uma licença do Autonomous Ransomware Protection (ARP) instalada em seu cluster ASA r2, o ARP será ativado por padrão em todas as unidades de armazenamento existentes e recém-criadas 12 horas após a atualização para o ONTAP 9.18.1 ou a inicialização de um novo cluster ASA r2 com ONTAP 9.18.1.' 
 ---
-= Desative a proteção autônoma padrão contra ransomware em seus sistemas de armazenamento ASA r2
+= Desative a proteção autônoma contra ransomware padrão em seus sistemas de armazenamento ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
