@@ -19,6 +19,9 @@ Depois de se preparar para instalar o sistema de storage ASA r2, instale o hardw
 * Entenda que o fluxo de ar através do sistema de armazenamento entra pela frente onde a tampa frontal ou as tampas da extremidade estão instaladas e esgota a parte traseira onde as portas estão localizadas.
 
 
+
+CAUTION: Use sempre uma pulseira antiestática aterrada, conectada a um ponto de aterramento verificado durante a instalação e os procedimentos de manutenção. A não observância das precauções adequadas contra ESD pode causar danos permanentes aos nós controladores, prateleiras de armazenamento e switches de rede.
+
 .Passos
 . Instale os kits de trilho para o seu sistema de armazenamento e prateleiras de armazenamento, conforme necessário, usando as instruções incluídas nos kits.
 . Instale e proteja seu sistema de armazenamento no gabinete ou rack de telecomunicações:

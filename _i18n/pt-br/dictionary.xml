@@ -1692,7 +1692,6 @@
   <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">Em cada controladora, conete as portas E2A, E2B, E2C e e2D aos switches de rede host Ethernet.</block>
   <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*Cabos de 10/25 GbE*</block>
   <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">*Cabeamento de host FC*</block>
-  <block id="945fde23e0c7ac9dc52f131c48ef5861" category="paragraph">Em cada controlador, conecte as portas 1a, 1b, 1c e 1D aos switches de rede de host FC.</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">*Cabos FC de 64 GB/s*</block>
   <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">Cabo fc de 64 GB, largura de 100px mm</block>
   <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
@@ -1819,7 +1818,6 @@
   <block id="7358d22f4186a5e126b0fada0a666115" category="example-title">ASA C30 com um módulo de e/S de 10/25 GbE de 4 portas</block>
   <block id="baae66b5065d8c53c84d82ba2175779d" category="list-text">Em cada controlador, as portas de cabo E2A, E2B, E2C e e2D para os switches de rede de host Ethernet.</block>
   <block id="84f30e54db618597e0548b01a8f9bb23" category="example-title">ASA C30 com um módulo de E/S FC de 4 portas e 64 Gb/s</block>
-  <block id="8f03269dbdbab70bab244893051fb6ec" category="list-text">Em cada controladora, cable as portas 1a, 1b, 1c e 1D para os switches de rede de host FC.</block>
   <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="paragraph">Para obter o número máximo de gavetas compatíveis com o seu sistema de storage e para todas as opções de cabeamento, como ótico e conectado a switch, <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>consulte .</block>
   <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">Os sistemas de armazenamento AFF A1K suportam prateleiras NS224 com o módulo NSM100 ou NSM100B. As principais diferenças entre os módulos são:</block>
   <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">Os módulos de prateleira NSM100 usam portas e0a e e0b integradas.</block>
@@ -2706,7 +2704,6 @@
   <block id="625927359c6ff98754dcdfda6d0f8d77" category="paragraph">Caso precise modificar as configurações padrão para o rebalanceamento de cargas de trabalho baseado em cópias, entre em contato com o Suporte da NetApp .</block>
   <block id="299c5db3cbde057ebd5a919711b1d2e1" category="paragraph">Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento. Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento. Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.</block>
   <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">Aprenda sobre balanceamento de capacidade em um cluster ASA r2</block>
-  <block id="be2bfcecf308b1d3a417456024096c75" category="paragraph">Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, o ONTAP cria automaticamente um volume na zona de disponibilidade de armazenamento apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente colocado na zona de disponibilidade de armazenamento para desempenho ideal e utilização equilibrada da capacidade. A utilização da capacidade é equilibrada dentro da zona de disponibilidade de armazenamento com base na sua versão do ONTAP. <block ref="9689a3d9a5cc82eb930985adacfe9343" category="inline-link-macro-rx"></block>.</block>
   <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">Resumo das diferenças do sistema ASA r2</block>
   <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">Grupos de consistência infantil por grupo de consistência parental</block>
   <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
@@ -2769,4 +2766,8 @@
   <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">Habilite a proteção autônoma contra ransomware com IA em seus sistemas de armazenamento ASA r2</block>
   <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">Pause ou retome a Proteção Autônoma contra Ransomware com IA em seus sistemas de armazenamento ASA r2</block>
   <block id="bd38f3869f7e640b90d83fffd4208955" category="doc">Responda à proteção autônoma contra ransomware com alertas de IA em sistemas de armazenamento ASA r2</block>
+  <block id="7c9f18ab5a6d9bddcd86839795bbf631" category="paragraph">Em cada controlador, conecte as portas 2a, 2b, 2c e 2d aos switches de rede do host FC.</block>
+  <block id="e075a310e0208871f253ed1786f7aa85" category="list-text">Em cada controlador, conecte as portas 2a, 2b, 2c e 2d aos switches de rede FC do host.</block>
+  <block id="3e43f7eeca64d5c830b0064870a6156b" category="admonition">Use sempre uma pulseira antiestática aterrada, conectada a um ponto de aterramento verificado durante a instalação e os procedimentos de manutenção. A não observância das precauções adequadas contra ESD pode causar danos permanentes aos nós controladores, prateleiras de armazenamento e switches de rede.</block>
+  <block id="fc4a9f6cd00df6dfa4d8144f15b57af3" category="paragraph">Quando uma unidade de armazenamento (baseada em um LUN ou em um namespace NVMe) é criada, ONTAP cria automaticamente um volume na zona de disponibilidade de storage apropriada para abrigar a unidade de armazenamento. O volume recém-criado é automaticamente posicionado dentro da zona de disponibilidade de storage para desempenho ideal e utilização equilibrada da capacidade. A utilização da capacidade é equilibrada dentro da zona de disponibilidade de storage com base na sua versão do ONTAP. <block ref="44cab674f8c9e72d3dcaedde750c6695" category="inline-link-macro-rx"></block>.</block>
 </blocks>
