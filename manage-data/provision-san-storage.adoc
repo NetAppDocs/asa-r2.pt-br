@@ -45,6 +45,9 @@ Para otimizar o balanceamento da carga de trabalho em toda a zona de disponibili
 
 CAUTION: Se você estiver criando mais de uma unidade de storage, cada unidade será criada com a mesma capacidade. Multiplique o número de unidades de storage que você está criando pela capacidade desejada para garantir que você tenha espaço utilizável suficiente. Se você não tiver espaço livre e optar por provisionar em excesso, monitore a utilização atentamente para evitar ficar sem espaço e perder dados.
 
++
+A partir do ONTAP 9.19.1, se você estiver criando um LUN AIX que planeja habilitar para proteção de sincronização ativa do SnapMirror, em *Informações do host*, selecione *local* para o *Modo de acesso*. Isso é necessário para habilitar o failover transparente de aplicativos.
+
 . Aceite o *mapeamento de host* selecionado automaticamente ou selecione um grupo de host diferente para a unidade de armazenamento a ser mapeada.
 +
 *Mapeamento de host* refere-se ao grupo de hosts ao qual a nova unidade de armazenamento será mapeada.  Se houver um grupo de hosts preexistente para o tipo de host selecionado para sua nova unidade de armazenamento, o grupo de hosts preexistente será selecionado automaticamente para seu mapeamento de hosts.  Você pode aceitar o grupo de hosts selecionado automaticamente ou pode selecionar um grupo de hosts diferente.

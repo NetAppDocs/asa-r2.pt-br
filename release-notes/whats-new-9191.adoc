@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9191.html 
+keywords: 'what"s new, release notes, 9.19.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas ASA r2. 
+---
+= Novidades do ONTAP 9.19.1 para sistemas ASA r2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas ASA r2.
+
+
+
+== Proteção de dados
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../data-protection/prepare-aix-snapmirror-active-sync.html["Suporte do host AIX para SnapMirror active sync"] | O recurso Transparent Application Failover para AIX é compatível com SnapMirror active sync em configurações simétricas ativo-ativo. 
+|===
+
+
+== Migração de dados SAN
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["Suporte do ONTAP para importação de LUN estrangeira (FLI) para o protocolo iSCSI"] | O recurso Foreign LUN Import (FLI) do ONTAP oferece suporte ao protocolo iSCSI para conectividade de backend. 
+|===
+
+
+== Configuração do SAN
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-direct-attachment["Suporte para configurações FC de conexão direta"] | Não é necessário um switch FC para estabelecer conexões entre hosts FC e FC-NVMe e storage ONTAP. Os hosts podem ser conectados diretamente às portas do adaptador FC em sistemas ASA r2. A capacidade de conexão direta pode ser especialmente valiosa em locais remotos e ambientes híbridos onde a simplicidade é fundamental. 
+|===
+
+
+== Segurança
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../secure-data/enable-anti-ransomware-protection.html["Suporte para ARP/AI com SnapMirror relações de sincronização ativa"] | A Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em relacionamentos de sincronização ativa do SnapMirror em sistemas ASA r2. A ARP/AI é executada nas unidades de storage primário ativas, cria snapshots ARP somente para a unidade primária e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de storage. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#tls-hardware-offload["Suporte para descarregamento de hardware TLS"] | Você pode descarregar a criptografia e descriptografia do Transport Layer Security (TLS) de todo o seu cluster para placas Ethernet compatíveis. Isso reduz a sobrecarga da CPU e melhora o desempenho de sistemas que usam TLS. 
+|===
+
+
+== Eficiência de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#global-deduplication["Suporte para deduplicação global"] | A deduplicação global estende a economia de espaço já existente na deduplicação do ONTAP para toda a Storage Availability Zone (SAZ). Ao eliminar blocos de dados duplicados em todas as unidades de storage da SAZ, ela pode melhorar significativamente a eficiência de storage e reduzir o custo de propriedade. A deduplicação global é ativada por padrão e opera de forma transparente, sem a necessidade de configuração administrativa. 
+|===
+
+
+== Gerenciamento de recursos de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../monitor/monitor-storage.html#monitor-storage-availability-zone-utilization["Suporte para alerta de capacidade da zona de disponibilidade de storage no System Manager"] | Um alerta é exibido no System Manager se uma zona de disponibilidade de storage em seu sistema ASA r2 estiver próxima da capacidade. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases["Suporte para modificar as configurações padrão que controlam os aumentos automáticos do teto de taxa de transferência do QoS"] | Você pode modificar as configurações padrão que controlam como os grupos de políticas de QoS aumentam automaticamente o limite de throughput de QoS em resposta a necessidades de curto prazo por maior desempenho. Essas configurações não podem ser modificadas no ONTAP 9.18.1 e versões anteriores. 
+|===
+
+
+== Atualizar
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../administer/upgrade-ontap.html["Relatórios aprimorados para verificações automatizadas antes da atualização"] | Ao executar verificações automatizadas de pré-atualização, os erros e avisos são exibidos separadamente para ajudá-lo a identificar facilmente os problemas que devem ser resolvidos antes de você atualizar. 
+|===

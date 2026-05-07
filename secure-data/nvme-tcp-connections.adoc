@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/nvme-tcp-connections.html 
-keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, in-band authentication, in band, nvme, nvme/tcp, tls, transport layer security, secure connections, secure data connections 
-summary: Aprimore a segurança dos dados configurando o NVMe/TCP em TLS para criptografar todos os dados enviados pela rede entre o host NVMe/TCP e o ONTAP. 
+keywords: asa r2, secure data, data security, encrypt, data at rest, encryption, in-band authentication, in band, nvme, tcp, tls, transport layer security, secure connections, secure data connections 
+summary: Aprimore a segurança dos seus dados configurando o NVMe TCP sobre TLS para criptografar todos os dados enviados pela rede entre o seu host NVMe TCP e ONTAP. 
 ---
 = Conexões NVMe seguras em seus sistemas de storage ASA R2
 :allow-uri-read: 

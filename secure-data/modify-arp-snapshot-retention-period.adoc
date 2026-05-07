@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/modify-arp-snapshot-retention-period.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security 
 summary: Aprenda como modificar os períodos de retenção de snapshots do ARP para atender às suas necessidades de armazenamento e negócios. 
 ---
 = Modificar períodos de retenção de snapshots ARP/AI em sistemas de armazenamento ASA r2

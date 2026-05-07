@@ -13,16 +13,17 @@ summary: 'Use a sincronização ativa do SnapMirror para proteger aplicativos ho
 [role="lead"]
 A proteção de dados de sincronização ativa do ONTAP SnapMirror permite que os serviços empresariais continuem operando mesmo em caso de falha total do site, permitindo que os aplicativos realizem failover de forma transparente usando uma cópia secundária. Com a sincronização ativa do SnapMirror , não é necessária intervenção manual ou script personalizado para acionar um failover.
 
-Embora os procedimentos do System Manager para configurar a sincronização ativa do SnapMirror sejam diferentes em sistemas ASA r2 do que em sistemas NetApp FAS, AFF e ASA que executam a personalidade ONTAP unificada, os requisitos, a arquitetura e a operação da sincronização ativa do SnapMirror são os mesmos.
+Embora os procedimentos do System Manager para configurar o SnapMirror active sync sejam diferentes em sistemas ASA r2 do que em sistemas NetApp FAS, AFF e ASA executando a personalidade unificada do ONTAP, os requisitos, a arquitetura e a operação do SnapMirror active sync são os mesmos. link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Saiba mais sobre recuperação de desastres com sincronização ativa SnapMirror no seu sistema ASA r2"^]
+
+Nos sistemas ASA r2, SnapMirror active sync oferece suporte a configurações ativo-ativo simétricas. Em uma configuração ativo-ativo simétrica, ambos os sites podem acessar o storage local para I/O ativo. Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurações simétricas ativas/ativas"^].
 
 .Sobre esta tarefa
-A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.
+* A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.
+* A partir do ONTAP 9.19.1 RC, a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em SnapMirror relacionamentos SAN de sincronização ativa em sistemas ASA r2. O ARP/AI é executado nas unidades de storage primário ativas, cria snapshots ARP somente para a unidade primária e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de storage. Para obter os passos de capacitação do ARP/AI, consulte link:../secure-data/enable-anti-ransomware-protection.html["Habilite a proteção autônoma contra ransomware com IA"].
 
-link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Saiba mais sobre recuperação de desastres com sincronização ativa SnapMirror no seu sistema ASA r2"^]
 
-Em sistemas ASA r2, a sincronização ativa do SnapMirror suporta configurações simétricas ativa/ativa. Em uma configuração simétrica ativa/ativa, ambos os sites podem acessar o armazenamento local para E/S ativa.
-
-Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurações simétricas ativas/ativas"^] .
+.Antes de começar
+Se você estiver executando ONTAP 9.19.1 ou posterior e habilitando SnapMirror active sync para um host AIX, você deve link:prepare-aix-snapmirror-active-sync.html["prepare o host AIX"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Um"] Prepare-se para configurar a sincronização ativa do SnapMirror .
 [role="quick-margin-para"]
@@ -46,5 +47,4 @@ link:configure-snapmirror-active-sync.html["Configurar sincronização ativa do 
 
 .Informações relacionadas
 * link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Saiba mais sobre a sincronização ativa do SnapMirror"^] .
-* link:../learn-more/hardware-comparison.html#personality-differences["Saiba mais sobre as personalidades da ONTAP"].
 

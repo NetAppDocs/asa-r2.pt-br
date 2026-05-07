@@ -80,6 +80,14 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+=== Descarregamento de hardware TLS
+
+Você pode descarregar a criptografia e descriptografia do Transport Layer Security (TLS) de todo o seu cluster para placas Ethernet compatíveis. Isso reduz a sobrecarga da CPU e melhora o desempenho de sistemas que usam TLS.
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Aprenda a configurar o descarregamento de hardware TLS"^].
+
+
+
 == Rede
 
 Saiba mais sobre os recursos de rede comuns suportados nos sistemas ASA r2.
@@ -105,6 +113,35 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+== Desempenho
+
+Saiba mais sobre os recursos de desempenho comuns suportados nos sistemas ASA r2.
+
+
+
+=== Modifique as configurações padrão que controlam os aumentos automáticos do teto de taxa de transferência do QoS
+
+Os grupos de políticas de QoS adaptativas e não adaptativas são ativados automaticamente para aumentar temporariamente o limite de throughput de uma carga de trabalho em 50% por 1 segundo para responder a demandas de curto prazo por maior desempenho por padrão. A partir do ONTAP 9.19.1, é possível modificar essas configurações padrão. No ONTAP 9.18.1 e anteriores, essas configurações não podem ser alteradas.
+
+link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["Saiba mais sobre os limites de taxa de transferência do QoS"^].
+
+
+
+== Configuração do SAN
+
+Uma rede de área de armazenamento (SAN) consiste em uma solução de storage conectada a hosts por meio de um protocolo de transporte SAN, como iSCSI ou FC. Você pode configurar sua SAN para que sua solução de storage se conecte aos hosts por meio de um ou mais switches. Se estiver usando iSCSI, você também pode configurar sua SAN para que sua solução de storage se conecte diretamente ao host sem usar um switch.
+
+
+
+=== Conexão direta SAN
+
+A partir do ONTAP 9.19.1, não é necessário um switch FC para estabelecer conexões entre hosts FC e FC-NVMe e o storage ONTAP. Os hosts podem ser conectados diretamente às portas do adaptador FC em sistemas ASA r2. A capacidade de conexão direta pode ser especialmente valiosa em locais remotos e ambientes híbridos, onde a simplicidade é fundamental.
+
+* link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html#direct-attach-fc-and-fc-nvme-configurations["Saiba mais sobre a conexão direta de SAN"^].
+
+
+
+
 == Protocolos SAN
 
 Os sistemas ASA r2 suportam todos os protocolos SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).
@@ -124,6 +161,22 @@ A partir do ONTAP 9.16.1, a desalocação de espaço (também chamada de "hole p
 
 
 
+
+
+
+== Eficiência de storage
+
+A eficiência de storage é a medida de quão eficazmente um sistema de storage utiliza o espaço disponível, otimizando recursos de storage, minimizando o desperdício de espaço e reduzindo a área física ocupada pelos dados gravados.
+
+ONTAP oferece diversas tecnologias de eficiência de storage que podem ajudar a otimizar a utilização do storage e reduzir custos.
+
+link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.html["Saiba mais sobre as tecnologias de eficiência de storage do ONTAP"].
+
+
+
+=== Desduplicação global
+
+A partir do ONTAP 9.19.1, a _deduplicação global_ estende link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["economias de espaço de deduplicação ONTAP existentes"^] no nível da unidade de armazenamento para toda a Storage Availability Zone (SAZ). Ao eliminar blocos de dados duplicados em todas as unidades de armazenamento da SAZ, a eficiência de storage pode ser significativamente melhorada e o custo de propriedade reduzido. A deduplicação global não requer licença de recurso, está habilitada por padrão, integra-se perfeitamente com as tecnologias de eficiência de storage existentes e opera de forma transparente, com impacto mínimo no desempenho e sem a necessidade de configuração administrativa.
 
 
 

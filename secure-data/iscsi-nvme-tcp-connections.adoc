@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/iscsi-nvme-tcp-connections.html 
-keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme/tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
-summary: 'Se você estiver usando o protocolo IP no sistema ASA R2, poderá configurar a segurança IP (IPsec) para melhorar a segurança dos dados.' 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, iscsi, nvme, tcp, ipsec, data-in-flight, ip security, secure connections, secure data connections, hardware offload 
+summary: Se você estiver usando o protocolo IP em seu sistema ASA r2, poderá configurar a segurança IP para aprimorar a segurança de seus dados. 
 ---
 = Conexões IP seguras em seus sistemas de storage ASA R2
 :allow-uri-read: 
