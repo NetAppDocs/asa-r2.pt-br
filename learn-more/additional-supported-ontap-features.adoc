@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 Você pode descarregar a criptografia e descriptografia do Transport Layer Security (TLS) de todo o seu cluster para placas Ethernet compatíveis. Isso reduz a sobrecarga da CPU e melhora o desempenho de sistemas que usam TLS.
 
-link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Aprenda a configurar o descarregamento de hardware TLS"^].
+link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["Aprenda a configurar o descarregamento de hardware TLS"^].
 
 
 
