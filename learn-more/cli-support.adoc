@@ -15,6 +15,8 @@ Em vez de agregados, a camada de armazenamento em sistemas ASA r2 utiliza zonas 
 
 Devido a esta abordagem simplificada à gestão do armazenamento,  `storage aggregate` Os comandos não são suportados em sistemas ASA r2. Suporte para certos  `lun` ,  `storage` e  `volume` comandos e parâmetros também são limitados.
 
+A menos que esteja listado como não suportado, todos os outros comandos link:https://docs.netapp.com/us-en/ontap-cli/["Referência do comando ONTAP"] são suportados para sistemas ASA r2.
+
 Os seguintes comandos e conjuntos de comandos não são suportados no ASA no R2:
 
 .Comandos <code> lun</code> não suportados
@@ -139,9 +141,6 @@ O  `volume modify` o comando não está disponível quando usado em conjunto com
 
 
 ====
-.Para mais informações
-Consulte a link:https://docs.netapp.com/us-en/ontap-cli/["Referência do comando ONTAP"] para obter uma lista completa dos comandos suportados
-
 
 
 == Configure um cluster do ONTAP ASA R2 usando a CLI
