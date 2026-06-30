@@ -24,6 +24,7 @@ Quando o failover automático de LIF iSCSI é ativado, se ocorrer um failover de
 * FabricPool
 * Provisionamento de espessura de LUN
 * MetroCluster
+* Criptografia de agregado NetApp (NAE)
 * Protocolos de objetos
 * ONTAP S3 SnapMirror e S3 APIs
 
@@ -35,7 +36,7 @@ link:../secure-data/ransomware-protection.html["Saiba como bloquear instantâneo
 
 * Criptografia de camada dupla
 +
-link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] Para dados no seu sistema ASA R2.
+Os sistemas ASA r2 suportam criptografia de hardware usando unidades de auto-criptografia (SEDs) e criptografia de software usando a tecnologia NetApp Volume Encryption (NVE). link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] para proteger os dados no seu sistema ASA r2.
 
 
 

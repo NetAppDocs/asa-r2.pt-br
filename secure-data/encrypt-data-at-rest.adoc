@@ -21,7 +21,11 @@ NOTE: Nos sistemas ASA r2, os SEDs são suportados apenas para SSDs baseados em 
 
 Use o gerenciador de chaves integrado do ASA R2 ou um gerenciador de chaves externo para fornecer chaves de autenticação aos nós.
 
-Além do NSE, você também pode habilitar a criptografia de software para adicionar outra camada de segurança aos seus dados.
+Além da NSE, você também pode habilitar a criptografia por software para adicionar outra camada de segurança aos seus dados. Os sistemas ASA r2 usam a tecnologia NetApp Volume Encryption (NVE) para criptografar dados no nível do software. NetApp Aggregate Encryption (NAE) não é compatível com os sistemas ASA r2 porque a camada de storage nesses sistemas ASA r2 usa storage availability zones em vez de aggregates.
+
+Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Criptografia de volume NetApp"^].
+
+Saiba mais sobre link:https://docs.netapp.com/us-en/asa-r2/learn-more/hardware-comparison.html["as diferenças entre os sistemas ASA r2 e outros sistemas ONTAP"].
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
