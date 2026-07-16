@@ -16,6 +16,7 @@ Quando você provisiona o storage, permite que seus hosts SAN leiam e gravem dad
 
 
 
+[[create-storage-units]]
 == Crie unidades de armazenamento
 
 Em um sistema ASA r2, uma unidade de armazenamento disponibiliza espaço de armazenamento para os hosts SAN realizarem operações de dados. Uma unidade de armazenamento refere-se a um LUN para hosts SCSI ou a um namespace NVMe para hosts NVMe. Se o seu cluster estiver configurado para suportar hosts SCSI, você será solicitado a criar um LUN. Se o seu cluster estiver configurado para suportar hosts NVMe, você será solicitado a criar um namespace NVMe.
@@ -176,6 +177,7 @@ Saiba mais link:../administer/manage-client-vm-access.html["Como os sistemas ASA
 
 
 
+[[add-host-initiators]]
 == Adicione iniciadores de host
 
 Você pode adicionar novos iniciadores de host ao seu sistema ASA R2 a qualquer momento. Os iniciadores tornam os hosts elegíveis para acessar unidades de armazenamento e executar operações de dados.
@@ -243,6 +245,7 @@ Seus hosts NVMe são adicionados ao sistema ASA R2 e você está pronto para map
 ====
 
 
+[[map-the-storage-unit-to-a-host]]
 == Mapear a unidade de armazenamento para um host
 
 Após criar as unidades de armazenamento ASA r2 e adicionar os iniciadores de host, mapeie os hosts para as unidades de armazenamento para começar a fornecer dados.  As unidades de armazenamento são mapeadas para os hosts como parte do processo de criação da unidade de armazenamento.  Você também pode mapear unidades de armazenamento existentes para hosts novos ou existentes a qualquer momento.
@@ -259,6 +262,7 @@ Sua unidade de armazenamento é mapeada para seus hosts e você está pronto par
 
 
 
+[[complete-host-side-provisioning]]
 == Provisionamento completo no lado do host
 
 Depois de criar suas unidades de armazenamento, adicionar seus iniciadores de host e mapear suas unidades de armazenamento, há etapas que você deve executar em seus hosts antes que eles possam ler e gravar dados em seu sistema ASA R2.

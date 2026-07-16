@@ -15,6 +15,7 @@ Para maior proteção contra ataques de ransomware, replique snapshots para um c
 
 
 
+[[initialize-the-snaplock-compliance-clock]]
 == Inicialize o relógio SnapLock Compliance
 
 Antes de criar snapshots à prova de adulteração, é necessário inicializar o relógio SnapLock Compliance nos clusters local e de destino.

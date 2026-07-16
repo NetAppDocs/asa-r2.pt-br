@@ -16,6 +16,7 @@ As unidades de armazenamento em um sistema ASA R2 estão contidas nas máquinas 
 
 
 
+[[create-a-storage-vm]]
 == Crie uma VM de storage
 
 Durante a configuração do cluster, sua máquina virtual de armazenamento de dados (VM) padrão é criada. Todas as novas unidades de armazenamento são criadas dentro da VM de armazenamento de dados padrão, a menos que você crie e selecione uma VM de armazenamento diferente. Você pode criar uma VM de armazenamento adicional para segregar suas unidades de armazenamento para diferentes aplicativos, departamentos ou clientes. Por exemplo, você pode querer criar uma VM de storage para seu ambiente de desenvolvimento e outra VM de storage para seu ambiente de produção ou criar uma VM de storage para seu departamento financeiro e outra VM de storage para seu departamento de marketing.
@@ -38,6 +39,7 @@ Você criou uma VM de storage. Agora você pode usar a VM de storage para link:.
 
 
 
+[[create-ipspaces]]
 == Crie IPspaces
 
 Um espaço IPspace é um espaço de endereço IP distinto no qual as VMs de armazenamento residem. Quando você cria IPspaces, você habilita as VMs de armazenamento para ter seu próprio armazenamento seguro, administração e roteamento. Você também permite que os clientes em domínios de rede separados administrativamente usem endereços IP sobrepostos do mesmo intervalo de sub-rede de endereços IP.
@@ -59,6 +61,7 @@ Agora que você criou um espaço IPspace, você pode usá-lo para criar uma sub-
 
 
 
+[[create-subnets]]
 == Crie sub-redes
 
 Uma sub-rede permite alocar blocos específicos de endereços IPv4 ou IPv6 para usar quando você cria um LIF (interface de rede) . Uma sub-rede simplifica a criação de LIF, permitindo que você especifique o nome da sub-rede em vez de um endereço IP específico e uma máscara de rede para cada LIF.
@@ -89,6 +92,7 @@ Você criou uma sub-rede que agora pode usar para simplificar a criação de seu
 
 
 
+[[create-a-lif-network-interface]]
 == Criar um LIF (interface de rede)
 
 Um LIF (interface de rede) é um endereço IP associado a uma porta física ou lógica. Crie LIFs nas portas que você deseja usar para acessar dados. As VMs de storage fornecem dados aos clientes por meio de uma ou mais LIFs. Se houver uma falha de componente, um LIF pode falhar ou ser migrado para uma porta física diferente, de modo que a comunicação de rede não seja interrompida.
@@ -121,6 +125,7 @@ Você pode usar a interface de linha de comando (CLI) do ONTAP para criar um LIF
 
 
 
+[[create-a-custom-iscsi-only-lif-service-policy]]
 === Crie uma política de serviço LIF personalizada somente iSCSI
 
 Se você quiser criar LIFs somente iSCSI com failover automático de LIF, primeiro crie uma política de serviço LIF somente iSCSI personalizada.
@@ -156,6 +161,7 @@ set -privilege admin
 
 
 
+[[create-iscsi-only-lifs-with-automatic-lif-failover]]
 === Crie LIFs somente iSCSI com failover automático de LIF
 
 Se existirem LIFs iSCSI na VM de armazenamento que não estejam habilitadas para failover automático de LIF, as LIFs recém-criadas também não serão habilitadas para failover automático de LIF.  Se o failover automático de LIF não estiver habilitado e ocorrer um evento de failover, suas LIFs iSCSI não serão migradas.
@@ -197,6 +203,7 @@ network interface show -lif iscsi*
 
 
 
+[[modify-a-lif-network-interfaces]]
 == Modificar um LIF (interfaces de rede)
 
 Os LIFs podem ser desativados ou renomeados conforme necessário. Você também pode alterar o endereço IP de LIF e a máscara de sub-rede.

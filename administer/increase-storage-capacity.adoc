@@ -15,6 +15,7 @@ Adicione unidades a um nó ou gaveta para aumentar a capacidade de storage do si
 
 
 
+[[use-netapp-hardware-universe-to-prepare-for-installation-of-a-new-drive]]
 == Use o NetApp Hardware Universe para se preparar para a instalação de uma nova unidade
 
 Antes de instalar uma nova unidade em um nó ou chassi, use o NetApp Hardware Universe para confirmar se a unidade que você deseja adicionar é compatível com o seu sistema ASA r2 e para identificar o slot correto para a nova unidade.  Os slots corretos para adicionar unidades variam dependendo do modelo do sistema e da versão do ONTAP .  Em alguns casos, é necessário adicionar unidades a slots específicos em sequência.
@@ -33,6 +34,7 @@ Você confirmou que sua nova unidade é suportada e você sabe o slot apropriado
 
 
 
+[[install-a-new-drive-on-the-asa-r2]]
 == Instale uma nova unidade no ASA R2
 
 O número mínimo de unidades que você deve adicionar em um único procedimento é seis. Adicionar uma única unidade pode reduzir o desempenho.

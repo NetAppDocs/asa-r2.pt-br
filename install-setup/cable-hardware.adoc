@@ -15,6 +15,7 @@ Conecte seu sistema de storage ASA para habilitar a comunicação em cluster, ac
 
 
 
+[[overview-of-hardware-cabling]]
 == Visão geral da cablagem de hardware
 
 A configuração de cabos varia conforme o modelo da plataforma, pois cada modelo ASA r2 possui locais de slots, atribuições de portas e configurações de módulos de E/S exclusivos. Selecione o procedimento para o seu modelo ASA r2:
@@ -47,6 +48,7 @@ Conecte os controladores às prateleiras de armazenamento NS224 para fornecer ca
 
 
 
+[[additional-resources]]
 == Recursos adicionais
 
 Os procedimentos de cabeamento mostram configurações comuns. O cabeamento específico depende dos componentes encomendados para o seu sistema de storage. Para obter detalhes completos sobre configuração e prioridade de slots, consulte link:https://hwu.netapp.com["NetApp Hardware Universe"^].

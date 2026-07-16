@@ -46,6 +46,7 @@ O suporte para sincronização ativa do SnapMirror em sistemas ASA r2 varia de a
 
 
 
+[[nvme-protocol-limitations-with-snapmirror-active-sync-on-asa-r2-systems]]
 == Limitações do protocolo NVMe com sincronização ativa SnapMirror em sistemas ASA r2
 
 Antes de configurar a sincronização ativa do SnapMirror em um sistema ASA r2 com hosts NVMe, você deve estar ciente de certas limitações do protocolo NVMe.

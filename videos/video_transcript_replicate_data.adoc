@@ -13,7 +13,7 @@ summary: Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas 
 [role="lead"]
 A transcrição a seguir é fornecida para o vídeo `Replicate data to a remote cluster from an ASA r2 storage system`.
 
-link:videos-common-tasks.html#video_transcript_return_replicate_data["Voltar à página"]
+link:videos-common-tasks.html["Voltar à página"]
 
 Use o Gerenciador de sistemas do ONTAP para proteger seus dados agendando snapshots de unidades de storage ou grupos de consistência e replicando para um local remoto.
 

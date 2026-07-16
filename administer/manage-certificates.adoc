@@ -17,6 +17,7 @@ O OCSP (Online Certificate Status Protocol) valida o status de solicitações de
 
 
 
+[[generate-a-certificate-signing-request]]
 == Gerar uma solicitação de assinatura de certificado
 
 Gerar uma solicitação de assinatura de certificado (CSR) para criar uma chave privada que pode ser usada para gerar um certificado público.
@@ -34,6 +35,7 @@ Você gerou um CSR para o qual pode ser usado para gerar um certificado público
 
 
 
+[[add-a-trusted-certificate-authority]]
 == Adicione uma autoridade de certificação confiável
 
 O ONTAP fornece um conjunto padrão de certificados raiz confiáveis para aplicativos que usam a Segurança da camada de Transporte (TLS). Você pode adicionar autoridades de certificação confiáveis adicionais, conforme necessário.
@@ -50,6 +52,7 @@ Você adicionou uma nova autoridade de certificação confiável ao seu sistema 
 
 
 
+[[renew-or-delete-a-trusted-certificate-authority]]
 == Renove ou exclua uma autoridade de certificação confiável
 
 As autoridades de certificação confiáveis devem ser renovadas anualmente. Se você não quiser renovar um certificado expirado, você deve excluí-lo.
@@ -83,6 +86,7 @@ Renovou ou ou eliminou uma autoridade de certificação fidedigna existente no s
 
 
 
+[[add-a-clientserver-certificate-or-local-certificate-authorities]]
 == Adicione um certificado de cliente/servidor ou autoridades de certificação locais
 
 Adicione um certificado de cliente/servidor ou autoridades de certificação locais para ativar serviços Web seguros.
@@ -99,6 +103,7 @@ Adicionou um novo certificado de cliente/servidor ou autoridades locais ao seu s
 
 
 
+[[renew-or-delete-a-clientserver-certificate-or-local-certificate-authorities]]
 == Renovar ou eliminar um certificado de cliente/servidor ou autoridades de certificação locais
 
 Os certificados de cliente/servidor e as autoridades de certificação locais devem ser renovados anualmente. Se você não quiser renovar um certificado expirado ou autoridades de certificado locais, você deve excluí-los.

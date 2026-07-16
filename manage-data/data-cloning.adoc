@@ -19,6 +19,7 @@ A clonagem de dados cria cópias de unidades de storage e grupos de consistênci
 
 
 
+[[clone-storage-units]]
 == Clonar unidades de storage
 
 Ao clonar uma unidade de storage, você cria uma nova unidade de storage no sistema ASA R2 que é uma cópia gravável e pontual da unidade de storage clonada.
@@ -74,6 +75,7 @@ Criou uma nova unidade de armazenamento idêntica à unidade de armazenamento cl
 
 
 
+[[clone-consistency-groups]]
 == Grupos de consistência de clones
 
 Ao clonar um grupo de consistência, você cria um novo grupo de consistência idêntico à estrutura, às unidades de storage e aos dados do grupo de consistência clonado. Use um clone de grupo de consistência para realizar testes de aplicações ou migrar dados. Suponha, por exemplo, que você precise migrar uma carga de trabalho de produção de um grupo de consistência. Você pode clonar o grupo de consistência para criar uma cópia do workload de produção e mantê-lo como um backup até que a migração seja concluída.
@@ -153,6 +155,7 @@ Para proteger seus dados, você deve link:../data-protection/create-snapshots.ht
 
 
 
+[[split-consistency-group-clone]]
 == Clone de grupo de consistência dividida
 
 Quando você divide um clone de grupo de consistência, dissocia o clone do grupo de consistência de origem e aloca espaço em disco para o clone. O clone se torna um grupo de consistência autônomo que pode ser usado independentemente do grupo de consistência de origem.

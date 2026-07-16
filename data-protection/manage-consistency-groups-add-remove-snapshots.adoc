@@ -17,6 +17,7 @@ Se não precisar mais proteger os dados de unidades de armazenamento específica
 
 
 
+[[add-snapshot-data-protection-to-a-consistency-group]]
 == Adicionar proteção de dados de snapshot a um grupo de consistência
 
 Quando você adiciona proteção de dados de snapshot a um grupo de consistência, os snapshots locais do grupo de consistência são feitos em intervalos regulares com base em uma programação predefinida.
@@ -66,6 +67,7 @@ Agora que seus dados estão protegidos com snapshots, você deve link:../secure-
 
 
 
+[[remove-snapshot-data-protection-from-a-consistency-group]]
 == Remova a proteção de dados do snapshot de um grupo de consistência
 
 Quando você remove a proteção de dados de snapshot de um grupo de consistência, os snapshots são desabilitados para todas as unidades de armazenamento no grupo de consistência.

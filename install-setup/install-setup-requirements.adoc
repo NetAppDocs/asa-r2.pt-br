@@ -15,6 +15,7 @@ Reveja o equipamento necessário e as precauções de elevação para o seu sist
 
 
 
+[[equipment-needed-for-install]]
 == Equipamento necessário para instalação
 
 Para instalar o sistema de storage ASA r2, você precisa dos seguintes equipamentos e ferramentas.
@@ -29,12 +30,14 @@ Para instalar o sistema de storage ASA r2, você precisa dos seguintes equipamen
 
 
 
+[[lifting-precautions]]
 == Precauções de elevação
 
 Os sistemas de storage e as gavetas de storage do ASA R2 são pesados. Tenha cuidado ao levantar e mover estes itens.
 
 
 
+[[storage-system-weights]]
 === Pesos do sistema de armazenamento
 
 Tome as precauções necessárias ao mover ou elevar o seu sistema de armazenamento ASA R2.
@@ -72,6 +75,7 @@ image::../media/drw_g_lifting_weight_ieops-1831.svg[Ícone de cuidado de peso AS
 ====
 
 
+[[storage-shelf-weights]]
 === Pesos da prateleira de armazenamento
 
 Tome as precauções necessárias ao mover ou levantar a prateleira.
@@ -82,7 +86,7 @@ Tome as precauções necessárias ao mover ou levantar a prateleira.
 --
 Uma prateleira de NS224 kg pode pesar até 66,78 lbs (30,29 kg). Para levantar a prateleira, use duas pessoas ou um elevador hidráulico. Mantenha todos os componentes na prateleira (dianteira e traseira) para evitar desequilibrar o peso da prateleira.
 
-image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 NSM100 precaução de elevação]
+image::../media/drw_ns224_lifting_weight_2_ieops-2960.svg[NS224 NSM100 precaução de elevação]
 
 --
 .NS224 gaveta com NSM100B módulos

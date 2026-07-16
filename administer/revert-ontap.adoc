@@ -19,12 +19,14 @@ link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.
 
 
 
+[[revert-requirements-for-asa-r2-systems]]
 == Rever requisitos para sistemas ASA r2
 
 Certas configurações de cluster ASA r2 exigem que você execute ações específicas antes de iniciar uma reversão de software ONTAP .
 
 
 
+[[reverting-from-ontap-9-17-1]]
 === Revertendo do ONTAP 9.17.1
 
 Se você estiver revertendo do ONTAP 9.17.1 em um sistema ASA r2, execute as seguintes ações antes de iniciar a reversão:

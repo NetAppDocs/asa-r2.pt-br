@@ -15,6 +15,7 @@ Aumente ou diminua o tamanho de um grupo de consistência modificando o número 
 
 
 
+[[add-storage-units-to-a-consistency-group]]
 == Adicione unidades de armazenamento a um grupo de consistência
 
 Expanda a quantidade de armazenamento gerenciado por um grupo de consistência adicionando unidades de armazenamento novas ou existentes ao grupo.
@@ -75,6 +76,7 @@ Os instantâneos existentes do grupo de consistência não incluem as unidades d
 
 
 
+[[remove-a-storage-unit-from-a-consistency-group]]
 == Remova uma unidade de armazenamento de um grupo de consistência
 
 Remova uma unidade de armazenamento de um grupo de consistência para excluí-la, gerenciá-la como parte de um grupo de consistência diferente ou interromper a proteção de seus dados.  Remover uma unidade de armazenamento de um grupo de consistência rompe a relação entre a unidade de armazenamento e o grupo de consistência, mas não exclui a unidade de armazenamento.

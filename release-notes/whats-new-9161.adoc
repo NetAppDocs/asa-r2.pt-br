@@ -18,6 +18,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.16,1 para sistemas AS
 
 
 
+[[systems]]
 == Sistemas
 
 [cols="2,4"]
@@ -37,6 +38,7 @@ Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1. Es
 |===
 
 
+[[data-protection]]
 == Proteção de dados
 
 [cols="2,4"]
@@ -51,6 +53,7 @@ Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1. Es
 |===
 
 
+[[protocol-support]]
 == Suporte ao protocolo
 
 [cols="2,4"]
@@ -62,6 +65,7 @@ Os seguintes sistemas NetApp ASA r2 são suportados a partir do ONTAP 9.16.1. Es
 |===
 
 
+[[storage-efficiency]]
 == Eficiência de storage
 
 [cols="2,4"]

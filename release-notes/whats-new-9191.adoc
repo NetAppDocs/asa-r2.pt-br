@@ -18,6 +18,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 
 
 
+[[data-protection]]
 == Proteção de dados
 
 [cols="2,4"]
@@ -29,6 +30,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[san-data-migration]]
 == Migração de dados SAN
 
 [cols="2,4"]
@@ -40,6 +42,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[san-configuration]]
 == Configuração do SAN
 
 [cols="2,4"]
@@ -51,6 +54,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[security]]
 == Segurança
 
 [cols="2,4"]
@@ -65,6 +69,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[storage-efficiency]]
 == Eficiência de storage
 
 [cols="2,4"]
@@ -76,6 +81,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[storage-resource-management]]
 == Gerenciamento de recursos de storage
 
 [cols="2,4"]
@@ -90,6 +96,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[upgrade]]
 == Atualizar
 
 [cols="2,4"]

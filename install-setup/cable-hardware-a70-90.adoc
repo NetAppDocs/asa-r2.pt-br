@@ -34,6 +34,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Direção da patilha
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Etapa 1: Faça o cabeamento das conexões cluster/HA
 
 Conecte os controladores por meio de cabos para criar as conexões do cluster ONTAP. Para clusters sem switch, conecte os controladores entre si. Para clusters com switch, conecte os controladores aos switches de rede do cluster.
@@ -91,6 +92,7 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Conexões do c
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Etapa 2: Faça o cabeamento das conexões de rede do host
 
 Conete as portas do módulo Ethernet à rede host.
@@ -135,6 +137,7 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Cabo para rede Etherne
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Passo 3: Faça o cabeamento das conexões de rede de gerenciamento
 
 Conete os controladores à sua rede de gerenciamento.
@@ -160,6 +163,7 @@ IMPORTANT: Não conete os cabos de energia ainda.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Etapa 4: Faça o cabeamento das conexões da prateleira
 
 Os sistemas de storage ASA A70 e ASA A90 suportam gabinetes NS224 com o módulo NSM100 ou NSM100B. As principais diferenças entre os módulos são:
@@ -212,9 +216,9 @@ image::../media/oie_cable100_gbe_qsfp28.svg[Cabo de cobre de 100 GbE QSFP28]
 . No controlador A, ligue as seguintes portas:
 +
 .. Conete a porta e11a ao compartimento 1 NSM A porta e0a.
-.. Conete a porta e11b à porta e0b do NSM B da gaveta 2.
-.. Conecte a porta e8a à porta e0a do NSM A da shelf 2.
 .. Conecte a porta e8b à porta e0b do shelf 1 NSM B.
+.. Conecte a porta e8a à porta e0a do NSM A da shelf 2.
+.. Conete a porta e11b à porta e0b do NSM B da gaveta 2.
 +
 image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Conexões controlador a compartimento para o controlador A"]
 
@@ -223,9 +227,9 @@ image:../media/drw_a70-90_2shelf_cabling_a_ieops-1733.svg["Conexões controlador
 . No controlador B, ligue as seguintes portas:
 +
 .. Conete a porta e11a à porta e0a do NSM B da gaveta 1.
-.. Conete a porta e11b ao compartimento 2 NSM A porta e0b.
-.. Conecte a porta e8a à porta e0a do shelf 2 NSM B.
 .. Conecte a porta e8b à porta e0b do NSM A do shelf 1.
+.. Conecte a porta e8a à porta e0a do shelf 2 NSM B.
+.. Conete a porta e11b ao compartimento 2 NSM A porta e0b.
 +
 image:../media/drw_a70-90_2shelf_cabling_b_ieops-1734.svg["Conexões controlador para compartimento para o controlador B"]
 

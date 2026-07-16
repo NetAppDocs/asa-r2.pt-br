@@ -13,7 +13,7 @@ summary: Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas 
 [role="lead"]
 A transcrição a seguir é fornecida para o vídeo `Provision SAN storage on your ASA r2 storage system`.
 
-link:videos-common-tasks.html#video_transcript_return_provision_san_storage["Voltar à página"]
+link:videos-common-tasks.html["Voltar à página"]
 
 Você pode usar o Gerenciador de sistemas do ONTAP para provisionar unidades de storage para hosts de maneira rápida e fácil no sistema de storage do ASA R2.
 

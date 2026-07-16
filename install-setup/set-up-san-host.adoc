@@ -25,6 +25,7 @@ Saiba mais link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-s
 
 
 
+[[zoning-recommendation-for-fc-hosts]]
 == Recomendação de zoneamento para hosts FC
 
 Você deve configurar seus hosts FC para usar o zoneamento. Os sistemas ASA R2 seguem as mesmas recomendações e diretrizes de zoneamento de host FC que todos os outros sistemas ONTAP.

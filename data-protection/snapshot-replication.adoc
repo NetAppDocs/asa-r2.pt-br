@@ -25,6 +25,7 @@ link:manage-hierarchical-consistency-groups.html["Saiba mais sobre grupos de con
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Passo 1: Crie um relacionamento de pares de cluster
 
 Antes de proteger seus dados replicando-os em um cluster remoto, é necessário criar um relacionamento de peers de clusters entre o cluster local e o cluster remoto.
@@ -46,6 +47,7 @@ Você fez um pedido para o cluster ASA R2 local com um cluster remoto. Agora voc
 
 
 
+[[step-2-optionally-create-a-custom-replication-policy]]
 == Etapa 2: Opcionalmente, crie uma política de replicação personalizada
 
 A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação.  Se as políticas predefinidas não atenderem às suas necessidades, você poderá criar uma política de replicação personalizada.
@@ -79,6 +81,7 @@ Saiba mais link:../administer/manage-client-vm-access.html["VMs de armazenamento
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Passo 3: Crie uma relação de replicação
 
 Uma relação de replicação de snapshot estabelece uma conexão entre o sistema ASA R2 e um local remoto para que você possa replicar grupos de consistência para um cluster remoto. Os grupos de consistência replicados podem ser usados para recuperação de desastres ou para migração de dados.
@@ -170,6 +173,7 @@ Agora que você criou uma política de replicação e um relacionamento, sua tra
 
 
 
+[[step-4-test-replication-failover]]
 == Etapa 4: Teste o failover de replicação
 
 Opcionalmente, valide que você pode fornecer dados com êxito de unidades de armazenamento replicadas em um cluster remoto se o cluster de origem estiver offline.

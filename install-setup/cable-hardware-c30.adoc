@@ -30,6 +30,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Direção da patilha
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Etapa 1: Faça o cabeamento das conexões cluster/HA
 
 Conecte os controladores por meio de cabos para criar as conexões do cluster ONTAP. Para clusters sem switch, conecte os controladores entre si. Para clusters com switch, conecte os controladores aos switches de rede do cluster.
@@ -144,6 +145,7 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[C
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Etapa 2: Faça o cabeamento das conexões de rede do host
 
 Conete as portas do módulo Ethernet ou as portas do módulo Fibre Channel (FC) à rede do host.
@@ -193,6 +195,7 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cabo para
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Passo 3: Faça o cabeamento das conexões de rede de gerenciamento
 
 Conete os controladores à sua rede de gerenciamento.
@@ -210,6 +213,7 @@ IMPORTANT: Não conete os cabos de energia ainda.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Etapa 4: Faça o cabeamento das conexões da prateleira
 
 O procedimento de cabeamento de prateleira NS224 mostra módulos NSM100B em vez de módulos NSM100. O cabeamento é o mesmo, independentemente do tipo de módulo NSM utilizado, apenas os nomes das portas são diferentes:

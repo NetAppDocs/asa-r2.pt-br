@@ -15,6 +15,7 @@ A partir do ONTAP 9.16.1, você pode usar o System Manager para criar grupos de 
 
 
 
+[[promote-an-existing-consistency-group-into-a-parent-consistency-group]]
 == Promover um grupo de consistência existente para um grupo de consistência pai
 
 Se você promover um grupo de consistência existente para um pai, um novo grupo de consistência filho será criado e as unidades de armazenamento pertencentes ao grupo de consistência promovido serão movidas para o novo grupo de consistência filho.  Unidades de armazenamento não podem ser associadas diretamente a um grupo de consistência pai.
@@ -35,6 +36,7 @@ Você pode criar grupos de consistência filhos adicionais sob o grupo de consis
 
 
 
+[[demote-a-parent-consistency-group-to-a-single-consistency-group]]
 == Demote um grupo de consistência pai para um único grupo de consistência
 
 Quando você rebaixa um grupo de consistência pai para um único grupo de consistência, as unidades de armazenamento dos grupos de consistência filho associados são adicionadas ao grupo de consistência pai.  Os grupos de consistência filhos são excluídos e o pai é então gerenciado como um único grupo de consistência.
@@ -54,6 +56,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Adi
 
 
 
+[[create-a-child-consistency-group]]
 == Crie um grupo de consistência filho
 
 A criação de grupos de consistência filho permite que você aplique políticas de instantâneo individuais a cada filho.  A partir do ONTAP 9.17.1, você também pode aplicar políticas de replicação individuais diretamente a cada filho.  No ONTAP 9.16.1, as políticas de replicação podem ser aplicadas somente no nível pai.
@@ -104,6 +107,7 @@ Depois de criar um grupo de consistência filho, você podelink:policies-schedul
 
 
 
+[[detach-a-child-consistency-group-from-a-parent-consistency-group]]
 == Separe um grupo de consistência filho de um grupo de consistência pai
 
 Quando você separa um grupo de consistência filho de um grupo de consistência pai, o grupo de consistência filho é removido do grupo de consistência pai e é gerenciado como um único grupo de consistência.  A política de replicação aplicada ao pai não é mais aplicada ao grupo de consistência filho desanexado.

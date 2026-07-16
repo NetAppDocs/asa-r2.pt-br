@@ -28,6 +28,7 @@ NOTE: Nenhum sistema de detecção ou prevenção de ransomware pode garantir co
 
 
 
+[[enable-arpai-on-all-storage-units-in-the-cluster]]
 == Ative o ARP/AI em todas as unidades de armazenamento no cluster
 
 Se você estiver executando ONTAP 9.17.1, você pode habilitar ARP/AI em todas as unidades de armazenamento criadas no cluster por padrão.
@@ -42,6 +43,7 @@ No ONTAP 9.18.1 e versões posteriores, ARP/AI está habilitado por padrão em t
 
 
 
+[[enable-arpai-on-all-storage-units-in-a-storage-vm]]
 == Habilite ARP/AI em todas as unidades de armazenamento em uma VM de armazenamento.
 
 Se você estiver executando ONTAP 9.17.1, poderá habilitar ARP/AI em todas as unidades de armazenamento criadas em uma máquina virtual de armazenamento (VM) por padrão. Isso significa que qualquer nova unidade de armazenamento criada na máquina virtual de armazenamento terá ARP/AI habilitado automaticamente. Você também pode aplicar ARP/AI a unidades de armazenamento existentes na máquina virtual de armazenamento.
@@ -65,6 +67,7 @@ Todas as novas unidades de armazenamento que você criar na máquina virtual de 
 
 
 
+[[enable-arpai-on-specific-storage-units-in-a-storage-vm]]
 == Habilite ARP/AI em unidades de armazenamento específicas em uma VM de armazenamento.
 
 Se você estiver executando ONTAP 9.17.1 e não quiser que ARP/AI esteja habilitado em todas as unidades de armazenamento em uma storage VM, você pode selecionar as unidades específicas que deseja habilitar.

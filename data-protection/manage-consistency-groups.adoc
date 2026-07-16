@@ -21,6 +21,7 @@ Os grupos hierárquicos de consistência permitem que você aplique políticas d
 
 
 
+[[consistency-groups-in-replication-relationships]]
 == Grupos de consistência em relacionamentos de replicação
 
 A partir do ONTAP 9.17.1, você pode fazer as seguintes alterações de geometria em grupos de consistência em um relacionamento de replicação assíncrona ou em um relacionamento de sincronização ativa do SnapMirror sem interromper ou excluir o relacionamento.  Quando ocorre uma alteração de geometria no grupo de consistência primário, a alteração é replicada para o grupo de consistência secundário.

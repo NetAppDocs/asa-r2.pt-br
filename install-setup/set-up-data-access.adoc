@@ -15,6 +15,7 @@ Para configurar o acesso aos dados, você deve garantir que os parâmetros crít
 
 
 
+[[set-up-data-access-from-san-hosts]]
 == Configurar o acesso a dados a partir de hosts SAN
 
 A configuração necessária para configurar o acesso de dados ao seu sistema ASA R2 a partir de seus hosts SAN varia dependendo do sistema operacional do host e do protocolo. A configuração correta é importante para o melhor desempenho e o failover bem-sucedido.
@@ -23,6 +24,7 @@ Consulte a documentação do host SAN ONTAP para link:https://docs.netapp.com/us
 
 
 
+[[migrate-vmware-virtual-machines]]
 == Migrar máquinas virtuais VMware
 
 Se você precisar migrar sua carga de trabalho de VM de um sistema de armazenamento ASA para um sistema de armazenamento ASA r2, a NetApp recomenda que você uselink:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere vMotion"^] para realizar uma migração ao vivo e sem interrupções dos seus dados.
@@ -38,6 +40,7 @@ As unidades de armazenamento ASA r2 são provisionadas dinamicamente por padrão
 
 
 
+[[migrate-data-from-a-third-party-storage-system]]
 == Migrar dados de um sistema de armazenamento de terceiros
 
 A partir do ONTAP 9.17.1, você pode usar a Importação de LUN Estrangeiro (FLI) para migrar dados de um LUN em um sistema de armazenamento de terceiros para um sistema ASA r2. Usar a FLI para a migração de dados pode ajudar a reduzir o risco de perda de dados e tempo de inatividade durante o processo de migração.
@@ -51,6 +54,7 @@ A partir do ONTAP 9.19.1, o FLI oferece suporte ao protocolo iSCSI para conectiv
 
 
 
+[[configure-your-asa-r2-system-as-a-storage-provider-in-your-vmware-environment]]
 == Configure o sistema ASA R2 como um fornecedor de storage no ambiente VMware
 
 Você pode usar as ferramentas do ONTAP para VMware para habilitar facilmente o sistema ASA R2 como fornecedor de storage no ambiente VMware.

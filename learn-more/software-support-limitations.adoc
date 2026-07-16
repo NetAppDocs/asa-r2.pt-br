@@ -42,6 +42,7 @@ Os sistemas ASA r2 suportam criptografia de hardware usando unidades de auto-cri
 
 
 
+[[support-for-snapmirror-replication]]
 == Suporte para replicação SnapMirror
 
 A replicação SnapMirror é suportada em sistemas ASA r2 com as seguintes limitações:

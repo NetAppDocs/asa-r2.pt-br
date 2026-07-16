@@ -18,6 +18,7 @@ Por exemplo, suponha que um aplicativo crítico esteja com alta latência e baix
 
 
 
+[[monitor-cluster-performance]]
 == Monitorar o desempenho do cluster
 
 Use métricas de performance do cluster para determinar se você precisa mudar os workloads para minimizar a latência e maximizar o IOPS e a taxa de transferência para suas aplicações essenciais.
@@ -33,6 +34,7 @@ Use as métricas de performance do cluster para analisar se você precisa modifi
 
 
 
+[[monitor-storage-unit-performance]]
 == Monitore o desempenho da unidade de armazenamento
 
 Use as métricas de desempenho da unidade de storage para determinar o impacto de aplicações específicas na latência, IOPS e taxa de transferência.

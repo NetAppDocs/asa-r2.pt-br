@@ -15,6 +15,7 @@ A partir do ONTAP 9.17.1, você pode usar a Proteção Autônoma contra Ransomwa
 
 
 
+[[pause-arpai]]
 == Pausar ARP/AI
 
 Antes de iniciar um evento de carga de trabalho incomum, pode ser necessário suspender temporariamente a análise de ARP/AI para evitar detecções de falsos positivos de ataques de ransomware.
@@ -30,6 +31,7 @@ A análise de ARP/AI é pausada para as unidades de armazenamento selecionadas, 
 
 
 
+[[resume-arpai]]
 == Retomar ARP/AI
 
 Se você pausar o ARP/AI durante uma carga de trabalho incomum, após a conclusão da carga de trabalho, você deverá retomá-la para proteger seus dados contra ataques de ransomware.

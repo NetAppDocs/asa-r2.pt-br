@@ -16,6 +16,7 @@ Crie um snapshot para fazer backup dos dados no seu sistema ASA r2.  Utilize o O
 
 
 
+[[step-1-optionally-create-a-consistency-group]]
 == Passo 1: Opcionalmente, crie um grupo de consistência
 
 Um grupo de consistência é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade. Crie grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados para workloads de aplicações que abrangem várias unidades de storage. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência, e você precisa fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento, você pode fazer backup de todo o banco de dados simplesmente adicionando proteção de dados snapshot ao grupo de consistência.
@@ -101,6 +102,7 @@ Você criou um grupo de consistência contendo as unidades de armazenamento que 
 ====
 
 
+[[step-2-create-a-snapshot]]
 == Passo 2: Crie um instantâneo
 
 Um instantâneo é uma cópia local e somente leitura de seus dados que você pode usar para restaurar unidades de armazenamento em pontos específicos no tempo.

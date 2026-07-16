@@ -17,6 +17,7 @@ link:snapshot-reserve.html["Saiba mais sobre a reserva de snapshots em sistemas 
 
 
 
+[[modify-snapshot-reserve-on-storage-units]]
 == Modificar reserva de snapshots em unidades de armazenamento
 
 Para definir valores de reserva de snapshots diferentes, configure cada unidade de armazenamento individualmente.  Para usar o mesmo valor em todas as unidades de armazenamento, modifique a reserva de snapshots na máquina virtual de armazenamento.
@@ -35,6 +36,7 @@ A reserva de snapshots está definida para a porcentagem que você especificou. 
 
 
 
+[[modify-snapshot-reserve-on-a-storage-vm]]
 == Modificar a reserva de snapshots em uma VM de armazenamento
 
 Para definir a mesma reserva de snapshots para todas as unidades de armazenamento em uma VM de armazenamento, aplique a porcentagem desejada à VM de armazenamento. .  Quando a reserva de snapshots é aplicada à máquina virtual de armazenamento, ela é aplicada a todas as unidades de armazenamento recém-criadas dentro da máquina virtual de armazenamento.  Essa configuração não se aplica a unidades de armazenamento criadas antes da modificação da configuração.

@@ -18,6 +18,7 @@ Saiba mais sobre as alterações nos limites e padrões que afetam os sistemas A
 
 
 
+[[changes-to-ontap-limits]]
 == Alterações nos limites do ONTAP
 
 [cols="2,4,4"]

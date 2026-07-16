@@ -13,7 +13,7 @@ summary: Veja vídeos curtos que demonstram como usar o Gerenciador de sistemas 
 [role="lead"]
 A transcrição a seguir é fornecida para o vídeo `Configure SAN protocols on your ASA r2 storage system`.
 
-link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["Voltar à página"]
+link:videos-common-tasks.html["Voltar à página"]
 
 Você pode usar o Gerenciador de sistemas do ONTAP para configurar seus protocolos SAN de forma rápida e fácil. Neste exemplo, vamos configurar endereços IP para interfaces de rede iSCSI.
 

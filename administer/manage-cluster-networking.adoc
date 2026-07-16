@@ -15,6 +15,7 @@ Você pode usar o Gerenciador de sistema do ONTAP para executar a administraçã
 
 
 
+[[add-a-broadcast-domain]]
 == Adicione um domínio de broadcast
 
 Use domínios de broadcast para simplificar o gerenciamento da rede de cluster agrupando portas de rede que pertencem à mesma rede de camada 2. As máquinas virtuais de armazenamento (VMs) podem então usar as portas do grupo para tráfego de dados ou gerenciamento.
@@ -49,6 +50,7 @@ Você adicionou um novo domínio de broadcast.
 
 
 
+[[reassign-ports-to-a-different-broadcast-domain]]
 == Reatribuir portas a um domínio de broadcast diferente
 
 As portas podem pertencer a apenas um domínio de broadcast. Se você quiser alterar o domínio de broadcast ao qual uma porta pertence, você precisa reatribuir a porta de seu domínio de broadcast existente a um novo domínio de broadcast.
@@ -66,6 +68,7 @@ Você reatribuiu portas a um domínio de broadcast diferente.
 
 
 
+[[create-a-vlan]]
 == Crie uma VLAN
 
 Uma VLAN consiste em portas de switch agrupadas em um domínio de broadcast. As VLANs permitem aumentar a segurança, isolar problemas e limitar os caminhos disponíveis na infraestrutura de rede IP.

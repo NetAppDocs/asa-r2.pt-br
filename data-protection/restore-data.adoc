@@ -15,6 +15,7 @@ Os dados em um grupo de consistência ou unidade de armazenamento protegida por 
 
 
 
+[[restore-a-consistency-group]]
 == Restaure um grupo de consistência
 
 A restauração de um grupo de consistência substitui os dados em todas as unidades de storage do grupo de consistência pelos dados de um snapshot. As alterações feitas nas unidades de armazenamento após a criação do instantâneo não são restauradas.
@@ -56,6 +57,7 @@ Seu grupo de consistência é restaurado ao ponto no tempo do snapshot usado par
 
 
 
+[[restore-a-storage-unit]]
 == Restaurar uma unidade de armazenamento
 
 A restauração de uma unidade de armazenamento substitui todos os dados da unidade de armazenamento pelos dados de um instantâneo. As alterações efetuadas na unidade de armazenamento após a criação do instantâneo não são restauradas.

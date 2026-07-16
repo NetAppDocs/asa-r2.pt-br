@@ -15,6 +15,7 @@ Depois de instalar o hardware de rack para seu sistema de storage ASA r2 e insta
 
 
 
+[[step-1-power-on-the-shelf-and-assign-shelf-id]]
 == Etapa 1: Ligue a prateleira e atribua o ID da prateleira
 
 Cada prateleira é distinguida por um ID de prateleira exclusivo. Esse ID garante que o compartimento seja distinto na configuração do sistema de storage.
@@ -125,6 +126,7 @@ Uma fonte de alimentação é ligada assim que o cabo de alimentação é ligado
 
 
 
+[[step-2-power-on-the-controllers]]
 == Passo 2: Ligue os controladores
 
 Depois de ativar os compartimentos de storage e atribuir a eles IDs exclusivos, ligue a energia dos controladores de storage.
@@ -173,12 +175,12 @@ image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Ligações 
 ====
 .A1K
 --
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
+image::../media/drw_a1k_70-90_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
 
 --
 .A70 e A90
 --
-image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
+image::../media/drw_a1k_70-90_power_source_icon_ieops-1700.svg[Sistema de armazenamento A1K e diagrama de ligação de alimentação A70 ou A90]
 
 --
 .A20, A30 E A50
