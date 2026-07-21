@@ -30,6 +30,18 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[performance]]
+== Desempenho
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#performance["Melhorias no desempenho do TCP"] | ONTAP melhora o desempenho da transferência de dados TCP em links WAN com perdas e alta latência, integrando dois recursos de recuperação de perda, PRR e RACK, à pilha TCP do ONTAP. 
+|===
+
+
 [[san-data-migration]]
 == Migração de dados SAN
 
@@ -62,7 +74,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 | Atualização | Descrição 
 
 
-| link:../secure-data/enable-anti-ransomware-protection.html["Suporte para ARP/AI com SnapMirror relações de sincronização ativa"] | A Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em relacionamentos de sincronização ativa do SnapMirror em sistemas ASA r2. A ARP/AI é executada nas unidades de storage primário ativas, cria snapshots ARP somente para a unidade primária e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de storage. 
+| link:../secure-data/enable-anti-ransomware-protection.html["Suporte para ARP/AI com SnapMirror relações de sincronização ativa"] | A Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em relacionamentos de sincronização ativa do SnapMirror em sistemas ASA r2. O ARP/AI é executado nas unidades de storage primário ativas, cria snapshots ARP apenas para o storage primário e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de storage. Clusters atualizados para ONTAP 9.19.1 que anteriormente tiveram a capacitação padrão do ARP suprimida devido a relacionamentos de replicação síncrona terão essa funcionalidade restaurada automaticamente. Um aviso pré-atualização notifica você e oferece a opção de desativá-la. 
 
 
 | link:../learn-more/additional-supported-ontap-features.html#tls-hardware-offload["Suporte para descarregamento de hardware TLS"] | Você pode descarregar a criptografia e descriptografia do Transport Layer Security (TLS) de todo o seu cluster para placas Ethernet compatíveis. Isso reduz a sobrecarga da CPU e melhora o desempenho de sistemas que usam TLS. 
