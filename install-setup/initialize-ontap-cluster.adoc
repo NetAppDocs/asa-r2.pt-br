@@ -53,7 +53,7 @@ O System Manager é aberto.
 +
 A senha deve ter pelo menos oito carateres e deve conter pelo menos uma letra e um número.
 
-. Volte a introduzir a palavra-passe para confirmar e, em seguida, selecione *continuar*.
+. Digite a senha novamente para confirmar e, em seguida, selecione *Continuar*.
 . Em *endereços de rede*, insira um nome de sistema de armazenamento ou aceite o nome padrão.
 +
 Se você alterar o nome padrão do sistema de armazenamento, o novo nome deve começar com uma letra e deve ter menos de 44 carateres. Você pode usar um ponto (.), hífen (-) ou sublinhado (_) no nome.

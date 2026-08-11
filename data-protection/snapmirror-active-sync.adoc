@@ -17,9 +17,11 @@ Embora os procedimentos do System Manager para configurar o SnapMirror active sy
 
 Nos sistemas ASA r2, SnapMirror active sync oferece suporte a configurações ativo-ativo simétricas. Em uma configuração ativo-ativo simétrica, ambos os sites podem acessar o storage local para I/O ativo. Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurações simétricas ativas/ativas"^].
 
+Os modos SnapLock Enterprise e Compliance não são suportados com o SnapMirror active sync em sistemas ASA r2.
+
 .Sobre esta tarefa
-* A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.
 * A partir do ONTAP 9.19.1, a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em relacionamentos SAN de sincronização ativa do SnapMirror em sistemas ASA r2. O ARP/AI é executado nas unidades de storage primário ativas, cria snapshots ARP apenas para o primário e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de storage. Para as etapas de capacitação do ARP/AI, consulte link:../secure-data/enable-anti-ransomware-protection.html["Habilite a proteção autônoma contra ransomware com IA"].
+* A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em configurações de quatro nós.  No ONTAP 9.17.1, a sincronização ativa do SnapMirror é suportada apenas em configurações de dois nós.
 
 
 .Antes de começar

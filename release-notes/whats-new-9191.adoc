@@ -30,6 +30,18 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 |===
 
 
+[[networking]]
+== Rede
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| Suporte aprimorado para failover automático de SAN LIF | O failover automático padrão de LIF é compatível com as LIFs iSCSI e NVMe/TCP. 
+|===
+
+
 [[performance]]
 == Desempenho
 

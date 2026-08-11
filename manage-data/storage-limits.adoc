@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
-keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
+keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
 summary: Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de armazenamento do ASA r2. 
 ---
-= Limites de armazenamento do ASA R2
+= Determine os limites de armazenamento do seu sistema ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,88 +13,18 @@ summary: Para obter o melhor desempenho, configuração e suporte, você deve es
 [role="lead"]
 Para obter o melhor desempenho, configuração e suporte, você deve estar ciente dos limites de armazenamento do ASA r2.
 
-Para obter uma lista completa dos limites de armazenamento mais atuais do ASA R2, link:https://hwu.netapp.com/["NetApp Hardware Universe"^]consulte .
-
-Os sistemas ASA r2 suportam os seguintes limites de armazenamento:
-
-[cols="3"]
-|===
-|  | Máximo por par de HA | Máximo por grupo 
+Os limites podem variar dependendo do seu sistema ASA r2 e da sua versão do ONTAP. Consulte link:https://hwu.netapp.com/["NetApp Hardware Universe"^] para obter a lista completa dos limites mais recentes para o seu sistema específico.
 
 
-| Grupos de consistência | 256 | 256 
+NOTE: Os sistemas ASA r2 estão listados no NetApp Hardware Universe em *Produtos* como plataformas "ASA".
+
+.Passos
+. Acesse link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+. Selecione *Produtos*.
+. Em *Plataformas*, selecione *ASA* como seu tipo de sistema.
+. Selecione o seu sistema específico e, em seguida, selecione a sua versão do ONTAP.
+. Selecione *Mostrar resultados*.
 
 
-| Aplicações empresariais | 100 | 350 
-
-
-| Nós | 2 | 12 
-
-
-| Grupos de replicação | 50 | 50 
-
-
-| Tamanho da zona de disponibilidade de armazenamento | 2 PB | 2 PB 
-
-
-| Unidades de armazenamento | 10.000 | 30.000 
-
-
-| Tamanho da unidade de armazenamento | 128 TB | 128 TB 
-
-
-| Unidades de armazenamento por grupo de consistência | 256 | 256 
-
-
-| Grupos de consistência infantil por grupo de consistência parental | 64 | 64 
-
-
-| Máquinas virtuais de armazenamento  a| 
-* 256 (ONTAP 9.18.1 e posterior)
-* 32 (ONTAP 9.17.1 e versões anteriores)
-
- a| 
-* 256 (ONTAP 9.18.1 e posterior)
-* 32 (ONTAP 9.17.1 e versões anteriores)
-
-
-
-
-| Máquinas virtuais | 800 | 1200 
-|===
-
-
-[[limits-for-snapmirror-asynchronous-relationships]]
-== Limites para relacionamentos assíncronos do SnapMirror
-
-Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação assíncrona do SnapMirror . Para obter uma lista completa dos limites de armazenamento mais recentes do ASA r2,link:https://hwu.netapp.com/["NetApp Hardware Universe"^] .
-
-[cols="3"]
-|===
-| Limite máximo | Por par de HA | Por cluster 
-
-
-| Grupos de consistência | 250 | 750 
-
-
-| Unidades de armazenamento | 4.000 | 6.000 
-|===
-
-
-[[limits-for-snapmirror-active-sync-relationship]]
-== Limites para relacionamento de sincronização ativa do SnapMirror
-
-Os limites a seguir se aplicam a unidades de armazenamento e grupos de consistência em um relacionamento de replicação de sincronização ativa do SnapMirror . A sincronização ativa do SnapMirror é suportada a partir do ONTAP 9.17.1, somente em clusters de dois nós.  A partir do ONTAP 9.18.1, a sincronização ativa do SnapMirror é suportada em clusters de quatro nós.
-
-Para obter uma lista completa dos limites de armazenamento mais recentes do ASA r2,link:https://hwu.netapp.com/["NetApp Hardware Universe"^] .
-
-[cols="2"]
-|===
-| Limite máximo | Por par de HA 
-
-
-| Grupos de consistência | 50 
-
-
-| Unidades de armazenamento | 400 
-|===
+.Resultados
+Os limites suportados para o seu sistema ASA r2 específico e versão do ONTAP são exibidos.

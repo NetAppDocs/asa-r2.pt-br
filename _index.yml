@@ -43,7 +43,7 @@ indexpage:
     - title: Datasheet do ASA
       url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
     - title: Melhores práticas para sistemas NetApp ASA
-      url: https://www.netapp.com/pdf.html?item=/media/137426-tr-5009-best-practices-for-netapp-asa.pdf
+      url: https://www.netapp.com/pdf.html?item=/media/138231-tr-5009-best-practices-for-netapp-asa.pdf
     - title: Guia de transição da API REST
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
     - title: Desempenho do banco de dados Oracle no NetApp ASA

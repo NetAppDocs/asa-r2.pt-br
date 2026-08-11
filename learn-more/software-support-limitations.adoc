@@ -14,47 +14,35 @@ summary: Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para solu
 Embora os sistemas ASA R2 ofereçam uma ampla gama de suporte para soluções SAN, certos recursos de software ONTAP não são suportados.
 
 .Os sistemas ASA R2 não suportam o seguinte:
-* Failover automático de iSCSI LIF predefinido
-+
-Nos sistemas ASA R2, o LIF de rede padrão é compartilhado entre hosts NVMe e SCSI, portanto, não é compatível com failover automático. Para ativar o failover automático de LIF iSCSI, é link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Crie um LIF apenas iSCSI"]necessário . O failover automático é ativado no iSCSI Only LIFS por padrão.
-
-+
-Quando o failover automático de LIF iSCSI é ativado, se ocorrer um failover de armazenamento, o iSCSI LIF é migrado automaticamente de seu nó ou porta inicial para seu nó ou porta parceiro de HA e, em seguida, volta assim que o failover for concluído. Ou, se a porta de um iSCSI LIF não for saudável, o LIF é migrado automaticamente para uma porta saudável em seu nó inicial atual e, em seguida, de volta para sua porta original quando a porta estiver funcionando novamente.
-
 * FabricPool
 * Provisionamento de espessura de LUN
 * MetroCluster
 * Criptografia de agregado NetApp (NAE)
 * Protocolos de objetos
 * ONTAP S3 SnapMirror e S3 APIs
-
-
-.Os sistemas ASA R2 suportam o seguinte:
 * SnapLock
 +
-link:../secure-data/ransomware-protection.html["Saiba como bloquear instantâneos"] No seu sistema ASA R2.
+SnapLock Compliance e Enterprise não são suportados em clusters primários em ambientes SAN. SnapLock for SnapVault é suportado em clusters secundários.
 
-* Criptografia de camada dupla
+* A replicação SnapMirror é suportada em sistemas ASA r2 com as seguintes limitações:
 +
-Os sistemas ASA r2 suportam criptografia de hardware usando unidades de auto-criptografia (SEDs) e criptografia de software usando a tecnologia NetApp Volume Encryption (NVE). link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] para proteger os dados no seu sistema ASA r2.
+** A replicação síncrona do SnapMirror não é suportada.
+** A replicação assíncrona do SnapMirror é suportada apenas entre dois sistemas ASA r2. A replicação assíncrona do SnapMirror não é suportada entre um sistema ASA r2 e um sistema ASA, AFF ou FAS , ou a nuvem.
++
+Saiba mais sobrelink:../data-protection/pre-defined-protection-policies.html["Políticas de replicação SnapMirror suportadas em sistemas ASA r2"] .
 
-
-
-
-
-[[support-for-snapmirror-replication]]
-== Suporte para replicação SnapMirror
-
-A replicação SnapMirror é suportada em sistemas ASA r2 com as seguintes limitações:
-
-* A replicação síncrona do SnapMirror não é suportada.
-* O SnapMirror ActiveSync é compatível apenas entre dois sistemas ASA R2.
+** O SnapMirror ActiveSync é compatível apenas entre dois sistemas ASA R2.
 +
 Saiba mais sobrelink:../data-protection/snapmirror-active-sync.html["Sincronização ativa do SnapMirror em sistemas ASA r2"] .
 
-* A replicação assíncrona do SnapMirror é suportada apenas entre dois sistemas ASA r2. A replicação assíncrona do SnapMirror não é suportada entre um sistema ASA r2 e um sistema ASA, AFF ou FAS , ou a nuvem.
+
+
+
+
+.Os sistemas ASA R2 suportam o seguinte:
+* Criptografia de camada dupla
 +
-Saiba mais sobrelink:../data-protection/pre-defined-protection-policies.html["Políticas de replicação SnapMirror suportadas em sistemas ASA r2"] .
+Os sistemas ASA r2 suportam criptografia de hardware usando unidades de auto-criptografia (SEDs) e criptografia de software usando a tecnologia NetApp Volume Encryption (NVE). link:../secure-data/encrypt-data-at-rest.html["Saiba como aplicar criptografia de camada dupla"] para proteger os dados no seu sistema ASA r2.
 
 
 

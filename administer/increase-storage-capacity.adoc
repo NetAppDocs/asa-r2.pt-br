@@ -37,7 +37,7 @@ Você confirmou que sua nova unidade é suportada e você sabe o slot apropriado
 [[install-a-new-drive-on-the-asa-r2]]
 == Instale uma nova unidade no ASA R2
 
-O número mínimo de unidades que você deve adicionar em um único procedimento é seis. Adicionar uma única unidade pode reduzir o desempenho.
+O número mínimo de unidades que você deve adicionar em um único procedimento é três. Adicionar uma unidade única pode reduzir o desempenho.
 
 .Sobre esta tarefa
 Você deve repetir as etapas deste procedimento para cada unidade.

@@ -27,7 +27,7 @@ Você pode desativar a capacitação padrão durante ou após o período de car�
 +
 ** Para desativar durante o período de carência de 12 horas:
 +
-... Em *Anti-ransomware*, selecione *Don't enable* e depois selecione *Disable*.
+... Em *Anti-ransomware*, selecione *Não ativar* e, em seguida, selecione *Desativar*.
 
 
 ** Para desativar após o período de carência de 12 horas:
