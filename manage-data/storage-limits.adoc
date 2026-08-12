@@ -16,7 +16,10 @@ Para obter o melhor desempenho, configuração e suporte, você deve estar cient
 Os limites podem variar dependendo do seu sistema ASA r2 e da sua versão do ONTAP. Consulte link:https://hwu.netapp.com/["NetApp Hardware Universe"^] para obter a lista completa dos limites mais recentes para o seu sistema específico.
 
 
-NOTE: Os sistemas ASA r2 estão listados no NetApp Hardware Universe em *Produtos* como plataformas "ASA".
+NOTE: Os limites de máquinas virtuais (VMs) não estão listados no Hardware Universe. O número máximo recomendado de VMs por par de HA é 800 e por cluster é 1200 com base nos limites de volume do sistema ASA r2. Esse limite não se aplica a VMs residentes em datastores VMFS. Não há limite máximo para o número de VMs em datastores VMFS.
+
+.Sobre esta tarefa
+Os sistemas ASA r2 estão listados no NetApp Hardware Universe em *Produtos* como plataformas "ASA".
 
 .Passos
 . Acesse link:https://hwu.netapp.com["NetApp Hardware Universe"^].
