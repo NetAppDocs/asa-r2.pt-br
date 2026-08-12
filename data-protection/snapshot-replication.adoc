@@ -178,7 +178,7 @@ Seu plano de transferência deve ser de no mínimo 30 minutos para ser suportado
 
 
 .O que se segue?
-Agora que você criou uma política de replicação e um relacionamento, sua transferência de dados inicial começa conforme definido na política de replicação. Opcionalmente, você pode testar o failover de replicação para verificar se o failover bem-sucedido pode ocorrer se o sistema ASA R2 ficar offline.
+Agora que você criou uma relação de replicação, sua transferência de dados inicial começa conforme definido em sua política de replicação. Opcionalmente, você pode testar o failover da replicação para verificar se o failover ocorre com sucesso caso seu sistema ASA r2 fique offline.
 
 
 

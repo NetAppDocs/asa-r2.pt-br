@@ -38,7 +38,7 @@ Saiba mais sobre os novos recursos disponíveis no ONTAP 9.19.1 para sistemas AS
 | Atualização | Descrição 
 
 
-| Suporte aprimorado para failover automático de SAN LIF | O failover automático padrão de LIF é compatível com as LIFs iSCSI e NVMe/TCP. 
+| link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Suporte aprimorado para failover automático de SAN LIF"] | O failover automático padrão de LIF é compatível com LIFs IP e NVMe/TCP. 
 |===
 
 
