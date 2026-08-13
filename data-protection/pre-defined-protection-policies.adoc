@@ -4,7 +4,7 @@ permalink: data-protection/pre-defined-protection-policies.html
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
 summary: A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação. 
 ---
-= Saiba mais sobre as políticas de proteção de dados predefinidas do ONTAP
+= Saiba mais sobre as políticas de proteção de dados predefinidas para os sistemas ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ permalink: data-protection/policies-schedules.html
 keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
 summary: Use políticas e programações de proteção de dados para proteger os dados em um cronograma automatizado. 
 ---
-= Gerenciar políticas e programações de proteção de dados da ONTAP em sistemas de storage ASA R2
+= Gerencie as políticas e os cronogramas de proteção de dados nos sistemas ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

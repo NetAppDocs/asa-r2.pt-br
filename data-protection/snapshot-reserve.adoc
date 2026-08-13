@@ -4,7 +4,7 @@ permalink: data-protection/snapshot-reserve.html
 keywords: asa r2, snapshot reserve, percentage 
 summary: A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots. 
 ---
-= Saiba mais sobre a reserva de snapshots do ONTAP no armazenamento ASA r2.
+= Saiba mais sobre a reserva de snapshots do ONTAP em sistemas de armazenamento ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

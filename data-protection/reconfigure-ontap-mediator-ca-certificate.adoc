@@ -4,7 +4,7 @@ permalink: data-protection/reconfigure-ontap-mediator-ca-certificate.html
 keywords: asa r2, data protection, protect data, configure mediator, reconfigure, reinitialize, ontap mediator, cloud mediator, self-signed, ca, certificates 
 summary: Se você configurar o ONTAP Mediator ou o ONTAP Cloud Mediator com um certificado autoassinado, poderá reconfigurar o mediador para usar um certificado de terceiros.  Certificados de terceiros podem ser preferidos ou exigidos pela sua organização por motivos de segurança. 
 ---
-= Reconfigure o ONTAP Mediator ou o ONTAP Cloud Mediator para usar um certificado de terceiros em sistemas ASA r2
+= Reconfigure o Mediator para usar certificados de terceiro em sistemas ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
