@@ -38,7 +38,7 @@ vserver migrate show
 .Resultado
 Os dados estão sendo fornecidos aos seus clientes a partir da máquina virtual de armazenamento no seu cluster ASA r2.
 
-.O que vem a seguir?
+.O que se segue?
 Agora você está pronto para remover a VM de armazenamento do cluster ASA de origem.
 
 

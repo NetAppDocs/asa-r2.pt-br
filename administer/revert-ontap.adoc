@@ -13,9 +13,9 @@ summary: As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo pro
 [role="lead"]
 As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo processo de reversões para outros sistemas ONTAP .
 
-A reversão de um cluster ONTAP é disruptiva. Você deve deixar o cluster offline durante a reversão. Você não deve reverter um cluster de produção sem assistência do suporte técnico. Você pode reverter um cluster novo ou de teste sem assistência. Se a reversão de um sistema novo ou de teste falhar ou for concluída com sucesso, mas você não estiver satisfeito com o desempenho do cluster em seu ambiente de produção, entre em contato com o suporte técnico para obter assistência.
+Reverter um cluster ONTAP é um processo disruptivo. Você precisa colocar o cluster offline durante todo o período da reversão. Você não deve reverter um cluster de produção sem a assistência do suporte técnico. Você pode reverter um cluster novo ou de teste sem assistência. Se a reversão de um sistema novo ou de teste falhar ou se for concluída com sucesso, mas você não estiver satisfeito com o desempenho do cluster em seu ambiente de produção, você deve entrar em contato com o suporte técnico para obter assistência.
 
-link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Reverter um cluster ONTAP"] .
+Veja link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Reverter um cluster ONTAP"] o procedimento completo de reversão.
 
 
 

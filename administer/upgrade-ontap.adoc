@@ -15,7 +15,7 @@ Ao atualizar o software ONTAP no sistema ASA R2, você pode aproveitar os novos 
 
 As atualizações de software ONTAP para sistemas ASA r2 seguem o mesmo processo que as atualizações para outros sistemas ONTAP. Recomenda-se que você comece por link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Preparando-se para a sua atualização com Upgrade Advisor no Active IQ Digital Advisor ou Upgrade Health Checker"^].
 
-Após preparar a atualização, recomenda-se que você execute as atualizações usando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Atualização automatizada e sem interrupções (ANDU) do System Manager"^]. O ANDU aproveita a tecnologia de failover de alta disponibilidade (HA) do ONTAP para garantir que os clusters continuem a fornecer dados sem interrupção durante a atualização.
+Após preparar sua atualização, recomenda-se que você a execute usando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Atualização automatizada e sem interrupções (ANDU) do System Manager"^] o ANDU. O ANDU aproveita a tecnologia de failover de alta disponibilidade (HA) do ONTAP para garantir que os clusters continuem a fornecer dados sem interrupção durante a atualização.
 
 Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Atualizações de software ONTAP"^].
 
@@ -26,6 +26,6 @@ Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["At
 
 Não é necessário estar em processo de atualização do software ONTAP para executar as verificações prévias à atualização automatizada do ONTAP. Executar essas verificações independentemente do processo de atualização automatizada do ONTAP permite visualizar quais verificações são realizadas no seu cluster e fornece uma lista de quaisquer erros ou avisos que devem ser corrigidos antes de iniciar a atualização propriamente dita.
 
-A partir do ONTAP 9.19.1, erros e avisos são exibidos separadamente para ajudar você a identificar facilmente problemas que precisam ser resolvidos antes de você atualizar.
+A partir do ONTAP 9.19.1, erros e avisos são exibidos separadamente para ajudar você a identificar facilmente problemas que precisam ser resolvidos antes de você realizar a atualização.
 
 Saiba como link:https://docs.netapp.com/us-en/ontap/upgrade/automated-pre-checks.html["executar verificações automatizadas de pré-atualização do ONTAP"^].

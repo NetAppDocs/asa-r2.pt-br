@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/space-balancing.html 
 keywords: capacity, space, rebalancing, balanced, placement, balance, asa r2 
-summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+summary: Para sistemas ASA r2, o ONTAP utiliza posicionamento balanceado, balanceamento dinâmico de espaço ou rebalanceamento de carga de trabalho baseado em cópias para manter a utilização do storage equilibrada entre as zonas de disponibilidade de storage. 
 ---
 = Saiba mais sobre balanceamento de capacidade do ONTAP em um cluster ASA r2.
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Talvez seja necessário renomear um nó para alinhar com as convençõe
 
 
 [role="lead"]
-Para sistemas ASA r2, o ONTAP utiliza o _posicionamento balanceado_ para alocar automaticamente as unidades de armazenamento recém-criadas na melhor zona de disponibilidade de armazenamento, visando o desempenho ideal e a utilização equilibrada do espaço de armazenamento.  Se você estiver executando o ONTAP 9.17.1 ou posterior, o espaço consumido pelas unidades de armazenamento existentes será balanceado usando o _balanceamento dinâmico de espaço_.  Se você estiver executando o ONTAP 9.16.1, o espaço consumido pelas unidades de armazenamento existentes será balanceado usando o _rebalanceamento de carga de trabalho baseado em cópia_.
+Para sistemas ASA r2, o ONTAP utiliza o _posicionamento balanceado_ para alocar automaticamente unidades de storage recém-criadas na melhor zona de disponibilidade de storage, garantindo desempenho ideal e utilização equilibrada do storage. Se você estiver executando o ONTAP 9.17.1 ou posterior, o espaço consumido pelas unidades de storage existentes é balanceado utilizando o _balanceamento dinâmico de espaço_. Se você estiver executando o ONTAP 9.16.1, o espaço consumido pelas unidades de storage existentes é balanceado utilizando o _rebalanceamento de carga de trabalho baseado em cópia_.
 
 [cols="2"]
 |===
@@ -27,10 +27,10 @@ Para sistemas ASA r2, o ONTAP utiliza o _posicionamento balanceado_ para alocar 
 | Rebalanceamento de carga de trabalho baseado em cópias | Somente ONTAP 9.16.1 
 |===
 .Posicionamento equilibrado
-Com o recurso de _posicionamento balanceado_, as unidades de armazenamento recém-criadas são automaticamente posicionadas na zona de melhor disponibilidade de armazenamento para otimizar o desempenho e o uso equilibrado do espaço.  O posicionamento balanceado está ativado por padrão no ONTAP 9.16.1 e versões posteriores.
+Com o _posicionamento balanceado_, as unidades de storage recém-criadas são automaticamente alocadas na melhor zona de disponibilidade de storage para otimizar o desempenho e a utilização do storage. O posicionamento balanceado está habilitado por padrão no ONTAP 9.16.1 e versões posteriores.
 
 .Equilíbrio espacial dinâmico
-Com o _balanceamento dinâmico de espaço_, o ONTAP monitora ativamente a quantidade de espaço livre no cluster e move automaticamente as unidades de armazenamento dentro das zonas de disponibilidade de armazenamento para manter a utilização equilibrada do espaço.  Um aviso do EMS é emitido automaticamente se a utilização da capacidade em todo o cluster atingir 80% e um alerta do EMS é emitido automaticamente se atingir 90%.
+Com o balanceamento dinâmico de espaço, o ONTAP monitora ativamente a quantidade de espaço livre no cluster e move automaticamente as unidades de storage dentro das zonas de disponibilidade de storage para manter a utilização do espaço equilibrada. Um aviso do Event Management System (EMS) é emitido automaticamente se a utilização da capacidade em todo o cluster atingir 80% e um alerta do EMS é emitido automaticamente se atingir 90%.
 
 O balanceamento dinâmico de espaço é ativado por padrão 14 dias após a atualização ou instalação do ONTAP 9.17.1 ou posterior.  Caso precise modificar o período de ativação padrão de 14 dias, entre em contato com o Suporte da NetApp .  Não é possível reverter da ONTAP 9.17.1 após a ativação do balanceamento dinâmico de espaço.
 

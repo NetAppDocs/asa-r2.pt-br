@@ -161,7 +161,7 @@ O TLS criptografa todos os dados enviados pela rede entre seus hosts NVMe/TCP e 
 
 .. Selecione *Adicionar iniciador* para adicionar mais iniciadores.
 +
-Formate o NQN do host como <nqn.yyyy-mm> seguido por um nome de domínio totalmente qualificado.  O ano deve ser igual ou posterior a 1970.  O comprimento máximo total deve ser 223.  Um exemplo de um iniciador NVMe válido é nqn.2014-08.com.example:string
+Formate o NQN do host como <nqn.yyyy-mm> seguido por um domínio totalmente qualificado. O ano deve ser igual ou posterior a 1970. O comprimento máximo total deve ser 223. Um exemplo de um iniciador NVMe válido é nqn.2014-08.com.example:string.
 
 
 

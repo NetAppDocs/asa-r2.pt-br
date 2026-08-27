@@ -11,9 +11,9 @@ summary: Crie grupos de hosts para fornecer aos hosts acesso às unidades de arm
 
 
 [role="lead"]
-Em um sistema ASA R2, um _grupo de hosts_ é o mecanismo usado para dar aos hosts acesso a unidades de armazenamento. Um grupo de hosts se refere a um iggroup para hosts SCSI ou a um subsistema NVMe para hosts NVMe. Um host só pode ver as unidades de armazenamento mapeadas para os grupos de hosts aos quais pertence. Quando um grupo de hosts é mapeado para uma unidade de armazenamento, os hosts que são membros do grupo são então capazes de montar (criar diretórios e estruturas de arquivo) a unidade de armazenamento.
+Em um sistema ASA r2, um _grupo de hosts_ é o mecanismo usado para conceder acesso dos hosts às unidades de armazenamento. Um grupo de hosts refere-se a um igroup para hosts SCSI ou a um subsistema NVMe para hosts NVMe. Um host só pode ver as unidades de armazenamento mapeadas para os grupos de hosts aos quais pertence. Quando um grupo de hosts é mapeado para uma unidade de armazenamento, os hosts que são membros do grupo podem então montar (criar diretórios e estruturas de arquivos em) a unidade de armazenamento.
 
-Os grupos de hosts são criados automaticamente ou manualmente quando você cria suas unidades de storage. Opcionalmente, você pode usar as etapas a seguir para criar grupos de hosts antes ou depois da criação da unidade de armazenamento.
+Os grupos de hosts são criados automaticamente ou manualmente quando você cria suas unidades de storage. Opcionalmente, você pode usar as etapas a seguir para criar grupos de hosts antes ou depois da criação da unidade de storage.
 
 .Passos
 . No System Manager, selecione *Host*.

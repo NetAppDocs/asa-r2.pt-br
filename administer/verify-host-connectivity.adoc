@@ -20,7 +20,7 @@ O status de conetividade do host é indicado ao lado do nome do grupo de hosts d
 
 +
 ** *OK*: Indica que todos os iniciadores estão conetados a ambos os nós.
-** *Parcialmente conetado*: Indica que alguns dos iniciadores não estão conetados ambos os nós.
+** *Parcialmente Conectado*: Indica que alguns dos iniciadores não estão conectados a ambos os nós.
 ** *Nenhum conetado*: Indica que nenhum iniciador está conetado.
 
 

@@ -62,8 +62,8 @@ em seguida, image:icon_dropdown_arrow.gif["seta azul apontando na direção para
 . Selecione *Guardar*.
 
 
-.O que vem a seguir
-Agora que seus dados estão protegidos com snapshots, você deve link:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"]copiar seus grupos de consistência para um local geograficamente remoto para backup e recuperação de desastres.
+.O que se segue?
+Agora que seus dados estão protegidos com snapshots, você deve link:snapshot-replication.html["configurar a replicação de instantâneos"] copiar seus grupos de consistência para um local geograficamente remoto para backup e recuperação de desastres.
 
 
 

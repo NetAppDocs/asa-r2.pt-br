@@ -11,14 +11,14 @@ summary: Use o System Manager para configurar o acesso do controlador de domíni
 
 
 [role="lead"]
-Use o System Manager para configurar o acesso do controlador de domínio do diretório ativo, a autenticação LDAP e SAML para suas contas de usuário. Crie funções de conta de usuário para definir funções específicas que os usuários atribuídos às funções podem executar no cluster.
+Use o System Manager para configurar o acesso ao controlador de domínio do Active Directory, autenticação LDAP e SAML para suas contas de usuário. Crie funções de conta de usuário para definir funções específicas que os usuários atribuídos a essas funções podem executar em seu cluster.
 
 
 
 [[configure-active-directory-domain-controller-access]]
-== Configurar o acesso do controlador de domínio do diretório ativo
+== Configurar o acesso do controlador de domínio do Active Directory
 
-Configure o acesso do controlador de domínio do ative Directory (AD) ao cluster ou à VM de armazenamento para que você possa habilitar o acesso à conta do AD.
+Configure o acesso do controlador de domínio do Active Directory (AD) ao seu cluster ou máquina virtual de armazenamento para que você possa habilitar o acesso à conta do AD.
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
@@ -64,7 +64,7 @@ Consulte a documentação do IDP para obter a configuração.
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Em *Segurança*, ao lado de *autenticação SAML*, image:icon_gear_white_bg.png["contorno azul de uma engrenagem mecânica"]selecione .
+. Em *Segurança*, ao lado de *autenticação SAML*, selecione image:icon_gear_white_bg.png["contorno azul de uma engrenagem mecânica"].
 . Selecione *Ativar autenticação SAML*.
 . Insira o URL do IDP e o endereço IP do sistema host; em seguida, selecione *Salvar*.
 +
@@ -115,7 +115,7 @@ Crie uma conta de usuário administrador para permitir que o usuário da conta e
 . Em *Users*, image:icon_add_blue_bg.png["retângulo azul contendo um sinal de adição seguido da palavra adicionar em letras brancas"]selecione .
 . Introduza um nome de utilizador e, em seguida, selecione uma função a atribuir ao utilizador.
 . Selecione o método de login do usuário e o método de autenticação.
-. Para ativar o MFA, image:icon_add.gif["sinal de adição seguido pela palavra adicionar em letras azuis"]selecione ; em seguida, selecione um método de login secundário e um método de autenticação
+. Para ativar a MFA, selecione image:icon_add.gif["sinal de adição seguido pela palavra adicionar em letras azuis"]; em seguida, selecione um método de login secundário e método de autenticação.
 . Introduza uma palavra-passe para o utilizador.
 . Selecione *Guardar*.
 

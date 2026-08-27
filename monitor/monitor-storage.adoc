@@ -30,7 +30,7 @@ A taxa de redução de dados representa a quantidade de espaço economizado com 
 
 
 .O que se segue?
-Se o cluster estiver com pouco espaço ou se não tiver capacidade para atender a uma demanda futura, você deve Planejar link:../administer/increase-storage-capacity.html["adicionar novas unidades"]seu sistema ASA R2 para aumentar a capacidade de storage.
+Se o seu cluster estiver com pouco espaço ou não tiver capacidade para atender à demanda futura, link:../administer/increase-storage-capacity.html["adicionar novas unidades"] ao seu sistema ASA r2 para aumentar a sua capacidade de storage.
 
 
 
@@ -50,7 +50,7 @@ Um resumo da utilização da zona de disponibilidade de storage é exibido para 
 
 . Se você quiser métricas mais detalhadas, selecione uma disponibilidade de armazenamento específica.
 +
-Em *Visão geral*, a capacidade da zona de disponibilidade de armazenamento, a quantidade de espaço usado e a taxa de redução de dados são exibidos.
+Em *Visão geral*, a capacidade da zona de disponibilidade de storage, a quantidade de espaço utilizado e a taxa de redução de dados são exibidas.
 
 +
 Em *Unidades de armazenamento*, é exibida uma lista de todas as unidades de armazenamento na zona de disponibilidade de storage.
@@ -58,7 +58,7 @@ Em *Unidades de armazenamento*, é exibida uma lista de todas as unidades de arm
 
 
 .O que se segue?
-Se a sua zona de disponibilidade de storage estiver com pouco espaço, você deve planejar link:../manage-data/move-storage-units.html["mova as unidades de armazenamento"] para outra zona de disponibilidade de storage para equilibrar a utilização do storage em todo o cluster, excluir snapshots para liberar espaço ou adicionar discos adicionais aos seus nós para aumentar a capacidade.
+Se a sua zona de disponibilidade de storage estiver com pouco espaço, link:../manage-data/move-storage-units.html["mova as unidades de armazenamento"] para outra zona de disponibilidade de storage para equilibrar a utilização do storage em todo o cluster, exclua snapshots para liberar espaço ou adicione discos adicionais aos seus nós para aumentar a capacidade.
 
 
 
@@ -76,7 +76,7 @@ Monitore a quantidade de storage consumida por uma unidade de storage para que v
 ** Quantidade de espaço usado
 ** Relação de redução de dados
 +
-A taxa de redução de dados representa a quantidade de espaço economizado com a eficiência de storage
+A taxa de redução de dados representa a quantidade de espaço economizado com a eficiência de storage.
 
 ** Instantâneo utilizado
 +

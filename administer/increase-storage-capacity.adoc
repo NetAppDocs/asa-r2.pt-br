@@ -57,7 +57,7 @@ Certifique-se de que fecha lentamente a pega do excêntrico de forma a que fique
 
 . Verifique se o LED de atividade da unidade (verde) está aceso.
 +
-** SE o LED estiver sólido, a unidade tem energia.
+** Se o LED estiver aceso continuamente, a unidade está recebendo energia.
 ** Se o LED estiver piscando, a unidade tem energia e e/S está em andamento. O LED também piscará se o firmware da unidade estiver sendo atualizado.
 +
 O firmware da unidade é atualizado automaticamente (sem interrupções) em novas unidades que não tenham versões de firmware atuais.

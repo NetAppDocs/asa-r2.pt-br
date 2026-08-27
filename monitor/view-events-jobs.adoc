@@ -11,7 +11,7 @@ summary: Use o Gerenciador de sistema do ONTAP para exibir uma lista de erros ou
 
 
 [role="lead"]
-Use o Gerenciador de sistema do ONTAP para exibir uma lista de erros ou alertas que ocorreram em seu sistema, juntamente com as ações corretivas recomendadas. Também pode visualizar registos de auditoria do sistema e uma lista de trabalhos ativos, concluídos ou com falha.
+Utilize o ONTAP System Manager para visualizar uma lista de erros ou alertas, ações corretivas recomendadas, registros de auditoria do sistema e trabalhos ativos, concluídos ou com falha.
 
 .Passos
 . No System Manager, selecione *Eventos e trabalhos*.
@@ -67,4 +67,4 @@ Configure o sistema para enviar uma notificação para endereços de e-mail espe
 
 
 .Resultado
-O endereço de e-mail que você adicionou receberá agora as notificações de e-mail especificadas para eventos de cluster e logs de auditoria.
+O endereço de e-mail que você adicionou recebe as notificações por e-mail especificadas para eventos do cluster e registros de auditoria.

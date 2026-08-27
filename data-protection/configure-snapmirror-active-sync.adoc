@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/configure-snapmirror-active-sync.html 
-keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, disaster recovery, symmetric active active 
 summary: Aprenda a configurar a sincronização ativa do SnapMirror para garantir a continuidade dos negócios criando uma cópia de dados secundária e habilitando o failover automático em caso de desastre. 
 ---
 = Configurar a sincronização ativa do SnapMirror em sistemas ASA r2

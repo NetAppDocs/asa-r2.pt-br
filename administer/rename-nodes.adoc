@@ -11,7 +11,7 @@ summary: Talvez seja necessário renomear um nó para alinhar com as convençõe
 
 
 [role="lead"]
-Você pode usar o Gerenciador de sistema do ONTAP para renomear um nó no sistema ASA R2. Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos.
+Você pode usar o System Manager para renomear um nó no seu sistema ASA r2 para alinhá-lo às convenções de nomenclatura da sua organização ou por outros motivos administrativos.
 
 .Passos
 . No System Manager, selecione *Cluster > Overview*.

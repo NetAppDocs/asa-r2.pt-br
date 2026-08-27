@@ -13,7 +13,7 @@ summary: Visualize os insights no Gerenciador de sistemas do ONTAP para identifi
 [role="lead"]
 Veja _Insights_ no Gerenciador de sistemas do ONTAP para identificar as práticas recomendadas e modificações de configuração que você pode implementar em seu sistema ASA R2 para otimizar a segurança e o desempenho do cluster.
 
-Por exemplo, suponha que você tenha servidores NTP (Network Time Protocol) configurados para o cluster. No entanto, você não sabe que você tem menos do que o número recomendado de servidores NTP necessários para o gerenciamento ideal do tempo de cluster. Para ajudá-lo a evitar problemas que podem ocorrer quando a hora do cluster é imprecisa, o Insights irá notificá-lo de que você tem poucos servidores NTP configurados e lhe dará opções para saber mais sobre esse problema, corrigi-lo ou descartá-lo.
+Por exemplo, suponha que você tenha servidores NTP (Network Time Protocol) configurados para o seu cluster. No entanto, você não sabe que possui menos servidores NTP do que o recomendado para um gerenciamento ideal do tempo do cluster. Para ajudar você a evitar problemas que podem ocorrer quando o tempo do cluster está impreciso, o Insights notifica que você tem poucos servidores NTP configurados e oferece opções para saber mais sobre o problema, corrigi-lo ou ignorá-lo.
 
 image:insights.png["captura de tela da página de insights do gerenciador de sistema"]
 

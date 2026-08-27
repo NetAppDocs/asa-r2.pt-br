@@ -36,21 +36,21 @@ Os pré-requisitos para peering de cluster são os mesmos para sistemas ASA r2 e
 .Passos
 . No cluster local, no System Manager, selecione *Cluster > Settings*.
 . Em *Intercluster Settings* ao lado de *Cluster Peers* image:icon_kabob.gif["três pontos azuis verticais"]selecione e, em seguida, selecione *Add a cluster peer*.
-. Selecione *Lauch Remote cluster*; isso gera uma senha que você usará para autenticar com o cluster remoto.
+. Selecione *Iniciar cluster remoto*; isso gera uma senha que você usará para autenticar com o cluster remoto.
 . Depois que a frase-passe do cluster remoto for gerada, cole-a em *Passphrase* no cluster local.
 . image:icon_add.gif["sinal de mais azul seguido da palavra adicionar em letras azuis"]Selecione ; em seguida, introduza o endereço IP da interface de rede entre clusters.
 . Selecione *Iniciar peering de cluster*.
 
 
 .O que se segue?
-Você fez um pedido para o cluster ASA R2 local com um cluster remoto. Agora você pode criar uma relação de replicação.
+Você estabeleceu o emparelhamento do seu ASA r2 local com um cluster remoto. Agora você pode criar uma relação de replicação.
 
 
 
 [[step-2-optionally-create-a-custom-replication-policy]]
 == Etapa 2: Opcionalmente, crie uma política de replicação personalizada
 
-A política de replicação define quando as atualizações executadas no cluster ASA r2 são replicadas para o site remoto.  O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação.  Se as políticas predefinidas não atenderem às suas necessidades, você poderá criar uma política de replicação personalizada.
+A política de replicação define quando as atualizações realizadas no cluster ASA r2 são replicadas para o local remoto. O ONTAP inclui várias políticas de proteção de dados predefinidas que você pode usar para seus relacionamentos de replicação. Se as políticas predefinidas não atenderem às suas necessidades, você pode criar uma política de replicação personalizada.
 
 Aprenda sobrelink:pre-defined-protection-policies.html["políticas de proteção de dados ONTAP predefinidas"] .
 

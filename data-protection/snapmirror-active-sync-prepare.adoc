@@ -76,5 +76,5 @@ Um grupo de consistência pode ser mapeado com vários subsistemas, mas cada sub
 * link:https://docs.netapp.com/us-en/ontap/san-admin/microsoft-offloaded-data-transfer-odx-concept.html["Transferência de dados descarregados da Microsoft (ODX)"]
 
 
-.O que vem a seguir?
+.O que se segue?
 Depois de concluir a preparação necessária para habilitar a sincronização ativa do SnapMirror , você deve link:snapmirror-active-sync-confirm-cluster-configuration.html["confirme a configuração do seu cluster"] .

@@ -11,7 +11,7 @@ summary: Use snapshots à prova de violação para proteger seus dados. Os snaps
 
 
 [role="lead"]
-O ONTAP SnapLock é uma solução de conformidade de alto desempenho para organizações que utilizam armazenamento WORM para reter arquivos em formato não modificado para fins regulatórios e de governança. Você pode executar o SnapLock nos modos Compliance ou Enterprise, que oferecem diferentes níveis de proteção de dados WORM. Os modos SnapLock Compliance e Enterprise não são suportados em clusters primários em ambientes SAN, mas você pode habilitar o SnapLock for SnapVault em seus sistemas secundários para proteger snapshots secundários contra exclusão acidental ou maliciosa.
+O ONTAP SnapLock é uma solução de conformidade de alto desempenho para organizações que utilizam storage WORM para reter arquivos em formato não modificado para fins regulatórios e de governança. Você pode executar o SnapLock nos modos Compliance ou Enterprise, que oferecem diferentes níveis de proteção de dados WORM. Os modos SnapLock Compliance e Enterprise não são suportados em clusters primários em ambientes SAN, mas você pode habilitar o SnapLock for SnapVault em seus sistemas secundários para proteger snapshots secundários contra exclusão acidental ou maliciosa.
 
 O SnapLock Compliance Clock deve ser inicializado para proteger os snapshots em seus sistemas secundários com SnapLock for SnapVault.
 

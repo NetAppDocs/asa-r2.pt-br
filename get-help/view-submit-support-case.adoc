@@ -11,11 +11,11 @@ summary:
 
 
 [role="lead"]
-Se você tiver um problema que exija assistência, use o Gerenciador de sistemas do ONTAP para enviar um caso para o suporte técnico. Você também pode usar o Gerenciador do sistema do ONTAP para exibir casos fechados ou em andamento.
+Se você tiver um problema que exija assistência, use o ONTAP System Manager para enviar uma solicitação ao suporte técnico ou para visualizar casos que foram fechados ou estão em andamento.
 
 Você precisa estar link:https://docs.netapp.com/us-en/active-iq/task_login_activeiq.html["Registrado no Active IQ"^] para visualizar os casos de suporte do seu sistema ASA r2.
 
 .Passos
-. Para enviar um caso de suporte, no Gerenciador de sistema, selecione *Cluster >Support*; em seguida, selecione *vá para o suporte NetApp*.
-. Para visualizar um caso submetido anteriormente, no System Manager, selecione *Cluster >Support*; em seguida, selecione *View my Cases*.
+. Para enviar uma solicitação de suporte, no System Manager, selecione *Cluster > Suporte*; em seguida, selecione *Ir para NetApp Support*.
+. Para visualizar um caso previamente submetido, no System Manager, selecione *Cluster > Suporte*; em seguida, selecione *Visualizar meus casos*.
 

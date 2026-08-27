@@ -11,7 +11,7 @@ summary: Como os sistemas ASA r2 executam uma versão simplificada do ONTAP, mui
 
 
 [role="lead"]
-Como os sistemas ASA r2 executam uma versão simplificada do ONTAP, muitas tarefas comuns do ONTAP e funções do System Manager são executadas da mesma forma nos sistemas ASA r2 e em outros sistemas ONTAP .
+Como os sistemas ASA r2 executam uma versão simplificada do ONTAP, você realiza muitas tarefas comuns do ONTAP e funções do System Manager da mesma forma que em outros sistemas ONTAP.
 
 Para obter mais informações sobre recursos e funções comuns, consulte a seguinte documentação do ONTAP .
 
@@ -27,7 +27,7 @@ Saiba mais sobre os recursos comuns de proteção de dados compatíveis com os s
 [[clustered-external-key-servers]]
 === Servidores de chave externa agrupados
 
-Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento. Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento. Ao registrar chaves, o ONTAP primeiro tentará acessar um servidor de chaves primário antes de tentar acessar sequencialmente os servidores secundários até que a operação seja concluída com sucesso, evitando a duplicação de chaves.
+Você pode configurar a conectividade com servidores de gerenciamento de chaves externas em cluster em uma máquina virtual de armazenamento. Com servidores de chaves em cluster, você pode designar servidores de chaves primários e secundários em uma máquina virtual de armazenamento. Ao registrar chaves, o ONTAP primeiro tenta um servidor de chaves primário e, em seguida, tenta sequencialmente os servidores secundários até que a operação seja bem-sucedida, evitando chaves duplicadas.
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Aprenda a configurar servidores de chaves externas em cluster."^].
 
@@ -107,7 +107,7 @@ Saiba mais sobre os recursos de rede comuns suportados nos sistemas ASA r2.
 [[fips-compliance]]
 === Conformidade com o FIPS
 
-O ONTAP está em conformidade com o padrão FIPS 140-2 (Federal Information Processing Standards) para todas as conexões SSL.  Você pode ativar e desativar o modo SSL FIPS, definir protocolos SSL globalmente e desativar quaisquer cifras fracas, como RC4, dentro do ONTAP.
+ONTAP está em conformidade com o Federal Information Processing Standards (FIPS) 140-2 para todas as conexões SSL. Você pode ativar e desativar o modo SSL FIPS, definir protocolos SSL globalmente e desativar quaisquer cifras fracas, como RC4, dentro do ONTAP.
 
 A partir da versão 9.18.1 do ONTAP , os algoritmos criptográficos de computação pós-quântica são suportados para SSL.  Esses algoritmos fornecem proteção adicional contra possíveis ataques futuros de computação quântica e estão disponíveis quando o modo SSL FIPS está desativado.
 
@@ -135,7 +135,7 @@ Saiba mais sobre os recursos de desempenho comuns suportados nos sistemas ASA r2
 [[modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases]]
 === Modifique as configurações padrão que controlam os aumentos automáticos do teto de taxa de transferência do QoS
 
-Os grupos de políticas de QoS adaptativas e não adaptativas são ativados automaticamente para aumentar temporariamente o limite de throughput de uma carga de trabalho em 50% por 1 segundo para responder a demandas de curto prazo por maior desempenho por padrão. A partir do ONTAP 9.19.1, é possível modificar essas configurações padrão. No ONTAP 9.18.1 e anteriores, essas configurações não podem ser alteradas.
+Os grupos de políticas de QoS adaptativas e não adaptativas aumentam temporariamente o limite de throughput de uma carga de trabalho em 50% por 1 segundo, por padrão, para atender a demandas de curto prazo por maior desempenho. A partir do ONTAP 9.19.1, você pode modificar essas configurações. No ONTAP 9.18.1 e versões anteriores, não é possível alterá-las.
 
 link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["Saiba mais sobre os limites de taxa de transferência do QoS"^].
 
@@ -204,13 +204,13 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 [[global-deduplication]]
 === Desduplicação global
 
-A partir do ONTAP 9.19.1, a _deduplicação global_ estende link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["economias de espaço de deduplicação ONTAP existentes"^] no nível da unidade de armazenamento para toda a Storage Availability Zone (SAZ). Ao eliminar blocos de dados duplicados em todas as unidades de armazenamento da SAZ, a eficiência de storage pode ser significativamente melhorada e o custo de propriedade reduzido. A deduplicação global não requer licença de recurso, está habilitada por padrão, integra-se perfeitamente com as tecnologias de eficiência de storage existentes e opera de forma transparente, com impacto mínimo no desempenho e sem a necessidade de configuração administrativa.
+A partir do ONTAP 9.19.1, a _deduplicação global_ estende link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["economias de espaço de deduplicação ONTAP existentes"^] no nível da unidade de storage para toda a zona de disponibilidade de storage (SAZ). Ao eliminar blocos de dados duplicados em todas as unidades de storage na SAZ, a eficiência de storage pode ser significativamente melhorada e o custo de propriedade reduzido. A deduplicação global não requer licença de recurso, está habilitada por padrão, integra-se perfeitamente com as tecnologias de eficiência de storage existentes e opera de forma transparente, com impacto mínimo no desempenho e sem a necessidade de configuração administrativa.
 
 
 
 [[system-manager]]
 == System Manager
 
-Você pode pesquisar diversas ações, objetos e tópicos de informação no Gerenciador de Sistemas.  Você também pode pesquisar dados da tabela para entradas específicas.
+Você pode pesquisar diversas ações, objetos e tópicos de informação no System Manager. Você também pode pesquisar dados de tabela para encontrar entradas específicas.
 
 link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Aprenda a pesquisar, filtrar e classificar informações no Gerenciador de Sistemas."^].

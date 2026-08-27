@@ -11,7 +11,7 @@ summary: Aprenda como modificar os períodos de retenção de snapshots do ARP p
 
 
 [role="lead"]
-Se a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) detectar atividade anormal em uma ou mais unidades de armazenamento do seu sistema ASA r2, ela criará automaticamente um snapshot ARP para proteger os dados da unidade de armazenamento. Dependendo da sua capacidade de armazenamento e dos requisitos de negócios para seus dados, você pode aumentar ou diminuir o período de retenção padrão do snapshot ARP. Por exemplo, você pode aumentar o período de retenção para aplicativos críticos para os negócios, de modo que, se necessário, tenha períodos de retenção mais longos para recuperação de dados, ou pode diminuir o período de retenção para aplicativos não críticos, economizando espaço de armazenamento.
+Se a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) detectar atividade anormal em uma ou mais unidades de armazenamento no seu ASA r2, ela criará automaticamente um snapshot ARP para proteger os dados. Dependendo da sua capacidade de storage e dos requisitos do seu negócio, você pode querer aumentar ou diminuir o período de retenção padrão do snapshot ARP. Por exemplo, você pode aumentar o período de retenção para aplicativos críticos para os negócios, para oferecer janelas de recuperação de dados mais longas, ou diminuí-lo para aplicativos não críticos para economizar espaço de storage.
 
 O período de retenção padrão para o snapshot do ARP varia dependendo da ação que você toma em resposta à atividade anormal.
 
@@ -28,4 +28,4 @@ O período de retenção padrão para o snapshot do ARP varia dependendo da aç�
 
 | Não tome medidas imediatas | 10 dias 
 |===
-Os períodos de retenção padrão podem ser modificados usando a interface de linha de comando (CLI) do ONTAP . Veja  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modificar opções para snapshots automáticos do ONTAP"] para saber as etapas para alterar o período de retenção padrão.
+Você pode modificar os períodos de retenção padrão usando a interface de linha de comando do ONTAP (CLI). Consulte  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modificar opções para snapshots automáticos do ONTAP"] para ver as etapas para alterar o período de retenção padrão.

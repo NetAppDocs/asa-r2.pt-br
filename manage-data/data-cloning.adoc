@@ -15,7 +15,7 @@ searchtitle: Clonagem de dados usando o ONTAP System Manager | ASA R2
 
 
 [role="lead"]
-A clonagem de dados cria cópias de unidades de storage e grupos de consistência no sistema ASA R2 usando o Gerenciador de sistemas do ONTAP que pode ser usado para desenvolvimento de aplicações, testes, backups, migração de dados ou outras funções administrativas.
+A clonagem de dados cria cópias de unidades de storage e grupos de consistência no seu ASA r2. Você pode usar as cópias para desenvolvimento de aplicativos, testes, backups, migração de dados e outras funções administrativas.
 
 
 
@@ -43,7 +43,7 @@ Um novo snapshot é criado para o clone por padrão.
  a| 
 Use um instantâneo existente
  a| 
-.. Em *Snapshot to clone*, selecione *Use an existing snaphot*.
+.. Em *Snapshot to clone*, selecione *Use an existing snapshot*.
 .. Selecione o instantâneo que deseja usar para o clone.
 
 
@@ -62,7 +62,7 @@ Crie um novo grupo de hosts
 Adicione um novo host
  a| 
 .. Em *Host mapping*, selecione *New hosts*.
-.. Insira o nome a para o novo host; em seguida, selecione *FC* ou *iSCSI*.
+.. Insira um nome para o novo host; em seguida, selecione *FC* ou *iSCSI*.
 .. Selecione os iniciadores do host na lista de iniciadores existentes ou selecione *Adicionar* para adicionar novos iniciadores para o host.
 
 
@@ -126,7 +126,7 @@ Crie um novo grupo de hosts
 Adicione um novo host
  a| 
 .. Em *Host mapping*, selecione *New hosts*.
-.. Introduza o nome do novo nome de anfitrião; em seguida, selecione *FC* ou *iSCSI*.
+.. Insira um nome para o novo host; em seguida, selecione *FC* ou *iSCSI*.
 .. Selecione os iniciadores do host na lista de iniciadores existentes ou selecione *Adicionar iniciador* para adicionar novos iniciadores para o host.
 
 
@@ -162,7 +162,7 @@ Quando você divide um clone de grupo de consistência, dissocia o clone do grup
 
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.
-. Passe o Mouse sobre o clone do grupo de consistência que você deseja dividir.
+. Passe o cursor sobre o clone do grupo de consistência que você deseja dividir.
 . Selecione *Split clone*.
 . Selecione *Split*.
 

@@ -25,7 +25,7 @@ Reúna as seguintes informações:
 
 .Passos
 . No System Manager, selecione *Cluster > Overview*.
-. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ao lado do nó que deseja ingressar no cluster; em seguida, selecione *Adicionar nó*
+. Selecione image:icon_kabob.gif["três pontos azuis verticais"] ao lado do nó que você deseja adicionar ao cluster; em seguida, selecione *Adicionar nó*.
 . Introduza o endereço IP de cada nó.
 . Introduza o endereço IP da interface de rede entre clusters, a máscara de sub-rede e o gateway.
 . Se você quiser configurar o gerenciador de chaves integrado (OKM), insira a senha OKM.

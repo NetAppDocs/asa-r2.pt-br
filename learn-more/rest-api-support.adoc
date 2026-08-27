@@ -21,7 +21,7 @@ A API REST do ASA R2 é baseada na API REST fornecida com a personalidade ONTAP 
 [[types-of-api-changes]]
 == Tipos de alterações de API
 
-Há vários tipos de diferenças entre a API REST do sistema ASA R2 e a API REST ONTAP unificada disponível nos sistemas FAS, AFF e ASA. Entender os tipos de alterações ajudará você a utilizar melhor a documentação de referência de API on-line.
+Existem diversas diferenças entre a ASA r2 API REST e a API REST unificada do ONTAP disponível nos sistemas FAS, AFF e ASA. Compreender essas mudanças ajudará você a usar a documentação de referência da API online com mais eficiência.
 
 .Novos endpoints do ASA R2 não suportados no Unified ONTAP
 Vários endpoints foram adicionados à API REST do ASA R2 que não estão disponíveis com o Unified ONTAP.
@@ -34,7 +34,7 @@ Como outro exemplo, os pontos de extremidade *Storage-Units* fornecem uma visual
 Vários endpoints disponíveis com o ASA R2 têm restrições sobre as quais os métodos HTTP podem ser usados em comparação com o Unified ONTAP. Por exemplo, POST e DELETE não são permitidos ao usar o endpoint `/api/protocols/nvme/services` com sistemas ASA R2.
 
 .Alterações de propriedade para um endpoint e método HTTP
-Algumas combinações de terminais e métodos do sistema ASA R2 não suportam todas as propriedades definidas disponíveis na personalidade unificada do ONTAP. Por exemplo, ao USAR PATCH com o endpoint `/api/storage/volumes/{uuid}`, várias propriedades não são suportadas com o ASA R2, incluindo:
+Algumas combinações de endpoint e método do ASA r2 não suportam todas as propriedades definidas para a personalidade unificada do ONTAP. Por exemplo, ao usar PATCH com o endpoint `/api/storage/volumes/{uuid}`, diversas propriedades não são suportadas pelo ASA r2, incluindo:
 
 * `autosize.maximum`
 * `autosize.minimum`
@@ -49,7 +49,7 @@ Há várias alterações na forma como o ASA R2 processa determinadas solicitaç
 [[enhanced-security-with-oauth-2-0]]
 == Segurança aprimorada com o OAuth 2,0
 
-OAuth 2,0 é o quadro de autorização padrão da indústria. Ele é usado para restringir e controlar o acesso a recursos protegidos com base em tokens de acesso assinados. Você pode configurar o OAuth 2,0 usando o Gerenciador de sistema para proteger os recursos do sistema ASA R2.
+O OAuth 2.0 é o padrão do setor de autorização. Ele é usado para restringir e controlar o acesso a recursos protegidos com base em tokens de acesso assinados. Você pode configurar o OAuth 2.0 usando o System Manager para proteger os recursos do sistema ASA r2.
 
 Depois que o OAuth 2,0 é configurado com o System Manager, o acesso pelos clientes REST API pode ser controlado. Você precisa primeiro obter um token de acesso de um servidor de autorização. Em seguida, o cliente REST passa o token para o cluster ASA R2 como um token portador usando o cabeçalho de solicitação de autorização HTTP. Consulte https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Autenticação e autorização usando OAuth 2,0"^] para obter mais informações.
 

@@ -15,7 +15,7 @@ Se você estiver usando o protocolo NVMe, poderá configurar a autenticação na
 
 .Passos
 . Selecione *hosts*; em seguida, selecione *NVMe*.
-. image:icon_add_blue_bg.png["Quadrado azul com um sinal de mais seguido da palavra Adicionar em letras brancas"]Selecione .
+. Selecione image:icon_add_blue_bg.png["Quadrado azul com um sinal de mais seguido da palavra Adicionar em letras brancas"].
 . Insira o nome do host e selecione o sistema operacional do host.
 . Insira uma descrição do host; em seguida, selecione a VM de armazenamento a ser conetada ao host.
 . image:icon_dropdown_arrow.gif["seta virada para baixo azul"]Selecione ao lado do nome do host.

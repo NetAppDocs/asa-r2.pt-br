@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Use grupos de consistência para executar várias ações em várias unidades de armazenamento ao mesmo tempo, em vez de executar ações individualmente em cada unidade.  Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos em um grupo de consistência pai. 
+summary: Utilize grupos de consistência para executar diversas ações em várias unidades de storage ao mesmo tempo, em vez de executar ações individualmente em cada unidade. Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos sob um grupo de consistência pai. 
 ---
 = Gerenciar grupos de consistência hierárquica no seu sistema ASA r2
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Use grupos de consistência para executar várias ações em várias un
 
 
 [role="lead"]
-A partir do ONTAP 9.16.1, você pode usar o System Manager para criar grupos de consistência hierárquicos no seu sistema ASA r2.  Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos em um grupo de consistência pai.  Você pode aplicar políticas de instantâneos individuais a cada grupo de consistência filho e replicar os instantâneos de todos os grupos de consistência filho para um cluster remoto como uma única unidade replicando o pai.  Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas.
+A partir do ONTAP 9.16.1, você pode usar o System Manager para criar grupos de consistência hierárquicos no seu sistema ASA r2. Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos sob um grupo de consistência pai. Você pode aplicar políticas de snapshot individuais a cada grupo de consistência filho e replicar os snapshots de todos os grupos de consistência filhos para um cluster remoto como uma única unidade, replicando o grupo pai. Isso simplifica a proteção e o gerenciamento de dados para estruturas de dados complexas.
 
 
 
@@ -25,14 +25,14 @@ Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja
 
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.
-. Passe o Mouse sobre o grupo de consistência que você deseja converter em um grupo de consistência pai.
+. Passe o cursor sobre o grupo de consistência que você deseja converter em um grupo de consistência pai.
 . image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *promover para o grupo de consistência pai*.
 . Insira um nome para o novo grupo de consistência filho ou aceite o nome padrão; em seguida, selecione o tipo de componente do grupo de consistência.
 . Selecione *promover*.
 
 
 .O que se segue?
-Você pode criar grupos de consistência filhos adicionais sob o grupo de consistência pai.  Você também podelink:../secure-data/encrypt-data-at-rest.html["configurar a replicação de instantâneos"] para copiar os grupos de consistência pai e filho para um local geograficamente remoto para backup e recuperação de desastres.
+Você pode criar grupos de consistência filhos adicionais sob o grupo de consistência pai. Você também pode link:snapshot-replication.html["configurar a replicação de instantâneos"] copiar os grupos de consistência pai e filhos para um local geograficamente remoto para backup e recuperação de desastres.
 
 
 
@@ -102,7 +102,7 @@ Se você selecionar criar um novo grupo de consistência pai, digite um nome par
 
 --
 ====
-.O que vem a seguir
+.O que se segue?
 Depois de criar um grupo de consistência filho, você podelink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["aplicar políticas individuais de proteção de snapshot"] para cada grupo de consistência infantil.  Você também podelink:snapshot-replication.html["configurar políticas de replicação"] nos grupos de consistência pai e filho para replicar os grupos de consistência em um local remoto.
 
 
@@ -118,7 +118,7 @@ Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.
 . Selecione o grupo de consistência pai.
-. Selecione sobre o grupo de consistência filho que deseja separar.
+. Passe o cursor sobre o grupo de consistência filho que você deseja desanexar.
 . image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *Desanexar do pai*.
 . Insira um novo nome para o grupo de consistência que você está desanexando ou aceite o nome padrão; em seguida, selecione o tipo de aplicativo do grupo de consistência.
 . Selecione *Desanexar*.

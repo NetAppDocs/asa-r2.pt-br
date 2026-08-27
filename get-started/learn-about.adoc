@@ -12,7 +12,7 @@ searchtitle: Saiba mais sobre os sistemas ASA A1K, A90, A70, A50, A30 A20 e C30
 
 
 [role="lead"]
-Os sistemas NetApp ASA r2 oferecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes que utilizam apenas SAN. Em um sistema ASA r2, o software ONTAP e o System Manager são otimizados para oferecer suporte às funcionalidades essenciais de SAN, removendo recursos e funções não suportados em ambientes SAN.
+Os sistemas NetApp ASA r2 oferecem uma solução unificada de hardware e software que simplifica a experiência para clientes que utilizam apenas SAN. Em um sistema ASA r2, o software ONTAP e o System Manager são otimizados para oferecer suporte às funcionalidades essenciais de SAN, removendo recursos desnecessários em ambientes SAN.
 
 Os seguintes sistemas são classificados como sistemas ASA r2:
 
@@ -32,7 +32,7 @@ Os sistemas ASA R2 introduzem o uso de unidades de storage com grupos de consist
 * _Um grupo de consistência_ é uma coleção de unidades de armazenamento que são gerenciadas como uma única unidade.
 
 
-Os sistemas ASA r2 usam unidades de armazenamento com grupos de consistência para simplificar o gerenciamento de armazenamento e a proteção de dados.  Por exemplo, suponha que você tenha um banco de dados com 10 unidades de armazenamento em um grupo de consistência e precise fazer backup de todo o banco de dados.  Em vez de fazer backup de cada unidade de armazenamento individualmente, você pode proteger todo o banco de dados fazendo backup do grupo de consistência.
+Os sistemas ASA r2 utilizam unidades de armazenamento com grupos de consistência para simplificar o gerenciamento de storage e a proteção de dados. Por exemplo, suponha que você tenha um banco de dados composto por 10 unidades de armazenamento em um grupo de consistência e precise fazer backup de todo o banco de dados. Em vez de fazer backup de cada unidade de armazenamento individualmente, você pode proteger todo o banco de dados fazendo backup do grupo de consistência.
 
 .Proteção e segurança de dados
 Para ajudar a proteger seus dados contra ataques maliciosos, como roubo ou ransomware, os sistemas ASA r2 oferecem suporte a um gerenciador de chaves integrado, criptografia em duas camadas, autenticação multifator e verificação multiadministrador. Você também pode replicar snapshots para um local secundário e usar o SnapLock for SnapVault para proteger os snapshots de destino contra exclusão acidental ou maliciosa.

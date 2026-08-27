@@ -11,13 +11,13 @@ summary: Se você estiver usando o protocolo IP em seu sistema ASA r2, poderá c
 
 
 [role="lead"]
-Se você estiver usando o protocolo IP no sistema ASA R2, poderá configurar a segurança IP (IPsec) para melhorar a segurança dos dados. O IPsec é um padrão da Internet que fornece criptografia de dados em trânsito, autenticação para o tráfego que flui entre os pontos de extremidade da rede em um nível IP e proteção contra repetição e ataques mal-intencionados contra seus dados.
+Se você utiliza o protocolo IP no seu ASA r2, pode configurar a segurança IP (IPsec) para aprimorar a segurança dos dados. O IPsec é um padrão da Internet que oferece criptografia de dados em trânsito, autenticação de endpoint em nível de IP e proteção contra ataques de repetição e ataques do tipo "man-in-the-middle".
 
 Para sistemas ASA R2, o IPsec está disponível para hosts iSCSI e NVMe/TCP.
 
 Em determinados sistemas ASA R2, várias operações criptográficas, como verificações de criptografia e integridade, podem ser descarregadas para uma placa de controlador de interface de rede (NIC) suportada. A taxa de transferência para operações descarregadas para a placa NIC é de aproximadamente 5% ou menos. Isso pode melhorar significativamente o desempenho e a taxa de transferência do tráfego de rede protegido pelo IPsec.
 
-A partir do ONTAP 9.18.1, o suporte para descarregamento de hardware IPsec foi estendido ao tráfego IPv6.
+A partir do ONTAP 9.18.1, o suporte ao descarregamento de hardware IPsec foi estendido ao tráfego IPv6.
 
 As seguintes placas de rede são compatíveis com o descarregamento de hardware nos seguintes sistemas ASA r2 e versões do ONTAP :
 

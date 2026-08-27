@@ -31,7 +31,7 @@ Gerar uma solicitação de assinatura de certificado (CSR) para criar uma chave 
 
 
 .Resultado
-Você gerou um CSR para o qual pode ser usado para gerar um certificado público.
+Você gerou um CSR que pode ser usado para gerar um certificado público.
 
 
 
