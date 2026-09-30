@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/add-nodes.html 
-keywords: rename, node, renaming, asa r2 
-summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+keywords: add, node, adding, asa r2, expand cluster 
+summary: Os sistemas de storage ASA r2 suportam até 12 nós por cluster. Depois que os novos nós de um par de HA forem cabeados e ligados, você precisa adicioná-los ao cluster. 
 ---
 = Adicione nós do ASA R2 a um cluster do ONTAP
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Talvez seja necessário renomear um nó para alinhar com as convençõe
 
 
 [role="lead"]
-A partir do ONTAP 9.16.1, os sistemas de armazenamento ASA r2 suportam até 12 nós por cluster.  Depois que os novos nós de um par HA forem cabeados e ligados, você precisará conectá-los ao cluster.
+Os sistemas de storage ASA r2 suportam até 12 nós por cluster. Depois que os novos nós de um par de HA forem cabeados e ligados, você precisa adicioná-los ao cluster.
 
 .Antes de começar
 Reúna as seguintes informações:

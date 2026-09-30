@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: remove, node, removing, asa r2 
+summary: Talvez seja necessário renomear um nó para alinhar com as convenções de nomenclatura da sua organização ou por outros motivos administrativos. 
+---
+= Remover nós ASA r2 de um cluster ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pode ser necessário remover um nó do cluster para fins de manutenção, substituição ou desativação. Os nós devem ser removidos um de cada vez. Se você remover um nó, também deverá remover seu parceiro de HA.
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-asa-r2-cluster]]
+== Etapa 1: Prepare-se para remover nós de um cluster ASA r2
+
+Antes de remover um nó de um cluster ASA r2, você deve verificar se o cluster está íntegro. Em seguida, você deve migrar ou excluir unidades de armazenamento, VLANs e LIFs do nó e desativar o failover de armazenamento.
+
+.Passos
+. Verifique se o cluster está íntegro:
++
+[source, cli]
+----
+cluster show
+----
+. link:../manage-data/move-storage-units.html["Mover"] ou link:../manage-data/delete-storage-units.html["excluir"] todas as unidades de armazenamento do nó.
+. Se você tiver unidades de armazenamento SCSI (LUNs) no nó a ser removido, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["Exclua o nó e seu parceiro de HA da lista de nós de relatório do Selective LUN Map (SLM)"^].
++
+Se você não remover o nó e seu parceiro de HA da lista de nós de relatório do SLM, o acesso às LUNs anteriormente presentes no nó poderá ser perdido, mesmo que as LUNs tenham sido movidas para outro nó.
+
+. link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Excluir"^] ou link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrar"^] todas as interfaces de rede (LIFs) do nó.
++
+** Os LIFs de dados devem ser movidos para outro nó ou excluídos.
++
+A migração de LIF iSCSI é limitada apenas às portas no nó inicial ou no parceiro de HA, portanto, elas devem ser excluídas.
+
+** As LIFs entre clusters devem ser excluídas.
++
+Ao excluir LIFs entre clusters, um aviso é exibido e pode ser ignorado.
+
+** A LIF de gerenciamento de cluster deve ser movida para outro nó.
+
+
+. link:../administer/manage-cluster-networking.html#delete-a-vlan["Excluir todas as VLANs"] no nó.
+. Desativar o failover de armazenamento para o nó:
++
+[source, cli]
+----
+storage failover modify -enabled false -node <nodename>
+----
+
+
+.O que se segue?
+Remova o primeiro nó no par de HA do cluster e, em seguida, remova seu parceiro de HA.
+
+
+
+[[step-2-remove-a-node-from-an-asa-r2-cluster]]
+== Etapa 2: remover um nó de um cluster ASA r2
+
+Remova um nó de um cluster ASA r2 somente após concluir as etapas necessárias para prepará-lo para remoção. Após remover um nó do cluster, você deve remover seu parceiro de HA.
+
+.Antes de começar
+É recomendável que você link:../get-help/manage-autosupport.html#send-autosupport-data["emitir uma mensagem AutoSupport"] notifique o suporte técnico da NetApp que está removendo um nó do seu cluster.
+
+
+NOTE: Não remova um nó do cluster nem renomeie um nó quando uma atualização automatizada do ONTAP estiver em andamento.
+
+.Sobre esta tarefa
+* Se você remover dois nós de um cluster de quatro nós, o HA do cluster será ativado automaticamente nos dois nós restantes.
+* Todos os dados do sistema e dados de usuário, de todos os discos conectados ao nó, devem ser tornados inacessíveis aos usuários antes de remover um nó do cluster.
+* Caso um nó tenha sido removido incorretamente de um cluster, entre em contato com o Suporte da NetApp para obter assistência com as opções de recuperação.
+
+
+.Passos
+. Altere o nível de privilégio para avançado:
++
+[source, cli]
+----
+set -privilege advanced
+----
+. Identifique o nó no cluster que contém epsilon:
++
+[source, cli]
+----
+cluster show
+----
++
+No exemplo a seguir, "node0" atualmente contém epsilon:
+
++
+[listing]
+----
+cluster::*> cluster show
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. Se o nó que você está removendo detém o epsilon, mova o epsilon para um nó sobrevivente.
++
+.. Remova o epsilon do nó:
++
+[source, cli]
+----
+cluster modify -node <name_of_node_to_be_removed> -epsilon false
+----
+.. Mova epsilon para outro nó:
++
+[source, cli]
+----
+cluster modify -node <node_name> -epsilon true
+----
+
+
+. Identifique o nó primário atual:
++
+[source, cli]
+----
+cluster ring show
+----
++
+O nó primário é o nó que contém processos como mgmt, vldb, vifmgr, bcomd e crs.
+
+. Se o nó que você está removendo for o nó primário atual, habilite outro nó no cluster para ser eleito como o nó primário.
++
+.. Torne o nó primário atual inelegível para participar do cluster:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility false
+----
++
+Quando o nó primário se tornar inelegível, um dos nós restantes será eleito pelo quorum do cluster como o novo primário. Se você estiver executando esta etapa no primeiro nó de um par de HA, marque apenas esse nó como inelegível. Não altere o status do par de HA dele até que essas etapas sejam repetidas no parceiro.
+
++
+Se o nó parceiro for eleito como o novo primário e detiver epsilon, você deverá mover epsilon para outro nó antes de marcar o parceiro como inelegível.
+
+.. Torne o nó primário anterior elegível para participar do cluster novamente:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility true
+----
+
+
+. Faça login na LIF de gerenciamento de nó remoto ou na LIF de gerenciamento de cluster em um nó que você não está removendo do cluster.
+. Use o nome do nó ou o endereço IP do nó para removê-lo do cluster:
++
+Se você tiver um cluster com versões mistas e estiver removendo o último nó de versão inferior, use o parâmetro -skip-last-low-version-node-check com estes comandos.
+
++
+** Use o nome do nó para remover o nó:
++
+[source, cli]
+----
+cluster remove-node -node <node_name>
+----
+** Use o endereço IP do nó para remover o nó:
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <node_ip>
+----
++
+Uma mensagem de falha será gerada se houver condições que você deve resolver antes de remover o nó. Caso isso aconteça, resolva as condições e execute novamente o  `cluster remove-node` comando.
+
++
+O nó reinicia automaticamente após ser removido com sucesso do cluster.
+
+
+
+
+
+.O que se segue?
+Repita estas etapas para remover o parceiro de failover do cluster.
+
+.Informações relacionadas
+Saiba mais sobre o comando link:https://docs.netapp.com/us-en/ontap-cli/cluster-remove-node.html["cluster remove-node"].
+
+
+
+[[step-3-optionally-erase-the-node-configuration-and-initialize-all-disks]]
+== Etapa 3: opcionalmente, apague a configuração do nó e inicialize todos os discos
+
+Se você estiver reutilizando um nó que removeu do seu cluster ASA r2, será necessário apagar a configuração do nó e inicializar todos os discos antes que ele possa voltar a ingressar em um cluster.
+
+.Passos
+. Durante o processo de inicialização, quando solicitado, pressione *Ctrl-C* para exibir o menu de inicialização.
+. Selecione a opção do menu de inicialização *(4) Clean configuration and initialize all disks* ou a opção *(9) Configure Advanced Drive Partitioning* para apagar a configuração do nó e inicializar todos os discos.
+

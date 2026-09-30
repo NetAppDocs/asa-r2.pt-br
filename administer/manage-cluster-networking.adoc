@@ -11,7 +11,7 @@ summary: Use o Gerenciador de sistema do ONTAP para executar a administração b
 
 
 [role="lead"]
-Você pode usar o Gerenciador de sistema do ONTAP para executar a administração básica da rede de storage no sistema ASA R2. Por exemplo, você pode adicionar um domínio de broadcast ou reatribuir portas a um domínio de broadcast diferente.
+O ONTAP System Manager permite que você execute tarefas básicas de administração da rede de storage no seu sistema ASA r2, como adicionar um domínio de broadcast ou reatribuir portas entre domínios de broadcast, para que você possa organizar o tráfego de rede de acordo com as necessidades da sua infraestrutura.
 
 
 
@@ -22,10 +22,10 @@ Use domínios de broadcast para simplificar o gerenciamento da rede de cluster a
 
 O domínio de broadcast "padrão" e o domínio de broadcast "Cluster" são criados durante a configuração do cluster. O domínio de broadcast "padrão" contém portas que estão no IPspace "padrão". Essas portas são usadas principalmente para fornecer dados. As portas de gerenciamento de clusters e de nós também estão neste domínio de transmissão. O domínio de broadcast "Cluster" contém portas que estão no espaço IPspace "Cluster". Essas portas são usadas para comunicação de cluster e incluem todas as portas de cluster de todos os nós no cluster.
 
-Você pode criar domínios de broadcast adicionais após o cluster ter sido inicializado. Quando você cria um domínio de broadcast, um grupo de failover que contém as mesmas portas é criado automaticamente.
+Você pode criar domínios de broadcast adicionais após inicializar seu cluster. Quando você cria um domínio de broadcast, um grupo de failover que contém as mesmas portas é criado automaticamente.
 
 .Sobre esta tarefa
-A unidade máxima de transmissão (MTU) das portas adicionadas a um domínio de broadcast são atualizadas para o valor MTU definido no domínio de broadcast.
+A unidade máxima de transmissão (MTU) das portas adicionadas a um domínio de broadcast é atualizada para o valor de MTU definido no domínio de broadcast.
 
 .Passos
 . No System Manager, selecione *rede > Visão geral*.
@@ -95,3 +95,54 @@ A VLAN não pode ser conetada a uma porta que hospeda um cluster LIF ou a portas
 
 .Resultado
 Você criou uma VLAN para aumentar a segurança, isolar problemas e limitar os caminhos disponíveis na sua infraestrutura de rede IP.
+
+
+
+[[delete-a-vlan]]
+== Excluir um VLAN
+
+Pode ser necessário excluir uma VLAN antes de remover uma NIC do seu slot ou antes de remover um nó de um cluster. Quando você exclui uma VLAN, ela é removida automaticamente de todas as regras e grupos de failover que a utilizam.
+
+.Antes de começar
+Certifique-se de que não haja LIFs associadas à VLAN.
+
+.Sobre esta tarefa
+A exclusão da última VLAN de uma porta pode causar uma desconexão temporária da rede nessa porta.
+
+.Passos
+Você pode usar o System Manager ou a CLI para excluir uma VLAN.
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. No System Manager, selecione *Rede > Porta Ethernet > VLAN*.
+. Selecione a VLAN que deseja remover.
+. Selecione *Eliminar*.
+
+
+--
+.CLI
+--
+. Visualize suas VLANs:
++
+[source, cli]
+----
+network port vlan show
+----
+. Excluir uma VLAN:
++
+[source, cli]
+----
+network port vlan delete -node <node> -vlan-name <vlan-name>
+----
+. Verifique se a VLAN foi excluída:
++
+[source, cli]
+----
+network port vlan show
+----
+
+
+--
+====

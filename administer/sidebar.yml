@@ -32,6 +32,8 @@ entries:
   entries:
   - title: Adicionar nós
     url: "/administer/add-nodes.html"
+  - title: Remover nós
+    url: "/administer/remove-nodes.html"
   - title: Reinicialize, faça takeover e devolva nós
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Mudar o nome dos nós

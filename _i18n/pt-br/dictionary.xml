@@ -123,12 +123,9 @@
   <block id="f3833c816c6fe5b26b4e4266ccfed699" category="paragraph">Seu LIF foi modificado.</block>
   <block id="092a2a219a66f53ad918ecfca02a40cb" category="summary">Use o Gerenciador de sistema do ONTAP para executar a administração básica da rede de storage no sistema ASA R2.</block>
   <block id="7727ebf2fbdb4d8c5b88383f3872253c" category="doc">Gerenciar a rede de cluster em sistemas de storage ASA R2</block>
-  <block id="dce69090c45af3d113621dac45bca7fb" category="paragraph">Você pode usar o Gerenciador de sistema do ONTAP para executar a administração básica da rede de storage no sistema ASA R2. Por exemplo, você pode adicionar um domínio de broadcast ou reatribuir portas a um domínio de broadcast diferente.</block>
   <block id="142e63ab347e5afebe1ee3eddeb82dc4" category="section-title">Adicione um domínio de broadcast</block>
   <block id="18021c31fe204f4bcb54336f24bb7958" category="paragraph">Use domínios de broadcast para simplificar o gerenciamento da rede de cluster agrupando portas de rede que pertencem à mesma rede de camada 2. As máquinas virtuais de armazenamento (VMs) podem então usar as portas do grupo para tráfego de dados ou gerenciamento.</block>
   <block id="4d00d5474a9eac58d3c8b5a5efd05a9a" category="paragraph">O domínio de broadcast "padrão" e o domínio de broadcast "Cluster" são criados durante a configuração do cluster. O domínio de broadcast "padrão" contém portas que estão no IPspace "padrão". Essas portas são usadas principalmente para fornecer dados. As portas de gerenciamento de clusters e de nós também estão neste domínio de transmissão. O domínio de broadcast "Cluster" contém portas que estão no espaço IPspace "Cluster". Essas portas são usadas para comunicação de cluster e incluem todas as portas de cluster de todos os nós no cluster.</block>
-  <block id="98436b7b9537997727c62df8cd1c5b4b" category="paragraph">Você pode criar domínios de broadcast adicionais após o cluster ter sido inicializado. Quando você cria um domínio de broadcast, um grupo de failover que contém as mesmas portas é criado automaticamente.</block>
-  <block id="67484e42ec7ef0f9c6081b26a7966a3f" category="paragraph">A unidade máxima de transmissão (MTU) das portas adicionadas a um domínio de broadcast são atualizadas para o valor MTU definido no domínio de broadcast.</block>
   <block id="5be487237484d4edf568d618438fb533" category="list-text">No System Manager, selecione *rede &gt; Visão geral*.</block>
   <block id="6169050a4730f8d024d60e5e811d6085" category="list-text">Em domínios *Broadcast*, <block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>selecione .</block>
   <block id="01b73cca64689dc46d9d7ff592613e09" category="list-text">Introduza um nome para o domínio de difusão ou aceite o nome predefinido.</block>
@@ -1931,7 +1928,6 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">Saiba mais sobre soluções de disponibilidade contínua para ambientes vSphere</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">Melhores práticas para sistemas NetApp ASA</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">Guia de transição da API REST</block>
-  <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">A partir do ONTAP 9.16.1, os sistemas de armazenamento ASA r2 suportam até 12 nós por cluster.  Depois que os novos nós de um par HA forem cabeados e ligados, você precisará conectá-los ao cluster.</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo processo de reversões para outros sistemas ONTAP . A reversão de um cluster ONTAP é disruptiva.</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">Excluir o relacionamento de sincronização ativa do SnapMirror</block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">As atualizações de software ONTAP para sistemas ASA r2 seguem o mesmo processo de atualizações para outros sistemas ONTAP .  Ao atualizar seu software ONTAP no seu sistema ASA r2, você pode aproveitar os novos e aprimorados recursos do ONTAP .</block>
@@ -2859,4 +2855,77 @@
   <block id="e7e7921d40004de3413b2feb5d015c04" category="paragraph">Se você observar picos na atividade de suas unidades de armazenamento, sejam eles pontuais ou característicos de um novo padrão, você deve reportá-los como seguros. Reportar esses picos manualmente como seguros ajuda a melhorar a precisão das avaliações de ameaças do ARP. Saiba como <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="200e37440690270fcdf5d35f1f9f63c6" category="paragraph">O ONTAP SnapLock é uma solução de conformidade de alto desempenho para organizações que utilizam storage WORM para reter arquivos em formato não modificado para fins regulatórios e de governança. Você pode executar o SnapLock nos modos Compliance ou Enterprise, que oferecem diferentes níveis de proteção de dados WORM. Os modos SnapLock Compliance e Enterprise não são suportados em clusters primários em ambientes SAN, mas você pode habilitar o SnapLock for SnapVault em seus sistemas secundários para proteger snapshots secundários contra exclusão acidental ou maliciosa.</block>
   <block id="44ed1558e28022693124a32e31d67183" category="paragraph">Após inicializar o SnapLock Compliance Clock nos seus clusters local e de destino, você está pronto para <block ref="716f8ed67937d4ffe779f9f204ed103b" category="inline-link-macro-rx"></block>.</block>
+  <block id="e237bf865e87bbdfd26ab56b61fc4b9e" category="summary">Os sistemas de storage ASA r2 suportam até 12 nós por cluster. Depois que os novos nós de um par de HA forem cabeados e ligados, você precisa adicioná-los ao cluster.</block>
+  <block id="cc7c52d2eca1519912be5504b86923e5" category="paragraph">O ONTAP System Manager permite que você execute tarefas básicas de administração da rede de storage no seu sistema ASA r2, como adicionar um domínio de broadcast ou reatribuir portas entre domínios de broadcast, para que você possa organizar o tráfego de rede de acordo com as necessidades da sua infraestrutura.</block>
+  <block id="ba9a7a46c6bc7f943d070bcccd364153" category="paragraph">Você pode criar domínios de broadcast adicionais após inicializar seu cluster. Quando você cria um domínio de broadcast, um grupo de failover que contém as mesmas portas é criado automaticamente.</block>
+  <block id="8b32050d3c96b6bd0a885f98eb1416ea" category="paragraph">A unidade máxima de transmissão (MTU) das portas adicionadas a um domínio de broadcast é atualizada para o valor de MTU definido no domínio de broadcast.</block>
+  <block id="81cbd40cd8660cff0ad2a901db8d929f" category="section-title">Excluir um VLAN</block>
+  <block id="e6a55391d40a820f0fb96c2886a44b1b" category="paragraph">Pode ser necessário excluir uma VLAN antes de remover uma NIC do seu slot ou antes de remover um nó de um cluster. Quando você exclui uma VLAN, ela é removida automaticamente de todas as regras e grupos de failover que a utilizam.</block>
+  <block id="dc4d5090d51115b6ed8141aa254c3b32" category="paragraph">Certifique-se de que não haja LIFs associadas à VLAN.</block>
+  <block id="dd5e47c75e64cbe3996c8133e894e247" category="paragraph">A exclusão da última VLAN de uma porta pode causar uma desconexão temporária da rede nessa porta.</block>
+  <block id="ac7d09a665b758116e45c0e4113cc186" category="paragraph">Você pode usar o System Manager ou a CLI para excluir uma VLAN.</block>
+  <block id="cea11a3fe22277f7f45d6feb4b7f56bf" category="list-text">No System Manager, selecione *Rede &gt; Porta Ethernet &gt; VLAN*.</block>
+  <block id="1aae6a12505549a87c2e3ea5f5464f0f" category="list-text">Selecione a VLAN que deseja remover.</block>
+  <block id="feb83dac816796145feb86b7475c73f5" category="list-text">Visualize suas VLANs:</block>
+  <block id="0f39a6bacc3fe5756c2bc83081df6c3a" category="list-text">Excluir uma VLAN:</block>
+  <block id="ac309ab0be86396fc6a66899780ddf5b" category="list-text">Verifique se a VLAN foi excluída:</block>
+  <block id="8bd15b309bcdb0c15b1b0e6adeb166d0" category="doc">Remover nós ASA r2 de um cluster ONTAP</block>
+  <block id="f46b886aa665a8d7c7a7a4c7aa9c6346" category="paragraph">Pode ser necessário remover um nó do cluster para fins de manutenção, substituição ou desativação. Os nós devem ser removidos um de cada vez. Se você remover um nó, também deverá remover seu parceiro de HA.</block>
+  <block id="e0236ccc281e8e954020151e28594361" category="section-title">Etapa 1: Prepare-se para remover nós de um cluster ASA r2</block>
+  <block id="71b734249d4ab321665fcafc817c1579" category="paragraph">Antes de remover um nó de um cluster ASA r2, você deve verificar se o cluster está íntegro. Em seguida, você deve migrar ou excluir unidades de armazenamento, VLANs e LIFs do nó e desativar o failover de armazenamento.</block>
+  <block id="1715d07a24988d9207de94794a6f01cc" category="list-text">Verifique se o cluster está íntegro:</block>
+  <block id="6bc362dbf494c61ea117fe3c71ca48a5" category="inline-link-macro">Mover</block>
+  <block id="099af53f601532dbd31e0ea99ffdeb64" category="inline-link-macro">excluir</block>
+  <block id="cd6171fad4b783d0411b357a70e025b9" category="list-text"><block ref="103126b24482021bd492866bc35410e7" category="inline-link-macro-rx"></block> ou <block ref="397d82cf73bd33098ee8615a2f9e95f3" category="inline-link-macro-rx"></block> todas as unidades de armazenamento do nó.</block>
+  <block id="09a776ad2b6e83e1b754e6f7ebfafba3" category="inline-link-macro">Exclua o nó e seu parceiro de HA da lista de nós de relatório do Selective LUN Map (SLM)</block>
+  <block id="ae6f4389297774f1a5988f7c44c7db66" category="list-text">Se você tiver unidades de armazenamento SCSI (LUNs) no nó a ser removido, <block ref="2df19a9598282fc5088ade88859e3e79" category="inline-link-macro-rx"></block>.</block>
+  <block id="e84ba10869a172504b256da9f24370e6" category="paragraph">Se você não remover o nó e seu parceiro de HA da lista de nós de relatório do SLM, o acesso às LUNs anteriormente presentes no nó poderá ser perdido, mesmo que as LUNs tenham sido movidas para outro nó.</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="inline-link-macro">Excluir</block>
+  <block id="f183fde1c1f409b21fc8463052ca49e5" category="inline-link-macro">migrar</block>
+  <block id="39b0e3c1790c5d7e62d9065fac6449c0" category="list-text"><block ref="a406326f89a3bbce30953ad7824da1f0" category="inline-link-macro-rx"></block> ou <block ref="7991084d788264d2f8515724f03312a6" category="inline-link-macro-rx"></block> todas as interfaces de rede (LIFs) do nó.</block>
+  <block id="a1d06a7b7bc7900c0dc19460251f84e1" category="list-text">Os LIFs de dados devem ser movidos para outro nó ou excluídos.</block>
+  <block id="eea3b175d0f6393f8f1dbd8d7bdc392e" category="paragraph">A migração de LIF iSCSI é limitada apenas às portas no nó inicial ou no parceiro de HA, portanto, elas devem ser excluídas.</block>
+  <block id="2155c348c0a765e1cbd1204177de8f6b" category="list-text">As LIFs entre clusters devem ser excluídas.</block>
+  <block id="a9702b3847949399c05d5c3540819764" category="paragraph">Ao excluir LIFs entre clusters, um aviso é exibido e pode ser ignorado.</block>
+  <block id="284480082b3f00fd5851296324820748" category="list-text">A LIF de gerenciamento de cluster deve ser movida para outro nó.</block>
+  <block id="c2031112d335614e483a8e73e8f0e80e" category="inline-link-macro">Excluir todas as VLANs</block>
+  <block id="40f77f5330ce09a02647bfff9d2b11a1" category="list-text"><block ref="13cea30368888692a0a04edaddc87489" category="inline-link-macro-rx"></block> no nó.</block>
+  <block id="7da250e00cfaee667a1544bb30473c35" category="list-text">Desativar o failover de armazenamento para o nó:</block>
+  <block id="df17f0e15b00039cb79f8c73233345dc" category="paragraph">Remova o primeiro nó no par de HA do cluster e, em seguida, remova seu parceiro de HA.</block>
+  <block id="400f2bdb4ba287bc175bb483c502645d" category="section-title">Etapa 2: remover um nó de um cluster ASA r2</block>
+  <block id="47560f69aa17b178f049071f943efdc3" category="paragraph">Remova um nó de um cluster ASA r2 somente após concluir as etapas necessárias para prepará-lo para remoção. Após remover um nó do cluster, você deve remover seu parceiro de HA.</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">emitir uma mensagem AutoSupport</block>
+  <block id="c742d6b26a30fa446c7ef8b5dab2c732" category="paragraph">É recomendável que você <block ref="82761e960f0e30a8f5a0b51f2de27c3a" category="inline-link-macro-rx"></block> notifique o suporte técnico da NetApp que está removendo um nó do seu cluster.</block>
+  <block id="add39e8e05dc6feabb5680336ff42056" category="admonition">Não remova um nó do cluster nem renomeie um nó quando uma atualização automatizada do ONTAP estiver em andamento.</block>
+  <block id="8b7e38ab7ab942e33ee9b58f43906ab5" category="list-text">Se você remover dois nós de um cluster de quatro nós, o HA do cluster será ativado automaticamente nos dois nós restantes.</block>
+  <block id="ba20c2b3b00275ac5d310648e6ff4a27" category="list-text">Todos os dados do sistema e dados de usuário, de todos os discos conectados ao nó, devem ser tornados inacessíveis aos usuários antes de remover um nó do cluster.</block>
+  <block id="2e926e0f22616c9494cae63cff92b8f5" category="list-text">Caso um nó tenha sido removido incorretamente de um cluster, entre em contato com o Suporte da NetApp para obter assistência com as opções de recuperação.</block>
+  <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">Altere o nível de privilégio para avançado:</block>
+  <block id="1e6d712b266f8755c066ccc30bde9fdc" category="list-text">Identifique o nó no cluster que contém epsilon:</block>
+  <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">No exemplo a seguir, "node0" atualmente contém epsilon:</block>
+  <block id="b32cb3a5af2992203383db7140663697" category="list-text">Se o nó que você está removendo detém o epsilon, mova o epsilon para um nó sobrevivente.</block>
+  <block id="a688ab20f94fae358a349cab6d019da3" category="list-text">Remova o epsilon do nó:</block>
+  <block id="c7a7b8bd7c37d4318c7e769f4286f17b" category="list-text">Mova epsilon para outro nó:</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">Identifique o nó primário atual:</block>
+  <block id="7a76ce80b9cd6059ed18dca9be6af204" category="paragraph">O nó primário é o nó que contém processos como mgmt, vldb, vifmgr, bcomd e crs.</block>
+  <block id="a4fdc400f1c7bb92f441328b2a58ab2c" category="list-text">Se o nó que você está removendo for o nó primário atual, habilite outro nó no cluster para ser eleito como o nó primário.</block>
+  <block id="1f915321f7e8155e5ee88f538eca12b5" category="list-text">Torne o nó primário atual inelegível para participar do cluster:</block>
+  <block id="b774483fd19fa8acb4407780df5d4d87" category="paragraph">Quando o nó primário se tornar inelegível, um dos nós restantes será eleito pelo quorum do cluster como o novo primário. Se você estiver executando esta etapa no primeiro nó de um par de HA, marque apenas esse nó como inelegível. Não altere o status do par de HA dele até que essas etapas sejam repetidas no parceiro.</block>
+  <block id="0d4121decd846754730f2b08483bac20" category="paragraph">Se o nó parceiro for eleito como o novo primário e detiver epsilon, você deverá mover epsilon para outro nó antes de marcar o parceiro como inelegível.</block>
+  <block id="bbbdda94513cf5e245680f89dc7113d5" category="list-text">Torne o nó primário anterior elegível para participar do cluster novamente:</block>
+  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">Faça login na LIF de gerenciamento de nó remoto ou na LIF de gerenciamento de cluster em um nó que você não está removendo do cluster.</block>
+  <block id="cd61023a75b13d7ddd81a51dd5fd5bad" category="list-text">Use o nome do nó ou o endereço IP do nó para removê-lo do cluster:</block>
+  <block id="c660a1ebe622089157d033f8e00d3b45" category="paragraph">Se você tiver um cluster com versões mistas e estiver removendo o último nó de versão inferior, use o parâmetro -skip-last-low-version-node-check com estes comandos.</block>
+  <block id="6d2290891d47080550b5fed55fbf344f" category="list-text">Use o nome do nó para remover o nó:</block>
+  <block id="2935c03696a9fc643ed379f7af4ea5bf" category="list-text">Use o endereço IP do nó para remover o nó:</block>
+  <block id="8a1cd083e3f95f4585c2102d6c2b05bf" category="paragraph">Uma mensagem de falha será gerada se houver condições que você deve resolver antes de remover o nó. Caso isso aconteça, resolva as condições e execute novamente o <block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> comando.</block>
+  <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">O nó reinicia automaticamente após ser removido com sucesso do cluster.</block>
+  <block id="01d5d2ace7126b43c6c161bd5ee9a875" category="paragraph">Repita estas etapas para remover o parceiro de failover do cluster.</block>
+  <block id="b592ef8b0e17ac31ab55e93e7c1d10e1" category="inline-link-macro">cluster remove-node</block>
+  <block id="07e709e4a23132b1e1dd12b1fd7fee71" category="paragraph">Saiba mais sobre o comando <block ref="700df13594259d61712a860f23f94890" category="inline-link-macro-rx"></block>.</block>
+  <block id="6d554e0c9ffc1fe9e00235aea8dd5770" category="section-title">Etapa 3: opcionalmente, apague a configuração do nó e inicialize todos os discos</block>
+  <block id="9cba5ce5176add967894dfbbc6536a52" category="paragraph">Se você estiver reutilizando um nó que removeu do seu cluster ASA r2, será necessário apagar a configuração do nó e inicializar todos os discos antes que ele possa voltar a ingressar em um cluster.</block>
+  <block id="895863970f247b187f4fcbba3ee248c3" category="list-text">Durante o processo de inicialização, quando solicitado, pressione *Ctrl-C* para exibir o menu de inicialização.</block>
+  <block id="7d12381790ebb192cc4ad1b88892635d" category="list-text">Selecione a opção do menu de inicialização *(4) Clean configuration and initialize all disks* ou a opção *(9) Configure Advanced Drive Partitioning* para apagar a configuração do nó e inicializar todos os discos.</block>
+  <block id="93fa60c43fe67fdb72ad8e06d21cbed0" category="sidebar">Remover nós</block>
 </blocks>
