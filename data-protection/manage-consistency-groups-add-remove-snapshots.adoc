@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Crie instantâneos dos grupos de consistência para proteger os dados nas unidades de armazenamento que fazem parte do grupo de consistência.  Se não precisar mais proteger os dados em nenhuma das unidades de armazenamento no grupo de consistência, você poderá remover a proteção de instantâneo. 
+summary: Adicione proteção de snapshot a um grupo de consistência para proteger os dados em suas unidades de armazenamento, ou remova a proteção de snapshot quando não precisar mais dela. 
 ---
 = Proteja grupos de consistência no seu sistema ASA r2 com instantâneos
 :allow-uri-read: 
@@ -20,7 +20,7 @@ Se não precisar mais proteger os dados de unidades de armazenamento específica
 [[add-snapshot-data-protection-to-a-consistency-group]]
 == Adicionar proteção de dados de snapshot a um grupo de consistência
 
-Quando você adiciona proteção de dados de snapshot a um grupo de consistência, os snapshots locais do grupo de consistência são feitos em intervalos regulares com base em uma programação predefinida.
+Ao adicionar proteção de dados por snapshot a um grupo de consistência, o ONTAP cria snapshots locais do grupo de consistência em intervalos regulares, com base em uma programação predefinida.
 
 Você pode usar snapshots que link:restore-data.html["restaurar dados"]estão perdidos ou corrompidos.
 
@@ -54,7 +54,7 @@ em seguida, image:icon_dropdown_arrow.gif["seta azul apontando na direção para
 
 .. Selecione o agendamento da política.
 .. Em *máximo de instantâneos*, insira o número máximo de instantâneos que você deseja manter do grupo de consistência.
-.. Opcionalmente, sob *SnapMirror label*, digite um rótulo SnapMirror.
+.. Opcionalmente, em *rótulo SnapMirror*, insira um rótulo SnapMirror.
 .. Selecione *Guardar*.
 
 

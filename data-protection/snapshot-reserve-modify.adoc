@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve-modify.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots. 
+summary: Modifique a reserva do Snapshot em uma unidade de storage ou máquina virtual de storage e habilite a exclusão automática de snapshots para impedir que os snapshots consumam o espaço destinado aos dados de usuário. 
 ---
 = Modificar a reserva de snapshots em um sistema de armazenamento ASA r2
 :allow-uri-read: 
@@ -39,11 +39,11 @@ A reserva de snapshots está definida para a porcentagem que você especificou. 
 [[modify-snapshot-reserve-on-a-storage-vm]]
 == Modificar a reserva de snapshots em uma VM de armazenamento
 
-Para definir a mesma reserva de snapshots para todas as unidades de armazenamento em uma VM de armazenamento, aplique a porcentagem desejada à VM de armazenamento. .  Quando a reserva de snapshots é aplicada à máquina virtual de armazenamento, ela é aplicada a todas as unidades de armazenamento recém-criadas dentro da máquina virtual de armazenamento.  Essa configuração não se aplica a unidades de armazenamento criadas antes da modificação da configuração.
+Para definir a mesma reserva do Snapshot para todas as unidades de storage em uma VM de storage, aplique a porcentagem desejada à VM de storage. Quando a reserva do Snapshot é aplicada à VM de storage, ela é aplicada a todas as unidades de storage recém-criadas na VM de storage. Ela não é aplicada às unidades de storage criadas antes de você modificar a configuração.
 
 .Passos
 . No Gerenciador de Sistemas, selecione *Cluster > VMs de Armazenamento*; em seguida, selecione *Configurações*.
-. Em *Políticas*, ao lado de *Instantâneos*, selecioneimage:icon_kabob.gif["três pontos verticais"] Em seguida, selecione *Definir/editar reserva de instantâneo padrão*.
+. Em *Políticas*, ao lado de *Snapshots*, selecione image:icon_kabob.gif["três pontos verticais"]; em seguida, selecione *Definir/editar o padrão da reserva do Snapshot*.
 . Em *Reserva de snapshots %*, insira o valor numérico correspondente à porcentagem do espaço da unidade de armazenamento que você deseja alocar para snapshots.
 . Verifique se a opção *Excluir automaticamente snapshots antigos* está selecionada.
 . Selecione *Guardar*.

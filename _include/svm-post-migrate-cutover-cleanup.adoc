@@ -1,0 +1,64 @@
+= Faça a comutação manual dos clientes após uma migração de VM de storage
+:allow-uri-read: 
+
+
+Durante uma migração de VM de armazenamento entre clusters, a E/S do cliente passa para o cluster de destino, e a VM de armazenamento no cluster de origem é removida automaticamente. Se você optar por desativar a transferência e a remoção automáticas da VM de armazenamento de origem durante a migração, você precisará executar essas etapas manualmente após o status da migração atingir *Pronto para limpeza da origem*.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Faça a comutação manual dos clientes após uma migração de VM de storage
+
+Se você desativar a transição automática de clientes durante a migração entre clusters de uma VM de armazenamento, depois que o relacionamento de migração estiver pronto para a transição, execute a transição manualmente para que a VM de armazenamento de destino possa fornecer dados aos clientes.
+
+.Sobre esta tarefa
+Execute esta tarefa a partir do cluster de destino.
+
+.Passos
+. Executar manualmente a migração do cliente:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verifique se a operação de transição foi concluída:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Resultado
+Os dados estão sendo fornecidos aos seus clientes a partir da máquina virtual de storage no seu cluster de destino.
+
+.O que se segue?
+Agora você está pronto para remover a VM de storage do cluster de origem.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Remover manualmente uma VM de storage após a migração
+
+Se você desativar a limpeza automática da origem durante uma migração de VM de armazenamento entre clusters, após a conclusão da migração, remova a VM de armazenamento do cluster de origem para liberar o espaço de storage.
+
+.Antes de começar
+Seus clientes devem estar acessando dados a partir do cluster de destino.
+
+.Passos
+. No cluster de origem, verifique se o status da VM de armazenamento de origem é *Pronto para limpeza de origem*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Remova a VM de armazenamento de origem:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Resultado
+A máquina virtual de storage no seu cluster de origem é removida.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots. 
+summary: Saiba como a reserva do Snapshot separa espaço da unidade de storage para snapshots e como a exclusão automática de snapshots remove snapshots mais antigos quando o uso excede a reserva nos sistemas ASA r2. 
 ---
 = Saiba mais sobre a reserva de snapshots do ONTAP em sistemas de armazenamento ASA r2
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: A reserva de snapshots é a quantidade de espaço na unidade de armazen
 [role="lead"]
 A reserva de snapshots é a quantidade de espaço na unidade de armazenamento reservada especificamente para snapshots.  Quando a reserva de snapshots está configurada com exclusão automática de snapshots, os snapshots mais antigos são excluídos automaticamente quando o espaço usado pelos snapshots excede a reserva de snapshots.  Isso impede que os snapshots consumam espaço na sua unidade de armazenamento destinada aos dados do usuário.
 
-A reserva de snapshots é definida como uma porcentagem do tamanho total da unidade de armazenamento.  Por exemplo, se a unidade de armazenamento for de 50 GB e você definir a reserva de snapshots para 10%, a quantidade de espaço reservada para snapshots será de 5 GB.  Quando o espaço utilizado pelos snapshots atinge 5 GB, os snapshots mais antigos são excluídos automaticamente para liberar espaço para novos snapshots.  Se o tamanho da unidade de armazenamento aumentar para 100 GB, a reserva de snapshots aumentará para 10 GB.  A reserva máxima de snapshots que você pode definir é de 200%.  Se sua unidade de armazenamento atingir o tamanho máximo de 128 TB, uma reserva de snapshots de 200% permite que você faça 2 snapshots completos.
+A reserva do Snapshot é definida como uma porcentagem do tamanho total da unidade de storage. Por exemplo, se a unidade de storage for de 50 GB e você definir a reserva do Snapshot como 10%, a quantidade de espaço reservada para snapshots será de 5 GB. Quando a quantidade de espaço usada pelos snapshots aumentar para 5 GB, os snapshots mais antigos serão excluídos automaticamente para abrir espaço para novos snapshots. Se o tamanho da unidade de storage aumentar para 100 GB, a reserva do Snapshot aumentará para 10 GB. A reserva máxima do Snapshot que você pode definir é de 200%. Se sua unidade de storage aumentar até o tamanho máximo de 128 TB, uma reserva do Snapshot de 200% permitirá que você crie dois snapshots completos.
 
 Por padrão, a reserva de snapshots está definida como 0% e a exclusão automática de snapshots não está habilitada.
 

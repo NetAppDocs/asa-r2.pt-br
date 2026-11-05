@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Utilize grupos de consistência para executar diversas ações em várias unidades de storage ao mesmo tempo, em vez de executar ações individualmente em cada unidade. Em uma estrutura hierárquica, um ou mais grupos de consistência são configurados como filhos sob um grupo de consistência pai. 
+summary: Promova, rebaixe, crie e desanexe grupos de consistência hierárquica para gerenciar snapshots e replicação de várias unidades de storage no seu sistema ASA r2. 
 ---
 = Gerenciar grupos de consistência hierárquica no seu sistema ASA r2
 :allow-uri-read: 
@@ -42,13 +42,13 @@ Você pode criar grupos de consistência filhos adicionais sob o grupo de consis
 Quando você rebaixa um grupo de consistência pai para um único grupo de consistência, as unidades de armazenamento dos grupos de consistência filho associados são adicionadas ao grupo de consistência pai.  Os grupos de consistência filhos são excluídos e o pai é então gerenciado como um único grupo de consistência.
 
 .Antes de começar
-Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja rebaixar estiver em um relacionamento de sincronização ativa do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser rebaixado.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder rebaixar o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja rebaixar estiver em uma relação de sincronização ativa do SnapMirror, você deve link:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser rebaixado. Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em uma relação de replicação assíncrona, você deve link:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder rebaixar o grupo de consistência. Excluir a relação de sincronização ativa do SnapMirror ou interromper a relação assíncrona antes de rebaixar um grupo de consistência não é necessário no ONTAP 9.17.1 e em versões posteriores.
 
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.
 . Passe o Mouse sobre o grupo de consistência pai que você deseja rebaixar.
 . image:icon_kabob.gif["três pontos azuis verticais"]Selecione ; em seguida, selecione *demote para um único grupo de consistência*.
-. Selecione *demote*
+. Selecione *Rebaixar*.
 
 
 .O que se segue?
@@ -113,7 +113,7 @@ Depois de criar um grupo de consistência filho, você podelink:policies-schedul
 Quando você separa um grupo de consistência filho de um grupo de consistência pai, o grupo de consistência filho é removido do grupo de consistência pai e é gerenciado como um único grupo de consistência.  A política de replicação aplicada ao pai não é mais aplicada ao grupo de consistência filho desanexado.
 
 .Antes de começar
-Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja destacar estiver em um relacionamento de sincronização ativo do SnapMirror , você develink:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser destacado.  Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você develink:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder desanexar o grupo de consistência.  Excluir o relacionamento de sincronização ativo do SnapMirror ou quebrar o relacionamento assíncrono antes de expandir um grupo de consistência não é necessário no ONTAP 9.17.1 e versões posteriores.
+Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja desanexar estiver em um relacionamento do SnapMirror active sync, você deverá link:snapmirror-active-sync-delete-relationship.html["excluir o relacionamento de sincronização ativa do SnapMirror"] antes que o grupo de consistência possa ser desanexado. Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência estiver em um relacionamento de replicação assíncrona, você deverá link:snapmirror-active-sync-break-relationship.html["romper o relacionamento"] antes de poder desanexar o grupo de consistência. Excluir o relacionamento do SnapMirror active sync ou interromper o relacionamento assíncrono antes de desanexar um grupo de consistência não é necessário no ONTAP 9.17.1 e em versões posteriores.
 
 .Passos
 . No System Manager, selecione *proteção > grupos de consistência*.

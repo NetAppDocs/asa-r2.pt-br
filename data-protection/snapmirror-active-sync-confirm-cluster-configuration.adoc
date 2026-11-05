@@ -17,7 +17,7 @@ A sincronização ativa do SnapMirror depende de clusters pareados para proteger
 . Confirme se existe um relacionamento de peering de cluster entre os clusters.
 +
 
-NOTE: O espaço IP padrão é exigido pela sincronização ativa do SnapMirror para relacionamentos entre pares de cluster. Um espaço IP personalizado não é suportado.
+NOTE: O SnapMirror active sync requer o IPspace padrão para relacionamentos de peer de cluster. Um IPspace personalizado não é suportado.
 
 +
 link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Criar um relacionamento de pares de cluster"] .

@@ -11,7 +11,7 @@ summary: Se você configurar o ONTAP Mediator ou o ONTAP Cloud Mediator com um c
 
 
 [role="lead"]
-Se você configurar o ONTAP Mediator ou o ONTAP Cloud Mediator com um certificado autoassinado, poderá reconfigurar o mediador para usar um certificado de terceiros.  Certificados de terceiros podem ser preferidos ou exigidos pela sua organização por motivos de segurança.
+Reconfigure o ONTAP Mediator ou o ONTAP Cloud Mediator para usar um certificado de terceiro em vez de um certificado autoassinado. Sua organização pode preferir ou exigir certificados de terceiro por motivos de segurança.
 
 
 

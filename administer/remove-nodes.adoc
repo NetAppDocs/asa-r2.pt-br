@@ -30,7 +30,7 @@ cluster show
 . link:../manage-data/move-storage-units.html["Mover"] ou link:../manage-data/delete-storage-units.html["excluir"] todas as unidades de armazenamento do nó.
 . Se você tiver unidades de armazenamento SCSI (LUNs) no nó a ser removido, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["Exclua o nó e seu parceiro de HA da lista de nós de relatório do Selective LUN Map (SLM)"^].
 +
-Se você não remover o nó e seu parceiro de HA da lista de nós de relatório do SLM, o acesso às LUNs anteriormente presentes no nó poderá ser perdido, mesmo que as LUNs tenham sido movidas para outro nó.
+Se você não remover o nó e seu parceiro de HA da lista de nós de relatório do SLM, você poderá perder o acesso às LUNs que antes estavam no nó, mesmo que as LUNs tenham sido movidas para outro nó.
 
 . link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Excluir"^] ou link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrar"^] todas as interfaces de rede (LIFs) do nó.
 +
@@ -40,7 +40,7 @@ A migração de LIF iSCSI é limitada apenas às portas no nó inicial ou no par
 
 ** As LIFs entre clusters devem ser excluídas.
 +
-Ao excluir LIFs entre clusters, um aviso é exibido e pode ser ignorado.
+Ao excluir LIFs de intercluster, você pode ignorar o aviso que aparece.
 
 ** A LIF de gerenciamento de cluster deve ser movida para outro nó.
 
@@ -150,7 +150,7 @@ cluster modify -node <node_name> -eligibility true
 ----
 
 
-. Faça login na LIF de gerenciamento de nó remoto ou na LIF de gerenciamento de cluster em um nó que você não está removendo do cluster.
+. Faça login na LIF de gerenciamento de nó remoto ou na LIF de gerenciamento de cluster em um nó que você não vai remover do cluster.
 . Use o nome do nó ou o endereço IP do nó para removê-lo do cluster:
 +
 Se você tiver um cluster com versões mistas e estiver removendo o último nó de versão inferior, use o parâmetro -skip-last-low-version-node-check com estes comandos.
@@ -169,7 +169,7 @@ cluster remove-node -node <node_name>
 cluster remove-node -cluster_ip <node_ip>
 ----
 +
-Uma mensagem de falha será gerada se houver condições que você deve resolver antes de remover o nó. Caso isso aconteça, resolva as condições e execute novamente o  `cluster remove-node` comando.
+O ONTAP gera uma mensagem de falha se existirem condições que você precisa resolver antes de remover o nó. Se isso acontecer, resolva as condições e execute novamente o  `cluster remove-node`comando.
 
 +
 O nó reinicia automaticamente após ser removido com sucesso do cluster.

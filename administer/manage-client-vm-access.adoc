@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/manage-client-vm-access.html 
 keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface, iscsi lif failover, 
-summary: Crie um LIF para acessar dados em unidades de armazenamento no ASA R2. Use sub-redes para simplificar a criação de LIF e IPspaces para fornecer administração e roteamento seguros. 
+summary: Crie uma LIF para acessar dados em unidades de storage no seu ASA r2. Use sub-redes para simplificar a criação de LIFs e IPspaces para fornecer administração e roteamento seguros. 
 searchtitle: Gerencie o acesso do cliente ao armazenamento usando o Gerenciador de sistema do ONTAP | ASA R2 
 ---
 = Gerenciar o acesso do cliente a VMs de storage em sistemas de storage ASA R2
@@ -64,7 +64,7 @@ Agora que você criou um espaço IPspace, você pode usá-lo para criar uma sub-
 [[create-subnets]]
 == Crie sub-redes
 
-Uma sub-rede permite alocar blocos específicos de endereços IPv4 ou IPv6 para usar quando você cria um LIF (interface de rede) . Uma sub-rede simplifica a criação de LIF, permitindo que você especifique o nome da sub-rede em vez de um endereço IP específico e uma máscara de rede para cada LIF.
+Uma sub-rede permite alocar blocos específicos de endereços IPv4 ou IPv6 para uso na criação de uma LIF (interface de rede). Uma sub-rede simplifica a criação de LIFs, permitindo especificar o nome da sub-rede em vez de um endereço IP e máscara de rede específicos para cada LIF.
 
 .Antes de começar
 * Você deve ser um administrador de cluster para executar esta tarefa.
@@ -95,10 +95,10 @@ Você criou uma sub-rede que agora pode usar para simplificar a criação de seu
 [[create-a-lif-network-interface]]
 == Criar um LIF (interface de rede)
 
-Uma LIF (interface de rede) é um endereço IP associado a uma porta física ou lógica. Crie LIFs nas portas que você deseja usar para acessar dados. As VMs de armazenamento fornecem dados aos clientes por meio de uma ou mais LIFs. Em um sistema ASA r2, você pode criar LIFs IP, FC e NVMe/FC. Uma LIF de dados IP pode atender tanto ao tráfego iSCSI quanto ao NVMe/TCP por padrão. LIFs de dados separadas devem ser criadas para tráfego FC e NVMe/FC.
+Uma LIF (interface de rede) é um endereço IP associado a uma porta física ou lógica. Crie LIFs nas portas que você deseja usar para acessar os dados. As VMs de storage fornecem dados aos clientes por meio de uma ou mais LIFs. Em um sistema ASA r2, você pode criar LIFs IP, FC e NVMe/FC. Uma LIF de dados IP pode processar o tráfego iSCSI e NVMe/TCP por padrão. Você deve criar LIFs de dados separadas para o tráfego FC e NVMe/FC.
 
 .Failover de LIF em sistemas ASA r2
-Se ocorrer uma falha de componente, uma LIF pode ser transferida para outra porta física, de forma que a comunicação de rede não seja interrompida. A partir do ONTAP 9.19.1, a transferência automática de LIF é suportada por padrão para LIFs IP. Quando a transferência automática de LIF está habilitada, se ocorrer uma falha de armazenamento, a LIF é migrada automaticamente de seu nó ou porta de origem para o nó ou porta do parceiro de alta disponibilidade (HA) e, em seguida, retorna à sua porta original assim que a transferência for concluída. Ou, se a porta ficar inativa, a LIF é migrada automaticamente para uma porta ativa em seu nó de origem atual e, em seguida, retorna à sua porta original assim que a porta estiver ativa novamente.
+Se houver uma falha de componente, uma LIF poderá fazer failover ou ser migrada para uma porta física diferente, para que a comunicação de rede não seja interrompida. A partir do ONTAP 9.19.1, o failover automático de LIF é compatível por padrão para LIFs IP. Quando o failover automático de LIF está habilitado, se ocorrer um failover de storage, a LIF será migrada automaticamente de seu nó ou porta inicial para o nó ou porta do parceiro de HA e depois retornará quando o failover for concluído. Ou, se a porta ficar não íntegra, a LIF será migrada automaticamente para uma porta íntegra em seu nó inicial atual e depois retornará para sua porta original quando a porta voltar a ficar íntegra.
 
 No ONTAP 9.18.1 e versões anteriores, o failover automático de LIF não é compatível com LIFs IP que utilizam tráfego iSCSI e NVMe/TCP. Ao criar LIFs somente iSCSI, o failover automático de LIF é ativado por padrão, a menos que a VM de armazenamento já possua LIFs iSCSI que não têm o failover automático ativado. Se houver LIFs iSCSI na VM de armazenamento que não estejam com o failover automático ativado, as LIFs recém-criadas também não terão o failover ativado. Nesses casos, você deve primeiro excluir as LIFs iSCSI existentes e depois recriá-las com o failover automático ativado. Saiba como link:https://docs.netapp.com/us-en/ontap/san-admin/delete-lif-san-environment-task.html["Excluir uma LIF em um ambiente SAN"^].
 
@@ -184,7 +184,7 @@ Você deve usar a interface de linha de comando do ONTAP (CLI) para criar uma LI
 network interface create -vserver <storage_VM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
 ----
 +
-** Recomenda-se criar dois iSCSI LIFs em cada nó, um para a malha A e outro para a malha B. Isso proporciona redundância e balanceamento de carga para o tráfego iSCSI. No exemplo a seguir, são criados um total de quatro iSCSI LIFs, dois em cada nó e um para cada malha.
+** Crie duas LIFs iSCSI em cada nó, uma para a malha A e outra para a malha B. Isso proporciona redundância e balanceamento de carga para o tráfego iSCSI. No exemplo a seguir, um total de quatro LIFs iSCSI é criado, duas em cada nó, uma para cada malha.
 +
 [listing]
 ----
@@ -216,7 +216,7 @@ network interface show -lif iscsi*
 Os LIFs podem ser desativados ou renomeados conforme necessário. Você também pode alterar o endereço IP de LIF e a máscara de sub-rede.
 
 .Sobre esta tarefa
-O ONTAP utiliza o Network Time Protocol (NTP) para sincronizar o tempo no cluster. Após alterar os endereços IP do LIF, talvez seja necessário atualizar a configuração do NTP para evitar falhas de sincronização. Para obter mais informações, consulte o artigo da Base de Conhecimentolink:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["A sincronização NTP falha após a alteração do IP do LIF"] .
+ONTAP utiliza o Network Time Protocol (NTP) para sincronizar o tempo em todo o cluster. Após alterar os endereços IP das LIFs, pode ser necessário atualizar a configuração do NTP para evitar falhas de sincronização. Para obter mais informações, consulte o artigo da Knowledge Base link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["A sincronização NTP falha após a alteração do IP do LIF"].
 
 .Passos
 . Selecione *rede > Visão geral*; em seguida, selecione *interfaces de rede*.

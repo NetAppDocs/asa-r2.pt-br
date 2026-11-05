@@ -53,7 +53,7 @@ Você adicionou um novo domínio de broadcast.
 [[reassign-ports-to-a-different-broadcast-domain]]
 == Reatribuir portas a um domínio de broadcast diferente
 
-As portas podem pertencer a apenas um domínio de broadcast. Se você quiser alterar o domínio de broadcast ao qual uma porta pertence, você precisa reatribuir a porta de seu domínio de broadcast existente a um novo domínio de broadcast.
+As portas podem pertencer a apenas um domínio de broadcast. Para alterar o domínio de broadcast de uma porta, reatribua-a do domínio de broadcast atual para um novo.
 
 .Passos
 . No System Manager, selecione *rede > Visão geral*.

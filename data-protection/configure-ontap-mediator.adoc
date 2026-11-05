@@ -20,11 +20,11 @@ Se você estiver usando o ONTAP Cloud Mediator, verifique se o seu sistema ASA r
 . No Gerenciador do Sistema, selecione *Proteção > Visão geral*.
 . No painel direito, em *Mediadores*, selecione *Adicionar um mediador*.
 . Selecione o *Tipo de mediador*.
-. Para um mediador *na nuvem*, insira o ID da organização, o ID do cliente e o segredo do cliente. Para um mediador *local*, insira o endereço IP, a porta, o nome de usuário e a senha do mediador.
+. Para um mediador *na nuvem*, insira o ID da organização, o ID do cliente e o segredo do cliente. Para um mediador *local*, insira o endereço IP, a porta, o nome de usuário do mediador e a senha do mediador.
 . Selecione o peer de cluster na lista de peers de cluster qualificados ou selecione *Adicionar um peer de cluster* para adicionar um novo.
 . Adicione as informações do certificado
 +
-** Se você estiver usando um certificado autoassinado, copie o conteúdo do `intermediate.crt` arquivo e cole-o no campo *Certificado* ou selecione *Importar* para navegar até o `intermediate.crt` arquivar e importar as informações do certificado.
+** Se você estiver usando um certificado autoassinado, copie o conteúdo do `intermediate.crt` arquivo e cole-o no campo *Certificado*, ou selecione *Importar* para navegar até o `intermediate.crt` arquivo e importar as informações do certificado.
 ** Se você estiver usando um certificado de terceiros, insira as informações do certificado no campo *Certificado*.
 
 
@@ -32,4 +32,4 @@ Se você estiver usando o ONTAP Cloud Mediator, verifique se o seu sistema ASA r
 
 
 .O que se segue?
-Depois de inicializar o mediador, você pode link:configure-snapmirror-active-sync.html["configurar sincronização ativa do SnapMirror"] para criar uma cópia dos seus dados em um site secundário e permitir que seus aplicativos host façam failover de forma automática e transparente em caso de desastre.
+Após inicializar o mediador, você pode link:configure-snapmirror-active-sync.html["configurar sincronização ativa do SnapMirror"] para criar uma cópia dos seus dados em um local secundário e permitir que seus aplicativos host realizem failover automático e transparente em caso de desastre.

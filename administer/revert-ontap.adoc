@@ -13,7 +13,7 @@ summary: As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo pro
 [role="lead"]
 As reversões de software ONTAP para sistemas ASA r2 seguem o mesmo processo de reversões para outros sistemas ONTAP .
 
-Reverter um cluster ONTAP é um processo disruptivo. Você precisa colocar o cluster offline durante todo o período da reversão. Você não deve reverter um cluster de produção sem a assistência do suporte técnico. Você pode reverter um cluster novo ou de teste sem assistência. Se a reversão de um sistema novo ou de teste falhar ou se for concluída com sucesso, mas você não estiver satisfeito com o desempenho do cluster em seu ambiente de produção, você deve entrar em contato com o suporte técnico para obter assistência.
+Reverter um cluster ONTAP causa interrupção. Você deve colocar o cluster offline durante toda a duração da reversão. Você não deve reverter um cluster de produção sem a assistência do suporte técnico. Você pode reverter um cluster novo ou de teste sem assistência. Se a reversão de um sistema novo ou de teste falhar, ou se for concluída com sucesso, mas você não ficar satisfeito com o desempenho do cluster em seu ambiente de produção, entre em contato com o suporte técnico para obter assistência.
 
 Veja link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Reverter um cluster ONTAP"] o procedimento completo de reversão.
 
@@ -32,7 +32,7 @@ Certas configurações de cluster ASA r2 exigem que você execute ações espec�
 Se você estiver revertendo do ONTAP 9.17.1 em um sistema ASA r2, execute as seguintes ações antes de iniciar a reversão:
 
 
-NOTE: link:space-balancing.html["equilíbrio espacial dinâmico"]É ativado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ONTAP 9.17.1 ASA r2.  Não é possível reverter do ONTAP 9.17.1 para o ASA r2 após a ativação do balanceamento dinâmico de espaço.
+NOTE: link:space-balancing.html["Equilíbrio espacial dinâmico"] é ativado por padrão 14 dias após a atualização para o ONTAP 9.17.1 ou a inicialização de um novo cluster ASA r2 do ONTAP 9.17.1. Você não pode fazer a reversão do ONTAP 9.17.1 no seu sistema ASA r2 depois que o balanceamento dinâmico de espaço for ativado.
 
 [cols="2"]
 |===

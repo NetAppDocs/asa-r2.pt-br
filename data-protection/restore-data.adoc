@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/restore-data.html 
 keywords: restore data, asa r2, data restoration 
-summary: Se os dados de um grupo de consistência estiverem corrompidos ou perdidos, você poderá restaurar todo o grupo de consistência a partir de um snapshot remoto. 
+summary: Restaure um grupo de consistência ou uma unidade de storage a partir de um snapshot local ou remoto quando os dados forem perdidos ou corrompidos no seu sistema ASA r2. 
 ---
 = Restaure os dados em sistemas de storage ASA R2
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Se os dados de um grupo de consistência estiverem corrompidos ou perdi
 
 
 [role="lead"]
-Os dados em um grupo de consistência ou unidade de armazenamento protegida por instantâneos podem ser restaurados se forem perdidos ou corrompidos.
+Se os dados em um grupo de consistência ou em uma unidade de storage protegida por snapshots forem perdidos ou corrompidos, restaure-os a partir de um snapshot para retornar os dados ao ponto no tempo em que o snapshot foi criado.
 
 
 
@@ -43,7 +43,7 @@ Abre-se a página de detalhes do grupo de consistência.
 .Passos
 . No System Manager, selecione *proteção > replicação*.
 . Selecione *destinos locais*.
-. Selecione *fonte* que deseja restaurar e image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Selecione a *Origem* que deseja restaurar; em seguida, selecione image:icon_kabob.gif["três pontos azuis verticais"].
 . Selecione *Restaurar*.
 . Selecione o cluster, a VM de armazenamento e o grupo de consistência para o qual você deseja restaurar os dados.
 . Selecione o instantâneo a partir do qual pretende restaurar.

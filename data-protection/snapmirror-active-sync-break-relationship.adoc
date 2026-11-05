@@ -11,7 +11,7 @@ summary: Em certas situações, pode ser necessário interromper um relacionamen
 
 
 [role="lead"]
-Em certas situações, pode ser necessário interromper um relacionamento de replicação assíncrona.  Por exemplo, se você estiver executando o ONTAP 9.16.1 e quiser aumentar o tamanho de um grupo de consistência que está em um relacionamento de replicação assíncrona, será necessário quebrar o relacionamento antes de poder modificar o tamanho do grupo de consistência.
+Interrompa um relacionamento de replicação assíncrona quando você precisar fazer alterações que exijam isso. Por exemplo, se você estiver executando o ONTAP 9.16.1 e quiser aumentar o tamanho de um grupo de consistência em um relacionamento de replicação assíncrona, interrompa o relacionamento antes de modificar o tamanho do grupo de consistência.
 
 .Passos
 . No System Manager, selecione *proteção > replicação*.

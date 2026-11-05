@@ -11,12 +11,12 @@ summary: Aprenda a configurar a sincronização ativa do SnapMirror para garanti
 
 
 [role="lead"]
-Configure a sincronização ativa do SnapMirror para criar uma cópia dos seus dados em um site secundário e permitir que seus aplicativos host façam failover de forma automática e transparente em caso de desastre.
+Configure o SnapMirror active sync para criar uma cópia dos seus dados em um local secundário e permitir que seus aplicativos de host façam failover automático e transparente em caso de desastre.
 
 Em sistemas ASA r2, a sincronização ativa do SnapMirror suporta configurações simétricas ativa/ativa. Em uma configuração simétrica ativa/ativa, ambos os sites podem acessar o armazenamento local para E/S ativa.
 
 .Sobre esta tarefa
-Se você estiver usando o protocolo iSCSI ou FC e usar ferramentas ONTAP para VMware Sphere, você pode opcionalmente link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["use o ONTAP Tools para VMware para configurar a sincronização ativa do SnapMirror"^] .
+Se você estiver usando o protocolo iSCSI ou FC e usar as ONTAP tools for VMware vSphere, você pode, opcionalmente, link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["Use as ONTAP tools for VMware vSphere para configurar o SnapMirror active sync"^].
 
 
 NOTE: A partir do ONTAP 9.19.1, a Proteção Autônoma contra Ransomware com Inteligência Artificial (ARP/AI) oferece suporte a unidades de storage primário de leitura e gravação em SnapMirror relacionamentos SAN de sincronização ativa em sistemas ASA r2. O ARP/AI é executado nas unidades de storage primário ativas, cria snapshots ARP apenas para a unidade primária e fornece detecção de ransomware baseada em aprendizado de máquina para essas unidades de armazenamento. Para habilitar o ARP/AI, consulte link:../secure-data/enable-anti-ransomware-protection.html["Habilite a proteção autônoma contra ransomware com IA"].
@@ -34,7 +34,7 @@ Saiba mais sobre  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#ke
 . Selecione um peer de cluster existente ou escolha *Adicionar um novo*.
 . Selecione a VM de armazenamento.
 . Para a política de replicação, selecione *AutomatedFailOverDuplex*.
-. Se você estiver criando uma configuração ativa/ativa simétrica não uniforme, selecione *Configurações de destino*; em seguida, insira o nome do novo grupo de consistência de destino criado antes de iniciar este procedimento.
+. Se você estiver criando uma configuração ativo-ativo simétrica não uniforme, selecione *Configurações de destino* e insira o nome do novo grupo de consistência de destino que você criou antes de iniciar este procedimento.
 . Selecione *Guardar*.
 
 

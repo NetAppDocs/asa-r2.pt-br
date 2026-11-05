@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
-summary: Aumente ou diminua o tamanho de um grupo de consistência modificando o número de unidades de armazenamento no grupo de consistência. 
+summary: Aumente ou diminua o tamanho de um grupo de consistência adicionando ou removendo unidades de armazenamento do grupo. 
 ---
 = Modifique o tamanho dos grupos de consistência no seu sistema ASA r2
 :allow-uri-read: 
@@ -61,7 +61,7 @@ Se você estiver executando o ONTAP 9.16.1 e o grupo de consistência que deseja
 . Selecione *usando novas unidades de armazenamento*.
 . Introduza o número de unidades que pretende criar e a capacidade por unidade.
 +
-Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional host.  Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.
+Se você criar mais de uma unidade, cada unidade será criada com a mesma capacidade e o mesmo sistema operacional do host. Para atribuir uma capacidade diferente a cada unidade, selecione *Adicionar uma capacidade diferente*.
 
 . Selecione *expandir*.
 

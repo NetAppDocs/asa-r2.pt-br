@@ -2,22 +2,22 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
-summary: Aprenda como restabelecer relacionamentos de sincronização ativa do SnapMirror após um failover não planejado dos seus clusters ASA r2. 
+summary: Restabeleça as relações do SnapMirror active sync após um failover não planejado dos seus clusters ASA r2. 
 ---
-= Restabeleça a sincronização ativa do SnapMirror após failover não planejado no ASA r2
+= Restabeleça a sincronização ativa do SnapMirror após um failover não planejado no ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nos sistemas ASA r2, SnapMirror active sync suporta configurações ativo-ativo simétricas. Em uma configuração ativo-ativo simétrica, ambos os sites podem acessar o armazenamento local para E/S ativa. Se o cluster de origem falhar ou for isolado, o mediador aciona um failover automático não planejado (AUFO) e processa todas as operações de E/S do cluster de destino até que o cluster de origem se recupere.
+Restabeleça sua relação de sincronização ativa do SnapMirror para retomar as operações no cluster de origem original após um failover não planejado. Em sistemas ASA r2, a sincronização ativa do SnapMirror oferece suporte a configurações simétricas ativo-ativo. Em uma configuração simétrica ativo-ativo, ambos os sites podem acessar o storage local para E/S ativa. Se o cluster de origem falhar ou ficar isolado, o ONTAP Mediator aciona um failover automático não planejado (AUFO) e atende toda a E/S do cluster de destino até que o cluster de origem se recupere.
 
 Se você experimentar um AUFO da sua relação de sincronização ativa SnapMirror, você deve restabelecer a relação e retomar as operações no cluster de origem assim que ele voltar a ficar online.
 
 .Antes de começar
 * O relacionamento de sincronização ativa do SnapMirror deve estar sincronizado.
-* Não é possível iniciar um failover planejado quando uma operação não disruptiva, como uma movimentação de unidade de armazenamento, estiver em andamento.
+* Não é possível iniciar um failover planejado quando uma operação não disruptiva, como a movimentação de uma unidade de storage, estiver em andamento.
 * O Mediador ONTAP deve estar configurado, conectado e em quorum.
 * Para recuperar caminhos de E/S perdidos ou atualizar os estados dos caminhos de E/S em seus hosts, você precisa executar uma nova verificação de armazenamento/adaptador nos hosts após o cluster de armazenamento primário retomar a operação.
 

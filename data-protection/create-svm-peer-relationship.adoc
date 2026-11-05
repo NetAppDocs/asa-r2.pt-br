@@ -11,7 +11,7 @@ summary: Crie relacionamentos de pares entre VMs de armazenamento em diferentes 
 
 
 [role="lead"]
-Um relacionamento de pares define conexões de rede que permitem que clusters e máquinas virtuais (VMs) de armazenamento troquem dados com segurança. Crie relacionamentos de pares entre VMs de armazenamento em diferentes clusters para permitir a proteção de dados e a recuperação de desastres usando o SnapMirror.
+Uma relação de peer define conexões de rede que permitem que clusters e máquinas virtuais de storage (VMs) troquem dados com segurança. Crie relações de peer entre VMs de storage em clusters diferentes para habilitar a proteção de dados e a recuperação de desastres usando o SnapMirror.
 
 link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Saiba mais sobre relacionamentos entre pares"^] .
 
@@ -20,7 +20,7 @@ Você deve ter estabelecido um relacionamento de par de cluster entre os cluster
 
 .Passos
 . No Gerenciador do Sistema, selecione *Proteção > Visão geral*.
-. Em *Pares de VM de armazenamento* selecione *Adicionar um par de VM de armazenamento*.
+. Em *Pares de VM de storage*, selecione *Adicionar um par de VM de storage*.
 . Selecione a VM de armazenamento no cluster local; em seguida, selecione a VM de armazenamento no cluster remoto.
 . Selecione *Adicionar um peer de VM de armazenamento*.
 

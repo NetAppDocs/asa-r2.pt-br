@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9201.html 
+keywords: 'what"s new, release notes, 9.20.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: Saiba mais sobre os novos recursos disponíveis no ONTAP 9.20.1 para sistemas ASA r2. 
+---
+= Novidades do ONTAP 9.20.1 para sistemas ASA r2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis no ONTAP 9.20.1 para sistemas ASA r2.
+
+
+
+[[san-data-migration]]
+== Migração de dados SAN
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../manage-data/migrate-svm-from-asa-r2.html["Suporte para migração não disruptiva de máquinas virtuais de storage de sistemas ASA r2 para sistemas ASA e AFF"] | Você pode migrar uma máquina virtual de storage (VM) sem interrupções de um cluster ASA r2 de 2 nós para um cluster ASA de 2 nós ou um cluster AFF de 2 nós. Os mapeamentos de host e as configurações de unidades de storage existentes para LUNs e namespaces são mantidos durante a migração, reduzindo o esforço operacional e o risco. 
+
+
+| link:../manage-data/migrate-svm.html["Suporte para melhorar o desempenho após migrar VMs de storage de um sistema ASA para um sistema ASA r2"] | O ONTAP reduz a latência de leitura adicional e o uso da CPU que podem ocorrer após a migração de máquinas virtuais de storage (VMs) de um sistema ASA para um sistema ASA r2. 
+|===
+
+
+[[security]]
+== Segurança
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fc-sp-3-authentication-and-encryption["Suporte para autenticação e criptografia FC-SP-3 com HBAs seguros da Broadcom"] | O ONTAP oferece suporte à autenticação e à criptografia do Fibre Channel Security Protocol 3 (FC-SP-3) em HBAs seguros da Broadcom com sistemas ASA r2. O suporte ao FC-SP-3 permite criptografia completamente em nível de hardware e autenticação de dispositivos para proteger os dados em trânsito entre hosts SAN FC e NVMe/FC e sistemas de storage ONTAP, em alinhamento com os padrões de segurança Fibre Channel T11. 
+
+
+| Suporte para proteção da disponibilidade do gerenciamento web e melhorias de pré-cluster | Foram implementadas melhorias que preservam a disponibilidade da API de gerenciamento web[1] durante sobrecargas de conexão. O tratamento do Protocolo de Configuração Dinâmica de Hosts (DHCP) pré-cluster também foi aprimorado para que uma LIF de gerenciamento de nó possa manter e renovar a conectividade DHCP enquanto aguarda a configuração do cluster. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#external-key-management-for-encryption-at-rest["Suporte para migração automática de chaves de criptografia de volume de VM de storage"] | Ao habilitar um gerenciador de chaves externo em uma máquina virtual de storage, o ONTAP migra automaticamente as chaves de criptografia de volume dessa máquina virtual de storage do gerenciador de chaves com escopo de administrador para o novo gerenciador de chaves da máquina virtual de storage. Isso simplifica a transição para o gerenciamento de chaves externo e elimina a necessidade de uma etapa separada de migração manual no fluxo de trabalho padrão. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#multi-admin-verification-mav["Suporte aos Grupos MAV"] | Os grupos de aprovação do MAV podem incluir o provedor de identidade (IdP), o Active Directory (AD) e grupos LDAP (nsswitch) como aprovadores, além de administradores individuais. Os tipos de grupo compatíveis incluem Entra ID, ADFS, grupos de domínio do AD e grupos LDAP. Adicionar ou remover usuários no diretório do IdP, AD ou LDAP não exige nenhuma alteração na configuração do MAV. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#snmp["Suporte do SNMP para SHA-512"] | O ONTAP oferece suporte à autenticação SHA-512 para usuários do SNMPv3. Esse aprimoramento permite que você use uma autenticação SNMPv3 mais forte para clientes SNMP externos e para o monitoramento de switches, incluindo switches que exigem autenticação SHA-512. 
+|===
+
+
+[[storage-efficiency]]
+== Eficiência de storage
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#data-reduction-rate-drr["Suporte para relatórios simplificados da taxa de redução de dados de eficiência de storage"] | A taxa de redução de dados (DRR) da eficiência de storage fornece uma avaliação mais precisa da economia de espaço da eficiência de storage do ONTAP ao incluir apenas dados redutíveis. No ONTAP 9.19.1 e em versões anteriores, a DRR inclui dados redutíveis e não redutíveis. 
+
+
+| Suporte para melhorias de desempenho no offload de cópia SAN | O ONTAP melhora o desempenho do descarregamento de cópia SAN para cargas de trabalho de cópia NVMe e SCSI qualificadas. Entre em contato com seu representante da NetApp para obter detalhes. 
+
+
+| Otimização do Agendador Automático de Desduplicação (ADS) | O Agendador Automático de Desduplicação (ADS) foi aprimorado para permitir mais sessões simultâneas de desduplicação por nó, além de uma limitação mais inteligente e direcionada para equilibrar melhor a E/S do cliente. A atividade de desduplicação em volumes DP (de transferências do SnapMirror) e as sessões de Desduplicação Global são gerenciadas de forma mais otimizada juntamente com a desduplicação regular de volumes, o que reduz a contenção e o crescimento de metadados. Você pode se beneficiar da economia de eficiência de storage, especialmente em workloads mistos, sem necessidade de alterações de configuração. Este recurso é habilitado por padrão. 
+|===
+
+
+[[system-manager]]
+== O System Manager
+
+[cols="2,4"]
+|===
+| Atualização | Descrição 
+
+
+| link:../administer/manage-certificates.html["Suporte para alertas de expiração de certificado"] | O System Manager exibe um alerta de integridade no painel 30 dias antes do vencimento do certificado de um cluster ou de uma máquina virtual de storage (SVM) e o atualiza diariamente com os dias restantes até o vencimento. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#system-manager["Suporte para alertas de expiração de senha do usuário"] | Se a função associada a uma conta de usuário estiver configurada para alertas de expiração de senha, o usuário receberá um alerta em banner na parte superior da página no System Manager imediatamente após fazer login, a partir de 14 dias antes da expiração da senha. O alerta é atualizado a cada login do usuário para mostrar o número de dias restantes até a expiração da senha. 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#autosupport["Suporte para alertas adicionais do AutoSupport"] | O System Manager exibe novos alertas de AutoSupport que podem ajudar você a resolver problemas de configuração do AutoSupport. 
+|===

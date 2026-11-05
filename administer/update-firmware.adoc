@@ -30,7 +30,7 @@ As atualizações recomendadas para firmware de storage, firmware do Service Pro
 
 
 .Resultado
-As atualizações recomendadas são transferidas e instaladas automaticamente no sistema ASA R2 com base nas seleções de atualização.
+As atualizações recomendadas são baixadas e instaladas automaticamente no seu sistema ASA r2 com base nas suas seleções de atualização.
 
 
 
@@ -64,7 +64,7 @@ Veja uma lista de atualizações de firmware e de ficheiros de sistema que foram
 [[edit-automatic-updates]]
 == Editar atualizações automáticas
 
-Você pode optar por ter as atualizações recomendadas para o firmware do seu storage, firmware do SP/BMC e arquivos de sistema baixadas e instaladas automaticamente no seu cluster, ou pode optar por ter as atualizações recomendadas descartadas automaticamente. Se você quiser controlar manualmente a instalação ou o descarte de atualizações, selecione a opção para ser notificado quando uma atualização recomendada estiver disponível; então você pode optar por instalá-la ou descartá-la manualmente.
+Você pode configurar o download e a instalação automáticos, ou o descarte automático, das atualizações recomendadas para o firmware de storage, o firmware SP/BMC e os arquivos do sistema no seu cluster. Para controlar manualmente a instalação ou o descarte, opte por receber uma notificação quando uma atualização recomendada estiver disponível e, em seguida, instale-a ou descarte-a você mesmo.
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
@@ -81,7 +81,7 @@ As atualizações automáticas são modificadas com base nas suas seleções.
 [[update-firmware-manually]]
 == Atualize o firmware manualmente
 
-Se você quiser a flexibilidade de visualizar as atualizações recomendadas antes que elas sejam baixadas e instaladas, você pode desativar as atualizações automatizadas e atualizar seu firmware manualmente.
+Para ver as atualizações recomendadas antes de baixá-las e instalá-las, desative as atualizações automáticas e atualize o firmware manualmente.
 
 .Passos
 . Transfira o ficheiro de atualização do firmware para um servidor ou cliente local.

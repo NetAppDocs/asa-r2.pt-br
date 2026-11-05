@@ -11,9 +11,9 @@ summary: 'Use a sincronização ativa do SnapMirror para proteger aplicativos ho
 
 
 [role="lead"]
-A proteção de dados de sincronização ativa do ONTAP SnapMirror permite que os serviços empresariais continuem operando mesmo em caso de falha total do site, permitindo que os aplicativos realizem failover de forma transparente usando uma cópia secundária. Com a sincronização ativa do SnapMirror , não é necessária intervenção manual ou script personalizado para acionar um failover.
+A proteção de dados do ONTAP SnapMirror active sync permite que os serviços empresariais continuem operando mesmo durante uma falha completa do local, permitindo que os aplicativos façam failover de forma transparente usando uma cópia secundária. Você não precisa de intervenção manual nem de scripts personalizados para acionar um failover com SnapMirror active sync.
 
-Embora os procedimentos do System Manager para configurar o SnapMirror active sync sejam diferentes em sistemas ASA r2 do que em sistemas NetApp FAS, AFF e ASA executando a personalidade unificada do ONTAP, os requisitos, a arquitetura e a operação do SnapMirror active sync são os mesmos. link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Saiba mais sobre recuperação de desastres com sincronização ativa SnapMirror no seu sistema ASA r2"^]
+Embora os procedimentos do o System Manager para configurar o SnapMirror active sync sejam diferentes nos sistemas ASA r2 em comparação com os sistemas NetApp FAS, AFF e ASA que executam a personalidade ONTAP unificada, os requisitos, a arquitetura e a operação do SnapMirror active sync são os mesmos. link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Saiba mais sobre recuperação de desastres com sincronização ativa SnapMirror no seu sistema ASA r2"^]
 
 Nos sistemas ASA r2, SnapMirror active sync oferece suporte a configurações ativo-ativo simétricas. Em uma configuração ativo-ativo simétrica, ambos os sites podem acessar o storage local para I/O ativo. Saiba mais sobre link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurações simétricas ativas/ativas"^].
 
@@ -41,7 +41,7 @@ Você pode usar o ONTAP Mediator ou o ONTAP Cloud Mediator para monitorar a inte
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatro"] Configure o ONTAP Mediator ou o ONTAP Cloud Mediator usando certificados autoassinados.
 [role="quick-margin-para"]
-Você deve link:configure-ontap-mediator.html["configurar o mediador ONTAP ou o mediador de nuvem ONTAP"] antes de poder começar a usá-lo com o SnapMirror Active Sync para monitoramento de cluster.
+Você precisa link:configure-ontap-mediator.html["configurar o ONTAP Mediator ou o ONTAP Cloud Mediator"] antes de começar a usá-lo com o SnapMirror active sync para monitoramento de cluster.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinco"] Configurar sincronização ativa do SnapMirror .
 [role="quick-margin-para"]

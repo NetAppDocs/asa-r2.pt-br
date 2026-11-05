@@ -26,6 +26,9 @@ Saiba mais sobre as alterações nos limites e padrões que afetam os sistemas A
 | Recurso | Limite de alteração | Alterado na versão... 
 
 
+| Escala de registro de reserva persistente SCSI | O número máximo suportado de registros de reserva persistente SCSI-3 por LUN aumenta de 182 para 256. | ONTAP 9.20.1 
+
+
 | VMs de armazenamento por cluster | O número máximo de máquinas virtuais (VMs) de armazenamento suportadas por par HA foi aumentado de 32 para 256. | ONTAP 9.18.1 
 
 
