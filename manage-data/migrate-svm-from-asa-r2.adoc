@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm-from-asa-r2.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 'A partir do ONTAP 9.20.1, você pode migrar sem interrupção uma máquina virtual de storage (VM) de um cluster ASA r2 de 2 nós para um cluster ASA de 2 nós ou um cluster AFF de 2 nós.' 
+summary: Migre uma VM de storage de um cluster ASA r2 de 2 nós para um cluster ASA ou AFF de 2 nós sem interrupção, a partir do ONTAP 9.20.1. 
 ---
-= Migrar uma VM de storage de um cluster ASA r2 para um cluster ASA ou AFF
+= Migrar uma máquina virtual de storage de um cluster ASA r2 para um cluster ASA ou AFF
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-A partir do ONTAP 9.20.1, você pode migrar sem interrupção uma máquina virtual (VM) de storage de um cluster ASA r2 de 2 nós para um cluster ASA de 2 nós ou um cluster AFF de 2 nós. Talvez você precise migrar uma VM de storage para consolidar cargas de trabalho SAN e NAS, adotar recursos do ONTAP não disponíveis para sistemas ASA r2 ou como parte de uma atualização de hardware do seu ambiente. Os mapeamentos de host e as configurações de unidade de storage existentes para LUNs e namespaces são mantidos durante a migração, reduzindo o esforço operacional e o risco.
+A partir do ONTAP 9.20.1, você pode migrar sem interrupções uma máquina virtual de storage (VM) de um cluster ASA r2 de 2 nós para um cluster ASA de 2 nós ou um cluster AFF de 2 nós. Talvez você precise migrar uma VM de storage para consolidar cargas de trabalho SAN e NAS, adotar recursos do ONTAP que não estão disponíveis para sistemas ASA r2 ou atualizar seu hardware. Os mapeamentos de host existentes e as configurações de unidades de storage para LUNs e namespaces são mantidos durante a migração, reduzindo o esforço operacional e o risco.
 
 .Antes de começar
 * Você precisa ser um administrador de cluster.
@@ -21,8 +21,8 @@ A partir do ONTAP 9.20.1, você pode migrar sem interrupção uma máquina virtu
 .Sobre esta tarefa
 * Você pode migrar uma máquina virtual de storage do ASA r2 de um cluster ASA r2 de 2 nós somente para um cluster AFF de 2 nós.
 +
-** Você não pode migrar uma VM de storage ASA r2 para um cluster FAS, nem para um cluster ASA ou AFF com mais de 2 nós.
-** Não é possível migrar uma máquina virtual de storage ASA r2 de um cluster ASA r2 com mais de 2 nós.
+** Não é possível migrar uma máquina virtual de storage do ASA r2 para um cluster FAS nem para um cluster ASA ou AFF com mais de dois nós.
+** Você não pode migrar uma máquina virtual de storage ASA r2 de um cluster ASA r2 com mais de dois nós.
 
 
 * A migração de dados de um cluster ASA r2 para um cluster AFF não é reversível.
@@ -30,7 +30,7 @@ A partir do ONTAP 9.20.1, você pode migrar sem interrupção uma máquina virtu
 Você pode abortar uma migração antes da transição, mas depois que a transição for iniciada, não será possível interromper ou reverter a migração. Após a conclusão da migração, não será possível migrar dados de um cluster AFF para um cluster ASA r2.
 
 +
-Você pode link:migrate-svm.html["migrar uma SVM de um ASA para um cluster ASA r2"].
+Você pode link:migrate-svm.html["migrar uma máquina virtual de storage de um ASA para um cluster ASA r2"].
 
 * Você só pode migrar uma máquina virtual de storage por vez.
 * A máquina virtual de storage pode conter no máximo 400 unidades de storage.
@@ -120,7 +120,7 @@ Antes de migrar uma máquina virtual de storage (VM) de um cluster ASA r2, você
 
 .Passos
 . link:../data-protection/snapmirror-active-sync-break-relationship.html["Remova quaisquer relações de replicação existentes"].
-. link:../data-protection/snapmirror-active-sync-delete-relationship.html["Remova quaisquer relacionamentos de sincronização ativa existentes do SnapMirrror"].
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["Remova todos os relacionamentos existentes de sincronização ativa do SnapMirror"].
 . Verifique se o IPsec está ativado:
 +
 [source, cli]
@@ -137,16 +137,16 @@ security ipsec config modify -is-enabled -false
 +
 Saiba mais sobre o comando link:https://docs.netapp.com/us-en/ontap-cli/security-ipsec-config-show.html["security ipsec config show"^].
 
-.. Verifique se há LIFs de iPv6 e de IP virtual (VIP):
+.. Verifique se há LIFs de IPv6 e de IP virtual (VIP):
 +
 [source, cli]
 ----
 network interface show -vserver <storage_vm_name> -fields address-family, is-vip
 ----
 +
-Para LIFs iPv6, o parâmetro `-address-family` é `ipv6`. Para VIP LIFs, o parâmetro `-is-vip` é `true`.
+Para LIFs IPv6, o parâmetro `-address-family` é `ipv6`. Para VIP LIFs, o parâmetro `-is-vip` é `true`.
 
-.. Se existirem LIFs iPv6 ou VIP, remova-as:
+.. Se existirem LIFs IPv6 ou VIP, remova-as:
 +
 [source, cli]
 ----
@@ -221,7 +221,7 @@ Você está pronto para migrar sua VM de armazenamento do seu cluster ASA r2.
 
 Após criar o relacionamento de peers de clusters necessário entre o ASA r2 e os clusters ASA ou AFF e concluir as etapas para preparar ambos os clusters, você pode iniciar a migração da VM de storage.
 
-Ao realizar uma migração de VM de storage, é uma prática recomendada deixar 30% de folga de CPU tanto no cluster ASA r2 quanto no cluster AFF para permitir a execução da carga de trabalho de CPU da migração.
+Como prática recomendada, deixe 30% de folga de CPU tanto no cluster ASA r2 quanto no cluster AFF para que a carga de trabalho de migração possa ser executada.
 
 .Sobre esta tarefa
 * Após a migração da VM de armazenamento, a E/S do cliente passa sem interrupções para o cluster de destino, e a VM de armazenamento no cluster ASA r2 é removida automaticamente. O cutover automático e a remoção automática da VM de armazenamento estão habilitados por padrão. Opcionalmente, você pode desabilitar uma ou ambas as opções e executá-las manualmente.

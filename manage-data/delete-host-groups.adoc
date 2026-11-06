@@ -15,7 +15,7 @@ Em um sistema ASA r2, um grupo de hosts é o mecanismo usado para conceder aos h
 
 .Passos
 . No System Manager, selecione *Storage*.
-. Em *Mapeamento de host*, selecione o grupo de hosts que você deseja excluir.
+. Em *Mapeamento de hosts*, selecione o grupo de hosts que deseja excluir.
 . Selecione *Armazenamento mapeado*.
 . Selecione *Mais*; depois selecione *Excluir*.
 . Selecione a opção de confirmação para verificar se você deseja continuar; em seguida, selecione *Excluir*.

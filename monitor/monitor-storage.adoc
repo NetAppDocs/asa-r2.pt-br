@@ -39,7 +39,7 @@ Se o seu cluster estiver com pouco espaço ou não tiver capacidade para atender
 
 Cada par de HA em um sistema ASA r2 utiliza um pool de storage comum chamado _zona de disponibilidade de storage_. A zona de disponibilidade de storage tem acesso a todos os discos disponíveis no sistema de storage e é visível para ambos os nós do par de HA. Monitorar o espaço disponível das suas zonas de disponibilidade de storage permite diminuir o uso ou aumentar a capacidade conforme necessário, evitando falhas nas cargas de trabalho devido à falta de espaço.
 
-Se você tiver 4 ou mais nós no cluster, poderá visualizar a quantidade de espaço usada pela zona de disponibilidade de storage para cada par de HA. Essa métrica não está disponível para clusters de 2 nós.
+Se o seu cluster tiver quatro ou mais nós, você poderá visualizar a quantidade de espaço usada pela zona de disponibilidade de storage para cada par de HA. Essa métrica não está disponível para clusters de dois nós.
 
 A partir do ONTAP 9.19.1, um alerta é exibido em *Insights* do System Manager se uma zona de disponibilidade de storage em um dos seus pares de HA do sistema ASA r2 estiver próxima da capacidade. Saiba mais sobre System Manager link:view-insights.html["Percepções"].
 
@@ -48,7 +48,7 @@ A partir do ONTAP 9.19.1, um alerta é exibido em *Insights* do System Manager s
 +
 Um resumo da utilização da zona de disponibilidade de storage é exibido para cada par de HA no cluster.
 
-. Se você quiser métricas mais detalhadas, selecione uma disponibilidade de armazenamento específica.
+. Se você quiser métricas mais detalhadas, selecione uma zona de disponibilidade de storage específica.
 +
 Em *Visão geral*, a capacidade da zona de disponibilidade de storage, a quantidade de espaço utilizado e a taxa de redução de dados são exibidas.
 
@@ -58,7 +58,7 @@ Em *Unidades de armazenamento*, é exibida uma lista de todas as unidades de arm
 
 
 .O que se segue?
-Se a sua zona de disponibilidade de storage estiver com pouco espaço, link:../manage-data/move-storage-units.html["mova as unidades de armazenamento"] para outra zona de disponibilidade de storage para equilibrar a utilização do storage em todo o cluster, exclua snapshots para liberar espaço ou adicione discos adicionais aos seus nós para aumentar a capacidade.
+Se a sua zona de disponibilidade de storage estiver com pouco espaço, migre link:../manage-data/move-storage-units.html["mova as unidades de armazenamento"] para outra zona de disponibilidade de storage para equilibrar a utilização do storage em todo o cluster, exclua Snapshots para liberar espaço ou adicione discos aos seus nós para aumentar a capacidade.
 
 
 

@@ -60,7 +60,7 @@ Configure o sistema para enviar uma notificação para endereços de e-mail espe
 
 .Passos
 . No System Manager, selecione *Cluster > Settings*.
-. Ao lado de *Gerenciamento de notificações*, image:icon_kabob.gif["três pontos azuis verticais"]selecione .
+. Ao lado de *Gerenciamento de notificações*, selecione image:icon_kabob.gif["três pontos azuis verticais"].
 . Para configurar um destino de evento, selecione *Ver destinos de eventos*; em seguida, selecione *destinos de eventos*. Para configurar um destino de log de auditoria, selecione *Exibir destinos de auditoria*; em seguida, selecione *destinos de log de auditoria*.
 . image:icon_add_blue_bg.png["retângulo azul com sinal de adição seguido da palavra adicionar em letras brancas"]Selecione .
 . Introduza as informações de destino e, em seguida, selecione *Add*.

@@ -14,7 +14,7 @@ searchtitle: Monitore o desempenho do cluster usando o Gerenciador de sistema do
 [role="lead"]
 Utilize o ONTAP System Manager para monitorar o desempenho geral do seu cluster e de unidades de storage específicas, incluindo latência, IOPS e taxa de transferência, em períodos que variam de uma hora a um ano.
 
-Por exemplo, suponha que um aplicativo crítico esteja com alta latência e baixa taxa de transferência. Quando você visualiza o desempenho do cluster nos últimos cinco dias úteis, observa uma diminuição na performance ao mesmo tempo todos os dias. Use essas informações para determinar se o aplicativo crítico está competindo por recursos de cluster quando um processo não crítico começa a ser executado em segundo plano. Você poderá modificar sua política de QoS para limitar o impacto do workload não crítico nos recursos do sistema e garantir que seu workload crítico atenda aos destinos mínimos de taxa de transferência.
+Por exemplo, suponha que uma aplicação crítica esteja apresentando alta latência e baixa taxa de transferência. Ao analisar o desempenho do cluster nos últimos cinco dias úteis, você percebe uma queda no desempenho sempre no mesmo horário. Você usa essa informação para determinar que a aplicação crítica está competindo por recursos do cluster quando um processo não crítico começa a ser executado em segundo plano. Você pode então modificar sua política de QoS para limitar o impacto da carga de trabalho não crítica nos recursos do sistema e garantir que sua carga de trabalho crítica atenda às metas mínimas de taxa de transferência.
 
 
 
